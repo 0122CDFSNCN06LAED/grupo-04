@@ -1,4 +1,4 @@
-# grupo-04
+# grupo-04 (no name yet)
 
 "Somos una empresa dedicada a la comercialización de productos en gran escala, brindamos una amplia cartera de proveedores ofreciendole a nuestros clientes las mejores opciones del mercado. Nuestra plataforma brinda la posibilidad a empresas a subir sus productos y que estos sean adquiridos en gran escala por otras compañías, obteniendo así descuentos por volumen, además de condiciones especiales requeridas por compradores empresariales."
 
@@ -9,3 +9,4 @@
 + Adrian Montañez : Tengo 31 años , soy empleado de comercio, tengo 2 hijos. 
 + Santiago Cisneros: Tengo 27 años, vivo en la plata, en este momento de mi vida estudio programacion y trabajo para una empresa de seguros. 
 + Ricardo Castro Lloret: Tengo 33 años, estudié Marketing, pero trabajo en IT hace algunos años y me apasiona la tecnología.
++ Eduardo: 
