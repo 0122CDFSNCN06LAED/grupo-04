@@ -4,3 +4,4 @@ Referencias: Aerobox, Amazon, MercadoLibre, Ebay, Alibaba, flexxus, VentasxMayor
 Integrantes del equipo: 
 Agustin Delfino: Tengo 18 años, vivo en Gualeguaychú Entre Rios, estudio programación.
 Adrian Montañez : Tengo 31 años , soy empleado de comercio, tengo 2 hijos. 
+Santiago Cisneros: Tengo 27 años, vivo en la plata, en este momento de mi vida estudio programacion y trabajo para una empresa de seguros. 
