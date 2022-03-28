@@ -1,0 +1,126 @@
+main {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+.text-center {
+    text-align: center;
+}
+
+.width-90 {
+    width: 90%;
+}
+.width-100 {
+    width: 100%;
+}
+
+#caja-precio {
+    width: 100%;
+    display: flex;
+}
+.precio-numero {
+    margin-left: 10px;
+    border: solid 1px gray;
+    border-radius: 6px;
+    background-color: white;
+    color: gray;
+    width: 60%;
+    height: 40px;
+    text-align: left;
+    align-self: center;
+    display: flex;
+}
+.precio-numero p {
+    align-self: center
+}
+
+
+
+#caja-subtotal {
+    width: 100%;
+    display: flex;
+}
+.precio-subtotal {
+    margin-left: 10px;
+    border: solid 1px gray;
+    border-radius: 6px;
+    background-color: rgb(0,0,0, 0.3);
+    color: gray;
+    width: 60%;
+    height: 40px;
+    text-align: left;
+    align-self: center;
+    display: flex;
+}
+
+.precio-subtotal p {
+    align-self: center;
+}
+
+.select-cantidad{
+    border-radius: 6px;
+    margin-left: 10px;
+}
+
+.section-carrito {
+    box-shadow: 0px 0px 10px rgb(100 100 100);
+    border-radius: 6px;
+    margin-bottom: 20px;
+}
+
+.section-total {
+    display: flex;
+}
+.section-total h2 {
+    font-family: sans-serif;
+}
+
+.precio-total {
+    margin-left: 10px;
+    border: solid 1px gray;
+    border-radius: 6px;
+    background-color: white;
+    color: gray;
+    width: 60%;
+    height: 40px;
+    text-align: left;
+    align-self: center;
+    display: flex;
+}
+.precio-total p {
+    align-self: center;
+}
+
+
+
+.carrito {
+    text-align: center;
+    font-size: 40px;
+}
+
+.product-card {    
+    text-align: center;
+    padding: 10px;
+}
+
+.descripcion-producto {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+
+.bg-gris {
+    background-color: #ebebeb
+}
+
+
+.button-comprar{
+    width: 100%;
+    height: 60px;
+    font-size: 20px;
+    border-radius: 20px;
+    background-color: #1259c3;
+    border: none;
+    color: white;
+}
