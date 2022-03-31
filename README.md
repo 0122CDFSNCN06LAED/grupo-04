@@ -15,6 +15,7 @@ https://trello.com/b/rpJVEEfM/proyecto-integrador
 
 
 Colores a utilizar en el proyecto:
+
 .dark-primary-color    { background: #303F9F; }
 .default-primary-color { background: #3F51B5; }
 .light-primary-color   { background: #C5CAE9; }
