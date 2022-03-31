@@ -14,13 +14,13 @@
 https://trello.com/b/rpJVEEfM/proyecto-integrador
 
 
-Colores a utilizar en el proyecto:
+## Colores a utilizar en el proyecto:
 
-.dark-primary-color    { background: #303F9F; }
-.default-primary-color { background: #3F51B5; }
-.light-primary-color   { background: #C5CAE9; }
-.text-primary-color    { color: #FFFFFF; }
-.accent-color          { background: #448AFF; }
-.primary-text-color    { color: #212121; }
-.secondary-text-color  { color: #757575; }
-.divider-color         { border-color: #BDBDBD; }
++dark-primary-color    { background: #303F9F; }
++default-primary-color { background: #3F51B5; }
++light-primary-color   { background: #C5CAE9; }
++text-primary-color    { color: #FFFFFF; }
++accent-color          { background: #448AFF; }
++primary-text-color    { color: #212121; }
++secondary-text-color  { color: #757575; }
++divider-color         { border-color: #BDBDBD; }
