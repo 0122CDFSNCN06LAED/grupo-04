@@ -1,0 +1,9 @@
+.form-register {
+    display: flex;
+    flex-direction: column;
+}
+
+.main-register {
+    display: flex;
+    flex-direction: column;
+}
