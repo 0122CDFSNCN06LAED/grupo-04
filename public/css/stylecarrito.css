@@ -101,6 +101,7 @@ main {
 .product-card {    
     text-align: center;
     padding: 10px;
+    position: relative;
 }
 
 .descripcion-producto {
@@ -124,3 +125,28 @@ main {
     border: none;
     color: white;
 }
+
+.button-eliminarProducto {
+    position: absolute;
+    right: 6px;
+}
+.fa-times {
+    color: red;
+    font-size: 30px;
+}
+
+
+
+.caja-redes {
+    display: flex;
+    width: 100%;
+    font-size: 50px;
+    justify-content: space-around;
+    margin-top: 30px;
+}
+
+.p-footer {
+    margin-left: 30px;
+}
+
+
