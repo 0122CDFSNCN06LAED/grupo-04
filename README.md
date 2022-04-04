@@ -11,8 +11,8 @@
 + Ricardo Castro Lloret: Tengo 33 años, estudié Marketing, pero trabajo en IT hace algunos años y me apasiona la tecnología.
 + Eduardo: tengo 35 años, terminando la carrera de abogacía en mi último año y a un mes de terminar Tester QA, tengo varios trabajos.
 
-https://trello.com/b/rpJVEEfM/proyecto-integrador
 
+https://trello.com/invite/b/rpJVEEfM/fd7b626f97a43adac56917fa119545ff/proyecto-integrador
 
 ## Colores a utilizar en el proyecto:
 
