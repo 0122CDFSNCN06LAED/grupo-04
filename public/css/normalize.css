@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+    padding: 5px 0;
+    font-size: 17px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+header {
+    background-color: #1A1A1A;;
+    color: #FFFFFF;
+    margin-left: 1px;
+    margin-right: 1px;
+    padding: 10px;
+    display: flex;
+}
+
+.celeste-vpm {
+    color: #4DC6BE;
+}
+
+.blanco-vpm {
+    color: #FFFFFF;
+}
+
+.azul-claro-vpm {
+    color: #477ECF;
+    
+}
+
+
+.logo {
+    width: 70%;
+}
