@@ -22,13 +22,14 @@ a {
 }
 
 
-header {
+.header {
     background-color: #1A1A1A;;
     color: #FFFFFF;
     margin-left: 1px;
     margin-right: 1px;
     padding: 10px;
     display: flex;
+    position: relative;
 }
 
 .celeste-vpm {
@@ -44,7 +45,45 @@ header {
     
 }
 
-
 .logo {
-    width: 70%;
+    width: 30%;
 }
+
+
+.burger-menu {
+  font-size: 175%;
+  position: absolute;
+  right: 20px;
+  align-self: center;
+}
+
+
+.magnifying-glass {
+  font-size: 120%;
+  position: relative;
+  top: 2px;
+  align-self: center;
+  
+}
+
+.barra-busqueda {
+    width: 40%;
+    height: 60%;
+    display: flex;
+  position: absolute;
+  right: 35px;
+  justify-content: center;
+  align-self: center;
+  margin-right: 10px;
+}
+
+.input-busqueda {
+    width: 70%;
+    height: 100%;
+    margin-right: 2px;
+    justify-content: center;
+    
+}
+
+
+
