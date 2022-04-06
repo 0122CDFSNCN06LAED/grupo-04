@@ -60,7 +60,7 @@
 }
 
 .dark-primary-color {
-    background: #070B27;
+    background: #b6993cf3;
 }
 
 .default-primary-color {
@@ -90,3 +90,78 @@
 .divider-color {
     border-color: #BDBDBD;
 }
+.main-header{
+    width: 100%;
+    background-color: #72839e;
+    padding: 30px;
+   
+        
+  }
+  .main-header-top-bar{
+    display: flex;
+    flex-wrap: wrap;
+    width:100%
+    
+  }
+  .article-container {
+    display: flex;
+    flex-wrap: nowrap;
+  }
+  .section-visita{
+    display: flex;
+    flex-wrap: wrap;
+  } 
+.section-oferta{
+  display: flex;
+  flex-wrap: wrap;
+  }
+
+  .delivery-icon {
+    display: block;
+    font-size: 16px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    right: 20px;
+    top: -15px;
+  
+    transition: transform 1s;
+  }
+  
+  .description-box {
+    position: relative;
+    border-top: 1px solid #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+  }
+  
+  .price {
+    flex-grow: 0.33;
+  }
+  
+  .discount {
+    flex-grow: 0.66;
+  }
+  
+  .product-card {
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    margin-bottom: 16px;
+    margin-right: 8px;
+    margin-left: 8px;
+  }
+  
+  .description {
+    width: 100%;
+  }
+  
+  .section-title {
+    margin-top: 16px;
+    margin-bottom: 16px;
+  }
+  
+  
