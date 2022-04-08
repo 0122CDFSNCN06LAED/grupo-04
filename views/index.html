@@ -1,64 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <title>Mercado Liebre</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/87484bc3bf.js" crossorigin="anonymous"></script>
-
-    <link rel="stylesheet" href="/css/home.css">
-    <link rel="stylesheet" href="/css/stylecarrito.css">
     <link rel="stylesheet" href="/css/normalize.css">
     <link rel="stylesheet" href="/css/theme.css">
-   
+    <link rel="stylesheet" href="/css/demo.css">
 
 
-
-
-
+    <title>Demo header y footer</title>
 </head>
 
 <body>
     <header>
-        <header class="dark-primary-color">
-            <section>
-                <div class="logo"><img src="/img/proyecto-logo.jpeg" alt=""></div>
-                <form class="search-bar "action="">
-                  <input type="search" name="search" id="search">
-                  <button type="submit" id="search-button"><i class="fas fa-search"></i>
-                  </button>
-    
-              
-                </form>
-                <p id="header-envios">Envios a todo el país</p>
-            </section>
-            <nav class="nav-bar">
-                <ul class="izq-navbar">
-                    <li>
-                        <a href="login.html"></a>Ingresá
-                    </li>
-                    <li>
-                        <a href="register.html"></a>Crea tu cuenta
-                    </li>
-                    <li>
-                        <a href="productCart.html"></a>Nuestros productos
-                    </li>
-                    <li>
-                        <a href="productDetail.html"></a>Mis compras
-                    </li>
-                </ul>
-            </nav>
-        </header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-negro">
+            <div class="container-fluid"> 
+                    <a class="navbar-brand a-logo" href="#">
+                        <img src="../img/demo/BMP-Logo.png" alt="" width="100%" height="100%">
+                    </a>
+                    <span class="navbar-text">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Que estás buscando?" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        </form>
+                    </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+                    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                              Categorías
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                              <li><a class="dropdown-item" href="#">Almacén</a></li>
+                              <li><a class="dropdown-item" href="#">Herramientas</a></li>
+                              <li><a class="dropdown-item" href="#">Librería</a></li>
+                              <li><a class="dropdown-item" href="#">Tecnología</a></li>
+                              <li><a class="dropdown-item" href="#">Vestimenta</a></li>
+                            </ul>
+                          </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Ofertas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Historial</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Contacto</a>
+                        </li>
+                        <li class="nav-item celeste-vpm">
+                            <a class="nav-link active" aria-current="page" href="#">Ingresá</a>
+                        </li>
+                    </ul>
+                    <span class="navbar-text">
+                        <form class="d-flex">
+                            <input class="form-control me-2" type="search" placeholder="Que estás buscando?" aria-label="Search">
+                            <button class="btn btn-outline-success" type="submit">Buscar</button>
+                        </form>
+                    </span>
+                </div>
+            </div>
+        </nav>
     </header>
+    <section>
+      <img class="width-100" src="/img/img-home-banner.jpg" alt="" />
+    </section>
     <main class="main-header">
-      <section id="last-visit-feedback">
-        <h2 class="section-title">Ultimas busquedas</h2>
+
+      <div class="container-md">100% wide until medium breakpoint</div>
+      <section id="on-sale">
+        <h2 class="section-title">Novedades</h2>
+        <section class="article-container">
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/articulos/tecnologia/AuricularesOficina.jpeg""
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">8.635</p>
+              <h3 class="description text-dark-gray">X10 Auriculares Logitech H151 negro</h3>
+            </div>
+          </article>
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/TecladoOficina.jpeg"
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">$ 2.590</p>
+              <h3 class="description text-dark-gray">X10 Teclado Genius SlimStar 230</h3>
+            </div>
+          </article>
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/MouseOficina.jpeg"
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">$ 600</p>
+              <h3 class="description text-dark-gray">Mouse Logitech M100 negro</h3>
+            </div>
+          </article>
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/Monitor.jpeg"
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">$ 102.415</p>
+              <h3 class="description text-dark-gray">X10 Monitor 24p Led 1080p Full</h3>
+            </div>
+          </article>
+        </section>
+      </section>
+      <section id="on-sale">
+        <h2 class="section-title">Ofertas</h2>
         <section class="article-container">
           <article class="product-card">
             <img
@@ -75,16 +150,16 @@
           <article class="product-card">
             <img
               class="width-40"
-              src="/img/Cable-Hdmi-3.0-Metro.jpg"
+              src="/img/TecladoOficina.jpeg"
               alt=""
             />
             <div class="description-box">
               <i class="text-green delivery-icon fas fa-truck"></i>
               <p class="price">$ 2.590</p>
-              <h3 class="description text-dark-gray">X10 Cable Hdmi Full Hd 24k Mallado 3mts</h3>
+              <h3 class="description text-dark-gray">X10 Teclado Genius SlimStar 230</h3>
             </div>
           </article>
-          <article class="product-card1">
+          <article class="product-card">
             <img
               class="width-40"
               src="/img/MouseOficina.jpeg"
@@ -99,19 +174,129 @@
           <article class="product-card">
             <img
               class="width-40"
-              src="/img/monitor-LG.jpeg"
+              src="/img/Monitor.jpeg"
               alt=""
             />
             <div class="description-box">
               <i class="text-green delivery-icon fas fa-truck"></i>
-              <p class="price">$ 150.850</p>
-              <h3 class="description text-dark-gray">X10 Monitor LG 32p Led 1080p Full</h3>
+              <p class="price">$ 102.415</p>
+              <h3 class="description text-dark-gray">X10 Monitor 24p Led 1080p Full</h3>
             </div>
           </article>
         </section>
       </section>
       <section id="on-sale">
-        <h2 class="section-title">Novedades</h2>
+        
+        <h2 class="section-title">Tecnología</h2>
+        <section class="article-container">
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/AuricularesOficina.jpeg"
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">8.635</p>
+              <h3 class="description text-dark-gray">X10 Auriculares Logitech H151 negro</h3>
+            </div>
+          </article>
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/TecladoOficina.jpeg"
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">$ 2.590</p>
+              <h3 class="description text-dark-gray">X10 Teclado Genius SlimStar 230</h3>
+            </div>
+          </article>
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/MouseOficina.jpeg"
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">$ 600</p>
+              <h3 class="description text-dark-gray">Mouse Logitech M100 negro</h3>
+            </div>
+          </article>
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/Monitor.jpeg"
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">$ 102.415</p>
+              <h3 class="description text-dark-gray">X10 Monitor 24p Led 1080p Full</h3>
+            </div>
+          </article>
+        </section>
+      </section>
+      <section>
+        <img class="width-100" src="/img/img-home-banner.jpg" alt="" />
+      </section>
+      <section id="on-sale">
+        <h2 class="section-title">Herramientas</h2>
+        <section class="article-container">
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/AuricularesOficina.jpeg"
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">8.635</p>
+              <h3 class="description text-dark-gray">X10 Auriculares Logitech H151 negro</h3>
+            </div>
+          </article>
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/TecladoOficina.jpeg"
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">$ 2.590</p>
+              <h3 class="description text-dark-gray">X10 Teclado Genius SlimStar 230</h3>
+            </div>
+          </article>
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/MouseOficina.jpeg"
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">$ 600</p>
+              <h3 class="description text-dark-gray">Mouse Logitech M100 negro</h3>
+            </div>
+          </article>
+          <article class="product-card">
+            <img
+              class="width-40"
+              src="/img/Monitor.jpeg"
+              alt=""
+            />
+            <div class="description-box">
+              <i class="text-green delivery-icon fas fa-truck"></i>
+              <p class="price">$ 102.415</p>
+              <h3 class="description text-dark-gray">X10 Monitor 24p Led 1080p Full</h3>
+            </div>
+          </article>
+        </section>
+      </section>
+      <section id="on-sale">
+        <h2 class="section-title">Vestimenta</h2>
         <section class="article-container">
           <article class="product-card">
             <img

@@ -92,7 +92,7 @@
 }
 .main-header{
     width: 100%;
-    background-color: #72839e;
+    background-color: #fdfefffd;
     padding: 30px;
    
         
@@ -164,4 +164,8 @@
     margin-bottom: 16px;
   }
   
-  
+ 
+
+  .product-card:hover .delivery-icon {
+    transform: rotate(360deg);
+  }
