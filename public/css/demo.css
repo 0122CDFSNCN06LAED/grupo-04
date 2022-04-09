@@ -32,6 +32,14 @@
     background-color: #4DC6BE;
     border-color: #4DC6BE
 }
+.dropdown-item:hover {
+    color: #1e2125;
+    background-color: #4DC6BE;
+}
+
+.creaCuenta {
+    width: 124px;
+}
 
 
 
