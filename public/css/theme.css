@@ -1,171 +1,318 @@
 .default-primary-color {
-    background: #3F51B5;
+  background: #3f51b5;
 }
 
 .light-primary-color {
-    background: #C5CAE9;
+  background: #c5cae9;
 }
 
 .text-primary-color {
-    color: #FFFFFF;
+  color: #ffffff;
 }
 
 .accent-color {
-    background: #448AFF;
+  background: #448aff;
 }
 
 .primary-text-color {
-    color: #212121;
+  color: #212121;
 }
 
 .secondary-text-color {
-    color: #757575;
+  color: #757575;
 }
-
 
 /* hasta aca son colores para borrar*/
 
 .celeste-vpm {
-    color: #4DC6BE;
+  color: #4dc6be;
 }
 
 .text-white {
-    color: #FFFFFF;
+  color: #ffffff;
 }
 
 .azul-claro-vpm {
-    color: #477ECF;
+  color: #477ecf;
 }
 
 .bg-white {
-    background-color: #FFFFFF;
+  background-color: #ffffff;
 }
 
 .bg-black {
-    background-color: #1A1A1A;
+  background-color: #1a1a1a;
 }
 
 .margin-top-5 {
-    margin-top: 5px;
+  margin-top: 5px;
 }
 
 .input-box {
-    width: 100%;
-    padding: 8px;
-    border-radius: 6px;
+  width: 100%;
+  padding: 8px;
+  border-radius: 6px;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .formulario-login-register {
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    margin-bottom: 16px;
-    margin-top: 16px;
-    margin-right: 8px;
-    margin-left: 8px;
-    width: 300px;
-    border-radius: 5px;
-    padding: 10px;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  margin-bottom: 16px;
+  margin-top: 16px;
+  margin-right: 8px;
+  margin-left: 8px;
+  width: 300px;
+  border-radius: 5px;
+  padding: 10px;
 }
 
 .button-login {
-    width: 100%;
-    height: 30px;
+  width: 100%;
+  height: 30px;
 }
 
 .magnifying-glass {
-    font-size: 120%;
-    position: relative;
-    top: 2px;
-    align-self: center;
+  font-size: 120%;
+  position: relative;
+  top: 2px;
+  align-self: center;
 }
 
 .main-login-register {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .divider-color {
-    border-color: #BDBDBD;
+  border-color: #bdbdbd;
 }
 
 .main-header {
-    width: 100%;
-    background-color: #fdfefffd;
-    padding: 30px;
+  width: 100%;
+  background-color: #fdfefffd;
+  padding: 30px;
 }
 
 .main-header-top-bar {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .article-container {
-    display: flex;
-    flex-wrap: nowrap;
+  display: flex;
+  flex-wrap: nowrap;
 }
 
 .section-visita {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .section-oferta {
-    display: flex;
-    flex-wrap: wrap;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .delivery-icon {
-    display: block;
-    font-size: 16px;
-    padding: 5px;
-    width: 30px;
-    height: 30px;
-    border: 1px solid #39b54a;
-    background-color: #fff;
-    border-radius: 50%;
-    position: absolute;
-    right: 20px;
-    top: -15px;
-    transition: transform 1s;
+  display: block;
+  font-size: 16px;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #39b54a;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  right: 20px;
+  top: -15px;
+  transition: transform 1s;
 }
 
 .description-box {
-    position: relative;
-    border-top: 1px solid #ebebeb;
-    display: flex;
-    flex-wrap: wrap;
-    padding: 15px;
+  position: relative;
+  border-top: 1px solid #ebebeb;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 15px;
 }
 
 .price {
-    flex-grow: 0.33;
+  flex-grow: 0.33;
 }
 
 .discount {
-    flex-grow: 0.66;
+  flex-grow: 0.66;
 }
 
 .product-card {
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    margin-bottom: 16px;
-    margin-right: 8px;
-    margin-left: 8px;
+  box-shadow: 0px 0px 10px rgb(100, 100, 100);
+  margin-bottom: 16px;
+  margin-right: 8px;
+  margin-left: 8px;
 }
 
 .description {
-    width: 100%;
+  width: 100%;
 }
 
 .section-title {
-    margin-top: 16px;
-    margin-bottom: 16px;
+  margin-top: 16px;
+  margin-bottom: 16px;
 }
 
 .product-card:hover .delivery-icon {
-    transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+/* clases exclusivas del footer */
+
+.footer-bmp {
+  display: flex;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.logo-footer {
+  width: 60%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 25px;
+}
+
+.footer-social-media-list {
+  display: flex;
+  color: #ffffff;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  align-items: center;
+  padding-left: 25px;
+}
+
+.fa-brands {
+  font-size: 1.2em;
+  margin-left: 6px;
+  margin-right: 6px;
+  margin-top: 10px;
+}
+
+.footer-social-media-container {
+  display: flex;
+  align-items: center;
+}
+
+.footer-data-container {
+  font-size: 0.9em;
+  position: relative;
+  right: 300px;
+}
+
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.email-and-phone {
+  margin-bottom: 0px;
+  color: #ffffff;
+  font-size: 0.9em;
+  font-weight: bold;
+  position: relative;
+  width: 70%;
+  right: -30px;
+}
+
+.footer-logo-container {
+  width: 40%;
+}
+
+.contact-container {
+  width: 160px;
+  margin-left: auto;
+  margin-right: 5px;
+}
+
+.email-and-phone-container-since-480 {
+    display: none;
+    margin-top: 10px;
+}
+
+
+
+
+
+@media (min-width: 480px ) {
+
+    .contact-container {
+        width: 55%;
+    }
+
+    .email-and-phone {
+         width: 270px;
+         text-align: left;
+         margin-left: auto;
+         justify-content: right;
+   
+    }
+
+
+    .footer-social-media-container {
+
+  margin-left: auto;
+
+
+}
+
+
+
+    .logo-footer {
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+
+}
+
+
+@media (min-width: 768px ) {
+
+.email-and-phone-container-since-480 {
+    display: flex;
+}
+
+.email-and-phone-container {
+    display: none;
+
+}
+
+.contact-container {
+        width: 20%;
+        margin-right: 28px;
+    }
+
+    .fa-brands {
+    font-size: 2em;
+}
+
+
+.footer-social-media-list {
+  padding-left: 0px;
+}
+
+
+.email-and-phone {
+    font-size: 1.2em;
+}
+
+
+    .logo-footer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
 }
