@@ -11,55 +11,169 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" rel="stylesheet" />
-
-    <link rel="stylesheet" href="/css/normalize.css" />
-    <link rel="stylesheet" href="/css/theme.css" />
-    <link rel="stylesheet" href="/css/home.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
-
+    <script src="https://kit.fontawesome.com/87484bc3bf.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/css/normalize.css" />
+    <link rel="stylesheet" href="/css/theme.css" />
+    <link rel="stylesheet" href="/css/formularios.css">
+    <link rel="stylesheet" href="/css/demo.css">
 </head>
 
-<body class="primary">
-    <header class="header-login-register">
+<body class="bg-black">
+    <header class="header-scroll">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+            <div class="container-fluid">
+                <a class="navbar-brand a-logo" href="#">
+                    <img src="../img/demo/BMP-Logo.png" alt="" width="100%" height="100%" />
+                </a>
+                <span class="navbar-text">
+                  <form class="d-flex">
+                    <input
+                      class="form-control me-2"
+                      type="search"
+                      placeholder="Que estás buscando?"
+                      aria-label="Search"
+                    />
+                    <button class="btn btn-outline-success" type="submit">
+                      Buscar
+                    </button>
+                  </form>
+                </span>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Categorías
+                      </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Almacén</a></li>
+                                <li><a class="dropdown-item" href="#">Herramientas</a></li>
+                                <li><a class="dropdown-item" href="#">Librería</a></li>
+                                <li><a class="dropdown-item" href="#">Tecnología</a></li>
+                                <li><a class="dropdown-item" href="#">Vestimenta</a></li>
+                            </ul>
+                        </li>
 
-        <a href="/"><img class="logo" src="/img/logo-proyecto.png" alt=""></a>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Usuario
+                      </a>
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Compras</a></li>
+                                <li><a class="dropdown-item" href="#">Ventas</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="#">Preguntas</a></li>
+                            </ul>
+                        </li>
+                        <li class="nav-item celeste-vpm">
+                            <a class="nav-link active" aria-current="page" href="#">Carrito</a
+                      >
+                    </li>
+                    <li class="nav-item">
+                      <a
+                        class="nav-link active creaCuenta"
+                        aria-current="page"
+                        href="#"
+                        >Creá tu cuenta</a
+                      >
+                    </li>
+                    <li class="nav-item celeste-vpm">
+                      <a class="nav-link active" aria-current="page" href="#"
+                        >Ingresá</a
+                      >
+                    </li>
+                  </ul>
+                  <span class="navbar-text">
+                    <form class="d-flex">
+                      <input
+                        class="form-control me-2"
+                        type="search"
+                        placeholder="Que estás buscando?"
+                        aria-label="Search"
+                      />
+                      <button class="btn btn-outline-success" type="submit">
+                        Buscar
+                      </button>
+                    </form>
+                  </span>
+                </div>
+              </div>
+            </nav>
 
     </header>
-    <main class="main-login-register">
-        <form class="formulario-login-register" action="" method="get">
-            <h1 class="center titulo-login-register">Iniciar sesión</h1>
-            <div class="bloque-formulario">
-                <label class="label-chico" for="username">nombre de usuario o direccion de correo electrónico</label>
-                <input class="input-box" type="text" name="username" id="username">
-            </div>
-            <div class="bloque-formulario">
-                <label class="label-chico" for="password">contraseña</label>
-                <input class="input-box" type="password" name="password" id="password">
-            </div>
-            <div class="bloque-formulario"><button class="button-login button-primary" type="submit">continuar</button></div>
-            <div class="center bloque-formulario">
-                <label for="register">¿Eres nuevo en Big World It?</label>
-                <button class="margin-top-5 input-box" type="submit"> <a href="register">crea tu cuenta</a></button>
-            </div>
 
-
+    <main class="container w-50 ml-auto mr-auto ">
+        <h1 class="titulo-fomulario text-center celeste-vpm">Iniciar sesión</h1>
+        <form >
+            <div class="row mb-1 mt-5">
+                <label for="username" class="form-label celeste-vpm fs-20">Nombre de usuario</label>
+                <input type="text" class="form-control" id="username" placeholder="Ingrese nombre de usuario o email" required>
+            </div>
+            <div class="row mb-3 mt-5">
+                <label for="exampleInputPassword1" class="form-label celeste-vpm fs-20">Contraseña</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" required>
+            </div>
+           <div class="d-flex justify-content-center mt-5 mb-5"> <button type="submit" class=" btn btn-outline-info ">Iniciar sesión</button>
+           </div>
         </form>
 
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-            <label class="form-check-label" for="flexRadioDefault1">
-              Default radio
-            </label>
-        </div>
-        <div class="form-check">
-            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
-            <label class="form-check-label" for="flexRadioDefault2">
-              Default checked radio
-            </label>
-        </div>
+
     </main>
-    <footer></footer>
+    <footer>
+        <div class="bg-black footer-bmp">
+
+        <div class="footer-logo-container">
+            <img class="logo-footer" src="../img/demo/BusinessMarketPlace.png" alt="BMP">
+
+        </div>
+
+        <div class="email-and-phone-container-since-480">
+            <p class="email-and-phone">info@bmp.com.ar +540303456789</p>
+        </div>
+
+
+
+        <div class="contact-container">
+
+            <div class="footer-social-media-container">
+                <ul class="footer-social-media-list">
+                    <li class="">
+                        <a class="" href="#"><i class="fa-brands fa-facebook"></i
+                    ></a>
+                        </li>
+                        <li class="">
+                            <a class="" href="#"><i class="fa-brands fa-twitter"></i
+                    ></a>
+                        </li>
+                        <li class="">
+                            <a class="" href="#"><i class="fa-brands fa-instagram"></i
+                    ></a>
+                        </li>
+                        <li class="">
+                            <a class="" href="#"><i class="fa-brands fa-telegram"></i
+                    ></a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="email-and-phone-container">
+                    <p class="email-and-phone">info@bmp.com.ar +540303456789</p>
+                </div>
+
+            </div>
+
+            </div>
+            </footer>
 </body>
 
 </html>
