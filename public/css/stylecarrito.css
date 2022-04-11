@@ -15,8 +15,9 @@ main {
 }
 
 .width-40 {
-    width: 40%; 
- }
+    width: 40%;
+}
+
 #caja-precio {
     width: 100%;
     display: flex;

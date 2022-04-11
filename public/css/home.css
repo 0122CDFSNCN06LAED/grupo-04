@@ -49,6 +49,7 @@
   .article-container {
     display: flex;
     flex-wrap: nowrap;
+    
   }
 
 .main-navbar {
