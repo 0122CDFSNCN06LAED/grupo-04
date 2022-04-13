@@ -165,22 +165,9 @@
   margin-bottom: 16px;
 }
 
-.product-card .description {
-    display: flex;
-  }
-
-  
-
-  .product-card:hover {
-    box-shadow: 0px 0px 10px rgb(100, 100, 100);
-  }
-
 .product-card:hover .delivery-icon {
   transform: rotate(360deg);
 }
-.text-green {
-    color: #39b54a;
-  }
 
 /* clases exclusivas del footer */
 
@@ -330,4 +317,3 @@
 }
 
 }
-
