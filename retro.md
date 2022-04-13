@@ -3,7 +3,9 @@
 -Puntos para mejorar: Desarrollar más productividad, reuniones continuas, fijar ideas, cumplimientos objetivos a corto plazo.
 
 
-
 13/04/2022
 - Al arrancar el sprint hablamos sobre la falta de comunicación. Pudimos corregirla, pero todavía falta trabajar en la fluidez.
-- pushear
+- pushear más seguido (no es necesario tener grandes cambios hechos para pushear)
+- mejoramos al hacer más reuniones diarias, pero deberíamos documentarlas
+- prestarle más atención a trello y utilizarlo para guiarse
+
