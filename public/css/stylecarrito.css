@@ -23,48 +23,17 @@ main {
     display: flex;
 }
 .precio-numero {
-    margin-left: 10px;
-    border: solid 1px gray;
-    border-radius: 6px;
-    background-color: white;
-    color: gray;
-    width: 60%;
-    height: 40px;
-    text-align: left;
-    align-self: center;
-    display: flex;
+    margin-bottom: 0.5rem;
+    font-size: 25px;
 }
-.precio-numero p {
-    align-self: center
+
+.product-name {
+    font-size: 20px;
 }
 
 
 
-#caja-subtotal {
-    width: 100%;
-    display: flex;
-}
-.precio-subtotal {
-    margin-left: 10px;
-    border: solid 1px gray;
-    border-radius: 6px;
-    background-color: rgb(0,0,0, 0.3);
-    color: gray;
-    width: 60%;
-    height: 40px;
-    text-align: left;
-    align-self: center;
-    display: flex;
-}
 
-.precio-subtotal p {
-    align-self: center;
-}
-
-.select-cantidad{
-    border-radius: 6px;
-    margin-left: 10px;
-}
 
 .section-carrito {
     box-shadow: 0px 0px 10px rgb(100 100 100);
@@ -72,28 +41,19 @@ main {
     margin-bottom: 20px;
 }
 
-.section-total {
-    display: flex;
-}
-.section-total h2 {
-    font-family: sans-serif;
+.total-precio {
+    font-size: 25px;
 }
 
-.precio-total {
-    margin-left: 10px;
-    border: solid 1px gray;
-    border-radius: 6px;
-    background-color: white;
-    color: gray;
-    width: 60%;
-    height: 40px;
-    text-align: left;
-    align-self: center;
+.caja-total {
     display: flex;
+    margin-left: 15px
 }
-.precio-total p {
-    align-self: center;
+
+.caja-total h2 {
+    margin-right: 20px;
 }
+
 
 
 
@@ -108,15 +68,14 @@ main {
     position: relative;
 }
 
-.descripcion-producto {
-    display: flex;
-    flex-wrap: wrap;
-}
-
-
-
-.bg-gris {
-    background-color: #ebebeb
+.selector-cantidad {
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
+    width: 50px;
+    height: 34px;
+    text-align: center;
 }
 
 
@@ -131,26 +90,26 @@ main {
 }
 
 .button-eliminarProducto {
-    position: absolute;
-    right: 6px;
-}
-.fa-times {
-    color: red;
-    font-size: 30px;
+    border: none;
+    background: none;
+    color: #448aff;
 }
 
-
-
-.caja-redes {
-    display: flex;
-    width: 100%;
-    font-size: 50px;
-    justify-content: space-around;
-    margin-top: 30px;
+.button-eliminarProducto:hover {
+    color: #0452fc;
 }
 
-.p-footer {
-    margin-left: 30px;
+
+
+.section-total {
+    background-color: #dcdcdc47;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: 0.25rem;
 }
 
+
+@media (min-width: 768px){
+    
+}
 

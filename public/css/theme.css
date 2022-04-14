@@ -32,6 +32,10 @@
   color: #ffffff;
 }
 
+.text-green {
+  color: #39b54a;
+}
+
 .azul-claro-vpm {
   color: #477ecf;
 }
@@ -42,6 +46,10 @@
 
 .bg-black {
   background-color: #1a1a1a;
+}
+
+.bg-gris {
+  background-color: #ebebeb
 }
 
 .margin-top-5 {
