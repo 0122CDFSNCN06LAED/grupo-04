@@ -102,7 +102,8 @@
         </div>
 
         <h1 class="text-center">Mi Carrito de Compras</h1>
-        <section>
+        <section class="section-main">
+        <section class="section-products">
             <section>
 
                 <div class="card mb-3" style="max-width: 540px;">
@@ -196,17 +197,24 @@
                     </div>
             </section>
         </section>
-        <section class="section-total mb-5">
+        <section class="information-total mb-5">
             <div class="caja-total">
-                <h2>Total con envío</h2>
-                <p class="total-precio">$ 133,234</p>
+                <article class="resumen-compra">
+                    <div><p>Resumen de compra</p></div>
+                    <div style="display: flex; justify-content: space-between;"><p>Productos(5)</p><p>$133,234</p></div>
+                    <div style="display: flex; justify-content: space-between;"><p>Envío</p><p>$0</p></div>
+                </article>
+                <article class="caja-total-envio">
+                    <h2>Total con envío</h2>
+                    <p class="total-precio">$ 133,234</p>
+                </article>
             </div>
 
             <div>
                 <button class="btn btn-outline-success mb-5 w-100">Continuar compra</button>
             </div>
         </section>
-
+</section>
     </main>
     <footer>
         <div class="bg-black footer-bmp">

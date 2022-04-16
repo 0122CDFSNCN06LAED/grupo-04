@@ -41,13 +41,22 @@ main {
     margin-bottom: 20px;
 }
 
+.section-products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .total-precio {
     font-size: 25px;
 }
 
 .caja-total {
     display: flex;
-    margin-left: 15px
+    margin-left: 15px;
+    margin-right: 15px;
+    flex-direction: column;
+
 }
 
 .caja-total h2 {
@@ -101,15 +110,36 @@ main {
 
 
 
-.section-total {
+.information-total {
     background-color: #dcdcdc47;
     background-clip: border-box;
     border: 1px solid rgba(0,0,0,.125);
     border-radius: 0.25rem;
+    height: 100%;
+}
+
+.caja-total-envio {
+    display: flex;
 }
 
 
 @media (min-width: 768px){
-    
+    .section-products {
+        display: block
+    }
+}
+
+
+
+
+@media (min-width: 992px) {
+    .section-main {
+        display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    }
+    .section-total {
+        height: 100%;
+    }
 }
 
