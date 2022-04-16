@@ -1,34 +1,79 @@
-.logo {
-  display: flex;
-  width: 15%;
-  margin-right: auto;
+.product-photo-and-price {
+
+  width: 90%;
+  margin-top: 20px;
+  margin-left: 20px;
 }
 
-.navigation-bar {
-  display: flex;
-  background-color: #c5cae9;
+
+.pd-carousel {
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
+  width: 90%;
+  max-width: 400px;
+  margin-bottom: 20px;
+
 }
 
-.burger-menu {
-  display: flex;
-  font-size: 200%;
-  position: relative;
-  right: 20px;
-  align-self: center;
+.pd-price {
+  font-weight: bold;
 }
 
-.margin-top-5 {
-  margin-top: 5px;
+
+.pd-amount {
+  margin-bottom: 20px;
 }
 
-.margin-bottom-5 {
-  margin-bottom: 5px;
+
+.pd-description-title {
+  font-weight: bold;
+  margin-left: 20px;
+  margin-top: 20px;
 }
 
-.solid-border-2-grey {
-    border: solid 2px darkgrey;
+
+.pd-description-detail-container {
+  margin-top: 20px;
+  width: 90%;
+  margin-left: 20px;
 }
 
-.padding-5 {
-    padding: 5px;
+
+.pd-description-detail {
+  margin-top: 10px;
+  margin-left: 10px;
+  width: 90%;
+}
+
+
+.pd-description-detail-title {
+  font-weight: bold;
+  margin-left: 30px;
+  margin-top: 20px;
+}
+
+
+.pd-last-buy-button {
+  margin: 20px;
+}
+
+
+.pd-vendor-title {
+  font-weight: bold;
+  margin-left: 20px;
+  margin-top: 20px;
+}
+
+
+.pd-vendor-detail {
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  width: 90%;
+}
+
+.pd-vendor-avatar {
+  width: 20%;
+  max-width: 50px;
 }
