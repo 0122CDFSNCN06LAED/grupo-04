@@ -1,11 +1,27 @@
+Retro sprint 1
 -En la reunión se organizó el proyecto con trello, se generaron las etapas a realizar, división de tareas, inquietudes y las propuestas a realizar.  Se hablo la situación actual del proyecto.
 -Puntos a favor: Buena comunicación, predisposición a mejorar.
 -Puntos para mejorar: Desarrollar más productividad, reuniones continuas, fijar ideas, cumplimientos objetivos a corto plazo.
 
 
-13/04/2022
+13/04/2022 - Retro sprint 2
 - Al arrancar el sprint hablamos sobre la falta de comunicación. Pudimos corregirla, pero todavía falta trabajar en la fluidez.
 - pushear más seguido (no es necesario tener grandes cambios hechos para pushear)
 - mejoramos al hacer más reuniones diarias, pero deberíamos documentarlas
 - prestarle más atención a trello y utilizarlo para guiarse
+
+
+21/04/2022 - Retro sprint 3 
+- Comenzar a hacer: juntarnos a no más de 48 horas del lanzamiento de un nuevo sprint.
+Fijamos como día de reunión para weekly los martes a las 18 horas.
+Traer a las reuniones los puntos a tocar anotados.
+- Qué hacer más: dejar registreo de las charlas y reuniones que tenemos como equipo.
+- Continuar haciendo: continuar con el enfoque y la energía que ponemos en el proyecto.
+- Hacer menos: reuniones largas. Coincidimos en que las reuniones deben ser breves y debemos aprovechar mejor el tiempo.
+- Dejar de hacer: ni idea.
+
+
+03/05/2022 - Retro sprint 4
+
+
 
