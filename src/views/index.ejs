@@ -9,310 +9,176 @@
 </head>
 
 <body>
-    <header class="header-scroll">
-        <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-            <div class="container-fluid">
-                <a class="navbar-brand a-logo" href="#">
-                    <img src="../img/demo/BMP-Logo.png" alt="" width="100%" height="100%" />
-                </a>
-                <span class="navbar-text">
-          <form class="d-flex">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Que estás buscando?"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Buscar
-            </button>
-          </form>
-        </span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Categorías
-              </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Almacén</a></li>
-                                <li><a class="dropdown-item" href="#">Herramientas</a></li>
-                                <li><a class="dropdown-item" href="#">Librería</a></li>
-                                <li><a class="dropdown-item" href="#">Tecnología</a></li>
-                                <li><a class="dropdown-item" href="#">Vestimenta</a></li>
-                            </ul>
-                        </li>
+    <%- include("./partials/header.ejs") %>
 
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Usuario
-              </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <li><a class="dropdown-item" href="#">Compras</a></li>
-                                <li><a class="dropdown-item" href="#">Ventas</a></li>
-                                <li>
-                                    <hr class="dropdown-divider" />
-                                </li>
-                                <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
-                                <li>
-                                    <hr class="dropdown-divider" />
-                                </li>
-                                <li><a class="dropdown-item" href="#">Preguntas</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item celeste-vpm">
-                            <a class="nav-link active" aria-current="page" href="#">Carrito</a
-              >
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link active creaCuenta"
-                aria-current="page"
-                href="#"
-                >Creá tu cuenta</a
-              >
-            </li>
-            <li class="nav-item celeste-vpm">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Ingresá</a
-              >
-            </li>
-          </ul>
-          <span class="navbar-text">
-            <form class="d-flex">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Que estás buscando?"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Buscar
-              </button>
-            </form>
-          </span>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="img/banner-1.jpg" class="d-block w-100" alt="slider1">
-      </div>
-      <div class="carousel-item">
-        <img src="img/banner-2.jpg" class="d-block w-100" alt="slider2">
-      </div>
-     
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+        <section id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/banner-1.jpg" class="d-block w-100" alt="slider1">
+                </div>
+                <div class="carousel-item">
+                    <img src="img/banner-2.jpg" class="d-block w-100" alt="slider2">
+                </div>
+
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
-  </div>
-  
-  <main class="bg-white mt-4">
-    <div class="container">   
-      <h2>Novedades</h2>
-      <div class="row">       
-        <div class="cont-card col-md-3 col-sm-6">        
-            <div class="card position-relative m-2">
-              <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">            
-              <div class="card-body card-description">
-                <i class="icon-card fa-solid fa-heart fa-2x "></i>
-                <h4 class="card-title">Monitor LG 24"</h4>
-                <div class="sub-card">
-                <p class="card-price">$15.000 </p>
-                <p class="card-discount">10% off</p>
-              </div>
-                
-                </div>
-            </div>
-            </div>
-            <div class="cont-card col-md-3 col-sm-6">        
-              <div class="card position-relative m-2">
-                <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">            
-                <div class="card-body card-description">
-                  <i class="icon-card fa-solid fa-heart fa-2x"></i>
-                  <h4 class="card-title">Monitor LG 24"</h4>
-                  <div class="sub-card">
-                  <p class="card-price">$15.000 </p>
-                  <p class="card-discount">10% off </p>
-                </div>
-                  
-                  </div>
-              </div>
-              </div>
-              <div class="cont-card col-md-3 col-sm-6">        
-                <div class="card position-relative m-2">
-                  <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">            
-                  <div class="card-body card-description">
-                    <i class="icon-card fa-solid fa-heart fa-2x"></i>
-                    <h4 class="card-title">Monitor LG 24"</h4>
-                    <div class="sub-card">
-                    <p class="card-price">$15.000 </p>
-                    <p class="card-discount">10% off </p>
-                  </div>
-                    
-                    </div>
-                </div>
-                </div>
-                <div class="cont-card col-md-3 col-sm-6">        
-                  <div class="card position-relative m-2">
-                    <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">            
-                    <div class="card-body card-description">
-                      <i class="icon-card fa-solid fa-heart fa-2x"></i>
-                      <h4 class="card-title">Monitor LG 24"</h4>
-                      <div class="sub-card">
-                      <p class="card-price">$15.000 </p>
-                      <p class="card-discount">10% off </p>
-                    </div>
-                      
-                      </div>
-                  </div>
-                 </div>
-               
-                 <div class="d-flex"><button type="button" class="btn btn-dark  btn-mas-productos ">Ver mas productos</button>
-                 </div>
-            </div>
-            </div>
-          
-      <div class="container">   
-        <h2>Novedades</h2>
-        <div class="row">       
-          <div class="cont-card col-md-3 col-sm-6">        
-              <div class="card position-relative m-2">
-                <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">            
-                <div class="card-body card-description">
-                  <i class="icon-card fa-solid fa-heart fa-2x"></i>
-                  <h4 class="card-title">Monitor LG 24"</h4>
-                  <div class="sub-card">
-                  <p class="card-price">$15.000 </p>
-                  <p class="card-discount">10% off</p>
-                </div>
-                  
-                  </div>
-              </div>
-              </div>
-              <div class="cont-card col-md-3 col-sm-6">        
-                <div class="card position-relative m-2">
-                  <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">            
-                  <div class="card-body card-description">
-                    <i class="icon-card fa-solid fa-heart fa-2x"></i>
-                    <h4 class="card-title">Monitor LG 24"</h4>
-                    <div class="sub-card">
-                    <p class="card-price">$15.000 </p>
-                    <p class="card-discount">10% off </p>
-                  </div>
-                    
-                    </div>
-                </div>
-                </div>
-                <div class="cont-card col-md-3 col-sm-6">        
-                  <div class="card position-relative m-2">
-                    <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">            
-                    <div class="card-body card-description">
-                      <i class="icon-card fa-solid fa-heart fa-2x"></i>
-                      <h4 class="card-title">Monitor LG 24"</h4>
-                      <div class="sub-card">
-                      <p class="card-price">$15.000 </p>
-                      <p class="card-discount">10% off </p>
-                    </div>
-                      
-                      </div>
-                  </div>
-                  </div>
-                  <div class="cont-card col-md-3 col-sm-6">        
-                    <div class="card position-relative m-2">
-                      <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">            
-                      <div class="card-body card-description">
-                        <i class="icon-card fa-solid fa-heart fa-2x"></i>
-                        <h4 class="card-title">Monitor LG 24"</h4>
-                        <div class="sub-card">
-                        <p class="card-price">$15.000 </p>
-                        <p class="card-discount">10% off </p>
-                      </div>
-                        
+        </section>
+
+        <main class="bg-white mt-4">
+            <div class="container">
+                <h2>Novedades</h2>
+                <div class="row">
+                    <article class="cont-card col-md-3 col-sm-6">
+                        <div class="card position-relative m-2">
+                            <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">
+                            <div class="card-body card-description">
+                                <i class="icon-card fa-solid fa-heart fa-2x "></i>
+                                <h4 class="card-title">Monitor LG 24"</h4>
+                                <div class="sub-card">
+                                    <p class="card-price">$15.000 </p>
+                                    <p class="card-discount">10% off</p>
+                                </div>
+
+                            </div>
                         </div>
+                    </article>
+                    <article class="cont-card col-md-3 col-sm-6">
+                        <div class="card position-relative m-2">
+                            <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">
+                            <div class="card-body card-description">
+                                <i class="icon-card fa-solid fa-heart fa-2x "></i>
+                                <h4 class="card-title">Monitor LG 24"</h4>
+                                <div class="sub-card">
+                                    <p class="card-price">$15.000 </p>
+                                    <p class="card-discount">10% off</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </article>
+                    <article class="cont-card col-md-3 col-sm-6">
+                        <div class="card position-relative m-2">
+                            <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">
+                            <div class="card-body card-description">
+                                <i class="icon-card fa-solid fa-heart fa-2x "></i>
+                                <h4 class="card-title">Monitor LG 24"</h4>
+                                <div class="sub-card">
+                                    <p class="card-price">$15.000 </p>
+                                    <p class="card-discount">10% off</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </article>
+                    <article class="cont-card col-md-3 col-sm-6">
+                        <div class="card position-relative m-2">
+                            <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">
+                            <div class="card-body card-description">
+                                <i class="icon-card fa-solid fa-heart fa-2x "></i>
+                                <h4 class="card-title">Monitor LG 24"</h4>
+                                <div class="sub-card">
+                                    <p class="card-price">$15.000 </p>
+                                    <p class="card-discount">10% off</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </article>
+
+                    <div class="d-flex"><button type="button" class="btn btn-dark  btn-mas-productos ">Ver mas productos</button>
                     </div>
-                    </div>
-                 
-             
-              </div>
-              </div>
-            </main>
-            <article class="quienes-somos bg-black p-5">
-              <h2 class="celeste-vpm ">Quienes somos?</h2>
-              <p class="celeste-vpm">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus consectetur sed, ad earum nostrum commodi eius placeat debitis nesciunt perferendis expedita tenetur totam possimus ab. Dolores dolore perferendis tempora perspiciatis.</p>
-       
-      </article>
-            <section class="video-consulta bg-black p-5">
-              <div class="container"> <video src="/videos/videobpm.mp4" loop="true" autoplay="autoplay" muted controls></video></div>
-             <div class="container" id="contenedor-formulario">
-                 <h2 class="titulo-formulario text-center mb-2 celeste-vpm">Dejanos tu consulta</h2>
-                 <form action="">
-                   <div class="mb-3">
-                   <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
-                   </div>
-                   <div class="mb-3">
-                    <textarea class="form-control" id="consulta" rows="3" placeholder="No dudes en consultarnos!"></textarea>
-                   </div>
-                 </form></div>
-               </section>
-    <footer>
-
-      <div class="bg-black footer-bmp">
-  
-          <div class="footer-logo-container">
-              <img class="logo-footer" src="../img/demo/BusinessMarketPlace.png" alt="BMP">
-  
-          </div>
-    
-          <div class="email-and-phone-container-since-480"> 
-                  <p class="email-and-phone">info@bmp.com.ar  +540303456789</p>
-          </div>
-  
-  
-        
-          <div class="contact-container">
-  
-              <div class="footer-social-media-container">
-                  <ul class="footer-social-media-list">
-                      <li class="">
-                      <a class="" href="#"
-                          ><i class="fa-brands fa-facebook"></i
-                      ></a>
-                        </li>
-                        <li class="">
-                            <a class="" href="#"><i class="fa-brands fa-twitter"></i
-                      ></a>
-                        </li>
-                        <li class="">
-                            <a class="" href="#"><i class="fa-brands fa-instagram"></i
-                      ></a>
-                        </li>
-                        <li class="">
-                            <a class="" href="#"><i class="fa-brands fa-telegram"></i
-                      ></a>
-                        </li>
-                    </ul>
                 </div>
-
-                <div class="email-and-phone-container">
-                    <p class="email-and-phone">info@bmp.com.ar +540303456789</p>
-                </div>
-
             </div>
 
+            <div class="container">
+                <h2>Novedades</h2>
+                <div class="row">
+                    <article class="cont-card col-md-3 col-sm-6">
+                        <div class="card position-relative m-2">
+                            <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">
+                            <div class="card-body card-description">
+                                <i class="icon-card fa-solid fa-heart fa-2x "></i>
+                                <h4 class="card-title">Monitor LG 24"</h4>
+                                <div class="sub-card">
+                                    <p class="card-price">$15.000 </p>
+                                    <p class="card-discount">10% off</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </article>
+                    <article class="cont-card col-md-3 col-sm-6">
+                        <div class="card position-relative m-2">
+                            <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">
+                            <div class="card-body card-description">
+                                <i class="icon-card fa-solid fa-heart fa-2x "></i>
+                                <h4 class="card-title">Monitor LG 24"</h4>
+                                <div class="sub-card">
+                                    <p class="card-price">$15.000 </p>
+                                    <p class="card-discount">10% off</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </article>
+                    <article class="cont-card col-md-3 col-sm-6">
+                        <div class="card position-relative m-2">
+                            <img class="card-img-top imag-home" src="img/articulos/tecnologia/Monitor-LG.jpeg">
+                            <div class="card-body card-description">
+                                <i class="icon-card fa-solid fa-heart fa-2x "></i>
+                                <h4 class="card-title">Monitor LG 24"</h4>
+                                <div class="sub-card">
+                                    <p class="card-price">$15.000 </p>
+                                    <p class="card-discount">10% off</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </article>
+                    <article class="cont-card col-md-3 col-sm-6">
+                        <div class="card position-relative m-2">
+                            <img class="card-img-top" src="img/articulos/tecnologia/Monitor-LG.jpeg">
+                            <div class="card-body card-description">
+                                <i class="icon-card fa-solid fa-heart fa-2x "></i>
+                                <h4 class="card-title">Monitor LG 24"</h4>
+                                <div class="sub-card">
+                                    <p class="card-price">$15.000 </p>
+                                    <p class="card-discount">10% off</p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+
             </div>
-            </footer>
+            </div>
+        </main>
+
+        <section class="video-consulta bg-black p-5">
+            <div class="container"> <video src="/videos/videobpm.mp4" loop="true" autoplay="autoplay" muted controls></video></div>
+            <div class="container" id="contenedor-formulario">
+                <h2 class="titulo-formulario text-center mb-2 celeste-vpm">Dejanos tu consulta</h2>
+                <form action="">
+                    <div class="mb-3">
+                        <input type="email" class="form-control" id="email" placeholder="nombre@ejemplo.com">
+                    </div>
+                    <div class="mb-3">
+                        <textarea class="form-control" id="consulta" rows="3" placeholder="No dudes en consultarnos!"></textarea>
+                    </div>
+                    <div class="d-flex justify-content-center"> <button type="submit" class=" btn btn-outline-info ">Enviar consulta</button>
+                </form>
+                </div>
+        </section>
+        <%- include("./partials/footer.ejs") %>
 </body>
 
 </html>
