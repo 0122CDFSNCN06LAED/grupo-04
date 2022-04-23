@@ -139,6 +139,12 @@
      display: none;
      margin-top: 10px;
  }
+
+ .header-scroll {
+     position: sticky;
+     top: 0;
+     z-index: 3;
+ }
  
  @media (min-width: 480px) {
      .contact-container {
@@ -183,6 +189,9 @@
          width: 40%;
          margin-top: 20px;
          margin-bottom: 20px;
+     }
+     .header-scroll {
+         position: inherit;
      }
  }
  
