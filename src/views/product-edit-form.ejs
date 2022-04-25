@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include("./partials/head.ejs") %>
+        <link rel="stylesheet" href="/css/home.css" />
+        <title>Editar producto</title>
+</head>
+
+<body>
+    <%- include("./partials/header.ejs") %>
+        <main>
+            <form action="/products/edit/<%=p.id%>?_method=PUT" method="POST">
+                <input type="hidden">
+                <div class="row">
+                    <div class="col-md-6"><label for="">Nombre</label></div>
+                    <div class="col-md-6"><input type="text" id="name" value="<%= p.name %> "></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"><label for="">Vendedor</label></div>
+                    <div class="col-md-6"><input type="text" id="vendor" value="<%= p.vendor %>"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"><label for="">Precio</label></div>
+                    <div class="col-md-6"><input type="text" id="price" value="<%= p.price %>"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"><label for="">Minimo a comprar</label></div>
+                    <div class="col-md-6"><input type="text" id="min-minBuy" value="<%= p.minBuy %>"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"><label for="">Stock</label></div>
+                    <div class="col-md-6"><input type="text" id="stock" value="<%= p.stock %>"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"><label for="">Category</label></div>
+                    <div class="col-md-6"><input type="text" id="category" value="<%= p.category %>"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"><label for="">description</label></div>
+                    <div class="col-md-6"><input type="text" id="description" value="<%= p.description %>"></div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"><label for="">Imagen</label></div>
+                    <div class="col-md-6"><input type="file" id="img" value="<%= p.img %>"></div>
+                </div>
+                <BUtton type="submit">Editar producto</BUtton>
+            </form>
+        </main>
+        <%- include("./partials/footer.ejs") %>
+</body>
+
+</html>

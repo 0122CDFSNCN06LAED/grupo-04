@@ -1,379 +1,378 @@
-[
-    {
+[{
         "id": 1,
         "name": "Azucar 1kg",
         "vendor": "DISTRIBUIDORA LH",
         "price": 300,
-        "min-buy": 10,
+        "minBuy": 10,
         "stock": 520,
         "category": "Almacén",
         "description": "La azúcar mas rica, dulce y saludable que viste en tu vida.",
         "image": "azucar.jpg"
-       },
-       {
+    },
+    {
         "id": 2,
         "name": "Azucar Ledesma 1000 sobres",
         "vendor": "DISTRIBUIDORA LH",
         "price": 500,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 620,
         "category": "Almacén",
         "description": "La azúcar en sobre ideal para tus clientes.",
         "image": "AzucarEnSobre.jpg"
-       },
-       {
+    },
+    {
         "id": 3,
         "name": "Cafe Molido Bonafide Sensaciones Intenso Torrado",
         "vendor": "DISTRIBUIDORA LH",
         "price": 2000,
-        "min-buy": 20,
+        "minBuy": 20,
         "stock": 110,
         "category": "Almacén",
         "description": "Marca: Bonafide,  Tipo: Café Molido, Contenido neto: 500g",
         "image": "cafe.jpg"
-       },
-       {
+    },
+    {
         "id": 4,
         "name": "Cafe Nescafe Gold Suave Tostado Y Molido - Libre De Gluten",
         "vendor": "DISTRIBUIDORA LH",
         "price": 5000,
-        "min-buy": 10,
+        "minBuy": 10,
         "stock": 682,
         "category": "Almacén",
         "description": "Granos 100% arábicos tostados a la perfección. Tostado delicado que despierta una combinación de cuerpo suave y notas frutadas. Especificaciones: • Marca: Nescafé • Tipo: Molido • Intendidad: 6 • Nivel de tostado: medio • Libre de gluten/ Sin T.A.C.C. • Contenido neto: 250g • Unidades: 1 Paquete",
         "image": "CafeMolido.jpg"
-       },
-       {
+    },
+    {
         "id": 5,
         "name": "Edulcorante Hileret X500 Sobres",
         "vendor": "DISTRIBUIDORA LH",
         "price": 600,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 110,
         "category": "Almacén",
         "description": "Marca Hileret Línea Edulcorante en sobre Formato del edulcorante Polvo Formato de venta Pack Unidades por pack 500 Unidades por envase 1 Tipo de envase Sobres.",
         "image": "edulcorante.jpg"
-       },
-       {
+    },
+    {
         "id": 6,
         "name": "Yerba Mate Con Palo Nobleza Gaucha Paquete X 500 G",
         "vendor": "DISTRIBUIDORA LH",
         "price": 1.000,
-        "min-buy": 10,
+        "minBuy": 10,
         "stock": 269,
         "category": "Almacén",
         "description": "MARCA: Nobleza Gaucha, TIPO: tradicional, SABOR: Sin sabor, PESO NETO: 500g,",
         "image": "yerba.jpg"
-       },
-       {
+    },
+    {
         "id": 7,
         "name": "Amoladora angular Black+Decker G720N naranja 820 W 220 V",
         "vendor": "MASAFERRO",
         "price": 14.890,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 144,
         "category": "Herramientas",
         "description": "Con la amoladora angular Black+Decker G720N vas a poder realizar distintos trabajos de corte y pulido. Tiene un potente motor de 820 W y cuenta con empuñadura lateral de 3 posiciones. Además, su avanzado sistema de seguridad incorporado la vuelven un dispositivo ideal para tu taller. Segura y fácil de maniobrar. A la hora de trabajar con herramientas es importante que tu seguridad esté garantizada. Con el botón de bloqueo de disco que trae incorporado reducís al máximo el riesgo cuando trabajás con discos de corte.",
         "image": "Amoladora.jpg"
-       },
-       {
+    },
+    {
         "id": 8,
         "name": "Sierra Sensitiva Bosch Gco 220 2200w 3800rpm 355mm 1 Disco",
         "vendor": "MASAFERRO",
         "price": 88.520,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 320,
         "category": "Herramientas",
         "description": "SIERRA CORTADORA SENSITIVA BOSCH PROFESIONAL  Modelo: GCO 220          Características:     • Potencia absorbida 2.200 Watts     • Diámetro del disco de tronzar: 355 mm       • Diámetro interior del disco de tronzar: 25,4 mm      • Velocidad de giro en vacío: 3.800 rpm       • Capacidad de corte rectangular 0°: 100 x 196 mm       • Capacidad de corte de cuadrado macho 0°: 119 x 119 mm       • Capacidad de corte de perfil en L 0°: 130 x 130 mm       • Capacidad de corte rectangular 45° de inglete: 107 x 115 mm       • Capacidad de corte de cuadrado macho 45° de inglete: 110 x 110 mm       • Capacidad de corte de perfil en L 45° de inglete: 115 x 115 mm       • Dimensiones de la herramienta (anchura x longitud x altura): 256 x 520 x 400 mm       • Gran poder de corte, diseño mejorado del motor para facilitar el corte pesado       • Larga vida útil: sistema mejorado de engranajes que aumenta la longevidad        • Fácil de transportar: la base de tamaño reducido mejora la portabilidad       • Peso aproximado: 15 kg",
         "image": "sierra-sensitiva.jpg"
-       },
-       {
+    },
+    {
         "id": 9,
         "name": "Taladro percutor eléctrico de 13mm Black+Decker TM555 560W naranja 220V + accesorios",
         "vendor": "MASAFERRO",
         "price": 24.203,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 359,
         "category": "Herramientas",
         "description": "¡Pensá en todos los proyectos que te gustaría hacer, ahora es el momento de crearlos!      Gracias a la innovación y evolución constante en la gama de herramientas Black+Decker, tendrás la confianza para realizar cualquier tarea. Sus taladros son potentes, compactos y podrás utilizarlos en múltiples aplicaciones; tienen una vida útil prolongada, para que puedas trabajar sin problemas año tras año. Empezá a ser creativo hoy y mirá a dónde te lleva.      Tecnología de excelencia       Su mandril de 13 mm te permitirá manipular fácilmente la herramienta de manera segura y precisa. Además, su velocidad variable ofrece una gran experiencia de uso, adaptada a tus necesidades y requerimentos.              Versatilidad y eficiencia       Utilizalo para las aplicaciones que desees. Al ser percutor y destornillador podrás explotar al máximo sus funciones y obtener exactitud y calidad.",
         "image": "Taladro.jpg"
-       },
-       {
+    },
+    {
         "id": 10,
         "name": "Taladro percutor eléctrico de 13mm Makita M8100B 710W turquesa 220V",
         "vendor": "MASAFERRO",
         "price": 20.146,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 654,
         "category": "Herramientas",
         "description": "Desde 1915 Makita desarrolla productos amigables tanto para el usuario como para el ambiente. Es líder en innovación y fabricante de las mejores herramientas en cuanto a tecnología y calidad. Los taladros Makita cuentan con un diseño compacto que permite utilizarlos de forma muy precisa para cualquier tipo de trabajo. Una de las características más elogiadas de estas herramientas es su diseño, con una empuñadura que facilita el uso y el manejo de la misma, logrando así mejores resultados con menos esfuerzo.      Tecnología de excelencia        Su mandril de 13 mm te permitirá manipular fácilmente la herramienta de manera segura y precisa. Además, su velocidad variable ofrece una gran experiencia de uso, adaptada a tus necesidades y requerimentos.                Versatilidad y eficiencia        Utilizalo para las aplicaciones que desees. Al ser percutor y destornillador podrás explotar al máximo sus funciones y obtener exactitud y calidad.",
         "image": "Taladro-Makita.webp"
-       },
-       {
+    },
+    {
         "id": 11,
         "name": "Amoladora angular Bosch Professional GWS 670 azul 670 W 220 V",
         "vendor": "MASAFERRO",
         "price": 11.510,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 142,
         "category": "Herramientas",
         "description": "Equipá tu casa o taller y ¡hacelo vos mismo! Esta amoladora angular es perfecta para realizar distintos trabajos de amolado, cepillado y pulido. A su vez, se destaca por ser un elemento indispensable para cortar, desbastar y lijar diversos materiales derivados del metal.        Segura y fácil de maniobrar.        A la hora de trabajar con herramientas es importante que tu seguridad esté garantizada. Con el botón de bloqueo de disco que trae incorporado reducís al máximo el riesgo cuando trabajás con discos de corte.",
         "image": "Amoladora-Bosch.webp"
-       },
-       {
+    },
+    {
         "id": 12,
         "name": "Soldadora inverter Stanley Sirio 140 50Hz/60Hz 230V",
         "vendor": "MASAFERRO",
         "price": 101.684,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 242,
         "category": "Herramientas",
         "description": "Stanley Sirio 140 es ideal para uso doméstico y profesional. Su calidad brinda una fusión precisa, para que puedas soldar diversos materiales, aplicando calor y proporcionando mayor resistencia.       Tecnología eficaz        Al ser de tipo MMA, cuenta con una salida de corriente alterna y es apta para el uso de electrodos especiales y comunes.        La principal ventaja es que puede utilizarse en cualquier posición en casi todos los materiales, lo que la convierte en la compañera ideal para soldar uniones que no se pueden colocar en la posición plana.              Voltaje estable sin picos       Gracias a su tecnología inverter disfrutarás de mayor facilidad y calidad a la hora de soldar. Se caracteriza por un menor consumo de energía y por ofrecer un arco mucho más estable y seguro, sin picos de voltaje.        Además, podrás controlar la potencia de salida de forma más precisa gracias a su regulación electrónica.",
         "image": "Soldadora-Stanley.webp"
-       },
-       {
+    },
+    {
         "id": 13,
         "name": "Juego De Tubos Set Herramientas Cromo Vanadium 46 Piezas 1/4",
         "vendor": "MASAFERRO",
         "price": 8.413,
-        "min-buy": 4,
+        "minBuy": 4,
         "stock": 541,
         "category": "Herramientas",
         "description": "JUEGO DE TUBOS ENCASTRE DE 1/4       46 PIEZAS CROMO VANADIUM - CALIDAD PROFESIONAL - USO INTENSIVO                IDEAL TALLERES DE AUTOMOVILES , MOTOCICLETAS, BICICLETERIAS, DESARME DE MOTORES, MAQUINARIAS                Herramienta infaltable - Gran durabilidad y calidad                -CONTENIDO:        -21 Tubos Enc. 1/4 con Punta:        -6 Torx: T10, T15, T20, T25, T27, T30        -3 POZ: #1 - #2 - #3        -3 PH: #1 - #2 - #3        -3 Planas: 4 - 5.5 - 7mm        -6 Allen: 3 - 4 - 5 - 6 - 7 - 8mm        -13 Tubos Hexagonales Enc 1/4: 4 - 4.5 - 5 - 5.5 - 6 - 7 - 8 - 9 - 10 - 11 - 12 - 13 - 14mm        -Accesorios Enc 1/4:        -Llave Crique enc. 1/4        -Movimiento Universal enc. 1/4        -3 Llaves Allen: 1.5 - 2 - 2.5mm        -1 Mango Tipo Destornillador enc. 1/4        -1 Barra de Extensión Flexible 150mm enc. 1/4       -2 Barras de extensión: 50 y 100mm enc. 1/4        -1 Manija T deslizable enc. 1/4       -1 Maletín Reforzado               CROMO VANADIUM - Material de alta resistencia y calidad",
         "image": "Juego-Tubos.webp"
-       },
-       {
+    },
+    {
         "id": 14,
         "name": "Escritorio para pc Su-Office Fan melamina de 163cm x 75cm x 60cm x 140cm blanco y negro",
         "vendor": "SU-OFFICE",
         "price": 98.424,
-        "min-buy": 10,
+        "minBuy": 10,
         "stock": 1100,
         "category": "Muebles",
         "description": "Ya sea para estudiar o trabajar, este escritorio Su-Office te ayudará a crear un ambiente confortable y sumar orden y funcionalidad a tus horas productivas. Su superficie no sólo te servirá de apoyo, sino que te permitirá tener los recursos al alcance de la mano para facilitar tus tareas.        Justo para vos Diseñado con un ángulo de 90º, esta mesa en forma de L te resultará ideal para optimizar el espacio dentro de tu hogar y te brindará un lugar extra para trabajar de manera práctica y cómoda.                Una buena adquisición       Gracias a su composición de Melamina, que impide la penetración del agua, este escritorio es resistente a la humedad y a las manchas. No sólo te acompañará por años, sino que podrás limpiarlo y mantenerlo fácilmente. ",
         "image": "EScritorio-oficina.webp"
-       },
-       {
+    },
+    {
         "id": 15,
         "name": "Cajonera 4 Cajones / Escritorio / Oficina Con Ruedas",
         "vendor": "SU-OFFICE",
         "price": 30.324,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 110,
         "category": "Muebles",
         "description": "Cajonera de 4 cajones Modelo: Quinn        Medidas:        • Largo: 44 cm        • Alto: 57 cm total con ruedas        • Profundidad: 45 cm                Medidas internas de cada cajón:        • Largo: 34 cm        • Alto: 7 cm        • Profundidad: 31 cm                Características:        • 1° cajón con cerradura        • Manijas plásticas negras o blancas opcional metálicas (debe aclararlo al comprar)        • Cajones con correderas metálicas        • Ruedas",
         "image": "Cajonera.webp"
-       },
-       {
+    },
+    {
         "id": 16,
         "name": "Silla de escritorio Baires4 Ejecutiva Mesh negra con tapizado de mesh y cuero sintético",
         "vendor": "SU-OFFICE",
         "price": 55.424,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 723,
         "category": "Muebles",
         "description": "Ajustala a tu medida        Con su ajuste de altura, vas a poder fijar la posición de tu torso respecto a la mesa de trabajo y así vas a conseguir una silla más cómoda al nivel de tus necesidades.                Cuidá tu cuerpo        Los apoyabrazos favorecerán tu postura al escribir y te van a ayudar a incorporarte con mayor facilidad cuando quieras levantarte.                Mantenete en movimiento        Las ruedas te van a permitir moverte y limpiar fácilmente tu espacio. Vas a poder trasladarla sin dificultad cuando lo necesites.Además, al ser giratoria te va a permitir rotar el asiento 360º sin la necesidad de cambiar de posición o moverte del lugar en donde estás.",
         "image": "Silla-escritorio.webp"
-       },
-       {
+    },
+    {
         "id": 17,
         "name": "Escritorio Combinado Negro Y Haya Astra Cajon C/guias Metalicas",
         "vendor": "SU-OFFICE",
         "price": 47.210,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 523,
         "category": "Muebles",
         "description": "Medidas del Escritorio:        • Largo: 1.20 MT        • Alto: 75 cm        • Profundidad: 60 cm        • Espacio entre los cajones y el lateral: 75 cm        • Espacio debajo de los cajones al piso: 49 cm        • Espacio hasta el refuerzo del lado de frente: 40        • Espacio hasta el refuerzo del lado de atrás: 18 cm        • Alto del refuerzo: 35 cm        • Espacio desde la tapa al piso: 74 cm        • Largo de los cajones total: 42 cm        • Medidas internas de cada cajón: 33 cm de largo x 7 cm de alto x 30 cm de profundidad                Características:        • Manijas plásticas        • Cajones con correderas metálicas        • Regatones plásticos para que no apoye directo al piso        • Bordes tapa cantos de ABS        ",
         "image": "Escritorio-oficina-combinado.webp"
-       },
-       {
+    },
+    {
         "id": 18,
         "name": "Silla de escritorio de Outlet Diva ergonómica negra con tapizado de marathon",
         "vendor": "SU-OFFICE",
         "price": 40.123,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 224,
         "category": "Muebles",
         "description": "La selección de una silla adecuada es muy importante para prevenir futuras lesiones. Con esta silla Sillas de Outlet, vas a tener la comodidad y el bienestar que necesitás a lo largo de tu jornada. Además, podés ubicarla en cualquier parte de tu casa u oficina ya que su diseño se adapta a múltiples entornos. ¡Dale a tus espacios un toque más moderno        Ergonómica y confiable        Es muy común que adoptes una mala postura al sentarte y eso sin duda trae una serie de patologías que repercuten directamente en tu bienestar. Esta silla ergonómica es la indicada para quienes pasan mucho tiempo frente al escritorio, ya sea por trabajo o estudio, ya que su diseño se adapta a las formas del cuerpo y garantiza un reparto de presiones equilibrado. Creá un ambiente de trabajo sano y productivo.                Ajustala a tu medida        Con su ajuste de altura, vas a poder fijar la posición de tu torso respecto a la mesa de trabajo y así vas a conseguir una silla más cómoda al nivel de tus necesidades.                Cuidá tu cuerpo        Los apoyabrazos favorecerán tu postura al escribir y te van a ayudar a incorporarte con mayor facilidad cuando quieras levantarte.                Mantenete en movimiento        Las ruedas te van a permitir moverte y limpiar fácilmente tu espacio. Vas a poder trasladarla sin dificultad cuando lo necesites.Además, al ser giratoria te va a permitir rotar el asiento 360º sin la necesidad de cambiar de posición o moverte del lugar en donde estás.",
         "image": "sillapc.jpg"
-       },
-       {
+    },
+    {
         "id": 19,
         "name": "Auriculares Logitech H151 negro",
         "vendor": "INFORMATICA-SANTIAGO",
         "price": 20.345,
-        "min-buy": 20,
+        "minBuy": 20,
         "stock": 623,
         "category": "Tecnología",
         "description": "Los auriculares estéreo esenciales que funcionan en todos los sistemas operativos y plataformas a través de una toma de audio estándar de 3,5 mm. Para empezar a usarlos, sólo es necesario conectarlos al puerto de 3,5 mm en una computadora, una tablet o un smartphone. Los controles integrados en el cable permiten controlar el volumen o silenciar llamadas sin interrumpir el uso. El práctico micrófono con supresión de ruido reduce el ruido de fondo.        ",
         "image": "AuricularesOficina.jpeg"
-       },
-       {
+    },
+    {
         "id": 20,
         "name": "Cable Hdmi 5 Metros Oro 1080p Reforzado Filtro Tv Ps4 Pc Ps3",
         "vendor": "INFORMATICA-SANTIAGO",
         "price": 21.490,
-        "min-buy": 20,
+        "minBuy": 20,
         "stock": 870,
         "category": "Tecnología",
         "description": "Cable Hdmi a Hdmi de 5 metros de largo, reforzado y mallado con doble filtro y puntas de oro de alta calidad version HDMI 1.4 para alta definicion 4K, Full Hd, 3D.        Con este cable de alta velocidad vas a poder conectar para conectar cámaras, filmadoras, televisores LCD, Plasmas de Alta Definición (HD), Smart TVs, consolas de Juegos como PS3 y PS4, proyectores, PC, Blue Ray, monitores a laptops, y mucho más para proyectar en donde vos desees, una imagen de alta definición.        El largo de 5 metros y su condición ligera y resistente, se ajusta a cualquier requerimiento en el hogar, oficina o comercio.",
         "image": "Cable-Hdmi-Metro.jpg"
-       },
-       {
+    },
+    {
         "id": 21,
         "name": "Impresora a color multifunción Epson EcoTank L3210 negra 220V",
         "vendor": "INFORMATICA-SANTIAGO",
         "price": 150.124,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 435,
         "category": "Tecnología",
         "description": "Epson busca que sus clientes obtengan el máximo provecho de sus productos. Por ello, brinda soluciones de impresión con una amplia gama de dispositivos que cubren todos los usos y necesidades, tanto en casa como en el trabajo.        Eficiencia y calidad        Imprimí archivos, escaneá documentos y hacé todas las fotocopias que necesités con esta impresora multifunción Epson, siempre lista para facilitar tu rutina de trabajo o estudio.                Perfecta para tu hogar o la oficina        Al ser a tinta te permitirá lograr impresiones de gran calidad con colores vivos y degradados suaves. Ocupa poco espacio y es fácil de manejar lo que la convierte en la opción ideal para cuestiones laborales, tareas escolares y requerimientos de la vida diaria.",
         "image": "impresora.jpg"
-       },
-       {
+    },
+    {
         "id": 22,
         "name": "Impresora simple función Xerox Phaser 3020/BI con wifi blanca y azul 220V - 240V",
         "vendor": "INFORMATICA-SANTIAGO",
         "price": 140.921,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 321,
         "category": "Tecnología",
         "description": "Pensada para la casa o la oficina, esta impresora Xerox es ideal para todo tipo de trabajos, ya sean grandes tiradas o pocas impresiones.        Eficiencia y calidad        Imprimí fácilmente todo lo que quieras con esta impresora Xerox, ya sean pocas páginas o grandes proyectos.                Perfecta para tu hogar o la oficina        Si buscás realizar grandes tiradas en pocos minutos, su tecnología láser es ideal para vos. Es simple y fácil de usar y tiene un costo de mantenimiento significativamente menor que las que funcionan a tinta.                Conectividad móvil        Ahora podés imprimir fácilmente desde tu celular o tablet sin importar en donde te encuentres y sin la asistencia de una computadora. Disfrutá de sus soluciones de impresión móvil, utilizá la que más te guste y tené tus documentos en solo segundos.",
         "image": "impresoraXerox.jpg"
-       },
-       {
+    },
+    {
         "id": 23,
         "name": "Apple Macbook Air",
         "vendor": "INFORMATICA-SANTIAGO",
         "price": 300.524,
-        "min-buy": 2,
+        "minBuy": 2,
         "stock": 8,
         "category": "Tecnología",
         "description": "Chip M1 de Apple que permite un gran avance en el rendimiento del CPU, GPU y aprendizaje automático. Hasta 18 horas de batería para hacer mucho más (1). CPU de 8 núcleos con un rendimiento hasta 3.5 veces más rápido para que puedas hacer de todo a una velocidad insuperable (2). GPU de hasta 8 núcleos con gráficos hasta 5 veces más veloces para apps y juegos con gráficos avanzados (2). Neural Engine de 16 núcleos para un aprendizaje automático avanzado. 8 GB de memoria unificada para que todo sea más rápido y fluido. Almacenamiento SSD superrápido para abrir apps y archivos al instante. Diseño silencioso, sin ventilador. Pantalla Retina de 13.3 pulgadas con una amplia gama de colores P3 para que disfrutes imágenes vibrantes y un nivel de detalle increíble (3). Cámara FaceTime HD con procesador de señal de imagen avanzado para hacer llamadas de video claras y nítidas. Sistema de tres micrófonos que se enfocan en tu voz y no en el ruido ambiental. Wi-Fi 6 de última generación para una conectividad más rápida. Dos puertos Thunderbolt/USB 4 para cargar y conectar accesorios. Magic Keyboard retroiluminado y Touch ID para desbloquear tu MacBook Air de forma segura. macOS con un diseño impactante e intuitivo, que funciona a la perfección con tu iPhone. Disponible en color oro, color plata y gris espacial.",
         "image": "macbook1.webp"
-       },
-       {
+    },
+    {
         "id": 24,
         "name": "Monitor LG 24MK430H led 23.8 negro 100V/240V",
         "vendor": "INFORMATICA-SANTIAGO",
         "price": 150.909,
-        "min-buy": 10,
+        "minBuy": 10,
         "stock": 567,
         "category": "Tecnología",
         "description": "Lo que tenés que saber de este producto        Pantalla led de 23.8 .        Tiene una resolución de 1920px-1080px.        Relación de aspecto de 16:9        Panel IPS.        Su brillo es de 250cd/m².        Tipos de conexión: D-Sub, Jack 3.5 mm, HDMI 1.4.",
         "image": "monitor-LG.jpeg"
-       },
-       {
+    },
+    {
         "id": 25,
         "name": "Monitor Daewoo Dw-mon24 Lcd 1080p Hdmi 24 Pul Full Hd",
         "vendor": "INFORMATICA-SANTIAGO",
         "price": 145.124,
-        "min-buy": 10,
+        "minBuy": 10,
         "stock": 528,
         "category": "Tecnología",
         "description": "Monitor Led Daewoo 24 Pulgadas Full HD        Especificaciones:                - Marca: DAEWOO        - Modelo: DW-MON24        - Tamaño de la pantalla : 24''        - Panel: VA        - Tipo de pantalla: LED        - Tipo de resolución: Full HD        - Resolución de la pantalla: 1920x1080        - Contraste 4000:1        - 16,7 millones de colores de pantalla        - Frecuencia De Refresco De Pantalla: 60 Hz        - Tiempo de Respuesta: 5 ms        - Es curvo: No        - Formato de Pantalla: Plana       - Parlantes Incorporados: No        - VGA: Si        - Entradas HDMI: Si        - Entrada RCA: No        - Potencia adaptador: 12v 3.5a        - Peso: 2,8 Kg",
         "image": "Monitor.jpeg"
-       },
-       {
+    },
+    {
         "id": 26,
         "name": "Mouse Logitech M90 negro",
         "vendor": "INFORMATICA-SANTIAGO",
         "price": 1.999,
-        "min-buy": 10,
+        "minBuy": 10,
         "stock": 984,
         "category": "Tecnología",
         "description": "Lo que tenés que saber de este producto        Utiliza cable.        Posee rueda de desplazamiento.        Cuenta con 3 botones para un mayor control.        Con sensor óptico.        Resolución de 1000dpi.        Creado para llevar a todas partes.        Control inteligente y navegación fácil.        ",
         "image": "MouseOficina.jpeg"
-       },
-       {
+    },
+    {
         "id": 27,
         "name": "Teclado Genius KB-116 QWERTY español color negro",
         "vendor": "INFORMATICA-SANTIAGO",
         "price": 3.998,
-        "min-buy": 10,
+        "minBuy": 10,
         "stock": 1110,
         "category": "Tecnología",
         "description": "Lo que tenés que saber de este producto        Contiene teclado numérico.        Tipo de teclado: membrana.        Tecla cilíndrica.        Con conector USB.        Medidas: 435mm de ancho, 135mm de alto y 20.5mm de profundidad.        Indispensable para tus actividades.        Las imágenes pueden ser ilustrativas.",
         "image": "TecladoOficina.jpeg"
-       },
-       {
+    },
+    {
         "id": 28,
         "name": "Botín Borcego Zapato Seguridad Trabajo Punta Acero",
         "vendor": "RICKY-&-ROLL",
         "price": 8.000,
-        "min-buy": 3,
+        "minBuy": 3,
         "stock": 424,
         "category": "Vestimenta",
         "dimension": "39, 40, 41, 42, 43",
         "description": "BOTÍN DE SEGURIDAD CON PUNTERA DE ACERO        Con el fin de seguir brindando productos de calidad, se diseño este producto. Nuestro botín de seguridad es de cuero Flor y tiene puntera de acero IRAM 3643. El mismo es dieléctico y su planta (“suela”) es de Poliuretano. Tiene plantilla Antimicotica, sus cordones son de algodón y nylon; y el cambrillón confiere estabilidad al pie y evita que el talón bascule. Son super livianos e internamente esta forrado por material absorbente. Está certificado bajo norma IRAM 3610.                CARACTERÍSTICAS:                Dieléctrico.        Puntera de Acero Certificada.        Lengüeta cerrada.        Interior antimicótico de Vildona.        Inyección al corte.",
         "image": "botasTrabajo.jpg"
-       },
-       {
+    },
+    {
         "id": 29,
         "name": "Delantal de cocina Universal",
         "vendor": "RICKY-&-ROLL",
         "price": 15.234,
-        "min-buy": 30,
+        "minBuy": 30,
         "stock": 110,
         "category": "Vestimenta",
         "description": "Hecho de material de alta calidad, de moda y práctico        Perfecto para el animador casero o gourmet aventurero        Este delantal también puede ser como delantal de trabajo en restaurante, cafetería, hotel, etc.        Un buen regalo para tu esposa y tu madre                Estilo: Simple       Uso: sanitario        Clasificación: Delantal sin mangas        Material: poliester        De arriba a abajo: 75 cm        Ancho: 64 cm        Cinturón de cuello (máx.): 50 cm        Bolsillo: 35 * 14.5cm        El paquete incluye: 1 pc delantal de cocina                Tipo de artículo: Delantales, manoplas y mangas",
         "image": "DelantalCocina.jpg"
-       },
-       {
+    },
+    {
         "id": 30,
         "name": "Remera Clásica Manga Corta Blanca",
         "vendor": "RICKY-&-ROLL",
         "price": 4.000,
-        "min-buy": 10,
+        "minBuy": 10,
         "stock": 620,
         "category": "Vestimenta",
         "dimension": "S, M, L, XL, 2XL",
         "description": "Remera estilo Americano, tela jersey de algodón compactado.         Mayor durabilidad y encogimiento regular.        El cuello remallado a la remera asegura que mantenga la forma lavado tras lavado.        Dobladillo doble aguja en ruedo y mangas.",
         "image": "RemeraLisa.jpg"
-       },
-       {
+    },
+    {
         "id": 31,
         "name": "Casaca De Cocina Unisex Edulchef Mangas Cortas",
         "vendor": "RICKY-&-ROLL",
         "price": 5.000,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 110,
         "category": "Vestimenta",
         "dimension": "XS, S, M, L, XL, 2XL",
         "description": "Casaca de cocina mangas cortas Gastronomía Edulchef        Ayudante de cocina , bacheros, etc        Cierre broche a presión recta, con tres bolsillo, cuello Mao, tela Arciel                Tallas del XS al XL.",
         "image": "uniformeCocina.jpg"
-       },
-       {
+    },
+    {
         "id": 32,
         "name": "Resma A4 Papel Autor 75grs 500 Hojas",
         "vendor": "BIG-WORLD-IT",
         "price": 2.500,
-        "min-buy": 4,
+        "minBuy": 4,
         "stock": 1100,
         "category": "Librería",
         "description": "Marca Autor    Tamaño del papel A4     Tipo de papel Resmas      Cantidad de hojas  500          Gramaje 75 g      Unidades por pack 500",
         "image": "CajaHojasA4.jpg"
-       },
-       {
+    },
+    {
         "id": 33,
         "name": "Birome Bic Opaca En Caja X50 Unid",
         "vendor": "BIG-WORLD-IT",
         "price": 14.230,
-        "min-buy": 10,
+        "minBuy": 10,
         "stock": 650,
         "category": "Librería",
         "description": "Tipo de lapicera: Bolígrafo        Tipo de trazo: 1 mm        Incluye estuche: No",
         "image": "CajaLapiceras.jpg"
-       },
-       {
+    },
+    {
         "id": 34,
         "name": "Cartuchos Epson Original T206 Negro + Col Combo 206",
         "vendor": "BIG-WORLD-IT",
         "price": 15.234,
-        "min-buy": 5,
+        "minBuy": 5,
         "stock": 254,
         "category": "Librería",
         "description": "Marca Epson     Modelo Epson 206     Contenido total en volumen 9 mL     Color de la tinta Negro     Unidades por envase 1      Formato de venta Caja Cerrada     Unidades por pack 1",
         "image": "cartuchos.jpg"
-       }
+    }
 ]
