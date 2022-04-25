@@ -7,7 +7,6 @@ module.exports = {
     register: (req, res) => {
         res.render("register.ejs");
     },
-
     productDetail: (req, res) => {
         res.render("productDetail.ejs");
     },
@@ -15,7 +14,6 @@ module.exports = {
     productCar: (req, res) => {
         res.render("productCar.ejs");
     },
-
     login: (req, res) => {
         res.render("login.ejs");
     },

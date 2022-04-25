@@ -10,6 +10,7 @@ const controllers = {
             products
         })
     },
+
     create: (req, res) => {
         res.render("product-create-form");
     },
@@ -20,7 +21,7 @@ const controllers = {
         })
         res.render("product-edit-form", { p: producto[0] });
     },
-    save: (req, res) => {
+    update: (req, res) => {
         products.forEach(x => {
             if (x.id == req.params.id) {
                 x.name = req.body.name
