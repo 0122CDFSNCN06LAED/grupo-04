@@ -20,7 +20,7 @@ module.exports = {
     aboutUs: (req, res) => {
         res.render("aboutUS.ejs");
     },
-    informacionVendedor: (req, res) => {
-        res.render("informacionVendedor.ejs");
+    vendorInformation: (req, res) => {
+        res.render("vendorInformation.ejs");
     }
 };

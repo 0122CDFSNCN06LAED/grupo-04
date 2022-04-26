@@ -10,5 +10,4 @@ router.get("/edit/:id", productsController.edit);
 router.put("/edit/:id_method=PUT", productsController.update);
 
 
-
 module.exports = router
