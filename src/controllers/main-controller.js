@@ -1,4 +1,8 @@
 const path = require("path");
+const fs = require("fs");
+const productsFilePath = path.join(__dirname, "../data/products.json");
+const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
 
 module.exports = {
     home: (req, res) => {
@@ -12,7 +16,9 @@ module.exports = {
     },
 
     productCar: (req, res) => {
-        res.render("productCar.ejs");
+        res.render("productCar.ejs", {
+            products
+        });
     },
     login: (req, res) => {
         res.render("login.ejs");

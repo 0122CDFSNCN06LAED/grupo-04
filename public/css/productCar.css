@@ -48,7 +48,7 @@ main {
 }
 
 .total-precio {
-    font-size: 25px;
+    font-size: 20px;
 }
 
 .caja-total {
@@ -68,7 +68,7 @@ main {
 
 .carrito {
     text-align: center;
-    font-size: 40px;
+    font-size: 60px;
 }
 
 .product-card {    
@@ -120,6 +120,12 @@ main {
 
 .caja-total-envio {
     display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.resumen-compra div {
+    border-bottom: solid 1px #00000047;
 }
 
 
@@ -140,6 +146,11 @@ main {
     }
     .section-total {
         height: 100%;
+    }
+    .information-total {
+        width: 39%;
+        position: sticky;
+        top: 50px
     }
 }
 
