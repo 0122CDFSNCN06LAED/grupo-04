@@ -10,42 +10,38 @@
 <body>
     <%- include("./partials/header.ejs") %>
         <main>
-            <form action="/products/edit/<%=p.id%>?_method=PUT" method="POST">
-                <input type="hidden">
-                <div class="row">
-                    <div class="col-md-6"><label for="">Nombre</label></div>
-                    <div class="col-md-6"><input type="text" id="name" value="<%= p.name %> "></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6"><label for="">Vendedor</label></div>
-                    <div class="col-md-6"><input type="text" id="vendor" value="<%= p.vendor %>"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6"><label for="">Precio</label></div>
-                    <div class="col-md-6"><input type="text" id="price" value="<%= p.price %>"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6"><label for="">Minimo a comprar</label></div>
-                    <div class="col-md-6"><input type="text" id="min-minBuy" value="<%= p.minBuy %>"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6"><label for="">Stock</label></div>
-                    <div class="col-md-6"><input type="text" id="stock" value="<%= p.stock %>"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6"><label for="">Category</label></div>
-                    <div class="col-md-6"><input type="text" id="category" value="<%= p.category %>"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6"><label for="">description</label></div>
-                    <div class="col-md-6"><input type="text" id="description" value="<%= p.description %>"></div>
-                </div>
-                <div class="row">
-                    <div class="col-md-6"><label for="">Imagen</label></div>
-                    <div class="col-md-6"><input type="file" id="img" value="<%= p.img %>"></div>
-                </div>
-                <BUtton type="submit">Editar producto</BUtton>
-            </form>
+            <div class="container">
+                <form action="/products/edit/<%=p.id%>?_method=PUT" method="POST">
+                    <input type="hidden">
+                    <div class="row">
+                        <h1>Vas a editar:</h1>
+                        <div class="col-md-6"><label for="">Nombre</label></div>
+                        <div class="col-md-6"><input type="text" id="name" value="<%= p.name %> "></div>
+                        <div class="col-md-6"><label for="">Vendedor</label></div>
+                        <div class="col-md-6"><input type="text" id="vendor" value="<%= p.vendor %>"></div>
+                        <div class="col-md-6"><label for="">Precio</label></div>
+                        <div class="col-md-6"><input type="text" id="price" value="<%= p.price %>"></div>
+                        <div class="col-md-6"><label for="">Minimo a comprar</label></div>
+                        <div class="col-md-6"><input type="text" id="min-minBuy" value="<%= p.minBuy %>"></div>
+
+                        <div class="col-md-6"><label for="">Stock</label></div>
+                        <div class="col-md-6"><input type="text" id="stock" value="<%= p.stock %>"></div>
+
+                        <div class="col-md-6"><label for="">Categoria</label></div>
+                        <div class="col-md-6"><input type="text" id="category" value="<%= p.category %>"></div>
+
+                        <div class="col-md-6"><label for="">description</label></div>
+                        <div class="col-md-6"><textarea type="text" id="description"><%= p.description %>"</textarea></div>
+
+                        <div class="col-md-6"><label for="">Imagen</label></div>
+                        <div class="col-md-6"><input type="file" id="img" value="<%= p.img %>"></div>
+                        <div class="col-12">
+                            <BUtton type="submit">Editar producto</BUtton>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
         </main>
         <%- include("./partials/footer.ejs") %>
 </body>
