@@ -17,26 +17,44 @@ const controllers = {
 
     edit: (req, res) => {
         let producto = products.filter(function(x) {
-            return x.id == req.params.id
-        })
+                return x.id == req.params.id
+            })
+            /* OTRA FORMA DE RECORRER Y DEVOLVER EL PRODUCTO 
+             let producto2;
+             products.forEach(x => {
+                 if(x.id==req.params.id){
+                     producto2 = x;
+                     break;
+                 }
+             })*/
+
         res.render("product-edit-form", { p: producto[0] });
     },
     update: (req, res) => {
+
         products.forEach(x => {
             if (x.id == req.params.id) {
                 x.name = req.body.name
                 x.category = req.body.category
                 x.description = req.body.description
                 x.vendor = req.body.vendor
-                x.price = req.body.price
-                x.stock = req.body.stock
+                x.price = Number(req.body.price)
+                x.stock = Number(req.body.stock)
                 x.img = req.body.img
-                x.minBuy = req.minBuy
+                x.minBuy = Number(req.body.minBuy)
             }
 
         });
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
+        res.redirect("/products");
 
+    },
+    destroy: (req, res) => {
+        let productosNuevos = products.filter(function(x) {
+            return x.id != req.params.id
+        })
+        fs.writeFileSync(productsFilePath, JSON.stringify(productosNuevos, null, ' '));
+        res.redirect("/products")
     }
 }
 
