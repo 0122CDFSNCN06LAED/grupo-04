@@ -4,45 +4,48 @@
 <head>
     <%- include("./partials/head.ejs") %>
         <link rel="stylesheet" href="/css/home.css" />
+        <link rel="stylesheet" href="/css/formularios.css" />
         <title>Editar producto</title>
 </head>
 
-<body>
+<body class="bg-black">
     <%- include("./partials/header.ejs") %>
-        <main>
-            <div class="container">
-                <form action="/products/edit/<%=p.id%>?_method=PUT" method="POST">
-                    <input type="hidden">
-                    <div class="row">
-                        <h1>Vas a editar:</h1>
-                        <div class="col-md-6"><label for="name">Nombre</label></div>
-                        <div class="col-md-6"><input type="text" id="name" name="name" value="<%= p.name %> "></div>
-                        <div class="col-md-6"><label for="ventor">Vendedor</label></div>
-                        <div class="col-md-6"><input type="text" id="vendor" name="vendor" value="<%= p.vendor %>"></div>
-                        <div class="col-md-6"><label for="price">Precio</label></div>
-                        <div class="col-md-6"><input type="text" id="price" name="price" value="<%= p.price %>"></div>
-                        <div class="col-md-6"><label for="minBuy">Minimo a comprar</label></div>
-                        <div class="col-md-6"><input type="text" id="minBuy" name="minBuy" value="<%= p.minBuy %>"></div>
+        <main class="container m-15 mb-10">
 
-                        <div class="col-md-6"><label for="stock">Stock</label></div>
-                        <div class="col-md-6"><input type="text" id="stock" name="stock " value="<%= p.stock %>"></div>
-
-                        <div class="col-md-6"><label for="category">Categoria</label></div>
-                        <div class="col-md-6"><input type="text" id="category" name="category" value="<%= p.category %>"></div>
-
-                        <div class="col-md-6"><label for="description">description</label></div>
-                        <div class="col-md-6"><textarea type="text" id="description"><%= p.description %>"</textarea></div>
-
-                        <div class="col-md-6"><label for="img">Imagen</label></div>
-                        <div class="col-md-6"><input type="file" id="img" name="img" value="<%= p.img %>"></div>
-                        <div class="col-12">
-                            <button type="submit">Editar producto</button>
-                        </div>
+            <form action="/products/edit/<%=p.id%>?_method=PUT" method="POST">
+                <input type="hidden">
+                <div class="row">
+                    <div class="col-12">
+                        <h1 class="titulo-fomulario text-center celeste-vpm">Estas editando:</h1>
                     </div>
+                    <div class="col-md-6"><label class="form-label celeste-vpm" for="name">Nombre</label></div>
+                    <div class="col-md-6"><input type="text" id="name" name="name" value="<%= p.name %> "></div>
+                    <div class="col-md-6"><label for="ventor">Vendedor</label></div>
+                    <div class="col-md-6"><input type="text" id="vendor" name="vendor" value="<%= p.vendor %>"></div>
+                    <div class="col-md-6"><label for="price">Precio</label></div>
+                    <div class="col-md-6"><input type="text" id="price" name="price" value="<%= p.price %>"></div>
+                    <div class="col-md-6"><label for="minBuy">Minimo a comprar</label></div>
+                    <div class="col-md-6"><input type="text" id="minBuy" name="minBuy" value="<%= p.minBuy %>"></div>
 
-                </form>
-                <form action="/products/delete/<%=p.id%>?_method=DELETE" method="POST"> <button type="submit">Eliminar producto</button></form>
-            </div>
+                    <div class="col-md-6"><label for="stock">Stock</label></div>
+                    <div class="col-md-6"><input type="text" id="stock" name="stock " value="<%= p.stock %>"></div>
+
+                    <div class="col-md-6"><label for="category">Categoria</label></div>
+                    <div class="col-md-6"><input type="text" id="category" name="category" value="<%= p.category %>"></div>
+
+                    <div class="col-md-6"><label for="description">description</label></div>
+                    <div class="col-md-6"><textarea type="text" id="description"><%= p.description %>"</textarea></div>
+
+                    <div class="col-md-6"><label for="img">Imagen</label></div>
+                    <div class="col-md-6"><input type="file" id="img" name="img" value="<%= p.img %>"></div>
+                    <div class="col-12">
+                        <button type="submit">Editar producto</button>
+                    </div>
+                </div>
+
+            </form>
+            <form action="/products/delete/<%=p.id%>?_method=DELETE" method="POST"> <button type="submit">Eliminar producto</button></form>
+
         </main>
         <%- include("./partials/footer.ejs") %>
 </body>
