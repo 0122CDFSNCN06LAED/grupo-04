@@ -3,6 +3,7 @@ const path = require('path');
 const app = express();
 const mainRouter = require("./routers/main-router");
 const productsRouter = require("./routers/products")
+const usersRouter = require("./routers/users");
 const methodOverride = require('method-override');
 
 
@@ -18,6 +19,8 @@ app.listen(3000, () => {
     console.log("El servidor de prendio en el puerto:3000");
 });
 
-app.use("/", mainRouter);
-app.use("/products", productsRouter);
 app.use("/users", usersRouter);
+app.use("/products", productsRouter);
+app.use("/", mainRouter);
+
+

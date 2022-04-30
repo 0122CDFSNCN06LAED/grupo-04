@@ -3,6 +3,6 @@ const usersController = require("../controllers/users-controller");
 
 const router = Router();
 
-router.get("/vendorInfo/:id", usersController.vendorInformation);
+router.get("/", usersController.vendorInformation);
 
 module.exports = router;
