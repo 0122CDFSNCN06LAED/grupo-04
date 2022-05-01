@@ -17,16 +17,9 @@ const controllers = {
 
     edit: (req, res) => {
         let producto = products.filter(function(x) {
-                return x.id == req.params.id
-            })
-            /* OTRA FORMA DE RECORRER Y DEVOLVER EL PRODUCTO 
-             let producto2;
-             products.forEach(x => {
-                 if(x.id==req.params.id){
-                     producto2 = x;
-                     break;
-                 }
-             })*/
+            return x.id == req.params.id
+        })
+
 
         res.render("product-edit-form", { p: producto[0] });
     },
