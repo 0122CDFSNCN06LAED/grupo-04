@@ -3,11 +3,63 @@
 
 <head>
     <%- include("./partials/head.ejs") %>
-        <title></title>
+        <link rel="stylesheet" href="/css/home.css" />
+        <link rel="stylesheet" href="/css/formularios.css" />
+        <title>Crear un nuevo producto</title>
 </head>
 
-<body>
+<body class="bg-black">
     <%- include("./partials/header.ejs") %>
+        <main class="container m-15 mb-10">
+
+            <form action="/products/create" method="POST">
+                <input type="hidden">
+                <div class="row">
+                    <div class="col-12">
+                        <h2 class="titulo-fomulario text-center celeste-vpm">Creando un nuevo producto</i></h2>
+                    </div>
+                    <div class="col-12 col-md-6">
+                        <label class="form-label celeste-vpm" for="name">Nombre del producto</label>
+                        <input class="form-control" type=" text " id="name " name="name " value="">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label celeste-vpm" for="ventor">Vendedor</label>
+                        <input class="form-control" type="text" id="vendor" name="vendor" value="">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label celeste-vpm" for="price">Precio</label>
+                        <input class="form-control" type="text" id="price" name="price" value="">
+                    </div>
+                    <div class="col-md-6">
+                        <label class="form-label celeste-vpm" for="minBuy">Minimo a comprar</label>
+                        <input class="form-control" type="text" id="minBuy" name="minBuy" value="">
+                    </div>
+
+                    <div class="col-md-6"><label class="form-label celeste-vpm" for="stock">Stock</label>
+                        <input class="form-control" type=" text " id="stock " name="stock " value="">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label celeste-vpm" for="category">Categoria</label>
+                        <input class="form-control" type="text" id="category" name="category" value="">
+                    </div>
+
+                    <div class="col-md-6">
+                        <label class="form-label celeste-vpm" for="description">Descripción</label>
+                        <textarea class="form-control" type="text" id="description"></textarea>
+                    </div>
+
+                    <div class="col-md-6"><label class="form-label celeste-vpm" for="img">Imagen</label>
+                        <input class="form-control" type="file" id="img" name="img" value="">
+                    </div>
+                    <div class="col-12 d-flex justify-content-center mt-5">
+                        <button class=" btn btn-outline-info mb-5 w-50 " type="submit ">Crear</button>
+                        <button class="btn btn-outline-info mb-5 w-50" type="reset">Borrar todo</button>
+                    </div>
+                </div>
+
+            
+        </main>
         <%- include("./partials/footer.ejs") %>
 </body>
 
