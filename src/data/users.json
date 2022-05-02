@@ -1,22 +1,18 @@
 [{
         "id": 1,
-        "user-name": "Alejandro Acercandro",
-        "company-name": "DISTRIBUIDORA LH",
+        "username": "Alejandro Acercandro",
+        "companyName": "DISTRIBUIDORA LH",
         "CUIT": 1234567890,
         "email": "distribuidoraLH@yahoo.com.ar",
         "password": "CorazonMeloso123",
-<<<<<<< HEAD
-        "contact": 3446423234
-=======
         "contact": 3446423234,
         "img": "/img/users/avatars/default-avatar.png"
->>>>>>> a6dfa6e444a3bda3fddf7b30dcb3ff8d3c95870d
 
     },
     {
       "id": 2,
-      "user-name": "Marcelo Sakc Ferroni",
-      "company-name": "MASAFERRO",
+      "userName": "Marcelo Sakc Ferroni",
+      "companyName": "MASAFERRO",
       "CUIT": 123456789,
       "email": "MaSaFerro123@hotmail.com",
       "password": "NoMeArrepientoDeEsteAmor123",
@@ -25,8 +21,8 @@
     },
     {
       "id": 3,
-      "user-name": "San Tiago De la Cruz",
-      "company-name": "INFORMATICA-SANTIAGO",
+      "userName": "San Tiago De la Cruz",
+      "companyName": "INFORMATICA-SANTIAGO",
       "CUIT": 1234234234,
       "email": "santiFULLHD4K@outlook.com.ar",
       "password": "JorgeLanata678",
@@ -35,8 +31,8 @@
     },
     {
       "id": 4,
-      "user-name": "Ricardo Charpentier",
-      "company-name": "RICKY-&-ROLL",
+      "userName": "Ricardo Charpentier",
+      "companyName": "RICKY-&-ROLL",
       "CUIT": 112312313,
       "email": "RICKY-&-ROLL@gmail.com",
       "password": "Ciudad-magica-de-buenos-aires",
@@ -45,8 +41,8 @@
     },
     {
       "id": 5,
-      "user-name": "Agustin Delgrueso",
-      "company-name": "BIG-WORLD-IT",
+      "userName": "Agustin Delgrueso",
+      "companyName": "BIG-WORLD-IT",
       "CUIT": 12342342,
       "email": "BigWordlIt@hotmail.com",
       "password": "sin_MariMari_no_hay_carnaval",

@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Azucar 1kg",
-    "vendor": "DISTRIBUIDORA LH",
+    "vendor": 1,
     "price": 300,
     "minBuy": 10,
     "stock": 520,
@@ -13,7 +13,7 @@
   {
     "id": 2,
     "name": "Azucar Ledesma 1000 sobres",
-    "vendor": "DISTRIBUIDORA LH",
+    "vendor": 2,
     "price": 500,
     "minBuy": 5,
     "stock": 620,
@@ -24,7 +24,7 @@
   {
     "id": 3,
     "name": "Cafe Molido Bonafide Sensaciones Intenso Torrado",
-    "vendor": "DISTRIBUIDORA LH",
+    "vendor": 4,
     "price": 2000,
     "minBuy": 20,
     "stock": 110,
@@ -35,7 +35,7 @@
   {
     "id": 4,
     "name": "Cafe Nescafe Gold Suave Tostado Y Molido - Libre De Gluten",
-    "vendor": "DISTRIBUIDORA LH",
+    "vendor": 3,
     "price": 5000,
     "minBuy": 10,
     "stock": 682,
@@ -46,7 +46,7 @@
   {
     "id": 5,
     "name": "Edulcorante Hileret X500 Sobres",
-    "vendor": "DISTRIBUIDORA LH",
+    "vendor": 4,
     "price": 600,
     "minBuy": 5,
     "stock": 110,
@@ -57,7 +57,7 @@
   {
     "id": 6,
     "name": "Yerba Mate Con Palo Nobleza Gaucha Paquete X 500 G",
-    "vendor": "DISTRIBUIDORA LH",
+    "vendor": 4,
     "price": 1.0,
     "minBuy": 10,
     "stock": 269,
@@ -68,7 +68,7 @@
   {
     "id": 7,
     "name": "Amoladora angular Black+Decker G720N naranja 820 W 220 V",
-    "vendor": "MASAFERRO",
+    "vendor": 3,
     "price": 14.89,
     "minBuy": 5,
     "stock": 144,
@@ -79,7 +79,7 @@
   {
     "id": 8,
     "name": "Sierra Sensitiva Bosch Gco 220 2200w 3800rpm 355mm 1 Disco",
-    "vendor": "MASAFERRO",
+    "vendor": 3,
     "price": 88.52,
     "minBuy": 5,
     "stock": 320,
@@ -90,7 +90,7 @@
   {
     "id": 9,
     "name": "Taladro percutor eléctrico de 13mm Black+Decker TM555 560W naranja 220V + accesorios",
-    "vendor": "MASAFERRO",
+    "vendor": 2,
     "price": 24.203,
     "minBuy": 5,
     "stock": 359,
@@ -101,7 +101,7 @@
   {
     "id": 10,
     "name": "Taladro percutor eléctrico de 13mm Makita M8100B 710W turquesa 220V",
-    "vendor": "MASAFERRO",
+    "vendor": 4,
     "price": 20.146,
     "minBuy": 5,
     "stock": 654,
@@ -112,7 +112,7 @@
   {
     "id": 11,
     "name": "Amoladora angular Bosch Professional GWS 670 azul 670 W 220 V",
-    "vendor": "MASAFERRO",
+    "vendor": 2,
     "price": 11.51,
     "minBuy": 5,
     "stock": 142,
@@ -123,7 +123,7 @@
   {
     "id": 12,
     "name": "Soldadora inverter Stanley Sirio 140 50Hz/60Hz 230V",
-    "vendor": "MASAFERRO",
+    "vendor": 1,
     "price": 101.684,
     "minBuy": 5,
     "stock": 242,
@@ -134,7 +134,7 @@
   {
     "id": 13,
     "name": "Juego De Tubos Set herramientas Cromo Vanadium 46 Piezas 1/4",
-    "vendor": "MASAFERRO",
+    "vendor": 1,
     "price": 8.413,
     "minBuy": 4,
     "stock": 541,
@@ -145,7 +145,7 @@
   {
     "id": 14,
     "name": "Escritorio para pc Su-Office Fan melamina de 163cm x 75cm x 60cm x 140cm blanco y negro",
-    "vendor": "SU-OFFICE",
+    "vendor": 3,
     "price": 98.424,
     "minBuy": 10,
     "stock": 1100,
@@ -156,7 +156,7 @@
   {
     "id": 15,
     "name": "Cajonera 4 Cajones / Escritorio / Oficina Con Ruedas",
-    "vendor": "SU-OFFICE",
+    "vendor": 4,
     "price": 30.324,
     "minBuy": 5,
     "stock": 110,
@@ -167,7 +167,7 @@
   {
     "id": 16,
     "name": "Silla de escritorio Baires4 Ejecutiva Mesh negra con tapizado de mesh y cuero sintético",
-    "vendor": "SU-OFFICE",
+    "vendor": 2,
     "price": 55.424,
     "minBuy": 5,
     "stock": 723,
@@ -178,7 +178,7 @@
   {
     "id": 17,
     "name": "Escritorio Combinado Negro Y Haya Astra Cajon C/guias Metalicas",
-    "vendor": "SU-OFFICE",
+    "vendor": 4,
     "price": 47.21,
     "minBuy": 5,
     "stock": 523,
@@ -189,7 +189,7 @@
   {
     "id": 18,
     "name": "Silla de escritorio de Outlet Diva ergonómica negra con tapizado de marathon",
-    "vendor": "SU-OFFICE",
+    "vendor": 2,
     "price": 40.123,
     "minBuy": 5,
     "stock": 224,
@@ -200,7 +200,7 @@
   {
     "id": 19,
     "name": "Auriculares Logitech H151 negro",
-    "vendor": "INFORMATICA-SANTIAGO",
+    "vendor": 5,
     "price": 20.345,
     "minBuy": 20,
     "stock": 623,
@@ -211,7 +211,7 @@
   {
     "id": 20,
     "name": "Cable Hdmi 5 Metros Oro 1080p Reforzado Filtro Tv Ps4 Pc Ps3",
-    "vendor": "INFORMATICA-SANTIAGO",
+    "vendor": 3,
     "price": 21.49,
     "minBuy": 20,
     "stock": 870,
@@ -222,7 +222,7 @@
   {
     "id": 21,
     "name": "Impresora a color multifunción Epson EcoTank L3210 negra 220V",
-    "vendor": "INFORMATICA-SANTIAGO",
+    "vendor": 4,
     "price": 150.124,
     "minBuy": 5,
     "stock": 435,
@@ -233,7 +233,7 @@
   {
     "id": 22,
     "name": "Impresora simple función Xerox Phaser 3020/BI con wifi blanca y azul 220V - 240V",
-    "vendor": "INFORMATICA-SANTIAGO",
+    "vendor": 2,
     "price": 140.921,
     "minBuy": 5,
     "stock": 321,
@@ -244,7 +244,7 @@
   {
     "id": 23,
     "name": "Apple Macbook Air",
-    "vendor": "INFORMATICA-SANTIAGO",
+    "vendor": 1,
     "price": 300.524,
     "minBuy": 2,
     "stock": 8,
@@ -255,7 +255,7 @@
   {
     "id": 24,
     "name": "Monitor LG 24MK430H led 23.8 negro 100V/240V",
-    "vendor": "INFORMATICA-SANTIAGO",
+    "vendor": 3,
     "price": 150.909,
     "minBuy": 10,
     "stock": 567,
@@ -266,7 +266,7 @@
   {
     "id": 25,
     "name": "Monitor Daewoo Dw-mon24 Lcd 1080p Hdmi 24 Pul Full Hd",
-    "vendor": "INFORMATICA-SANTIAGO",
+    "vendor": 2,
     "price": 145.124,
     "minBuy": 10,
     "stock": 528,
@@ -277,7 +277,7 @@
   {
     "id": 26,
     "name": "Mouse Logitech M90 negro",
-    "vendor": "INFORMATICA-SANTIAGO",
+    "vendor": 1,
     "price": 1.999,
     "minBuy": 10,
     "stock": 984,
@@ -288,7 +288,7 @@
   {
     "id": 27,
     "name": "Teclado Genius KB-116 QWERTY español color negro",
-    "vendor": "INFORMATICA-SANTIAGO",
+    "vendor": 4,
     "price": 3.998,
     "minBuy": 10,
     "stock": 1110,
@@ -299,7 +299,7 @@
   {
     "id": 28,
     "name": "Botín Borcego Zapato Seguridad Trabajo Punta Acero",
-    "vendor": "RICKY-&-ROLL",
+    "vendor": 3,
     "price": 8.0,
     "minBuy": 3,
     "stock": 424,
@@ -311,7 +311,7 @@
   {
     "id": 29,
     "name": "Delantal de cocina Universal",
-    "vendor": "RICKY-&-ROLL",
+    "vendor": 2,
     "price": 15.234,
     "minBuy": 30,
     "stock": 110,
@@ -322,7 +322,7 @@
   {
     "id": 30,
     "name": "Remera Clásica Manga Corta Blanca",
-    "vendor": "RICKY-&-ROLL",
+    "vendor": 2,
     "price": 4.0,
     "minBuy": 10,
     "stock": 620,
@@ -334,7 +334,7 @@
   {
     "id": 31,
     "name": "Casaca De Cocina Unisex Edulchef Mangas Cortas",
-    "vendor": "RICKY-&-ROLL",
+    "vendor": 4,
     "price": 5.0,
     "minBuy": 5,
     "stock": 110,
@@ -346,7 +346,7 @@
   {
     "id": 32,
     "name": "Resma A4 Papel Autor 75grs 500 Hojas",
-    "vendor": "BIG-WORLD-IT",
+    "vendor": 2,
     "price": 2.5,
     "minBuy": 4,
     "stock": 1100,
@@ -357,7 +357,7 @@
   {
     "id": 33,
     "name": "Birome Bic Opaca En Caja X50 Unid",
-    "vendor": "BIG-WORLD-IT",
+    "vendor": 2,
     "price": 14.23,
     "minBuy": 10,
     "stock": 650,
@@ -368,7 +368,7 @@
   {
     "id": 34,
     "name": "Cartuchos Epson Original T206 Negro + Col Combo 206",
-    "vendor": "BIG-WORLD-IT",
+    "vendor": 4,
     "price": 15.234,
     "minBuy": 5,
     "stock": 254,

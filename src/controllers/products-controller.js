@@ -4,6 +4,10 @@ const path = require("path");
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
+
+const usersFilePath = path.join(__dirname, "../data/users.json");
+const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
+
 const controllers = {
     index: (req, res) => {
         res.render("productsList.ejs", {
@@ -23,6 +27,7 @@ const controllers = {
 
         res.render("product-edit-form", { p: producto[0] });
     },
+
     update: (req, res) => {
 
         products.forEach(x => {
@@ -42,12 +47,26 @@ const controllers = {
         res.redirect("/products");
 
     },
+
     destroy: (req, res) => {
         let productosNuevos = products.filter(function(x) {
             return x.id != req.params.id
         })
         fs.writeFileSync(productsFilePath, JSON.stringify(productosNuevos, null, ' '));
         res.redirect("/products")
+    },
+
+    detail: (req, res) => {
+
+        const idBuscado = req.params.id;
+        const productDetail = products.find(producto => producto.id ==idBuscado);
+        const vendorID = productDetail.vendor;
+
+        const vendor = users.find(
+          (vendor) => vendor.id == vendorID
+        );
+
+        res.render("productDetail", { p: productDetail , vendor: vendor});
     }
 }
 

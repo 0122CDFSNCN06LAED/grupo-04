@@ -74,6 +74,18 @@
 }
 
 .pd-vendor-avatar {
-  width: 20%;
-  max-width: 50px;
+  width: 40%;
+  max-width: 70px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+}
+
+.vendor-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.vendor-info {
+  margin-left: 20px;
+  color: blue;
 }

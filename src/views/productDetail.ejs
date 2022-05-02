@@ -5,14 +5,14 @@
     <%- include("./partials/head.ejs") %>
 
         <link rel="stylesheet" href="/css/productDetail.css">
-        <title>Product Detail</title>
+        <title> BMP - <%= p.name %> </title>
 </head>
 
 <body>
 
     <%- include("./partials/header.ejs") %>
 
-        <h5 class="pd-description-detail-title">Detalle del producto</h5>
+        <h5 class="pd-description-detail-title">Detalle del producto: <%= p.name %>  </h5>
 
         <section class="product-photo-and-price">
             <div class="card mb-3">
@@ -27,24 +27,24 @@
                         </div>
                         <div class="carousel-inner">
                             <div class="carousel-item active" data-bs-interval="10000">
-                                <img src="/img/articulos/tecnologia/macbook1.webp" class="d-block w-100" alt="...">
+                                <img src="/img/articulos/<%=p.category%>/<%=p.image%>" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>First slide label</h5>
-                                    <p>Some representative placeholder content for the first slide.</p>
+                                    <h5></h5>
+                                    <p></p>
                                 </div>
                             </div>
                             <div class="carousel-item" data-bs-interval="2000">
-                                <img src="/img/articulos/tecnologia/macbook2.webp" class="d-block w-100" alt="...">
+                                <img src="/img/articulos/<%=p.category%>/<%=p.image%>" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>Second slide label</h5>
-                                    <p>Some representative placeholder content for the second slide.</p>
+                                    <h5></h5>
+                                    <p></p>
                                 </div>
                             </div>
                             <div class="carousel-item">
-                                <img src="/img/articulos/tecnologia/macbook1.webp" class="d-block w-100" alt="...">
+                                <img src="/img/articulos/<%=p.category%>/<%=p.image%>" class="d-block w-100" alt="...">
                                 <div class="carousel-caption d-none d-md-block">
-                                    <h5>Third slide label</h5>
-                                    <p>Some representative placeholder content for the third slide.</p>
+                                    <h5></h5>
+                                    <p></p>
                                 </div>
                             </div>
                         </div>
@@ -64,11 +64,11 @@
 
                     <div class="col-md-4">
                         <div class="card-body">
-                            <h5 class="precio-numero pd-price">$ 262.679,00</h5>
-                            <p class="card-text product-name">Apple Macbook Air (13 pulgadas, 2020, Chip M1, 512 GB de SSD, 8 GB de RAM) - Gris espacial</p>
+                            <h5 class="precio-numero pd-price">$ <%= p.price %> </h5>
+                            <p class="card-text product-name"><%= p.name %> </p>
                             <select class="form-select pd-amount" aria-label="Default select example">
-                          <option selected>Cantidad: 1  (10 disponibles)</option>
-                          <option value="1">1 unidades</option>
+                          <option selected>Cantidad: 1  (<%= p.stock %> disponibles)</option>
+                          <option value="1">1 unidad</option>
                           <option value="2">2 unidades</option>
                           <option value="3">3 unidades</option>
                           <option value="more-than-3">Más de 3</option>
@@ -82,12 +82,12 @@
             </div>
 
 
-            <div class="card mb-3">
+            <div class="card mb-3 vendor-container">
                 <h5 class="pd-vendor-title">Información del vendedor</h5>
                 <div class="pd-vendor-detail">
 
-                    <img src="/img/articulos/usuarios/imacstore.jpeg" alt="" class="pd-vendor-avatar"> Imac Store Argentina S.A
-
+                    <img src="/img/users/avatars/default-avatar.png" alt="" class="pd-vendor-avatar"> <%= vendor.companyName %> 
+                    <a href="../../users/vendorInfo/<%= vendor.id %> " class="vendor-info">Conocé más información sobre el vendedor</a>
                 </div>
             </div>
 
@@ -96,13 +96,7 @@
 
                 <div class="card mb-2 pd-description-detail">
                     <p class="pd-description-detail">
-                        Chip M1 de Apple que permite un gran avance en el rendimiento del CPU, GPU y aprendizaje automático. Hasta 18 horas de batería para hacer mucho más (1). CPU de 8 núcleos con un rendimiento hasta 3.5 veces más rápido para que puedas hacer de todo a una
-                        velocidad insuperable (2). GPU de hasta 8 núcleos con gráficos hasta 5 veces más veloces para apps y juegos con gráficos avanzados (2). Neural Engine de 16 núcleos para un aprendizaje automático avanzado. 8 GB de memoria unificada
-                        para que todo sea más rápido y fluido. Almacenamiento SSD superrápido para abrir apps y archivos al instante. Diseño silencioso, sin ventilador. Pantalla Retina de 13.3 pulgadas con una amplia gama de colores P3 para que disfrutes
-                        imágenes vibrantes y un nivel de detalle increíble (3). Cámara FaceTime HD con procesador de señal de imagen avanzado para hacer llamadas de video claras y nítidas. Sistema de tres micrófonos que se enfocan en tu voz y no en el
-                        ruido ambiental. Wi-Fi 6 de última generación para una conectividad más rápida. Dos puertos Thunderbolt/USB 4 para cargar y conectar accesorios. Magic Keyboard retroiluminado y Touch ID para desbloquear tu MacBook Air de forma
-                        segura. macOS con un diseño impactante e intuitivo, que funciona a la perfección con tu iPhone. Disponible en color oro, color plata y gris espacial.
-
+                        <%= p.description %> 
 
 
                     </p>
