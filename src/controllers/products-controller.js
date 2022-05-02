@@ -1,4 +1,5 @@
 const fs = require("fs");
+const { url } = require("inspector");
 const path = require("path");
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
@@ -67,6 +68,28 @@ const controllers = {
         );
 
         res.render("productDetail", { p: productDetail , vendor: vendor});
+        
+    },
+
+    store: (req,res) => {
+        const datosRecibidos = JSON.parse(JSON.stringify(req.body));
+        
+        const acumulador = [];
+        for (i=0; i < products.length ; i++) {
+            acumulador.push(products[i].id)
+        };
+
+        const biggerId = Math.max.apply(null, acumulador);
+        const idToAssing = biggerId + 1;
+        datosRecibidos.id = idToAssing;
+
+        products.push(datosRecibidos);
+        const productsWithNew = JSON.stringify(products)
+
+        fs.writeFileSync(productsFilePath, productsWithNew);
+
+        const urlToRedirect = "detail/" + idToAssing;
+        res.redirect(urlToRedirect);
     }
 }
 
