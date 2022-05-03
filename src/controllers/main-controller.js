@@ -18,7 +18,7 @@ module.exports = {
         res.render("login.ejs");
     },
     aboutUs: (req, res) => {
-        res.render("aboutUS.ejs");
+        res.render("aboutUs.ejs");
     },
     informacionVendedor: (req, res) => {
         res.render("informacionVendedor.ejs");
