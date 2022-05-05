@@ -47,6 +47,12 @@
     display: block;
 }
 
+.cont-card{
+    padding: 0;
+}
+
+
+
 .icon-card:hover {
     color: #477ecf;
 }
