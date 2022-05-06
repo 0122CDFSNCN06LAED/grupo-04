@@ -45,19 +45,14 @@ main h2 {
     display: block;
 }
 
-<<<<<<< HEAD
-=======
-.cont-card{
+.cont-card {
     padding: 0;
 }
-
-
 
 .icon-card:hover {
     color: #477ecf;
 }
 
->>>>>>> 46143e7fe26cb80e8765d381a6229978ea14cc78
 video {
     width: 100%;
     max-width: 500px;
