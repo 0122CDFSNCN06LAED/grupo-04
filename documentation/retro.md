@@ -22,6 +22,12 @@ Traer a las reuniones los puntos a tocar anotados.
 
 
 03/05/2022 - Retro sprint 4
+- Comenzar a hacer: comenzar a hacer reuniones semanales cortas para evaluar el estado de avance individual.
+- Que hacer más: dejar registreo de las charlas y reuniones que tenemos como equipo.
+- Continuar haciendo: seguir enfocados, comunicados y comprometidos con el trabajo en equipo.
+- Hacer menos: evitar dejar todo para último fin de semana del sprint.
+- Dejar de hacer: const niIdea = "ni idea";
 
 
+17/05/2022 - Retro sprint 5
 
