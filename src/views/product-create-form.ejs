@@ -12,11 +12,12 @@
     <%- include("./partials/header.ejs") %>
         <main class="container m-15 mb-10">
 
-            <form action="/products/create" method="POST">
+            <form action="/products/create" method="POST" enctype="multipart/form-data">
                 <input type="hidden">
                 <div class="row">
                     <div class="col-12">
-                        <h2 class="titulo-fomulario text-center celeste-vpm">Creando un nuevo producto</i></h2>
+                        <h2 class="titulo-fomulario text-center celeste-vpm">Creando un nuevo producto</i>
+                        </h2>
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label celeste-vpm" for="name">Nombre del producto</label>
@@ -58,7 +59,7 @@
                     </div>
                 </div>
 
-            
+
         </main>
         <%- include("./partials/footer.ejs") %>
 </body>

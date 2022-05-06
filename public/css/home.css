@@ -45,11 +45,9 @@ main h2 {
     display: block;
 }
 
-.cont-card{
+.cont-card {
     padding: 0;
 }
-
-
 
 .icon-card:hover {
     color: #477ecf;
