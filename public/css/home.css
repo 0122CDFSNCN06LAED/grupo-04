@@ -1,36 +1,34 @@
+main h2 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .card-description {
     border-top: 1px solid #ebebeb;
     text-align: center;
 }
 
-.card-price {
-    font-size: 30px;
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+    width: 100%;
 }
 
 .card-price {
-    font-size: 25px;
-    flex: grow 0.3;
+    font-size: 18px;
 }
 
 .card-discount {
-    font-size: 25px;
-    flex-grow: 0.7;
+    font-size: 18px;
 }
 
 .sub-card {
     display: flex;
     justify-content: space-around;
-    color: #477ecf
-}
-
-.card-title {
-    font-size: 28px;
-    font-weight: bold;
-    width: 100%;
 }
 
 .icon-card {
-    display: none;
+    display: block;
     position: absolute;
     top: 24px;
     right: 15px;
@@ -45,10 +43,6 @@
 
 .cont-card:hover .icon-card {
     display: block;
-}
-
-.icon-card:hover {
-    color: #477ecf;
 }
 
 video {
@@ -80,6 +74,9 @@ video {
         top: 15px;
         right: 5px;
         font-size: 1.5em;
+    }
+    .icon-card:hover {
+        color: #477ecf;
     }
 }
 

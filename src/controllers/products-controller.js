@@ -60,22 +60,22 @@ const controllers = {
     detail: (req, res) => {
 
         const idBuscado = req.params.id;
-        const productDetail = products.find(producto => producto.id ==idBuscado);
+        const productDetail = products.find(producto => producto.id == idBuscado);
         const vendorID = productDetail.vendor;
 
         const vendor = users.find(
-          (vendor) => vendor.id == vendorID
+            (vendor) => vendor.id == vendorID
         );
 
-        res.render("productDetail", { p: productDetail , vendor: vendor});
-        
+        res.render("productDetail", { p: productDetail, vendor: vendor });
+
     },
 
-    store: (req,res) => {
+    store: (req, res) => {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
-        
+
         const acumulador = [];
-        for (i=0; i < products.length ; i++) {
+        for (i = 0; i < products.length; i++) {
             acumulador.push(products[i].id)
         };
 
@@ -92,5 +92,7 @@ const controllers = {
         res.redirect(urlToRedirect);
     }
 }
+
+
 
 module.exports = controllers

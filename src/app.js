@@ -32,5 +32,3 @@ app.listen(3000, () => {
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
 app.use("/", mainRouter);
-
-

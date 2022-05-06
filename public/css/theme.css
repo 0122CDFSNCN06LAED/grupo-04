@@ -115,6 +115,11 @@
      position: relative;
  }
  
+ .container-img {
+     width: 240px;
+     height: 240px;
+ }
+ 
  .email-and-phone {
      margin-bottom: 0px;
      color: #ffffff;
@@ -139,32 +144,31 @@
      display: none;
      margin-top: 10px;
  }
-
+ 
  .header-scroll {
      position: sticky;
      top: 0;
      z-index: 3;
  }
-
-
- .float{
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#25d366;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-  font-size:30px;
-	box-shadow: 2px 2px 3px #999;
-  z-index:100;
-}
-
-.my-float{
-	margin-top:10px;
-}
+ 
+ .float {
+     position: fixed;
+     width: 60px;
+     height: 60px;
+     bottom: 40px;
+     right: 40px;
+     background-color: #25d366;
+     color: #FFF;
+     border-radius: 50px;
+     text-align: center;
+     font-size: 30px;
+     box-shadow: 2px 2px 3px #999;
+     z-index: 100;
+ }
+ 
+ .my-float {
+     margin-top: 10px;
+ }
  
  @media (min-width: 480px) {
      .contact-container {

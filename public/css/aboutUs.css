@@ -1,5 +1,13 @@
 main li {
-    list-style: block;
+    list-style: circle;
     margin: 20px;
-    font-size: 16px;
+    font-size: 20px;
+}
+
+p {
+    font-size: 20px;
+}
+
+main h2 {
+    font-size: 40px;
 }
