@@ -74,22 +74,32 @@ const controllers = {
     store: (req, res) => {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 
+        //chequeamos si enviaron imagen o no
+        if(req.file) {
+
         const acumulador = [];
+
         for (i = 0; i < products.length; i++) {
-            acumulador.push(products[i].id)
+          acumulador.push(products[i].id);
         };
 
         const biggerId = Math.max.apply(null, acumulador);
         const idToAssing = biggerId + 1;
         datosRecibidos.id = idToAssing;
+        datosRecibidos.image = req.file.filename;
 
         products.push(datosRecibidos);
-        const productsWithNew = JSON.stringify(products)
+        const productsWithNew = JSON.stringify(products);
 
         fs.writeFileSync(productsFilePath, productsWithNew);
 
         const urlToRedirect = "detail/" + idToAssing;
         res.redirect(urlToRedirect);
+
+        } else {
+            res.render("product-create-form");
+        }
+
     }
 }
 

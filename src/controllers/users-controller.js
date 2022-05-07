@@ -11,7 +11,6 @@ const controllers = {
   vendorInformation: (req, res) => {
     const idBuscado = req.params.id;
     const vendorInfo = users.find((user) => user.id == idBuscado);
-    console.log(vendorInfo);
     res.render("vendorInformation.ejs", { vendorInfo });
   },
 };

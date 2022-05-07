@@ -6,10 +6,12 @@ const multer = require("multer");
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        cb(null, 'public/img/multer');
+        const categoryForDestination = req.body.category;
+        const pathForMulter = 'public/img/articulos/' + categoryForDestination;             
+        cb(null, pathForMulter);
     },
     filename: function(req, file, cb) {
-        cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`);
+        cb(null, `${Date.now()}${path.extname(file.originalname)}`);
     }
 })
 
