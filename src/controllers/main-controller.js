@@ -14,9 +14,6 @@ module.exports = {
     productCar: (req, res) => {
         res.render("productCar.ejs");
     },
-    login: (req, res) => {
-        res.render("login.ejs");
-    },
     aboutUs: (req, res) => {
         res.render("aboutUs.ejs");
     },

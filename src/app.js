@@ -6,11 +6,27 @@ const mainRouter = require("./routers/main-router");
 const productsRouter = require("./routers/products")
 const usersRouter = require("./routers/users");
 const methodOverride = require('method-override');
+const session = require('express-session');
+const cookies = require('cookie-parser');
+const usuarioLogeadoMW = require('../src/middlewares/usuarioLogeado');
 
 
+app.use(usuarioLogeadoMW);
+
+
+//cookies & session
+app.use(
+    session({
+        secret: 'Inicio de session',
+        resave: false,
+        saveUninitialized: false,
+    })
+);
+app.use(cookies());
 //Seteo para usar EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
+
 
 //Config de METHOD para otros métodos
 app.use(methodOverride('_method'));
