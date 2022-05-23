@@ -14,19 +14,28 @@ const controllers = {
         res.render("vendorInformation.ejs", { vendorInfo });
     },
     login: (req, res) => {
-        res.render("login.ejs");
+        res.render("login.ejs", { error: "" });
     },
     loguear: (req, res) => {
         const email = req.body.username;
         const password = req.body.password;
         const usuario = users.find((user) => user.email == email && user.password == password);
+
+        console.log(usuario);
+
+
         if (usuario == null) {
             res.render("Login", { error: "Login incorrecto" })
         } else {
-            req.session.usuarioLogueado = usuario
-            res.redirect("index")
+            req.session.userLogged = usuario
+            res.redirect("../")
 
         }
+
+    },
+    logOut: (req, res) => {
+        req.session.userLogged = null;
+        res.redirect("../")
 
     }
 };

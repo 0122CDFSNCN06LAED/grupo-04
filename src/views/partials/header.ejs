@@ -40,47 +40,49 @@
                             <li><a class="dropdown-item" href="#">Vestimenta</a></li>
                         </ul>
                     </li>
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <% if(locals.isLogged) {%>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Usuario
                 </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <li><a class="dropdown-item" href="#">Compras</a></li>
-                            <li><a class="dropdown-item" href="#">Ventas</a></li>
-                            <li>
-                                <hr class="dropdown-divider" />
-                            </li>
-                            <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
-                            <li>
-                                <hr class="dropdown-divider" />
-                            </li>
-                            <li><a class="dropdown-item" href="#">Favoritos</a></li>
-                            <li>
-                                <hr class="dropdown-divider" />
-                            </li>
-                            <li><a class="dropdown-item" href="#">Preguntas</a></li>
-                        </ul>
-                    </li>
-                    <li class="nav-item celeste-vpm">
-                        <a class="nav-link active" aria-current="page" href="/productCar">Carrito</a
+                            <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="#">Compras</a></li>
+                                <li><a class="dropdown-item" href="#">Ventas</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="#">Mi Perfil</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="#">Favoritos</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="#">Preguntas</a></li>
+                            </ul>
+                        </li>
+                        <% } %>
+                            <li class="nav-item celeste-vpm">
+                                <a class="nav-link active" aria-current="page" href="/productCar">Carrito</a
                 >
               </li>
+            <% if(!locals.isLogged){ %> 
               <li class="nav-item">
                 <a
                   class="nav-link active creaCuenta"
                   aria-current="page"
                   href="/register"
-                  >Creá tu cuenta</a
-                >
-              </li>
-              <li class="nav-item celeste-vpm">
-                <a class="nav-link active" aria-current="page" href="/users/login"
-                  >Ingresá</a
-                >
-              </li>
-            </ul>
-            <span class="navbar-text">
+                  >Creá tu cuenta</a>
+                            </li>
+                            <li class="nav-item celeste-vpm">
+                                <a class="nav-link active" aria-current="page" href="/users/login">Ingresá</a>
+                            </li>
+                            <% } else{ %>
+                                <li class="nav-item celeste-vpm"><a class="nav-link active" aria-current="page" href="/users/logOut">Cerrar sesion</a></li>
+                                <% } %>
+                </ul>
+                <div><span class="navbar-text">
               <form class="d-flex">
                 <input
                   class="form-control me-2"
@@ -93,18 +95,22 @@
                 </button>
               </form>
             </span>
-          </div>
+                    <% if (locals.isLogged) { %>
+                        <span class="celeste-vpm m-2">Bienvenido <%= locals.userLogged.username %> </span>
+                        <% } %>
+                </div>
+            </div>
+
         </div>
-      </nav>
-<% if (locals.isLogged) { %>
-<span>Bienvenido <%= locals.usuario %> </span>
-  <% } %> 
-  
+
+    </nav>
 
 
-      <a href="https://api.whatsapp.com/send?phone=5493446638641&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20BMP." class="float" target="_blank">
+
+
+    <a href="https://api.whatsapp.com/send?phone=5493446638641&text=Hola%21%20Quisiera%20m%C3%A1s%20informaci%C3%B3n%20sobre%20BMP." class="float" target="_blank">
         <i class="fa fa-whatsapp my-float"></i>
-      </a>
+    </a>
 
 
 </header>
