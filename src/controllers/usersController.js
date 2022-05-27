@@ -11,10 +11,10 @@ const controllers = {
     vendorInformation: (req, res) => {
         const idBuscado = req.params.id;
         const vendorInfo = users.find((user) => user.id == idBuscado);
-        res.render("vendorInformation.ejs", { vendorInfo });
+        res.render("users/vendorInformation.ejs", { vendorInfo });
     },
     login: (req, res) => {
-        res.render("login.ejs", { error: "" });
+        res.render("users/login.ejs", { error: "" });
     },
     loguear: (req, res) => {
         const email = req.body.username;
@@ -25,7 +25,7 @@ const controllers = {
 
 
         if (usuario == null) {
-            res.render("login", { error: "Login incorrecto" })
+            res.render("users/login", { error: "Login incorrecto" })
         } else {
             req.session.userLogged = usuario;
             res.redirect("../")
