@@ -27,7 +27,7 @@ const controllers = {
         if (usuario == null) {
             res.render("login", { error: "Login incorrecto" })
         } else {
-            req.session.userLogged = usuario
+            req.session.userLogged = usuario;
             res.redirect("../")
 
         }
