@@ -1,3 +1,4 @@
+const res = require("express/lib/response");
 const fs = require("fs");
 const path = require("path");
 
@@ -36,6 +37,19 @@ const controllers = {
     logOut: (req, res) => {
         req.session.userLogged = null;
         res.redirect("../")
+
+    },
+
+    register: (req, res) => {
+        if (req.session.userLogged) {
+            res.redirect("../");
+        } else {
+            res.render("users/register");
+        }
+
+    },
+
+    store: () => {
 
     }
 };
