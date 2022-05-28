@@ -7,4 +7,8 @@ router.get("/vendorInfo/:id", usersController.vendorInformation);
 router.get("/login", usersController.login);
 router.post("/login", usersController.loguear)
 router.get("/logOut", usersController.logOut)
+router.get("/register", usersController.register);
+router.post("/register", usersController.store);
+
+
 module.exports = router;
