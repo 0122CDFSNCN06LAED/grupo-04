@@ -18,23 +18,28 @@ const controllers = {
         res.render("users/login.ejs", { error: "" });
     },
     loguear: (req, res) => {
-        const email = req.body.username;
+        const emailAndUsername = req.body.username;
         const password = req.body.password;
-        const usuario = users.find((user) => user.email == email && user.password == password);
+        const usuario = users.find((user) => user.email == emailAndUsername || user.userName == emailAndUsername && user.password == password);
 
         console.log(usuario);
-
-
+        
+        
         if (usuario == null) {
             res.render("users/login", { error: "Login incorrecto" })
         } else {
             req.session.userLogged = usuario;
-            res.redirect("../")
-
-        }
-
+            
+            if(req.body.recordame){
+                res.cookie('userEmail', req.body.username, {maxAge: 1000 * 60})
+            }
+            
+            res.redirect("../")          
+        } 
+            
     },
     logOut: (req, res) => {
+        res.clearCookie('userEmail');
         req.session.userLogged = null;
         res.redirect("../")
 
