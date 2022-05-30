@@ -1,6 +1,7 @@
 const res = require("express/lib/response");
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require("bcryptjs");
 
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
@@ -20,16 +21,18 @@ const controllers = {
     loguear: (req, res) => {
         const email = req.body.username;
         const password = req.body.password;
-        const usuario = users.find((user) => user.email == email && user.password == password);
+        const usuario = users.find((user) => user.email == email /*&& user.password == password*/);
+        console.log(bcrypt.compareSync(password, usuario.password));
 
+        console.log(password);
+        console.log(usuario.password);
 
-        if (usuario == null) {
-            res.render("users/login", { error: "Login incorrecto" })
-        } else {
+        if (bcrypt.compareSync(password, usuario.password)) {
             req.session.userLogged = usuario;
-            res.redirect("../")
-
-        }
+            res.redirect("../");
+        } else {
+            res.render("users/login", { error: "Login incorrecto" })
+        };
 
     },
     logOut: (req, res) => {
@@ -60,6 +63,7 @@ const controllers = {
             const biggerId = Math.max.apply(null, acumulador);
             const idToAssing = biggerId + 1;
             datosRecibidos.id = idToAssing;
+            datosRecibidos.password = bcrypt.hashSync(datosRecibidos.password, 10);
 
             if(req.file) {
                  datosRecibidos.img = req.file.filename;

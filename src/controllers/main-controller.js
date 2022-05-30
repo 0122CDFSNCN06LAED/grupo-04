@@ -5,7 +5,7 @@ module.exports = {
         res.render("index.ejs");
     },
     register: (req, res) => {
-        res.render("register.ejs");
+        res.redirect("users/register");
     },
     productDetail: (req, res) => {
         res.render("productDetail.ejs");
