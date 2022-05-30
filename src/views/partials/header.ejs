@@ -63,10 +63,18 @@
                             </ul>
                         </li>
                         <% } %>
-                            <li class="nav-item celeste-vpm">
-                                <a class="nav-link active" aria-current="page" href="/productCar">Carrito</a
-                >
-              </li>
+                        <% if (locals.isLogged) { %>
+                         
+                          <li class="nav-item celeste-vpm">
+                              <a class="nav-link active" aria-current="page" href="/productCar">Carrito</a>
+                         </li>
+                        <% } %>
+                        <% if (!locals.isLogged) { %>
+                         
+                          <li class="nav-item celeste-vpm">
+                              <a class="nav-link active" aria-current="page" href="/users/login">Carrito</a>
+                         </li>
+                        <% } %>
             <% if(!locals.isLogged){ %> 
               <li class="nav-item">
                 <a
