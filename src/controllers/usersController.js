@@ -22,10 +22,6 @@ const controllers = {
         const email = req.body.username;
         const password = req.body.password;
         const usuario = users.find((user) => user.email == email /*&& user.password == password*/);
-        console.log(bcrypt.compareSync(password, usuario.password));
-
-        console.log(password);
-        console.log(usuario.password);
 
         if (bcrypt.compareSync(password, usuario.password)) {
             req.session.userLogged = usuario;
