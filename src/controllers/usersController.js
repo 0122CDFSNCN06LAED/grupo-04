@@ -49,9 +49,31 @@ const controllers = {
 
     },
 
-    store: () => {
+    store: (req, res) => {
+          const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 
-    }
+          console.log(req.body)
+
+          //chequeamos si enviaron imagen o no
+            const acumulador = [];
+
+            for (i = 0; i < users.length; i++) {
+              acumulador.push(users[i].id);
+            }
+
+            const biggerId = Math.max.apply(null, acumulador);
+            const idToAssing = biggerId + 1;
+            datosRecibidos.id = idToAssing;
+            datosRecibidos.image = req.file.filename;
+
+            users.push(datosRecibidos);
+            const usersWithNew = JSON.stringify(users);
+
+            fs.writeFileSync(usersFilePath, usersWithNew);
+
+            const urlToRedirect = "../";
+            res.redirect(urlToRedirect);
+        }
 };
 
 module.exports = controllers;

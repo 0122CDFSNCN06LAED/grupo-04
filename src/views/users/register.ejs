@@ -14,7 +14,7 @@
             <div>
                 <h1 class="titulo-fomulario text-center celeste-vpm">Vendé y comprá con <span>BMP</span></h1>
             </div>
-            <form>
+            <form action="/users/register" method="POST" enctype="multipart/form-data">
                 <div class="row">
                     <div class="mb-3">
                         <label for="username" class="form-label celeste-vpm">Nombre de usuario</label>
@@ -42,10 +42,15 @@
                         <label for="confirmPassword" class="form-label celeste-vpm">Confirmar contraseña</label>
                         <input type="Password" class="form-control" id="confirmPassword" required>
                     </div>
+                    <div class="mb-3">
+                        <label for="img" class="form-label celeste-vpm">Foto de perfil</label>
+                        <input class="form-control" type="file" id="img" name="img" value="">
+                    </div>
                     <div class="mb-3 form-check">
                         <input type="checkbox" class="form-check-input" id="terminos-condiciones">
                         <label class="form-check-label text-light" for="exampleCheck1 celeste-vpm">por la presente reconozco que acepto los Términos y condiciones de BMP y que he leído el Aviso de privacidad .</label>
                     </div>
+                    
                     <div class="d-flex justify-content-center mt-5 mb-5"><button type="submit" class="btn btn-outline-info mb-5 w-50">Registrarse</button>
                     </div>
                 </div>
