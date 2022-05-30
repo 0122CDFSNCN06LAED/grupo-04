@@ -10,7 +10,6 @@ function usuarioLogeado(req, res, next) {
     if(userEnCookie){
         req.session.userLogged = userEnCookie
     }
-    // console.log(userEnCookie)
 
     if (req.session.userLogged) {
         res.locals.isLogged = true;

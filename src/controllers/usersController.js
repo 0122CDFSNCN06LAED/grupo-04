@@ -25,6 +25,9 @@ const controllers = {
 
         if (bcrypt.compareSync(password, usuario.password)) {
             req.session.userLogged = usuario;
+            if (req.body.recordame) {
+              res.cookie("userEmail", req.body.username, { maxAge: 1000 * 60 });
+            };
             res.redirect("../");
         } else {
             res.render("users/login", { error: "Login incorrecto" })
@@ -32,6 +35,7 @@ const controllers = {
 
     },
     logOut: (req, res) => {
+        res.clearCookie("userEmail");
         req.session.userLogged = null;
         res.redirect("../")
 
