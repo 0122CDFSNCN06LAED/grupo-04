@@ -14,33 +14,33 @@
             <div>
                 <h1 class="titulo-fomulario text-center celeste-vpm">Vendé y comprá con <span>BMP</span></h1>
             </div>
-            <form action="/users/register" method="POST" enctype="multipart/form-data">
+            <form method="POST" action="" enctype="multipart/form-data">
                 <div class="row">
                     <div class="mb-3">
                         <label for="username" class="form-label celeste-vpm">Nombre de usuario</label>
-                        <input type="text" class="form-control" id="username" placeholder="Ingrese caracteres alfanuméricos, guiones o guiones bajos" required>
+                        <input type="text" class="form-control" id="username" name="userName" placeholder="Ingrese caracteres alfanuméricos, guiones o guiones bajos" required>
                     </div>
                     <div class="mb-3 col-md-6 col-lg-6">
                         <label for="businessName" class="form-label celeste-vpm">Nombre de la empresa</label>
-                        <input type="text" class="form-control" id="businessName">
+                        <input type="text" class="form-control" id="businessName" name="companyName">
                     </div>
 
                     <div class="mb-3 col-md-6 col-lg-6">
                         <label for="businessId" class="form-label celeste-vpm">Cuit</label>
-                        <input type="text" class="form-control" id="businessId" placeholder="xx-xxxxxxxx-x" required>
+                        <input type="text" class="form-control" id="businessId" name="CUIT" placeholder="xx-xxxxxxxx-x" required>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label celeste-vpm">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="nombre@ejemplo.com.ar" required>
+                        <input type="email" class="form-control" id="exampleInputEmail1" name="email" placeholder="nombre@ejemplo.com.ar" required>
                         <div id="emailHelp" class="form-text text-light">Nunca compartiremos su correo electrónico con nadie más.</div>
                     </div>
                     <div class="mb-3">
                         <label for="exampleInputPassword1" class="form-label celeste-vpm">Contraseña</label>
-                        <input type="password" class="form-control" id="exampleInputPassword1" required>
+                        <input type="password" class="form-control" name="password" id="exampleInputPassword1" required>
                     </div>
                     <div class="mb-3">
-                        <label for="confirmPassword" class="form-label celeste-vpm">Confirmar contraseña</label>
-                        <input type="Password" class="form-control" id="confirmPassword" required>
+                        <label for="contact" class="form-label celeste-vpm">Teléfono</label>
+                        <input type="tel" class="form-control" name="contact" id="contact" required>
                     </div>
                     <div class="mb-3">
                         <label for="img" class="form-label celeste-vpm">Foto de perfil</label>

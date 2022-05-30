@@ -1,9 +1,7 @@
 const { Router } = require("express");
 const usersController = require("../controllers/usersController");
 const path = require("path");
-
 const router = Router();
-
 const multer = require("multer");
 
 const storage = multer.diskStorage({
@@ -11,7 +9,7 @@ const storage = multer.diskStorage({
     const pathForMulter = "public/img/users/avatars/";
     cb(null, pathForMulter);
   },
-  filename: function (req, file, cb) {
+  filename: function(req, file, cb) {
     cb(null, `${Date.now()}${path.extname(file.originalname)}`);
   },
 });

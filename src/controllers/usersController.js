@@ -18,28 +18,21 @@ const controllers = {
         res.render("users/login.ejs", { error: "" });
     },
     loguear: (req, res) => {
-        const emailAndUsername = req.body.username;
+        const email = req.body.username;
         const password = req.body.password;
-        const usuario = users.find((user) => user.email == emailAndUsername || user.userName == emailAndUsername && user.password == password);
+        const usuario = users.find((user) => user.email == email && user.password == password);
 
-        console.log(usuario);
-        
-        
+
         if (usuario == null) {
             res.render("users/login", { error: "Login incorrecto" })
         } else {
             req.session.userLogged = usuario;
-            
-            if(req.body.recordame){
-                res.cookie('userEmail', req.body.username, {maxAge: 1000 * 60})
-            }
-            
-            res.redirect("../")          
-        } 
-            
+            res.redirect("../")
+
+        }
+
     },
     logOut: (req, res) => {
-        res.clearCookie('userEmail');
         req.session.userLogged = null;
         res.redirect("../")
 
@@ -57,8 +50,6 @@ const controllers = {
     store: (req, res) => {
           const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 
-          console.log(req.body)
-
           //chequeamos si enviaron imagen o no
             const acumulador = [];
 
@@ -69,14 +60,19 @@ const controllers = {
             const biggerId = Math.max.apply(null, acumulador);
             const idToAssing = biggerId + 1;
             datosRecibidos.id = idToAssing;
-            datosRecibidos.image = req.file.filename;
+
+            if(req.file) {
+                 datosRecibidos.img = req.file.filename;
+                } else {
+                datosRecibidos.img = "default-avatar.png";
+                };
 
             users.push(datosRecibidos);
             const usersWithNew = JSON.stringify(users);
 
             fs.writeFileSync(usersFilePath, usersWithNew);
 
-            const urlToRedirect = "../";
+            const urlToRedirect = "vendorInfo/" + idToAssing;
             res.redirect(urlToRedirect);
         }
 };
