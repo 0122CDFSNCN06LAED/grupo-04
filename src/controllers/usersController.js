@@ -49,7 +49,6 @@ const controllers = {
     store: (req, res) => {
           const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 
-          //chequeamos si enviaron imagen o no
             const acumulador = [];
 
             for (i = 0; i < users.length; i++) {
@@ -72,8 +71,11 @@ const controllers = {
 
             fs.writeFileSync(usersFilePath, usersWithNew);
 
-            const urlToRedirect = "vendorInfo/" + idToAssing;
-            res.redirect(urlToRedirect);
+            req.session.userLogged = datosRecibidos;
+            res.redirect("../");
+
+            /*const urlToRedirect = "vendorInfo/" + idToAssing;
+            res.redirect(urlToRedirect);*/
         }
 };
 
