@@ -1,8 +1,16 @@
 const path = require("path");
+const fs = require("fs");
+
+const productsFilePath = path.join(__dirname, "../data/products.json");
+const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+
+
 
 module.exports = {
     home: (req, res) => {
-        res.render("index.ejs");
+        res.render("index.ejs", {
+          products,
+        });
     },
     register: (req, res) => {
         res.redirect("users/register");

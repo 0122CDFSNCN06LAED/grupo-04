@@ -8,6 +8,11 @@ main h2 {
     text-align: center;
 }
 
+.img-max-300 {
+    max-height: 300px;
+    max-width: 300px;
+}
+
 .card-title {
     font-size: 18px;
     font-weight: bold;
