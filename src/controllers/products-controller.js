@@ -75,31 +75,34 @@ const controllers = {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 
         //chequeamos si enviaron imagen o no
-        if(req.file) {
+        if (req.file) {
 
-        const acumulador = [];
+            const acumulador = [];
 
-        for (i = 0; i < products.length; i++) {
-          acumulador.push(products[i].id);
-        };
+            for (i = 0; i < products.length; i++) {
+                acumulador.push(products[i].id);
+            };
 
-        const biggerId = Math.max.apply(null, acumulador);
-        const idToAssing = biggerId + 1;
-        datosRecibidos.id = idToAssing;
-        datosRecibidos.image = req.file.filename;
+            const biggerId = Math.max.apply(null, acumulador);
+            const idToAssing = biggerId + 1;
+            datosRecibidos.id = idToAssing;
+            datosRecibidos.image = req.file.filename;
 
-        products.push(datosRecibidos);
-        const productsWithNew = JSON.stringify(products);
+            products.push(datosRecibidos);
+            const productsWithNew = JSON.stringify(products);
 
-        fs.writeFileSync(productsFilePath, productsWithNew);
+            fs.writeFileSync(productsFilePath, productsWithNew);
 
-        const urlToRedirect = "detail/" + idToAssing;
-        res.redirect(urlToRedirect);
+            const urlToRedirect = "detail/" + idToAssing;
+            res.redirect(urlToRedirect);
 
         } else {
             res.render("product-create-form");
         }
 
+    },
+    add: (req, res) => {
+        res.send("agregaste al carrito")
     }
 }
 
