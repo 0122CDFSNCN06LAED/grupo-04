@@ -29,5 +29,10 @@ Traer a las reuniones los puntos a tocar anotados.
 - Dejar de hacer: const niIdea = "ni idea";
 
 
-17/05/2022 - Retro sprint 5
+30/05/2022 - Retro sprint 5
+- Comenzar a hacer: reuniones cortas, 1 vez por semana.
+- Que hacer más: reuniones cortas y estudiar contenido.
+- Continuar haciendo: trabajo en equipo
+- Hacer menos: require("ni-idea") || niIdea;
+- Dejar de hacer: todo a último momento.
 

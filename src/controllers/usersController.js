@@ -1,6 +1,7 @@
 const res = require("express/lib/response");
 const fs = require("fs");
 const path = require("path");
+const bcrypt = require("bcryptjs");
 
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
@@ -20,19 +21,21 @@ const controllers = {
     loguear: (req, res) => {
         const email = req.body.username;
         const password = req.body.password;
-        const usuario = users.find((user) => user.email == email && user.password == password);
+        const usuario = users.find((user) => user.email == email /*&& user.password == password*/);
 
-
-        if (usuario == null) {
-            res.render("users/login", { error: "Login incorrecto" })
-        } else {
+        if (bcrypt.compareSync(password, usuario.password)) {
             req.session.userLogged = usuario;
-            res.redirect("../")
-
-        }
+            if (req.body.recordame) {
+              res.cookie("userEmail", req.body.username, { maxAge: 1000 * 60 });
+            };
+            res.redirect("../");
+        } else {
+            res.render("users/login", { error: "Login incorrecto" })
+        };
 
     },
     logOut: (req, res) => {
+        res.clearCookie("userEmail");
         req.session.userLogged = null;
         res.redirect("../")
 
@@ -50,7 +53,6 @@ const controllers = {
     store: (req, res) => {
           const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 
-          //chequeamos si enviaron imagen o no
             const acumulador = [];
 
             for (i = 0; i < users.length; i++) {
@@ -60,6 +62,7 @@ const controllers = {
             const biggerId = Math.max.apply(null, acumulador);
             const idToAssing = biggerId + 1;
             datosRecibidos.id = idToAssing;
+            datosRecibidos.password = bcrypt.hashSync(datosRecibidos.password, 10);
 
             if(req.file) {
                  datosRecibidos.img = req.file.filename;
@@ -72,8 +75,11 @@ const controllers = {
 
             fs.writeFileSync(usersFilePath, usersWithNew);
 
-            const urlToRedirect = "vendorInfo/" + idToAssing;
-            res.redirect(urlToRedirect);
+            req.session.userLogged = datosRecibidos;
+            res.redirect("../");
+
+            /*const urlToRedirect = "vendorInfo/" + idToAssing;
+            res.redirect(urlToRedirect);*/
         }
 };
 
