@@ -5,14 +5,18 @@
     <%- include("./partials/head.ejs") %>
 
         <link rel="stylesheet" href="/css/productDetail.css">
-        <title> BMP - <%= p.name %> </title>
+        <title> BMP -
+            <%= p.name %>
+        </title>
 </head>
 
 <body>
 
     <%- include("./partials/header.ejs") %>
 
-        <h5 class="pd-description-detail-title">Detalle del producto: <%= p.name %>  </h5>
+        <h5 class="pd-description-detail-title">Detalle del producto:
+            <%= p.name %>
+        </h5>
 
         <section class="product-photo-and-price">
             <div class="card mb-3">
@@ -64,8 +68,12 @@
 
                     <div class="col-md-4">
                         <div class="card-body">
-                            <h5 class="precio-numero pd-price">$ <%= p.price %> </h5>
-                            <p class="card-text product-name"><%= p.name %> </p>
+                            <h5 class="precio-numero pd-price">$
+                                <%= p.price %>
+                            </h5>
+                            <p class="card-text product-name">
+                                <%= p.name %>
+                            </p>
                             <select class="form-select pd-amount" aria-label="Default select example">
                           <option selected>Cantidad: 1  (<%= p.stock %> disponibles)</option>
                           <option value="1">1 unidad</option>
@@ -74,7 +82,12 @@
                           <option value="more-than-3">Más de 3</option>
                         </select>
                             <p class="card-text "><small class="text-green">Envío Gratis</small></p>
-                            <button type="button" class="btn btn-primary">Comprar ahora</button>
+                            <% if(locals.isLogged) {%>
+                                <a href="/products/agregar/<%=p.id%>"> <button type="button" class="btn btn-primary">Comprar ahora</button></a>
+                                <%} else {%>
+                                    <a href="/users/login"> <button type="button" class="btn btn-primary">Comprar ahora</button></a>
+
+                                    <% } %>
                         </div>
                     </div>
                 </div>
@@ -86,8 +99,9 @@
                 <h5 class="pd-vendor-title">Información del vendedor</h5>
                 <div class="pd-vendor-detail">
 
-                    <img src="/img/users/avatars/default-avatar.png" alt="" class="pd-vendor-avatar"> <%= vendor.companyName %> 
-                    <a href="../../users/vendorInfo/<%= vendor.id %> " class="vendor-info">Conocé más información sobre el vendedor</a>
+                    <img src="/img/users/avatars/default-avatar.png" alt="" class="pd-vendor-avatar">
+                    <%= vendor.companyName %>
+                        <a href="../../users/vendorInfo/<%= vendor.id %> " class="vendor-info">Conocé más información sobre el vendedor</a>
                 </div>
             </div>
 
@@ -96,7 +110,7 @@
 
                 <div class="card mb-2 pd-description-detail">
                     <p class="pd-description-detail">
-                        <%= p.description %> 
+                        <%= p.description %>
 
 
                     </p>

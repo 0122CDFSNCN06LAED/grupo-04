@@ -63,32 +63,28 @@
                             </ul>
                         </li>
                         <% } %>
-                        <% if (locals.isLogged) { %>
-                         
-                          <li class="nav-item celeste-vpm">
-                              <a class="nav-link active" aria-current="page" href="/productCar">Carrito</a>
-                         </li>
-                        <% } %>
-                        <% if (!locals.isLogged) { %>
-                         
-                          <li class="nav-item celeste-vpm">
-                              <a class="nav-link active" aria-current="page" href="/users/login">Carrito</a>
-                         </li>
-                        <% } %>
-            <% if(!locals.isLogged){ %> 
-              <li class="nav-item">
-                <a
-                  class="nav-link active creaCuenta"
-                  aria-current="page"
-                  href="/register"
-                  >Creá tu cuenta</a>
-                            </li>
-                            <li class="nav-item celeste-vpm">
-                                <a class="nav-link active" aria-current="page" href="/users/login">Ingresá</a>
-                            </li>
-                            <% } else{ %>
-                                <li class="nav-item celeste-vpm"><a class="nav-link active" aria-current="page" href="/users/logOut">Cerrar sesion</a></li>
+                            <% if (locals.isLogged) { %>
+
+                                <li class="nav-item celeste-vpm">
+                                    <a class="nav-link active" aria-current="page" href="/productCar">Carrito</a>
+                                </li>
                                 <% } %>
+                                    <% if (!locals.isLogged) { %>
+
+                                        <li class="nav-item celeste-vpm">
+                                            <a class="nav-link active" aria-current="page" href="/users/login">Carrito</a>
+                                        </li>
+                                        <% } %>
+                                            <% if(!locals.isLogged){ %>
+                                                <li class="nav-item">
+                                                    <a class="nav-link active creaCuenta" aria-current="page" href="/users/register">Creá tu cuenta</a>
+                                                </li>
+                                                <li class="nav-item celeste-vpm">
+                                                    <a class="nav-link active" aria-current="page" href="/users/login">Ingresá</a>
+                                                </li>
+                                                <% } else{ %>
+                                                    <li class="nav-item celeste-vpm"><a class="nav-link active" aria-current="page" href="/users/logOut">Cerrar sesion</a></li>
+                                                    <% } %>
                 </ul>
                 <div><span class="navbar-text">
               <form class="d-flex">
