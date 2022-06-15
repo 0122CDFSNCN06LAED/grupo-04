@@ -2,7 +2,7 @@ const res = require("express/lib/response");
 const fs = require("fs");
 const path = require("path");
 const bcrypt = require("bcryptjs");
-
+let db = require("../database/models")
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
 const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
@@ -16,7 +16,17 @@ const controllers = {
         res.render("users/vendorInformation.ejs", { vendorInfo });
     },
     login: (req, res) => {
+
+
+        db.Users.findAll().then((peliculas) => {
+            const mensaje = "Hola";
+            console.log(peliculas);
+
+        })
+        ;
+
         res.render("users/login.ejs", { error: "" });
+
     },
     loguear: (req, res) => {
         const email = req.body.username;
