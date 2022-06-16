@@ -36,3 +36,9 @@ Traer a las reuniones los puntos a tocar anotados.
 - Hacer menos: require("ni-idea") || niIdea;
 - Dejar de hacer: todo a último momento.
 
+16/06 daily sprint 6
+-reunion para contarnos como vamos avanzando en el proyecto tanto en lo individual y en lo grupal. 
+-comentamos cosas a modificar, puntos que nos quedan por terminar.
+-divinos tareas
+-revisamos middlware de logeo(preguntar a profesores en la clase)
+-acordamos proxima reunion 22/06 para la retro del sprint.
