@@ -14,7 +14,7 @@ module.exports = (sequelize, dataTypes) => {
       timestamps: false,
     };
 
-    const UserCategirie = sequelize.define(alias, cols, config)
+    const UserCategiry = sequelize.define(alias, cols, config)
 
-    return UserCategirie;
+    return UserCategiry;
 }

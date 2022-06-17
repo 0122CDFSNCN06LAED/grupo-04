@@ -1,4 +1,4 @@
-module.exports = (sequelize, dataTypes) => {
+module.exports = (sequelize, dgitataTypes) => {
     let alias = "Users";
     let cols = {
       id: {
