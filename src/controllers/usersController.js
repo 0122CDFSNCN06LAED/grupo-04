@@ -18,9 +18,8 @@ const controllers = {
     login: (req, res) => {
 
 
-        db.Users.findAll().then((peliculas) => {
-            const mensaje = "Hola";
-            console.log(peliculas);
+        db.Users.findAll().then((users) => {
+            console.log(users);
 
         })
         ;
