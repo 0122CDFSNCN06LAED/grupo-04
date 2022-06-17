@@ -8,11 +8,9 @@ module.exports = (sequelize, dataTypes) => {
       },
       product_id: {
         type: dataTypes.INTEGER,
-        primaryKey: true,
       },
       productCategories_id: {
         type: dataTypes.INTEGER,
-        primaryKey: true,
       },
     };
     let config = {
