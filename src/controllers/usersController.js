@@ -10,86 +10,90 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 
 const controllers = {
-    vendorInformation: (req, res) => {
-        const idBuscado = req.params.id;
-        const vendorInfo = users.find((user) => user.id == idBuscado);
-        res.render("users/vendorInformation.ejs", { vendorInfo });
-    },
-    login: (req, res) => {
+  vendorInformation: (req, res) => {
+    const idBuscado = req.params.id;
+    const vendorInfo = users.find((user) => user.id == idBuscado);
+    res.render("users/vendorInformation.ejs", { vendorInfo });
+  },
+  login: (req, res) => {
+    db.Users.findAll().then((users) => {
+      console.log(users);
+    });
 
+    res.render("users/login.ejs", { error: "" });
+  },
 
-        db.Users.findAll().then((users) => {
-            console.log(users);
+  test: (req, res) => {
+    db.Users.findAll({include: 
+        [{ association: 'usersCategories'
+    }]
+    }).then((users) => {
+        res.render("users/usersTest.ejs", { usuarios: users});
+    });
+     },
+     
+  loguear: (req, res) => {
+    const email = req.body.username;
+    const password = req.body.password;
+    const usuario = users.find(
+      (user) => user.email == email /*&& user.password == password*/
+    );
 
-        })
-        ;
+    if (bcrypt.compareSync(password, usuario.password)) {
+      req.session.userLogged = usuario;
+      if (req.body.recordame) {
+        res.cookie("userEmail", req.body.username, { maxAge: 1000 * 60 });
+      }
+      res.redirect("../");
+    } else {
+      res.render("users/login", { error: "Login incorrecto" });
+    }
+  },
+  logOut: (req, res) => {
+    res.clearCookie("userEmail");
+    req.session.userLogged = null;
+    res.redirect("../");
+  },
 
-        res.render("users/login.ejs", { error: "" });
+  register: (req, res) => {
+    if (req.session.userLogged) {
+      res.redirect("../");
+    } else {
+      res.render("users/register");
+    }
+  },
 
-    },
-    loguear: (req, res) => {
-        const email = req.body.username;
-        const password = req.body.password;
-        const usuario = users.find((user) => user.email == email /*&& user.password == password*/);
+  store: (req, res) => {
+    const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 
-        if (bcrypt.compareSync(password, usuario.password)) {
-            req.session.userLogged = usuario;
-            if (req.body.recordame) {
-              res.cookie("userEmail", req.body.username, { maxAge: 1000 * 60 });
-            };
-            res.redirect("../");
-        } else {
-            res.render("users/login", { error: "Login incorrecto" })
-        };
+    const acumulador = [];
 
-    },
-    logOut: (req, res) => {
-        res.clearCookie("userEmail");
-        req.session.userLogged = null;
-        res.redirect("../")
+    for (i = 0; i < users.length; i++) {
+      acumulador.push(users[i].id);
+    }
 
-    },
+    const biggerId = Math.max.apply(null, acumulador);
+    const idToAssing = biggerId + 1;
+    datosRecibidos.id = idToAssing;
+    datosRecibidos.password = bcrypt.hashSync(datosRecibidos.password, 10);
 
-    register: (req, res) => {
-        if (req.session.userLogged) {
-            res.redirect("../");
-        } else {
-            res.render("users/register");
-        }
+    if (req.file) {
+      datosRecibidos.img = req.file.filename;
+    } else {
+      datosRecibidos.img = "default-avatar.png";
+    }
 
-    },
+    users.push(datosRecibidos);
+    const usersWithNew = JSON.stringify(users);
 
-    store: (req, res) => {
-          const datosRecibidos = JSON.parse(JSON.stringify(req.body));
+    fs.writeFileSync(usersFilePath, usersWithNew);
 
-            const acumulador = [];
+    req.session.userLogged = datosRecibidos;
+    res.redirect("../");
 
-            for (i = 0; i < users.length; i++) {
-              acumulador.push(users[i].id);
-            }
-
-            const biggerId = Math.max.apply(null, acumulador);
-            const idToAssing = biggerId + 1;
-            datosRecibidos.id = idToAssing;
-            datosRecibidos.password = bcrypt.hashSync(datosRecibidos.password, 10);
-
-            if(req.file) {
-                 datosRecibidos.img = req.file.filename;
-                } else {
-                datosRecibidos.img = "default-avatar.png";
-                };
-
-            users.push(datosRecibidos);
-            const usersWithNew = JSON.stringify(users);
-
-            fs.writeFileSync(usersFilePath, usersWithNew);
-
-            req.session.userLogged = datosRecibidos;
-            res.redirect("../");
-
-            /*const urlToRedirect = "vendorInfo/" + idToAssing;
+    /*const urlToRedirect = "vendorInfo/" + idToAssing;
             res.redirect(urlToRedirect);*/
-        }
+  },
 };
 
 module.exports = controllers;

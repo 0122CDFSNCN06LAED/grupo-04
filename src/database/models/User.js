@@ -1,4 +1,4 @@
-module.exports = (sequelize, dgitataTypes) => {
+module.exports = (sequelize, dataTypes) => {
     let alias = "Users";
     let cols = {
       id: {
@@ -40,6 +40,14 @@ module.exports = (sequelize, dgitataTypes) => {
     }
 
     const User = sequelize.define(alias, cols, config)
+
+    User.associate = function(models) {
+      User.belongsTo(models.UserCategories, {
+        as: "usersCategories",
+        foreignKey: "usercategory_id",
+      });
+    }
+
 
     return User;
 }

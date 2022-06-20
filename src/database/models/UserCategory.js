@@ -10,11 +10,20 @@ module.exports = (sequelize, dataTypes) => {
         type: dataTypes.STRING,
       }    };
     let config = {
-      tableName: "usersuserCategories",
+      tableName: "userCategories",
       timestamps: false,
     };
 
-    const UserCategiry = sequelize.define(alias, cols, config)
+    const UserCategory = sequelize.define(alias, cols, config)
 
-    return UserCategiry;
+     UserCategory.associate = function (models) {
+       UserCategory.hasMany(models.Users, {
+         as: "users",
+         foreignKey: "usercategory_id",
+       });
+     };
+
+
+
+    return UserCategory;
 }

@@ -42,3 +42,7 @@ Traer a las reuniones los puntos a tocar anotados.
 -divinos tareas
 -revisamos middlware de logeo(preguntar a profesores en la clase)
 -acordamos proxima reunion 22/06 para la retro del sprint.
+
+20/4 daily sprint 6
+Reunión sincronica en la que se trabajó en conjunto configurando las relaciones de los modelos de sequelize
+Próxima reunión: mañana para revisar como quedaron todos los modelos
