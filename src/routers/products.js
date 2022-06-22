@@ -21,7 +21,7 @@ const uploadFile = multer({ storage });
 
 
 // /products 
-router.get("/", productsController.index);
+router.get("/", productsController.list);
 router.get("/create", productsController.create);
 router.post("/create", uploadFile.single("img"), productsController.store)
 router.get("/edit/:id", productsController.edit);

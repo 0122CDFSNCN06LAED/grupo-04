@@ -43,7 +43,7 @@ CREATE TABLE products (
 	productImages VARCHAR(100),
 	brand_id INT,
 	PRIMARY KEY (id),
-    FOREIGN KEY (brand_id) REFERENCES brands(id)
+    FOREIGN KEY (brand_id) REFERENCES brands(id),
 	FOREIGN KEY (productSubCategory_id) REFERENCES productSubCategories(id)
 );
 

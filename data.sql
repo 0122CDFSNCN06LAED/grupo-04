@@ -8,17 +8,17 @@ insert into brands (id, name) values
 (7, 'Skidoo'),
 (8, 'Browsedrive'),
 (9, 'Izio'),
-(10, 'Skinix')
+(10, 'Skinix');
 
 insert into productcategories (id, name, description) values (1, 'almacen', 'blablablabla'),
  (2, 'Herramientas', 'blablablabla'),
  (3, 'libreria', 'blablablabla'),
  (4, 'muebles', 'blablablabla'),
  (5, 'tecnologia', 'blablablabla'),
- (6, 'Vestimenta', 'blablablabla')
+ (6, 'Vestimenta', 'blablablabla');
  
  insert into usercategories (id, type) values (1, 'admin'),
-(2, 'normal')
+(2, 'normal');
 
 insert into productsubcategories (id, name, description, productCategory_id) values (1, 'nombre de subcategoria', 'blablablabla', 6),
  (2, 'nombre de subcategoria', 'blablablabla', 3),
@@ -49,7 +49,7 @@ insert into productsubcategories (id, name, description, productCategory_id) val
  (27, 'nombre de subcategoria25', 'blablablabla', 1),
  (28, 'nombre de subcategoria76', 'blablablabla', 6),
  (29, 'nombre de subcategoria135', 'blablablabla', 5),
- (30, 'nombre de subcategoria345', 'blablablabla', 3)
+ (30, 'nombre de subcategoria345', 'blablablabla', 3);
  
  insert into models (id, brand_id, name, description) values (1, 8, 'Nombre de modelo825', 'descripcion de modelo'),
 (2, 5, 'Nombre de modelo289', 'descripcion de modelo'),
@@ -80,9 +80,9 @@ insert into productsubcategories (id, name, description, productCategory_id) val
 (27, 7, 'Nombre de modelo651', 'descripcion de modelo'),
 (28, 3, 'Nombre de modelo475', 'descripcion de modelo'),
 (29, 10, 'Nombre de modelo218', 'descripcion de modelo'),
-(30, 5, 'Nombre de modelo028', 'descripcion de modelo')
+(30, 5, 'Nombre de modelo028', 'descripcion de modelo');
 
-insert into products (id, productCategory_id, productSubCategory_id, productName, price, minBuy, productImages, brand_id) values 
+insert into products (id, productCategory_id, productSubCategory, productName, price, minBuy, productImages, brand_id) values 
  (1, 2, 6, 'Nombre del Producto584', 45334, 11, 'http://dummyimage.com/141x100.png/cc0000/ffffff', 2),
  (2, 1, 6, 'Nombre del Producto260', 8091, 6, 'http://dummyimage.com/237x100.png/cc0000/ffffff', 5),
  (3, 2, 5, 'Nombre del Producto911', 40081, 22, 'http://dummyimage.com/154x100.png/5fa2dd/ffffff', 7),
@@ -112,7 +112,7 @@ insert into products (id, productCategory_id, productSubCategory_id, productName
  (27, 6, 3, 'Nombre del Producto846', 50561, 11, 'http://dummyimage.com/166x100.png/ff4444/ffffff', 8),
  (28, 5, 4, 'Nombre del Producto874', 35775, 21, 'http://dummyimage.com/184x100.png/5fa2dd/ffffff', 7),
  (29, 1, 5, 'Nombre del Producto026', 84660, 13, 'http://dummyimage.com/146x100.png/ff4444/ffffff', 5),
- (30, 2, 2, 'Nombre del Producto200', 66883, 10, 'http://dummyimage.com/203x100.png/cc0000/ffffff', 2)
+ (30, 2, 2, 'Nombre del Producto200', 66883, 10, 'http://dummyimage.com/203x100.png/cc0000/ffffff', 2);
  
  insert into users (id, userName, firstName, lastName, email, cuit, companyName, phoneNumber, password, companyImg, usercategory_id) values  
  (1, 'cblasgen0', 'Caty', 'Blasgen', 'cblasgen0@columbia.edu', 828437021, 'Rodriguez, Bednar and Bergstrom', 615252920, 'N1USyJKtQ3cm', 'http://dummyimage.com/216x100.png/ff4444/ffffff', 2),
@@ -144,7 +144,7 @@ insert into products (id, productCategory_id, productSubCategory_id, productName
  (27, 'rbirdq', 'Risa', 'Bird', 'rbirdq@foxnews.com', 163005138, 'Haag, Barrows and Wisoky', 291066788, 'qJQmaADxwv', 'http://dummyimage.com/141x100.png/dddddd/000000', 2),
  (28, 'cworvillr', 'Caria', 'Worvill', 'cworvillr@soundcloud.com', 997046829, 'Metz Inc', 853272157, 'rHQmFjoEaCpZ', 'http://dummyimage.com/236x100.png/cc0000/ffffff', 2),
  (29, 'efontanets', 'Edvard', 'Fontanet', 'efontanets@economist.com', 320952409, 'Anderson, Waelchi and DuBuque', 980216407, '6lWn1B5q', 'http://dummyimage.com/199x100.png/cc0000/ffffff', 2),
- (30, 'rmarchingtont', 'Ryon', 'Marchington', 'rmarchingtont@twitter.com', 627527342, 'Boehm LLC', 634717067, 'FX48i5z', 'http://dummyimage.com/123x100.png/5fa2dd/ffffff', 2)
+ (30, 'rmarchingtont', 'Ryon', 'Marchington', 'rmarchingtont@twitter.com', 627527342, 'Boehm LLC', 634717067, 'FX48i5z', 'http://dummyimage.com/123x100.png/5fa2dd/ffffff', 2);
 
  
  insert into products_productcategories (id, product_id, productCategories_id) values (1, 1, 4),
@@ -176,7 +176,7 @@ insert into products (id, productCategory_id, productSubCategory_id, productName
  (27, 27, 4),
  (28, 28, 2),
  (29, 29, 2),
- (30, 30, 2)
+ (30, 30, 2);
  
  insert into buydetail (id, product_id, quantity, user_id, operation_id, price) values (1, 24, 39, 5, 1, 782185),
  (2, 14, 52, 29, 2, 97377),
@@ -185,7 +185,7 @@ insert into products (id, productCategory_id, productSubCategory_id, productName
  (5, 17, 17, 8, 5, 390978),
  (6, 4, 45, 28, 6, 275367),
  (7, 23, 8, 16, 7, 996158),
- (8, 19, 21, 14, 8, 409312)
+ (8, 19, 21, 14, 8, 409312);
  
  insert into favoriteproducts (id, product_id, user_id) values (1, 19, 26),
 (2, 24, 30),
@@ -196,7 +196,7 @@ insert into products (id, productCategory_id, productSubCategory_id, productName
 (7, 5, 3),
 (8, 4, 12),
 (9, 5, 29),
-(10, 27, 29)
+(10, 27, 29);
 
 insert into productcar (id, product_id, quantity, user_id) values (1, 16, 3, 13),
 (2, 9, 2, 20),
@@ -212,7 +212,7 @@ insert into productcar (id, product_id, quantity, user_id) values (1, 16, 3, 13)
 (12, 23, 7, 28),
 (13, 25, 1, 26),
 (14, 4, 11, 25),
-(15, 27, 18, 24)
+(15, 27, 18, 24);
 
 
 
