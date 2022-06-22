@@ -36,7 +36,7 @@ CREATE TABLE brands (
 CREATE TABLE products (
 	id INT NOT NULL,
 	productCategory_id INT NOT NULL,
-	productSubCategory INT,
+	productSubCategory_id INT,
 	productName VARCHAR(100),
 	price FLOAT,
 	minBuy INT,
@@ -44,6 +44,7 @@ CREATE TABLE products (
 	brand_id INT,
 	PRIMARY KEY (id),
     FOREIGN KEY (brand_id) REFERENCES brands(id)
+	FOREIGN KEY (productSubCategory_id) REFERENCES productSubCategories(id)
 );
 
 
