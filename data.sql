@@ -82,7 +82,7 @@ insert into productSubCategories (id, name, description, productCategory_id) val
 (29, 10, 'Nombre de modelo218', 'descripcion de modelo'),
 (30, 5, 'Nombre de modelo028', 'descripcion de modelo');
 
-insert into products (id, productCategory_id, productSubCategory, productName, price, minBuy, productImages, brand_id) values 
+insert into products (id, productCategory_id, productSubCategory_id, productName, price, minBuy, productImages, brand_id) values 
  (1, 2, 6, 'Nombre del Producto584', 45334, 11, 'http://dummyimage.com/141x100.png/cc0000/ffffff', 2),
  (2, 1, 6, 'Nombre del Producto260', 8091, 6, 'http://dummyimage.com/237x100.png/cc0000/ffffff', 5),
  (3, 2, 5, 'Nombre del Producto911', 40081, 22, 'http://dummyimage.com/154x100.png/5fa2dd/ffffff', 7),
