@@ -33,6 +33,22 @@ CREATE TABLE brands (
 	PRIMARY KEY (id)
 );
 
+CREATE TABLE productCategories (
+	id INT NOT NULL,
+	name varchar(50),
+	description varchar(150),
+	PRIMARY KEY (id)
+);
+
+CREATE TABLE productSubCategories (
+	id INT NOT NULL,
+	name VARCHAR(50),
+	description VARCHAR(100),
+	productCategory_id INT,
+	PRIMARY KEY (id),
+    FOREIGN KEY (productCategory_id) REFERENCES productCategories(id)	
+);
+
 CREATE TABLE products (
 	id INT NOT NULL,
 	productCategory_id INT NOT NULL,
@@ -43,7 +59,7 @@ CREATE TABLE products (
 	productImages VARCHAR(100),
 	brand_id INT,
 	PRIMARY KEY (id),
-    FOREIGN KEY (brand_id) REFERENCES brands(id)
+    FOREIGN KEY (brand_id) REFERENCES brands(id),
 	FOREIGN KEY (productSubCategory_id) REFERENCES productSubCategories(id)
 );
 
@@ -70,13 +86,6 @@ CREATE TABLE buyDetail (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE productCategories (
-	id INT NOT NULL,
-	name varchar(50),
-	description varchar(150),
-	PRIMARY KEY (id)
-);
-
 CREATE TABLE products_productCategories (
 	id INT NOT NULL,
 	product_id INT,
@@ -95,17 +104,6 @@ CREATE TABLE favoriteProducts (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-
-
-
-CREATE TABLE productSubCategories (
-	id INT NOT NULL,
-	name VARCHAR(50),
-	description VARCHAR(100),
-	productCategory_id INT,
-	PRIMARY KEY (id),
-    FOREIGN KEY (productCategory_id) REFERENCES productCategories(id)	
-);
 
 CREATE TABLE models (
 	id INT NOT NULL,
