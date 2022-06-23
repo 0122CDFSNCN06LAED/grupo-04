@@ -46,3 +46,10 @@ Traer a las reuniones los puntos a tocar anotados.
 20/4 daily sprint 6
 Reunión sincronica en la que se trabajó en conjunto configurando las relaciones de los modelos de sequelize
 Próxima reunión: mañana para revisar como quedaron todos los modelos
+
+
+22/06 retro sprint 6
+COMENZAR A HACER :ponernos al dia con las tareas pendiente del sprint
+SEGUIR HACIENDO: trabajo en equipo, comunicacion activa. 
+DEJAR DE HACER: como equipo tenemos que avanzar progresivamente una vez lanzado el sprint  
+
