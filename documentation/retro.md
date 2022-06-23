@@ -53,3 +53,5 @@ COMENZAR A HACER :ponernos al dia con las tareas pendiente del sprint
 SEGUIR HACIENDO: trabajo en equipo, comunicacion activa. 
 DEJAR DE HACER: como equipo tenemos que avanzar progresivamente una vez lanzado el sprint  
 
+23/06 daily grupal
+-Acordamos reunion para tratar temas sobre el proyecto, avanzar en dudas sobre el mismo de manera conjunta. En este caso se avanza sobre relaciones pendientes de la DB. Quedamos en arreglar proxima reunion en base a disponibilidad de horarios.
