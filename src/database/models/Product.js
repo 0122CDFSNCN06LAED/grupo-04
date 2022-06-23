@@ -28,9 +28,18 @@ module.exports = (sequelize, dataTypes) => {
     let config = {
         tableName: "products",
         timestamps: false
-    }
+    };
 
-    const Product = sequelize.define(alias, cols, config)
+    const Product = sequelize.define(alias, cols, config);
+
+    Product.associate = function (models) {
+      Product.belongsToMany(models.ProductCategories, {
+        as: "ProductCategories",
+        through: "products_productCategories",
+        foreignKey: "product_id",
+        otherKey: "productCategories_id",
+        timestamps: false,
+      })};
 
     return Product;
 }
