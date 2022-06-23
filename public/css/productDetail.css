@@ -89,3 +89,12 @@
   margin-left: 20px;
   color: blue;
 }
+
+.btn-add-to-cart{
+  background-color: #1a1a1a;
+  color: white;
+}
+.btn-add-to-cart:hover{
+  border-color: #4DC6BE;
+  color: white;
+}
