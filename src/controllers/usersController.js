@@ -14,8 +14,8 @@ const controllers = {
     const idBuscado = req.params.id;
     db.Users.findByPk(idBuscado).then((vendorInfo) => {
       res.render("users/vendorInformation.ejs", { vendorInfo });
-    });
-    
+    }).catch(res.send("Hubo un error en la consulta"));  
+    //Falta validar que ID que llegue sea correcto
   },
   login: (req, res) => {
     db.Users.findAll().then((users) => {
