@@ -12,8 +12,10 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 const controllers = {
   vendorInformation: (req, res) => {
     const idBuscado = req.params.id;
-    const vendorInfo = users.find((user) => user.id == idBuscado);
-    res.render("users/vendorInformation.ejs", { vendorInfo });
+    db.Users.findByPk(idBuscado).then((vendorInfo) => {
+      res.render("users/vendorInformation.ejs", { vendorInfo });
+    });
+    
   },
   login: (req, res) => {
     db.Users.findAll().then((users) => {
