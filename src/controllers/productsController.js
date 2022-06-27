@@ -21,13 +21,13 @@ const controllers = {
         ).then(function(products) {
 
             console.log(products);
-            res.render("productsList.ejs", { products })
+            res.render("products/productsList.ejs", { products })
         })
 
     },
 
     create: (req, res) => {
-        res.render("product-create-form");
+        res.render("products/product-create-form");
     },
 
     edit: (req, res) => {
@@ -36,7 +36,7 @@ const controllers = {
         })
 
 
-        res.render("product-edit-form", { p: producto[0] });
+        res.render("products/product-edit-form", { p: producto[0] });
     },
 
     update: (req, res) => {
@@ -77,7 +77,10 @@ const controllers = {
             (vendor) => vendor.id == vendorID
         );
 
-        res.render("productDetail", { p: productDetail, vendor: vendor });
+        res.render("products/productDetail", {
+          p: productDetail,
+          vendor: vendor,
+        });
 
     },
 
@@ -107,7 +110,7 @@ const controllers = {
             res.redirect(urlToRedirect);
 
         } else {
-            res.render("product-create-form");
+            res.render("products/product-create-form");
         }
 
     },
