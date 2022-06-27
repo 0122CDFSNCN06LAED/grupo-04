@@ -32,14 +32,32 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
 
-    Product.associate = function (models) {
-      Product.belongsToMany(models.ProductCategories, {
-        as: "ProductCategories",
-        through: "products_productCategories",
-        foreignKey: "product_id",
-        otherKey: "productCategories_id",
-        timestamps: false,
-      })};
+    Product.associate = function(models) {
+        Product.hasMany(models.ProductsSubCategories, {
+            as: "productos_subcategorias",
+            through: "products_productSubCategories",
+            foreignKey: "product_id",
+            otherKey: "productSubCategories_id",
+            timestamps: false,
+        });
+        Product.belongsTo(models.models, {
+            as: "modelosDeProducto",
+            foreignKey: "model_id",
+        });
+        Product.hasMany(models.users, {
+            as: "productosFavoritos",
+            through: "favoriteproducts",
+            foreignKey: "product_id",
+            otherKey: "user_id",
+            timestamps: false,
+        });
+        Product.hasMany(models.products, {
+            as: "detalleCompra_producto",
+            foreignKey: "product_id",
+
+        });
+
+    };
 
     return Product;
 }

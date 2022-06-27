@@ -51,18 +51,23 @@ CREATE TABLE productSubCategories (
 
 CREATE TABLE products (
 	id INT NOT NULL AUTO_INCREMENT,
-	productCategory_id INT NOT NULL,
-	productSubCategory_id INT,
 	productName VARCHAR(100),
 	price FLOAT,
 	minBuy INT,
 	productImages VARCHAR(100),
-	brand_id INT,
+	models_id INT,
 	PRIMARY KEY (id),
-    FOREIGN KEY (brand_id) REFERENCES brands(id),
-	FOREIGN KEY (productSubCategory_id) REFERENCES productSubCategories(id)
+   FOREIGN KEY (models_id) REFERENCES models(id)
 );
 
+CREATE TABLE products_productSubCategories (
+	id INT NOT NULL AUTO_INCREMENT,
+	product_id INT,
+	productSubCategories_id INT,
+	PRIMARY KEY (id),
+    FOREIGN KEY (product_id) REFERENCES products(id),
+    FOREIGN KEY (productSubCategories_id) REFERENCES productSubCategories(id)
+);
 
 CREATE TABLE productCar (
 	id INT NOT NULL AUTO_INCREMENT,
@@ -86,14 +91,7 @@ CREATE TABLE buyDetail (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
-CREATE TABLE products_productCategories (
-	id INT NOT NULL AUTO_INCREMENT,
-	product_id INT,
-	productCategories_id INT,
-	PRIMARY KEY (id),
-    FOREIGN KEY (product_id) REFERENCES products(id),
-    FOREIGN KEY (productCategories_id) REFERENCES productCategories(id)
-);
+
 
 CREATE TABLE favoriteProducts (
 	id INT NOT NULL AUTO_INCREMENT,
