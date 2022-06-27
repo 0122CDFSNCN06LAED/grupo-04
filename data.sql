@@ -82,7 +82,7 @@ insert into productSubCategories (id, name, description, productCategory_id) val
 (29, 10, 'Nombre de modelo218', 'descripcion de modelo'),
 (30, 5, 'Nombre de modelo028', 'descripcion de modelo');
 
-insert into products (id, productCategory_id, productSubCategory_id, productName, price, minBuy, productImages, brand_id) values 
+insert into products (id, productName, price, minBuy, productImages, models_id) values 
  (1, 1, 6, 'Azucar 1kg', 300, 10, 'azucar.jpg', 2),
  (2, 1, 6, 'Azucar Ledesma 1000 sobres', 500, 5, 'azucarEnSobre.jpg', 5),
  (3, 1, 5, 'Cafe Molido Bonafide Sensaciones Intenso Torrado', 2000, 20, 'cafe.jpg', 7),
@@ -150,7 +150,7 @@ insert into products (id, productCategory_id, productSubCategory_id, productName
  (30, 'rmarchingtont', 'Ryon', 'Marchington', 'rmarchingtont@twitter.com', 627527342, 'Boehm LLC', 634717067, 'FX48i5z', 'http://dummyimage.com/123x100.png/5fa2dd/ffffff', 2);
 
  
- insert into products_productCategories (id, product_id, productCategories_id) values (1, 1, 4),
+ insert into products_productSubCategories (id, product_id, productSubCategories_id) values (1, 1, 4),
  (2, 2, 2),
  (3, 3, 3),
  (4, 4, 2),
