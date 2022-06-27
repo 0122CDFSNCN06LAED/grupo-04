@@ -1,8 +1,6 @@
-DROP DATABASE IF EXISTS bmp;
 CREATE DATABASE bmp;
 USE bmp;
 
-DROP TABLE IF EXISTS userCategories;
 
 CREATE TABLE userCategories (
 	id INT NOT NULL AUTO_INCREMENT,
@@ -47,6 +45,15 @@ CREATE TABLE productSubCategories (
 	productCategory_id INT,
 	PRIMARY KEY (id),
     FOREIGN KEY (productCategory_id) REFERENCES productCategories(id)	
+);
+
+CREATE TABLE models (
+	id INT NOT NULL AUTO_INCREMENT,
+	brand_id INT,
+	name VARCHAR(50),
+	description VARCHAR(100),
+	PRIMARY KEY (id),
+    FOREIGN KEY (brand_id) REFERENCES brands(id)
 );
 
 CREATE TABLE products (
@@ -100,14 +107,4 @@ CREATE TABLE favoriteProducts (
 	PRIMARY KEY (id),
     FOREIGN KEY (product_id) REFERENCES products(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
-);
-
-
-CREATE TABLE models (
-	id INT NOT NULL AUTO_INCREMENT,
-	brand_id INT,
-	name VARCHAR(50),
-	description VARCHAR(100),
-	PRIMARY KEY (id),
-    FOREIGN KEY (brand_id) REFERENCES brands(id)
 );
