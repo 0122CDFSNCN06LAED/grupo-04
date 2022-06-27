@@ -5,13 +5,13 @@ USE bmp;
 DROP TABLE IF EXISTS userCategories;
 
 CREATE TABLE userCategories (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	type VARCHAR(50),
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE users (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	userName VARCHAR(50) NOT NULL,
 	firstName VARCHAR(50),
 	lastName VARCHAR(50),
@@ -19,7 +19,7 @@ CREATE TABLE users (
 	cuit INT NOT NULL,
 	companyName VARCHAR(50)NOT NULL,
 	phoneNumber INT,
-	password VARCHAR(16) NOT NULL,
+	password VARCHAR(80) NOT NULL,
 	companyImg VARCHAR(100),
 	usercategory_id INT NOT NULL,
 	PRIMARY KEY (id),
@@ -28,20 +28,20 @@ CREATE TABLE users (
 );
 
 CREATE TABLE brands (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	name varchar(50),
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE productCategories (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	name varchar(50),
 	description varchar(150),
 	PRIMARY KEY (id)
 );
 
 CREATE TABLE productSubCategories (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	name VARCHAR(50),
 	description VARCHAR(100),
 	productCategory_id INT,
@@ -50,7 +50,7 @@ CREATE TABLE productSubCategories (
 );
 
 CREATE TABLE products (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	productCategory_id INT NOT NULL,
 	productSubCategory_id INT,
 	productName VARCHAR(100),
@@ -65,7 +65,7 @@ CREATE TABLE products (
 
 
 CREATE TABLE productCar (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	product_id INT NOT NULL,
 	quantity INT NOT NULL,
 	user_id INT NOT NULL,
@@ -75,7 +75,7 @@ CREATE TABLE productCar (
 );
 
 CREATE TABLE buyDetail (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	product_id INT,
 	quantity INT,
 	user_id INT,
@@ -87,7 +87,7 @@ CREATE TABLE buyDetail (
 );
 
 CREATE TABLE products_productCategories (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	product_id INT,
 	productCategories_id INT,
 	PRIMARY KEY (id),
@@ -96,7 +96,7 @@ CREATE TABLE products_productCategories (
 );
 
 CREATE TABLE favoriteProducts (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	product_id INT,
 	user_id INT,
 	PRIMARY KEY (id),
@@ -106,7 +106,7 @@ CREATE TABLE favoriteProducts (
 
 
 CREATE TABLE models (
-	id INT NOT NULL,
+	id INT NOT NULL AUTO_INCREMENT,
 	brand_id INT,
 	name VARCHAR(50),
 	description VARCHAR(100),

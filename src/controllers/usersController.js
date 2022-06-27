@@ -17,6 +17,7 @@ const controllers = {
     }).catch(res.send("Hubo un error en la consulta"));  
     //Falta validar que ID que llegue sea correcto
   },
+  
   login: (req, res) => {
     db.Users.findAll().then((users) => {
       console.log(users);
@@ -66,7 +67,35 @@ const controllers = {
   },
 
   store: (req, res) => {
-    const datosRecibidos = JSON.parse(JSON.stringify(req.body));
+    var img = null;
+
+    if (req.file) {
+      img = req.file.filename;
+    } else {
+      img = "default-avatar.png";
+    }
+
+    const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+
+
+    db.Users.create({
+      userName: req.body.userName,
+      email: req.body.email,
+      cuit: req.body.cuit,
+      password: hashedPassword,
+      companyName: req.body.companyName,
+      phoneNumber: req.body.contact,
+      companyImg: img,
+      usercategory_id: 1,
+    })
+      .then(() => {
+        const datosRecibidos = JSON.parse(JSON.stringify(req.body));
+        req.session.userLogged = datosRecibidos;
+        res.redirect("../");
+      })
+      .catch((error) => console.log(error));
+
+    /*const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 
     const acumulador = [];
 
@@ -90,8 +119,7 @@ const controllers = {
 
     fs.writeFileSync(usersFilePath, usersWithNew);
 
-    req.session.userLogged = datosRecibidos;
-    res.redirect("../");
+    
 
     /*const urlToRedirect = "vendorInfo/" + idToAssing;
             res.redirect(urlToRedirect);*/
