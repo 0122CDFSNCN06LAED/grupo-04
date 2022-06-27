@@ -56,6 +56,7 @@ CREATE TABLE models (
     FOREIGN KEY (brand_id) REFERENCES brands(id)
 );
 
+
 CREATE TABLE products (
 	id INT NOT NULL AUTO_INCREMENT,
 	productName VARCHAR(100),
@@ -97,7 +98,6 @@ CREATE TABLE buyDetail (
     FOREIGN KEY (product_id) REFERENCES products(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
-
 
 
 CREATE TABLE favoriteProducts (
