@@ -35,11 +35,12 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "product_id",
 
         });
-        buyDetail.hasMany(models.users, {
-            as: "detalleCompra_usuario",
-            foreignKey: "user_id",
 
+        buyDetail.belongsTo(models.Orders, {
+            as: "buyDetail_order",
+            foreignKey: "buyDetail_id",
         });
+
     }
     return buyDetail;
 }

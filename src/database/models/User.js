@@ -54,6 +54,10 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "product_id",
             timestamps: false,
         });
+        User.hasMany(models.Orders, {
+            as: "userOrders",
+            foreignKey: "user_id",
+        });
     }
 
 
