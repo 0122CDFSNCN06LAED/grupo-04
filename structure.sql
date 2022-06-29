@@ -77,7 +77,7 @@ CREATE TABLE products_productSubCategories (
     FOREIGN KEY (productSubCategories_id) REFERENCES productSubCategories(id)
 );
 
-CREATE TABLE productCar (
+CREATE TABLE productCart (
 	id INT NOT NULL AUTO_INCREMENT,
 	product_id INT NOT NULL,
 	quantity INT NOT NULL,

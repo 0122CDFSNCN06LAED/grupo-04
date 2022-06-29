@@ -40,18 +40,18 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "productSubCategories_id",
             timestamps: false,
         });
-        Product.belongsTo(models.models, {
+        Product.belongsTo(models.Models, {
             as: "modelosDeProducto",
             foreignKey: "model_id",
         });
-        Product.hasMany(models.users, {
+        Product.hasMany(models.Users, {
             as: "productosFavoritos",
             through: "favoriteproducts",
             foreignKey: "product_id",
             otherKey: "user_id",
             timestamps: false,
         });
-        Product.hasMany(models.products, {
+        Product.hasMany(models.Products, {
             as: "detalleCompra_producto",
             foreignKey: "product_id",
 
