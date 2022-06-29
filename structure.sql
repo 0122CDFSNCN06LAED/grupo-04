@@ -91,12 +91,11 @@ CREATE TABLE buyDetail (
 	id INT NOT NULL AUTO_INCREMENT,
 	product_id INT,
 	quantity INT,
-	user_id INT,
-	operation_id INT,
+	order_id INT,
 	price FLOAT,
 	PRIMARY KEY (id),
     FOREIGN KEY (product_id) REFERENCES products(id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+    FOREIGN KEY (order_id) REFERENCES orders(id)
 );
 
 
@@ -106,5 +105,16 @@ CREATE TABLE favoriteProducts (
 	user_id INT,
 	PRIMARY KEY (id),
     FOREIGN KEY (product_id) REFERENCES products(id),
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+CREATE TABLE orders (
+	id INT NOT NULL AUTO_INCREMENT,
+	buyDetail_id INT,
+	user_id INT,
+	total FLOAT,  
+	ordeDate DATETIME,
+	PRIMARY KEY (id),
+    FOREIGN KEY (buyDetail_id) REFERENCES buyDetail(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
