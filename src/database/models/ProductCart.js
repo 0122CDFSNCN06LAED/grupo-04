@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "ProductCar";
+    let alias = "ProductCart";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -17,7 +17,7 @@ module.exports = (sequelize, dataTypes) => {
         }
     };
     let config = {
-        tableName: "productCar",
+        tableName: "productCart",
         timestamps: false,
     };
 

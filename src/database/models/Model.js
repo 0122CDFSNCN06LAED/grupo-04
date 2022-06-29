@@ -21,17 +21,16 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
     };
 
+
     const Models = sequelize.define(alias, cols, config);
 
 
     Models.associate = function(models) {
-
         Models.belongsTo(models.Brands, {
             as: "marcas",
             foreignKey: "brand_id",
         })
     };
-
-
     return Models;
+
 }
