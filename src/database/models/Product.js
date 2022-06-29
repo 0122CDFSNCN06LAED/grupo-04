@@ -6,9 +6,6 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        productCategory_id: {
-            type: dataTypes.INTEGER,
-        },
         productName: {
             type: dataTypes.STRING,
         },
@@ -21,9 +18,7 @@ module.exports = (sequelize, dataTypes) => {
         productImages: {
             type: dataTypes.STRING,
         },
-        brand_id: {
-            type: dataTypes.INTEGER,
-        }
+
     };
     let config = {
         tableName: "products",
@@ -40,11 +35,11 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "productSubCategories_id",
             timestamps: false,
         });
-        Product.belongsTo(models.models, {
+        Product.belongsTo(models.Models, {
             as: "modelosDeProducto",
             foreignKey: "model_id",
         });
-        Product.belongsToMany(models.users, {
+        Product.belongsToMany(models.Users, {
             as: "productosFavoritos",
             through: "favoriteproducts",
             foreignKey: "product_id",

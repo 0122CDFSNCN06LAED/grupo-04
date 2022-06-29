@@ -21,18 +21,18 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
     };
 
-    const productCar = sequelize.define(alias, cols, config);
+    const ProductCar = sequelize.define(alias, cols, config);
     ProductCar.associate = function(models) {
-        ProductCar.hasMany(models.product, {
+        ProductCar.hasMany(models.Products, {
             as: "productCar",
             foreignKey: "product_id",
 
         });
-        ProductCar.hasMany(models.users, {
+        ProductCar.hasMany(models.Users, {
             as: "productCarUsers",
             foreignKey: "user_id",
 
         });
     }
-    return productCar;
+    return ProductCar;
 }

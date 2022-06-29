@@ -14,6 +14,7 @@ module.exports = (sequelize, dataTypes) => {
         },
         productCategory_id: {
             type: dataTypes.INTEGER,
+            foreignKey: true,
         },
     };
     let config = {
@@ -24,7 +25,7 @@ module.exports = (sequelize, dataTypes) => {
     const productSubCategories = sequelize.define(alias, cols, config);
 
     productSubCategories.associate = function(models) {
-        productSubCategories.hasMany(models.Products, {
+        productSubCategories.belongsToMany(models.Products, {
             as: "subcategorias_productos",
             through: "products_productSubCategories",
             foreignKey: "productSubcategories_id",

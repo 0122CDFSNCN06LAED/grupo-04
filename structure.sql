@@ -110,11 +110,9 @@ CREATE TABLE favoriteProducts (
 
 CREATE TABLE orders (
 	id INT NOT NULL AUTO_INCREMENT,
-	buyDetail_id INT,
 	user_id INT,
 	total FLOAT,  
 	ordeDate DATETIME,
 	PRIMARY KEY (id),
-    FOREIGN KEY (buyDetail_id) REFERENCES buyDetail(id),
-    FOREIGN KEY (user_id) REFERENCES users(id)
+ FOREIGN KEY (user_id) REFERENCES users(id)
 );

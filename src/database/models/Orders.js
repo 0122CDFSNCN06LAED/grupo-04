@@ -14,9 +14,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.DATE,
 
         },
-        buyDetail_id: {
-            type: dataTypes.STRING,
-        },
         user_id: {
             type: dataTypes.STRING,
         }
@@ -29,12 +26,12 @@ module.exports = (sequelize, dataTypes) => {
     const Orders = sequelize.define(alias, cols, config)
 
     Orders.associate = function(models) {
-        Orders.belongsTo(models.User, {
+        Orders.belongsTo(models.Users, {
             as: "orderUser",
             foreignKey: "user_id",
         });
 
-        Orders.hasMany(models.buyDetail, {
+        Orders.hasMany(models.BuyDetail, {
             as: "order_buyDetail",
             foreignKey: "buyDetail_id",
         });

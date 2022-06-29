@@ -11,17 +11,14 @@ const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
 const controllers = {
     list: (req, res) => {
-        db.Products.findAll({
-            include : [
-                {
-                    association: "ProductCategories"
-                }
-            ]}
+        db.Products.findAll(
 
         ).then(function(products) {
 
             console.log(products);
             res.render("products/productsList.ejs", { products })
+        }).catch(error => {
+            console.log(error)
         })
 
     },
@@ -78,8 +75,8 @@ const controllers = {
         );
 
         res.render("products/productDetail", {
-          p: productDetail,
-          vendor: vendor,
+            p: productDetail,
+            vendor: vendor,
         });
 
     },
