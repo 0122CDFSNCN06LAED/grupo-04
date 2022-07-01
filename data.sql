@@ -117,7 +117,7 @@ insert into products (id, productName, price, minBuy, productImages, models_id) 
  (29, 'Remera Clásica Manga Corta Blanca', 4000, 10, 'remeraLisa.jpg', 29),
  (30, 'Resma A4 Papel Autor 75grs 500 Hojas', 2500, 4, 'cajaHojasA4.jpg', 30),
  (31, 'Birome Bic Opaca En Caja X50 Unid', 1423, 10, 'cajaLapiceras.jpg', 31),
- (32, 'Cartuchos Epson Original T206 Negro + Col Combo 206', 15234, 5, 'cartuchos.jpg', 32)
+ (32, 'Cartuchos Epson Original T206 Negro + Col Combo 206', 15234, 5, 'cartuchos.jpg', 32),
  (33, 'Casaca De Cocina Unisex Edulchef Mangas Cortas', 66883, 5, 'uniformeCocina.jpg', 33);
  
  insert into users (id, userName, firstName, lastName, email, cuit, companyName, phoneNumber, password, companyImg, userCategory_id) values  
@@ -188,16 +188,16 @@ insert into products (id, productName, price, minBuy, productImages, models_id) 
  (33, 33, 23);  
 
  insert into orders (id, user_id, total, orderDate) values 
- (1, 1, 54000, 2022-07-03),
- (2, 1, 21000, 2022-04-18),
-(3, 4, 114400, 2022-12-04),
- (4, 4, 35700, 2022-01-15);
+ (1, 1, 54000, '2021-07-03'),
+ (2, 1, 21000, '2021-04-18'),
+(3, 4, 114400, '2021-12-04'),
+ (4, 4, 35700, '2021-01-15');
  
- insert into buyDetail (id, product_id, quantity, order_id, price) 
- values (1, 24, 10, 4, 1, 35700),
- (2, 14, 5, 29, 2, 21000),
- (3, 12, 15, 14, 3, 114400),
- (4, 10, 10, 1, 4, 35700):
+insert into buyDetail (id, product_id, quantity, order_id, price) values 
+(1, 24, 10, 1, 35700),
+ (2, 14, 5, 2, 21000),
+ (3, 12, 15,  3, 114400),
+ (4, 10, 10, 4, 35700);
  
  insert into favoriteProducts (id, product_id, user_id) values (1, 19, 26),
 (2, 24, 30),
@@ -210,7 +210,7 @@ insert into products (id, productName, price, minBuy, productImages, models_id) 
 (9, 5, 29),
 (10, 27, 29);
 
-insert into productCart (id, product_id, quantity, user_id) values (1, 16, 3, 13),
+insert into productcart  (id, product_id, quantity, user_id) values (1, 16, 3, 13),
 (2, 9, 2, 20),
 (3, 9, 3, 3),
 (4, 27, 5, 7),
