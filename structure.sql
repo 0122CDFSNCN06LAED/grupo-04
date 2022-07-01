@@ -87,6 +87,15 @@ CREATE TABLE productCart (
     FOREIGN KEY (user_id) REFERENCES users(id)
 );
 
+CREATE TABLE orders (
+	id INT NOT NULL AUTO_INCREMENT,
+	user_id INT,
+	total FLOAT,  
+	orderDate DATETIME,
+	PRIMARY KEY (id),
+ FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
 CREATE TABLE buyDetail (
 	id INT NOT NULL AUTO_INCREMENT,
 	product_id INT,
@@ -98,7 +107,6 @@ CREATE TABLE buyDetail (
     FOREIGN KEY (order_id) REFERENCES orders(id)
 );
 
-
 CREATE TABLE favoriteProducts (
 	id INT NOT NULL AUTO_INCREMENT,
 	product_id INT,
@@ -106,13 +114,4 @@ CREATE TABLE favoriteProducts (
 	PRIMARY KEY (id),
     FOREIGN KEY (product_id) REFERENCES products(id),
     FOREIGN KEY (user_id) REFERENCES users(id)
-);
-
-CREATE TABLE orders (
-	id INT NOT NULL AUTO_INCREMENT,
-	user_id INT,
-	total FLOAT,  
-	ordeDate DATETIME,
-	PRIMARY KEY (id),
- FOREIGN KEY (user_id) REFERENCES users(id)
 );
