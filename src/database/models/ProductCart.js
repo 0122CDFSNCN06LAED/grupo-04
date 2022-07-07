@@ -6,9 +6,9 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        product_id: {
+        /*product_id: {
             type: dataTypes.INTEGER,
-        },
+        },*/
         quantity: {
             type: dataTypes.INTEGER,
         },
@@ -22,7 +22,7 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const ProductCar = sequelize.define(alias, cols, config);
-    ProductCar.associate = function(models) {
+   /* ProductCar.associate = function(models) {
         ProductCar.hasMany(models.Products, {
             as: "productCar",
             foreignKey: "product_id",
@@ -33,6 +33,6 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "user_id",
 
         });
-    }
+    } */
     return ProductCar;
 }

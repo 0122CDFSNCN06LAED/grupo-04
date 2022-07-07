@@ -6,9 +6,9 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        product_id: {
+        /*product_id: {
             type: dataTypes.INTEGER,
-        },
+        },*/
         quantity: {
             type: dataTypes.INTEGER,
         },
@@ -30,11 +30,11 @@ module.exports = (sequelize, dataTypes) => {
     const buyDetail = sequelize.define(alias, cols, config);
 
     buyDetail.associate = function(models) {
-        buyDetail.hasMany(models.Products, {
+        /* buyDetail.hasMany(models.Products, {
             as: "detalleCompra_producto",
             foreignKey: "product_id",
 
-        });
+        }); */
 
         buyDetail.belongsTo(models.Orders, {
             as: "buyDetail_order",

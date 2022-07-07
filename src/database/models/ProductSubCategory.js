@@ -24,7 +24,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const productSubCategories = sequelize.define(alias, cols, config);
 
-    productSubCategories.associate = function(models) {
+   productSubCategories.associate = function(models) {
         productSubCategories.belongsToMany(models.Products, {
             as: "subcategorias_productos",
             through: "products_productSubCategories",
@@ -38,5 +38,6 @@ module.exports = (sequelize, dataTypes) => {
 
         })
     };
+    
     return productSubCategories;
 }

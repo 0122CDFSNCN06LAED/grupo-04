@@ -1,25 +1,25 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "Products";
     let cols = {
-        id: {
-            type: dataTypes.INTEGER,
-            primaryKey: true,
-            autoIncrement: true,
-        },
-        productName: {
-            type: dataTypes.STRING,
-        },
-        price: {
-            type: dataTypes.FLOAT,
-        },
-        minBuy: {
-            type: dataTypes.INTEGER,
-        },
-        productImages: {
-            type: dataTypes.STRING,
-        },
-
+      id: {
+        type: dataTypes.INTEGER,
+        primaryKey: true,
+        autoIncrement: true,
+      },
+      productName: {
+        type: dataTypes.STRING,
+      },
+      price: {
+        type: dataTypes.FLOAT,
+      },
+      productImages: {
+        type: dataTypes.STRING,
+      },
+      productImages: {
+        type: dataTypes.STRING,
+      }
     };
+
     let config = {
         tableName: "products",
         timestamps: false
@@ -27,7 +27,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
 
-    Product.associate = function(models) {
+    /* Product.associate = function(models) {
         Product.belongsToMany(models.ProductsSubCategories, {
             as: "productos_subcategorias",
             through: "products_productSubCategories",
@@ -52,7 +52,7 @@ module.exports = (sequelize, dataTypes) => {
 
         });
 
-    };
+    }; */
 
     return Product;
 }
