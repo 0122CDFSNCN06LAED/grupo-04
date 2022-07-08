@@ -1,23 +1,24 @@
 module.exports = (sequelize, dataTypes) => {
     let alias = "Products";
     let cols = {
-      id: {
-        type: dataTypes.INTEGER,
-        primaryKey: true,
-        autoIncrement: true,
-      },
-      productName: {
-        type: dataTypes.STRING,
-      },
-      price: {
-        type: dataTypes.FLOAT,
-      },
-      productImages: {
-        type: dataTypes.STRING,
-      },
-      productImages: {
-        type: dataTypes.STRING,
-      }
+        id: {
+            type: dataTypes.INTEGER,
+            primaryKey: true,
+            autoIncrement: true,
+        },
+        productName: {
+            type: dataTypes.STRING,
+        },
+        price: {
+            type: dataTypes.FLOAT,
+        },
+        productImages: {
+            type: dataTypes.STRING,
+        },
+
+        productImages: {
+            type: dataTypes.STRING,
+        }
     };
 
     let config = {
@@ -27,7 +28,7 @@ module.exports = (sequelize, dataTypes) => {
 
     const Product = sequelize.define(alias, cols, config);
 
-    /* Product.associate = function(models) {
+    Product.associate = function(models) {
         Product.belongsToMany(models.ProductsSubCategories, {
             as: "productos_subcategorias",
             through: "products_productSubCategories",
@@ -37,11 +38,11 @@ module.exports = (sequelize, dataTypes) => {
         });
         Product.belongsTo(models.Models, {
             as: "modelosDeProducto",
-            foreignKey: "model_id",
+            foreignKey: "models_id",
         });
         Product.belongsToMany(models.Users, {
             as: "productosFavoritos",
-            through: "favoriteproducts",
+            through: "favoriteProducts",
             foreignKey: "product_id",
             otherKey: "user_id",
             timestamps: false,
@@ -52,7 +53,7 @@ module.exports = (sequelize, dataTypes) => {
 
         });
 
-    }; */
+    };
 
     return Product;
 }

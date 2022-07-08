@@ -30,11 +30,11 @@ module.exports = (sequelize, dataTypes) => {
     const buyDetail = sequelize.define(alias, cols, config);
 
     buyDetail.associate = function(models) {
-        /* buyDetail.hasMany(models.Products, {
+        buyDetail.belongsTo(models.Products, {
             as: "detalleCompra_producto",
             foreignKey: "product_id",
 
-        }); */
+        });
 
         buyDetail.belongsTo(models.Orders, {
             as: "buyDetail_order",

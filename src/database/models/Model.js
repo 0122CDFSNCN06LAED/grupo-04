@@ -29,7 +29,9 @@ module.exports = (sequelize, dataTypes) => {
         Models.belongsTo(models.Brands, {
             as: "marcas",
             foreignKey: "brand_id",
-        })
+        });
+
+
     };
     return Models;
 
