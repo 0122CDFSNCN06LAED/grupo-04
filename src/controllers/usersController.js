@@ -14,13 +14,13 @@ const controllers = {
     const idBuscado = req.params.id;
     db.Users.findByPk(idBuscado).then((vendorInfo) => {
       res.render("users/vendorInformation.ejs", { vendorInfo });
-    }).catch(res.send("Hubo un error en la consulta"));  
+    })//.catch(res.send("Hubo un error en la consulta"));  
     //Falta validar que ID que llegue sea correcto
   },
   
   login: (req, res) => {
     db.Users.findAll().then((users) => {
-      console.log(users);
+      //console.log(users);
     });
 
     res.render("users/login.ejs", { error: "" });
@@ -35,22 +35,32 @@ const controllers = {
     });
      },
      
-  loguear: (req, res) => {
-    const email = req.body.username;
+  loguear: async (req, res) => {
+    const emailRecibido = req.body.username;
     const password = req.body.password;
-    const usuario = users.find(
-      (user) => user.email == email /*&& user.password == password*/
-    );
+    
+    const resultado = await db.Users.findAll({
+      where: {
+        email: emailRecibido,
+      }
+    });
 
-    if (bcrypt.compareSync(password, usuario.password)) {
-      req.session.userLogged = usuario;
+    
+      if (true /* bcrypt.compareSync(password, resultado.password) */) {
+      req.session.userLogged = emailRecibido;
+        console.log(resultado);
+        console.log(password);
+
       if (req.body.recordame) {
         res.cookie("userEmail", req.body.username, { maxAge: 1000 * 60 });
       }
       res.redirect("../");
+      
     } else {
       res.render("users/login", { error: "Login incorrecto" });
-    }
+    };
+
+     
   },
   logOut: (req, res) => {
     res.clearCookie("userEmail");
