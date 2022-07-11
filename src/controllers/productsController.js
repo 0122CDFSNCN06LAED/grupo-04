@@ -21,10 +21,17 @@ const controllers = {
             console.log(error)
         })
 
+
     },
 
     create: (req, res) => {
-        res.render("products/product-create-form");
+        db.Models.findAll().then((modelos) => {
+            db.ProductCategories.findAll().then((categories) => {
+                res.render("products/product-create-form", { m: modelos, c: categories })
+            })
+
+        })
+
     },
 
     edit: (req, res) => {
@@ -83,6 +90,28 @@ const controllers = {
 
     store: (req, res) => {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
+        db.Products.create({
+
+            productName: datosRecibidos.productName,
+            price: datosRecibidos.price,
+            minBuy: datosRecibidos.minBuy,
+            productImages: '',
+            models_id: datosRecibidos.models,
+
+
+        }).then((producto) => {
+            db.productos_subcategorias.create({
+                product_id: producto,
+                productSubCategories_id: datosRecibidos.category
+            }).then((productCategory) => {
+                res.redirect("/")
+            })
+        })
+
+    },
+    store2: (req, res) => {
+        const datosRecibidos = JSON.parse(JSON.stringify(req.body));
+
 
         //chequeamos si enviaron imagen o no
         if (req.file) {

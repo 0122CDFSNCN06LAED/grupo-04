@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <%- include("./partials/head.ejs") %>
+    <%- include("../partials/head.ejs") %>
         <link rel="stylesheet" href="/css/home.css" />
         <link rel="stylesheet" href="/css/formularios.css" />
         <title>Crear un nuevo producto</title>
 </head>
 
 <body class="bg-black">
-    <%- include("./partials/header.ejs") %>
+    <%- include("../partials/header.ejs") %>
         <main class="container m-15 mb-10">
 
             <form action="/products/create" method="POST" enctype="multipart/form-data">
@@ -21,16 +21,14 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label celeste-vpm" for="name">Nombre del producto</label>
-                        <input class="form-control" type=" text " id="name " name="name" value="">
+                        <input class="form-control" type=" text " id="name " name="productName" value="">
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label celeste-vpm" for="vendor">Vendedor</label>
-                        <select name="vendor" id="vendor" class="form-control">
-                            <option value="1">DISTRIBUIDORA LH</option>
-                            <option value="2">MASAFERRO</option>
-                            <option value="3">INFORMATICA-SANTIAGO</option>
-                            <option value="4">RICKY-&-ROLL</option>
-                            <option value="5">BIG-WORLD-IT</option>
+                        <label class="form-label celeste-vpm" for="models">Modelo</label>
+                        <select name="models" id="models" class="form-control">
+                            <% for(let i=0; i<m.length; i++){ %> 
+                               <option value="<%= m[i].id %> "><%= m[i].name %></option> 
+                                <% } %> 
                         </select>
                     </div>
                     <div class="col-md-6">
@@ -42,27 +40,24 @@
                         <input class="form-control" type="text" id="minBuy" name="minBuy" value="">
                     </div>
 
-                    <div class="col-md-6"><label class="form-label celeste-vpm" for="stock">Stock</label>
+                    <!-- <div class="col-md-6"><label class="form-label celeste-vpm" for="stock">Stock</label>
                         <input class="form-control" type=" text " id="stock " name="stock" value="">
-                    </div>
+                    </div>-->
 
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="category">Categoria</label>
                         <select name="category" id="category" class="form-control">
-                            <option value="almacen">Almacen</option>
-                            <option value="herramientas">Herramientas</option>
-                            <option value="libreria">Librería</option>
-                            <option value="muebles">Muebles</option>
-                            <option value="tecnologia">Tecnología</option>
-                            <option value="vestimenta">Vestimenta</option>
+                            <% for(let i=0; i<c.length; i++){ %> 
+                               <option value="<%= c[i].id %> "><%= c[i].name %></option> 
+                                <% } %> 
                         </select>
                     </div>
 
-                    <div class="col-md-6">
+                    <!--  <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="description">Descripción</label>
                         <textarea class="form-control" type="text" id="description" name="description"></textarea>
                     </div>
-
+-->
                     <div class="col-md-6"><label class="form-label celeste-vpm" for="img">Imagen</label>
                         <input class="form-control" type="file" id="img" name="img" value="">
                     </div>
@@ -74,7 +69,7 @@
 
 
         </main>
-        <%- include("./partials/footer.ejs") %>
+        <%- include("../partials/footer.ejs") %>
 </body>
 
 </html>

@@ -12,13 +12,16 @@ module.exports = (sequelize, dataTypes) => {
         price: {
             type: dataTypes.FLOAT,
         },
+        minBuy: {
+            type: dataTypes.INTEGER,
+        },
         productImages: {
             type: dataTypes.STRING,
         },
-
-        productImages: {
-            type: dataTypes.STRING,
+        models_id: {
+            type: dataTypes.INTEGER,
         }
+
     };
 
     let config = {
