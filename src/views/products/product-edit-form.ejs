@@ -2,14 +2,14 @@
 <html lang="en">
 
 <head>
-    <%- include("./partials/head.ejs") %>
+    <%- include("../partials/head.ejs") %>
         <link rel="stylesheet" href="/css/home.css" />
         <link rel="stylesheet" href="/css/formularios.css" />
         <title>Editar producto</title>
 </head>
 
 <body class="bg-black">
-    <%- include("./partials/header.ejs") %>
+    <%- include("../partials/header.ejs") %>
         <main class="container m-15 mb-10">
 
             <form action="/products/edit/<%=p.id%>?_method=PUT" method="POST">
@@ -20,11 +20,19 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label celeste-vpm" for="name">Nombre del producto</label>
-                        <input class="form-control" type=" text " id="name " name="name " value="<%=p .name %> ">
+                        <input class="form-control" type=" text " id="name " name="name " value="<%=p .productName %> ">
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label celeste-vpm" for="ventor">Vendedor</label>
-                        <input class="form-control" type="text" id="vendor" name="vendor" value="<%= p.vendor %>">
+                        <label class="form-label celeste-vpm" for="models">Modelo</label>
+                        <select name="models" id="models" class="form-control">
+                            <% for(let i=0; i<m.length; i++){ %> 
+                                <% if(m[i].id === p.models_id){ %>
+                                    <option value="<%= m[i].id %> " selected="selected"><%= m[i].name %></option> 
+                                <% }else{ %>
+                                   <option value="<%= m[i].id %> "><%= m[i].name %></option> 
+    
+                                <% } } %> 
+                        </select>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="price">Precio</label>
@@ -34,21 +42,16 @@
                         <label class="form-label celeste-vpm" for="minBuy">Minimo a comprar</label>
                         <input class="form-control" type="text" id="minBuy" name="minBuy" value="<%= p.minBuy %>">
                     </div>
-
-                    <div class="col-md-6"><label class="form-label celeste-vpm" for="stock">Stock</label>
-                        <input class="form-control" type=" text " id="stock " name="stock " value="<%=p .stock %>">
-                    </div>
-
                     <div class="col-md-6">
-                        <label class="form-label celeste-vpm" for="category">Categoria</label>
-                        <input class="form-control" type="text" id="category" name="category" value="<%= p.category %>">
-                    </div>
+                        <label class="form-label celeste-vpm" for="category">SubCategoria</label>
+                        <select name="category" id="category" class="form-control">
+                            <% for(let i=0; i<c.length; i++){ %> 
+                                
 
-                    <div class="col-md-6">
-                        <label class="form-label celeste-vpm" for="description">description</label>
-                        <textarea class="form-control" type="text" id="description"><%= p.description %>"</textarea>
+                               <option value="<%= c[i].id %> "><%= c[i].name %></option> 
+                                <% } %> 
+                        </select> 
                     </div>
-
                     <div class="col-md-6"><label class="form-label celeste-vpm" for="img">Imagen</label>
                         <input class="form-control" type="file" id="img" name="img" value="<%= p.img %>">
                     </div>
@@ -62,7 +65,7 @@
 
 
         </main>
-        <%- include("./partials/footer.ejs") %>
+        <%- include("../partials/footer.ejs") %>
 </body>
 
 </html>

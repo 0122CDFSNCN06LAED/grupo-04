@@ -26,7 +26,7 @@ const controllers = {
 
     create: (req, res) => {
         db.Models.findAll().then((modelos) => {
-            db.ProductCategories.findAll().then((categories) => {
+            db.ProductSubCategory.findAll().then((categories) => {
                 res.render("products/product-create-form", { m: modelos, c: categories })
             })
 
@@ -35,12 +35,25 @@ const controllers = {
     },
 
     edit: (req, res) => {
-        let producto = products.filter(function(x) {
-            return x.id == req.params.id
-        })
+        db.Products.findAll({
+            include : [
+                { model: db.ProductsSubCategories, as: 'Subcategories' }
+            ]
 
-
-        res.render("products/product-edit-form", { p: producto[0] });
+        }
+        
+        ).then((products)=>{
+            let producto = products.filter(function(x) {
+                return x.id == req.params.id
+            })
+            db.Models.findAll().then((modelos) => {
+                db.ProductSubCategory.findAll().then((categories) => {
+                    
+                    res.render("products/product-edit-form", { p: producto[0], m: modelos, c: categories })
+                })
+            })
+        });
+   
     },
 
     update: (req, res) => {
@@ -64,11 +77,36 @@ const controllers = {
     },
 
     destroy: (req, res) => {
-        let productosNuevos = products.filter(function(x) {
-            return x.id != req.params.id
+        db.ProductsSubCategories.destroy({
+            where: {
+                product_id : req.params.id
+            }
+        }).then(()=>{
+            db.ProProductCartducts.destroy({
+                where: {
+                    product_id : req.params.id
+                }
+            }).then(()=>{
+                db.FavoriteProducs.destroy({
+                    where: {
+                        product_id : req.params.id
+                    }
+                }).then(()=>{
+                    db.Products.destroy({
+                        where: {
+                            product_id : req.params.id
+                        }
+                    }).then(()=>{
+                        res.redirect("/products")
+                    })
+            
+                })     
+            })
+    
         })
-        fs.writeFileSync(productsFilePath, JSON.stringify(productosNuevos, null, ' '));
-        res.redirect("/products")
+
+        
+        
     },
 
     detail: (req, res) => {
@@ -97,11 +135,11 @@ const controllers = {
             minBuy: datosRecibidos.minBuy,
             productImages: '',
             models_id: datosRecibidos.models,
-
+            
 
         }).then((producto) => {
-            db.productos_subcategorias.create({
-                product_id: producto,
+            db.ProductsSubCategories.create({
+                product_id: producto.id,
                 productSubCategories_id: datosRecibidos.category
             }).then((productCategory) => {
                 res.redirect("/")

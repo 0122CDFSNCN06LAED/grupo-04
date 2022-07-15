@@ -46,11 +46,17 @@
 
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="category">Categoria</label>
+                        <!--
+                         <% for(let i=0; i<c.length; i++){ %> 
+                            <input type="checkbox" id="cat<%= c[i].id %>"><%= c[i].name %><br>
+                             
+                        <% } %> 
+                        -->
                         <select name="category" id="category" class="form-control">
                             <% for(let i=0; i<c.length; i++){ %> 
                                <option value="<%= c[i].id %> "><%= c[i].name %></option> 
                                 <% } %> 
-                        </select>
+                        </select> 
                     </div>
 
                     <!--  <div class="col-md-6">

@@ -1,5 +1,5 @@
 module.exports = (sequelize, dataTypes) => {
-    let alias = "ProductsSubCategories";
+    let alias = "ProductSubCategory";
     let cols = {
         id: {
             type: dataTypes.INTEGER,
@@ -22,22 +22,22 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
     };
 
-    const productSubCategories = sequelize.define(alias, cols, config);
+    const productSubCategory = sequelize.define(alias, cols, config);
 
-   productSubCategories.associate = function(models) {
-        productSubCategories.belongsToMany(models.Products, {
+   productSubCategory.associate = function(models) {
+    productSubCategory.belongsToMany(models.Products, {
             as: "subcategorias_productos",
             through: "products_productSubCategories",
             foreignKey: "productSubcategories_id",
             otherKey: "product_id",
             timestamps: false,
         });
-        productSubCategories.belongsTo(models.ProductCategories, {
+        productSubCategory.belongsTo(models.ProductCategories, {
             as: "subCategorias_cateogriaProductos",
             foreignKey: "productCategory_id",
 
         })
     };
     
-    return productSubCategories;
+    return productSubCategory;
 }
