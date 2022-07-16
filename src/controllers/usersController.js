@@ -19,9 +19,9 @@ const controllers = {
   },
   
   login: (req, res) => {
-    db.Users.findAll().then((users) => {
+   /*  db.Users.findAll().then((users) => {
       //console.log(users);
-    });
+    }); */
 
     res.render("users/login.ejs", { error: "" });
   },
@@ -45,11 +45,12 @@ const controllers = {
       }
     });
 
+      if (resultado[0] == undefined) {
+        res.render("users/login", { error: "Login incorrecto" });
+      } else {
     
-      if (true /* bcrypt.compareSync(password, resultado.password) */) {
-      req.session.userLogged = emailRecibido;
-        console.log(resultado);
-        console.log(password);
+      if (bcrypt.compareSync(password, resultado[0].password)) {
+      req.session.userLogged = resultado[0];
 
       if (req.body.recordame) {
         res.cookie("userEmail", req.body.username, { maxAge: 1000 * 60 });
@@ -59,7 +60,7 @@ const controllers = {
     } else {
       res.render("users/login", { error: "Login incorrecto" });
     };
-
+      }
      
   },
   logOut: (req, res) => {
