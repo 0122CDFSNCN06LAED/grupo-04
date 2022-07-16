@@ -18,7 +18,7 @@ insert into productCategories (id, name, description) values (1, 'almacen', 'bla
  (6, 'Vestimenta', 'blablablabla');
  
  insert into userCategories (id, type) values (1, 'admin'),
-(2, 'normal');
+(2, 'user');
 
 insert into productSubCategories (id, name, description, productCategory_id) values (1, 'nombre de subcategoria', 'blablablabla', 6),
  (2, 'nombre de subcategoria', 'blablablabla', 3),
@@ -121,7 +121,7 @@ insert into products (id, productName, price, minBuy, productImages, models_id) 
  (33, 'Casaca De Cocina Unisex Edulchef Mangas Cortas', 66883, 5, 'uniformeCocina.jpg', 33);
  
  insert into users (id, userName, firstName, lastName, email, cuit, companyName, phoneNumber, password, companyImg, userCategory_id) values  
- (1, 'cblasgen0', 'Caty', 'Blasgen', 'cblasgen0@columbia.edu', 828437021, 'Rodriguez, Bednar and Bergstrom', 615252920, 'N1USyJKtQ3cm', 'default-avatar.png', 2),
+ (1, 'admin@admin.com', 'admin', 'admin', 'admin@admin.com', 828437021, 'BMP', 615252920, '$2a$10$3JRBBvulx7pqYfMP8vqE.eR7YNBEqSPk4kqDTWu9qCFZy/gki3SyO', 'default-avatar.png', 2),
  (2, 'mmackinder1', 'Milt', 'Mackinder', 'mmackinder1@cdc.gov', 925814942, 'Runolfsson-Padberg', 280428797, '9VyMSEp3', 'default-avatar.png', 2),
  (3, 'nredwing2', 'Noll', 'Redwing', 'nredwing2@apache.org', 795591695, 'Dare, Dietrich and Langosh', 568287395, 'yP3Z5J9TB42x', 'default-avatar.png', 2),
  (4, 'oleahey3', 'Oates', 'Leahey', 'oleahey3@wp.com', 451082677, 'Lebsack, Mayer and Farrell', 362433944, 'DpLAvOOp', 'default-avatar.png', 2),
