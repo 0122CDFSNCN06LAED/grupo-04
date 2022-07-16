@@ -1,14 +1,12 @@
 [
  {
   "id": 1,
-  "name": "Azucar 1kg",
-  "vendor": 1,
   "price": 300,
   "minBuy": 10,
-  "stock": 520,
-  "category": "almacen",
-  "description": "La azúcar mas rica, dulce y saludable que viste en tu vida.",
-  "image": "azucar.jpg"
+  "stock": null,
+  "category": "1 ",
+  "image": "azucar.jpg",
+  "img": ""
  },
  {
   "id": 2,
@@ -155,14 +153,12 @@
  },
  {
   "id": 16,
-  "name": "Silla de escritorio Baires4 Ejecutiva Mesh negra con tapizado de mesh y cuero sintético",
-  "vendor": 2,
-  "price": 55424,
+  "price": 47210,
   "minBuy": 5,
-  "stock": 723,
-  "category": "muebles",
-  "description": "Ajustala a tu medida        Con su ajuste de altura, vas a poder fijar la posición de tu torso respecto a la mesa de trabajo y así vas a conseguir una silla más cómoda al nivel de tus necesidades.                Cuidá tu cuerpo        Los apoyabrazos favorecerán tu postura al escribir y te van a ayudar a incorporarte con mayor facilidad cuando quieras levantarte.                Mantenete en movimiento        Las ruedas te van a permitir moverte y limpiar fácilmente tu espacio. Vas a poder trasladarla sin dificultad cuando lo necesites.Además, al ser giratoria te va a permitir rotar el asiento 360º sin la necesidad de cambiar de posición o moverte del lugar en donde estás.",
-  "image": "sillaEscritorio.webp"
+  "stock": null,
+  "category": "1 ",
+  "image": "sillaEscritorio.webp",
+  "img": ""
  },
  {
   "id": 17,

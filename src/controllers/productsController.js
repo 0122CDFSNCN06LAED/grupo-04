@@ -36,9 +36,9 @@ const controllers = {
 
     edit: (req, res) => {
         db.Products.findAll({
-            include : [
+            /* include : [
                 { model: db.ProductsSubCategories, as: 'Subcategories' }
-            ]
+            ] */
 
         }
         
