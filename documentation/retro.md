@@ -55,3 +55,10 @@ DEJAR DE HACER: como equipo tenemos que avanzar progresivamente una vez lanzado 
 
 23/06 daily grupal
 -Acordamos reunion para tratar temas sobre el proyecto, avanzar en dudas sobre el mismo de manera conjunta. En este caso se avanza sobre relaciones pendientes de la DB. Quedamos en arreglar proxima reunion en base a disponibilidad de horarios.
+
+16/7 daily grupal
+- trabajo conjunto en codigo, limpieza de archivos no funcionales, etc.
+
+17/7 daily grupal
+- modificamos la estructura, data.sql, los modelos y los controllers para simplificar todo en productCategory solamente
+
