@@ -1,7 +1,6 @@
 const fs = require("fs");
 const { url } = require("inspector");
 const path = require("path");
-const { Association } = require("sequelize/types");
 const db = require("../database/models")
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -136,12 +135,12 @@ const controllers = {
 
 
     },
-    detail2: (req, res) => {
+    detail: (req, res) => {
 
-        db.Products.findByPk(req.params.id /* , { include: [{ association: "vendor" }] } */ ).then(producto => { res.render("products/productDetail", { p: producto }) })
+        db.Products.findByPk(req.params.id, { include: [{association: "vendor"}]}).then(producto => { res.render("products/productDetail", { p: producto }) })
 
     },
-    detail: (req, res) => {
+    detail2: (req, res) => {
 
         const idBuscado = req.params.id;
         const productDetail = products.find(producto => producto.id == idBuscado);
