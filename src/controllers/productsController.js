@@ -26,41 +26,38 @@ const controllers = {
 
     create: (req, res) => {
         db.Models.findAll().then((modelos) => {
-            db.ProductSubCategory.findAll().then((categories) => {
+            db.ProductCategories.findAll().then((categories) => {
                 res.render("products/product-create-form", { m: modelos, c: categories })
             })
 
         })
 
     },
-    store: (req, res) => {
+    store: async (req, res) => {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
-        db.Products.create({
+       await db.Products.create({
 
             productName: datosRecibidos.productName,
             price: datosRecibidos.price,
             minBuy: datosRecibidos.minBuy,
             productImages: '',
             models_id: datosRecibidos.models,
+            category_id: datosRecibidos.category
 
 
-        }).then((producto) => {
-            db.ProductsSubCategories.create({
-                product_id: producto.id,
-                productSubCategories_id: datosRecibidos.category
-            }).then((productCategory) => {
-                res.redirect("/")
-            })
-        })
+        });
+        
+        res.redirect("/")
 
     },
 
     edit: (req, res) => {
-        let producto = db.Products.findByPk(req.params.id);
-        let modelos = db.Models.findAll();
-        let categorias = db.Models.findAll();
-        Promise.all().then(([productos, modelos, categorias]) => {
-            res.render("products/product-edit-form", { p: productos, m: modelos, c: categorias })
+        let pedidoProducto = db.Products.findByPk(req.params.id);
+        let pedidoModelos = db.Models.findAll();
+        let pedidoCategorias = db.ProductSubCategory.findAll();
+        Promise.all([pedidoProducto, pedidoModelos, pedidoCategorias])
+        .then(([producto, modelos, categorias]) => {
+            res.render("products/product-edit-form", { p: producto, m: modelos, c: categorias })
         })
 
     },

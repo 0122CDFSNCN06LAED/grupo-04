@@ -1,7 +1,6 @@
 CREATE DATABASE bmp;
 USE bmp;
 
-
 CREATE TABLE userCategories (
 	id INT NOT NULL AUTO_INCREMENT,
 	type VARCHAR(50),
@@ -38,15 +37,6 @@ CREATE TABLE productCategories (
 	PRIMARY KEY (id)
 );
 
-CREATE TABLE productSubCategories (
-	id INT NOT NULL AUTO_INCREMENT,
-	name VARCHAR(50),
-	description VARCHAR(100),
-	productCategory_id INT,
-	PRIMARY KEY (id),
-    FOREIGN KEY (productCategory_id) REFERENCES productCategories(id)	
-);
-
 CREATE TABLE models (
 	id INT NOT NULL AUTO_INCREMENT,
 	brand_id INT,
@@ -64,17 +54,10 @@ CREATE TABLE products (
 	minBuy INT,
 	productImages VARCHAR(100),
 	models_id INT,
+	category_id INT,
 	PRIMARY KEY (id),
-   FOREIGN KEY (models_id) REFERENCES models(id)
-);
-
-CREATE TABLE products_productSubCategories (
-	id INT NOT NULL AUTO_INCREMENT,
-	product_id INT,
-	productSubCategories_id INT,
-	PRIMARY KEY (id),
-    FOREIGN KEY (product_id) REFERENCES products(id),
-    FOREIGN KEY (productSubCategories_id) REFERENCES productSubCategories(id)
+   FOREIGN KEY (models_id) REFERENCES models(id),
+   FOREIGN KEY (category_id) REFERENCES productCategories(id)
 );
 
 CREATE TABLE productCart (
