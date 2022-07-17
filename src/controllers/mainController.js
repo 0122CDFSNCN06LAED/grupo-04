@@ -1,5 +1,6 @@
 const path = require("path");
 const fs = require("fs");
+const db = require("../database/models")
 
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
@@ -8,10 +9,17 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 module.exports = {
     home: (req, res) => {
-        res.render("index.ejs", {
-          products,
-        });
+        db.Products.findAll(
+
+        ).then(function(products) {
+
+            console.log(products);
+            res.render("index.ejs", { products })
+        }).catch(error => {
+            console.log(error)
+        })
     },
+    
     register: (req, res) => {
         res.redirect("users/register");
     },

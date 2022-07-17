@@ -36,26 +36,26 @@
                 <h2>Novedades</h2>
                 <div class="row">
 
-                    <% for (let i = 0; i < products.length; i++) { %>
+                    <% products.forEach(product => { %>
                         <article class="cont-card col-md-3 col-sm-6">
                             <div class="card m-2">
                                 <div class="box-img">
-                                    <img class="article-img" src="/img/articulos/<%=products[i].image%> ">
+                                    <img class="article-img" src="/img/articulos/<%=product.productImages%>">
                                 </div>
                                 <div class="card-body card-description">
 
                                     <div class="d-flex justify-content-around">
                                         <i class="icon-card fa-solid fa-heart fa-2x "></i>
                                         <p class=" card-price ">$
-                                            <%=products[i].price%>
+                                            <%=product.price%>
                                         </p>
                                         <p class="card-discount ">10% off</p>
 
                                     </div>
                                     <div class="sub-card position-relative">
                                         <h3 class="card-title ">
-                                            <a href="../../products/detail/<%= products[i].id %>">
-                                                <%=products[i].name%>
+                                            <a href="../../products/detail/<%= product.id %>">
+                                                <%=product.productName%>
                                             </a>
                                         </h3>
                                     </div>
@@ -63,8 +63,7 @@
                                 </div>
                             </div>
                         </article>
-
-                        <%  }%>
+                        <% }) %>
 
 
 
@@ -80,26 +79,26 @@
             <div class="container">
                 <h2>Ofertas del mes</h2>
                 <div class="row">
-                    <% for (let i = 0; i < products.length; i++) { %>
+                    <% products.forEach(product => { %>
                         <article class="cont-card col-md-3 col-sm-6">
                             <div class="card m-2">
-                                <div style="height: 300px;">
-                                    <img class="card-img-top img-max-300" style="width: 100%; max-height: 100%;" src="/img/articulos/<%=products[i].image%> ">
+                                <div class="box-img">
+                                    <img class="article-img" src="/img/articulos/<%=product.productImages%>">
                                 </div>
                                 <div class="card-body card-description">
 
                                     <div class="d-flex justify-content-around">
                                         <i class="icon-card fa-solid fa-heart fa-2x "></i>
                                         <p class=" card-price ">$
-                                            <%=products[i].price%>
+                                            <%=product.price%>
                                         </p>
                                         <p class="card-discount ">10% off</p>
 
                                     </div>
                                     <div class="sub-card position-relative">
                                         <h3 class="card-title ">
-                                            <a href="../../products/detail/<%= products[i].id %>">
-                                                <%=products[i].name%>
+                                            <a href="../../products/detail/<%= product.id %>">
+                                                <%=product.productName%>
                                             </a>
                                         </h3>
                                     </div>
@@ -107,8 +106,7 @@
                                 </div>
                             </div>
                         </article>
-
-                        <%  }%>
+                        <% }) %>
                 </div>
 
 
