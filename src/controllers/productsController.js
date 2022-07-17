@@ -33,9 +33,9 @@ const controllers = {
         })
 
     },
-    store: async (req, res) => {
+    store: async(req, res) => {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
-       await db.Products.create({
+        await db.Products.create({
 
             productName: datosRecibidos.productName,
             price: datosRecibidos.price,
@@ -46,7 +46,7 @@ const controllers = {
 
 
         });
-        
+
         res.redirect("/")
 
     },
@@ -56,9 +56,9 @@ const controllers = {
         let pedidoModelos = db.Models.findAll();
         let pedidoCategorias = db.ProductCategories.findAll();
         Promise.all([pedidoProducto, pedidoModelos, pedidoCategorias])
-        .then(([producto, modelos, categorias]) => {
-            res.render("products/product-edit-form", { p: producto, m: modelos, c: categorias })
-        })
+            .then(([producto, modelos, categorias]) => {
+                res.render("products/product-edit-form", { p: producto, m: modelos, c: categorias })
+            })
 
     },
     edit2: (req, res) => {
@@ -135,8 +135,11 @@ const controllers = {
 
 
     },
-
     detail: (req, res) => {
+        db.Products.findByPk(req.params.id).then(producto => { res.render("products/productDetail") })
+
+    },
+    detail2: (req, res) => {
 
         const idBuscado = req.params.id;
         const productDetail = products.find(producto => producto.id == idBuscado);

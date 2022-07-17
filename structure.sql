@@ -55,9 +55,11 @@ CREATE TABLE products (
 	productImages VARCHAR(100),
 	models_id INT,
 	category_id INT,
+    vendor_id INT,
 	PRIMARY KEY (id),
    FOREIGN KEY (models_id) REFERENCES models(id),
-   FOREIGN KEY (category_id) REFERENCES productCategories(id)
+   FOREIGN KEY (category_id) REFERENCES productCategories(id),
+   FOREIGN KEY (vendor_id) REFERENCES users(id)
 );
 
 CREATE TABLE productCart (
