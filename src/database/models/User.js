@@ -54,7 +54,7 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "product_id",
             timestamps: false,
         });
-        User.HasMany(models.Products, {
+        User.hasMany(models.Products, {
             as: "productVendor",
             foreignKey: "vendor_id",
         });
