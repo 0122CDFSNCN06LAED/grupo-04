@@ -33,27 +33,57 @@ const controllers = {
         })
 
     },
+    store: (req, res) => {
+        const datosRecibidos = JSON.parse(JSON.stringify(req.body));
+        db.Products.create({
+
+            productName: datosRecibidos.productName,
+            price: datosRecibidos.price,
+            minBuy: datosRecibidos.minBuy,
+            productImages: '',
+            models_id: datosRecibidos.models,
+
+
+        }).then((producto) => {
+            db.ProductsSubCategories.create({
+                product_id: producto.id,
+                productSubCategories_id: datosRecibidos.category
+            }).then((productCategory) => {
+                res.redirect("/")
+            })
+        })
+
+    },
 
     edit: (req, res) => {
-        db.Products.findAll({
-            /* include : [
-                { model: db.ProductsSubCategories, as: 'Subcategories' }
-            ] */
+        let producto = db.Products.findByPk(req.params.id);
+        let modelos = db.Models.findAll();
+        let categorias = db.Models.findAll();
+        Promise.all().then(([productos, modelos, categorias]) => {
+            res.render("products/product-edit-form", { p: productos, m: modelos, c: categorias })
+        })
 
-        }
-        
-        ).then((products)=>{
+    },
+    edit2: (req, res) => {
+        db.Products.findAll({
+                /* include : [
+                    { model: db.ProductsSubCategories, as: 'Subcategories' }
+                ] */
+
+            }
+
+        ).then((products) => {
             let producto = products.filter(function(x) {
                 return x.id == req.params.id
             })
             db.Models.findAll().then((modelos) => {
                 db.ProductSubCategory.findAll().then((categories) => {
-                    
+
                     res.render("products/product-edit-form", { p: producto[0], m: modelos, c: categories })
                 })
             })
         });
-   
+
     },
 
     update: (req, res) => {
@@ -79,34 +109,34 @@ const controllers = {
     destroy: (req, res) => {
         db.ProductsSubCategories.destroy({
             where: {
-                product_id : req.params.id
+                product_id: req.params.id
             }
-        }).then(()=>{
+        }).then(() => {
             db.ProProductCartducts.destroy({
                 where: {
-                    product_id : req.params.id
+                    product_id: req.params.id
                 }
-            }).then(()=>{
+            }).then(() => {
                 db.FavoriteProducs.destroy({
                     where: {
-                        product_id : req.params.id
+                        product_id: req.params.id
                     }
-                }).then(()=>{
+                }).then(() => {
                     db.Products.destroy({
                         where: {
-                            product_id : req.params.id
+                            product_id: req.params.id
                         }
-                    }).then(()=>{
+                    }).then(() => {
                         res.redirect("/products")
                     })
-            
-                })     
+
+                })
             })
-    
+
         })
 
-        
-        
+
+
     },
 
     detail: (req, res) => {
@@ -126,27 +156,7 @@ const controllers = {
 
     },
 
-    store: (req, res) => {
-        const datosRecibidos = JSON.parse(JSON.stringify(req.body));
-        db.Products.create({
 
-            productName: datosRecibidos.productName,
-            price: datosRecibidos.price,
-            minBuy: datosRecibidos.minBuy,
-            productImages: '',
-            models_id: datosRecibidos.models,
-            
-
-        }).then((producto) => {
-            db.ProductsSubCategories.create({
-                product_id: producto.id,
-                productSubCategories_id: datosRecibidos.category
-            }).then((productCategory) => {
-                res.redirect("/")
-            })
-        })
-
-    },
     store2: (req, res) => {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 
