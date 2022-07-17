@@ -135,10 +135,11 @@ const controllers = {
 
 
     },
-    detail: (req, res) => {
-
-        db.Products.findByPk(req.params.id, { include: [{association: "vendor"}]}).then(producto => { res.render("products/productDetail", { p: producto }) })
-
+    detail: async(req, res) => {
+        let producto = await db.Products.findByPk(req.params.id, { include: [{ association: "vendor" }, { association: "modelosDeProducto" }] })
+        let marca = await db.Models.findByPk(req.params.id, { include: [{ association: "marcas" }] })
+        console.log(producto)
+        res.render("products/productDetail", { p: producto, m: marca })
     },
     detail2: (req, res) => {
 
