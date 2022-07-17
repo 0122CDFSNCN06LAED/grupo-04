@@ -9,11 +9,13 @@ function usuarioLogeado(req, res, next) {
 
     if(userEnCookie){
         req.session.userLogged = userEnCookie
+        console.log("si hay user en cookie: ", userEnCookie)
     }
 
     if (req.session.userLogged) {
         res.locals.isLogged = true;
         res.locals.userLogged = req.session.userLogged;
+        console.log("si NO hay user en cookie: ",userEnCookie)
     }
     
     next();

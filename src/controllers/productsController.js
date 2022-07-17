@@ -54,7 +54,7 @@ const controllers = {
     edit: (req, res) => {
         let pedidoProducto = db.Products.findByPk(req.params.id);
         let pedidoModelos = db.Models.findAll();
-        let pedidoCategorias = db.ProductSubCategory.findAll();
+        let pedidoCategorias = db.ProductCategories.findAll();
         Promise.all([pedidoProducto, pedidoModelos, pedidoCategorias])
         .then(([producto, modelos, categorias]) => {
             res.render("products/product-edit-form", { p: producto, m: modelos, c: categorias })
