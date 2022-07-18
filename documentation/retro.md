@@ -62,3 +62,10 @@ DEJAR DE HACER: como equipo tenemos que avanzar progresivamente una vez lanzado 
 17/7 daily grupal
 - modificamos la estructura, data.sql, los modelos y los controllers para simplificar todo en productCategory solamente
 
+18/07 retro sprint 6
+COMENZAR A HACER: validaciones, botones que conecten vistas y middlewares.
+SEGUIR HACIENDO: trabajo en equipo, comunicacion activa. 
+DEJAR DE HACER: todo a último momento.
+
+
+
