@@ -15,6 +15,9 @@ module.exports = (sequelize, dataTypes) => {
         minBuy: {
             type: dataTypes.INTEGER,
         },
+        description: {
+            type: dataTypes.STRING,
+        },
         productImages: {
             type: dataTypes.STRING,
         },
