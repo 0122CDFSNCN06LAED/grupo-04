@@ -40,6 +40,7 @@ const controllers = {
             price: datosRecibidos.price,
             minBuy: datosRecibidos.minBuy,
             productImages: req.file.filename,
+            description: datosRecibidos.description,
             models_id: datosRecibidos.models,
             category_id: datosRecibidos.category
 
@@ -69,6 +70,7 @@ const controllers = {
                 producto.price = datosRecibidos.price,
                 producto.minBuy = datosRecibidos.minBuy,
                 producto.productImages = req.file.filename,
+                producto.description = datosRecibidos.description,
                 producto.models_id = datosRecibidos.models,
                 producto.category_id = datosRecibidos.category
             producto.save().then(() => {

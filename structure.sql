@@ -53,6 +53,7 @@ CREATE TABLE products (
 	price FLOAT,
 	minBuy INT,
 	productImages VARCHAR(100),
+	description VARCHAR(100),
 	models_id INT,
 	category_id INT,
     vendor_id INT,

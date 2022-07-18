@@ -103,17 +103,6 @@
 
             </div>
 
-
-            <div class="card mb-3 vendor-container">
-                <h5 class="pd-vendor-title">Información del vendedor</h5>
-                <div class="pd-vendor-detail">
-
-                    <img src="/img/users/avatars/default-avatar.png" alt="" class="pd-vendor-avatar">
-                    <%= p.vendor.companyName %>
-                        <a href="../../users/vendorInfo/<%= p.vendor.id %> " class="vendor-info">Conocé más información sobre el vendedor</a>
-                </div>
-            </div>
-
             <div class="card mb-3 pd-description">
                 <h4 class="pd-description-title">Descripción del producto</h4>
 
@@ -129,14 +118,16 @@
                 </div>
 
             </div>
+            <div class="card mb-3 vendor-container">
+                <h5 class="pd-vendor-title">Información del vendedor</h5>
+                <div class="pd-vendor-detail">
+
+                    <img src="/img/users/avatars/default-avatar.png" alt="" class="pd-vendor-avatar">
+                    <%= p.vendor.companyName %>
+                        <a href="../../users/vendorInfo/<%= p.vendor.id %> " class="vendor-info">Conocé más información sobre el vendedor</a>
+                </div>
+            </div>
         </section>
-
-
-
-
-
-
-
         <%- include("../partials/footer.ejs") %>
 
 </body>
