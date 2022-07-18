@@ -92,18 +92,21 @@ const controllers = {
 
     db.Users.create({
       userName: req.body.userName,
+      firstName: req.body.firstName,
+      lastName: req.body.lastName,
       email: req.body.email,
       cuit: req.body.cuit,
       password: hashedPassword,
       companyName: req.body.companyName,
       phoneNumber: req.body.contact,
       companyImg: img,
-      usercategory_id: 1,
+      usercategory_id: 2,
     })
-      .then(() => {
+      .then((newUser) => {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
+        datosRecibidos.id = newUser.id;
         req.session.userLogged = datosRecibidos;
-        res.redirect("../");
+        res.redirect("../");  
       })
       .catch((error) => console.log(error));
 
@@ -142,11 +145,16 @@ const controllers = {
     if (req.session.userLogged) {
       const userId = req.session.userLogged.id;
       const paramsId = req.params.id;
-      res.send("USERID: " + userId)
-      res.send("PARAMSID: " + paramsId)
+      if (!paramsId) {
+        res.redirect(`/users/edit/${userId}`)
+      } else {
+        db.Users.findByPk(paramsId).then((usuario) => { 
+          res.render("users/edit", { u: usuario  })
+        });        
+      };
 
     } else {
-      res.render("users/register");
+      res.redirect("/users/register");
     }
   },
 
