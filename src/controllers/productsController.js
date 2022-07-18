@@ -5,6 +5,7 @@ const db = require("../database/models")
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 const { Op } = require("sequelize");
+const { validationResult } = require('express-validator')
 
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
