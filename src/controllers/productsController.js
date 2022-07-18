@@ -67,13 +67,13 @@ const controllers = {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
         console.log(datosRecibidos);
         db.Products.findByPk(req.params.id).then((producto) => {
-            producto.productName = datosRecibidos.productName,
-                producto.price = datosRecibidos.price,
-                producto.minBuy = datosRecibidos.minBuy,
-                producto.productImages = req.file.filename,
-                producto.description = datosRecibidos.description,
-                producto.models_id = datosRecibidos.models,
-                producto.category_id = datosRecibidos.category
+            producto.productName = datosRecibidos.productName;
+            producto.price = datosRecibidos.price;
+            producto.minBuy = datosRecibidos.minBuy;
+            producto.productImages = req.file ? req.file.filename : producto.productImages;
+            producto.description = datosRecibidos.description;
+            producto.models_id = datosRecibidos.models;
+            producto.category_id = datosRecibidos.category
             producto.save().then(() => {
                 res.redirect("/products");
             });

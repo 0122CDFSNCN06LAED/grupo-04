@@ -12,7 +12,7 @@
     <%- include("../partials/header.ejs") %>
         <main class="container m-15 mb-10">
 
-            <form action="/products/edit/<%=p.id%>?_method=PUT" method="POST">
+            <form action="/products/edit/<%=p.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
                 <input type="hidden">
                 <div class="row">
                     <div class="col-12">
@@ -20,20 +20,20 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label celeste-vpm" for="name">Nombre del producto</label>
-                        <input class="form-control" type=" text " id="name " name="name " value="<%=p .productName %> ">
+                        <input class="form-control" type="text" id="productName" name="productName" value="<%=p.productName %> ">
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label celeste-vpm" for="name">Descripcion del producto</label>
-                        <input class="form-control" type=" text " id="description " name="description" value="<%=p .description %>">
+                        <input class="form-control" type="text" id="description" name="description" value="<%=p.description %>">
                     </div>
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="models">Modelo</label>
                         <select name="models" id="models" class="form-control">
                             <% for(let i=0; i<m.length; i++){ %> 
                                 <% if(m[i].id === p.models_id){ %>
-                                    <option value="<%= m[i].id %> " selected="selected"><%= m[i].name %></option> 
+                                    <option value="<%= m[i].id %>" selected="selected"><%= m[i].name %></option> 
                                 <% }else{ %>
-                                   <option value="<%= m[i].id %> "><%= m[i].name %></option> 
+                                   <option value="<%= m[i].id %>"><%= m[i].name %></option> 
     
                                 <% } } %> 
                         </select>
@@ -52,7 +52,7 @@
                             <% for(let i=0; i<c.length; i++){ %> 
                                 
 
-                               <option value="<%= c[i].id %> "><%= c[i].name %></option> 
+                               <option value="<%= c[i].id %>"><%= c[i].name %></option> 
                                 <% } %> 
                         </select>
                     </div>

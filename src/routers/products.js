@@ -17,19 +17,15 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 /*se comineza a probar validaciones, pero no está en funcionamiento */
 const validations = [
-    body('productName').notEmpty().isLength({ min: 5 }),
-    body('description').notEmpty().isLength({ min: 100 }),
-    body('models').notEmpty(),
-    body('price').notEmpty().isNumeric(),
-    body('minBuy').notEmpty().isNumeric(),
-    body('category').notEmpty(),
+        body('productName').notEmpty().isLength({ min: 5 }),
+        body('description').notEmpty().isLength({ min: 100 }),
+        body('models').notEmpty(),
+        body('price').notEmpty().isNumeric(),
+        body('minBuy').notEmpty().isNumeric(),
+        body('category').notEmpty(),
 
-]
-
-
-
-
-// /products 
+    ]
+    // /products 
 router.get("/", productsController.list);
 router.get("/create", productsController.create);
 router.post("/create", uploadFile.single("img"), validations, productsController.store)
