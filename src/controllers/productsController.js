@@ -4,6 +4,7 @@ const path = require("path");
 const db = require("../database/models")
 const productsFilePath = path.join(__dirname, "../data/products.json");
 const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+const { Op } = require("sequelize");
 
 
 const usersFilePath = path.join(__dirname, "../data/users.json");
@@ -38,7 +39,7 @@ const controllers = {
             productName: datosRecibidos.productName,
             price: datosRecibidos.price,
             minBuy: datosRecibidos.minBuy,
-            productImages: '',
+            productImages: req.file.filename,
             models_id: datosRecibidos.models,
             category_id: datosRecibidos.category
 
@@ -59,78 +60,45 @@ const controllers = {
             })
 
     },
-    edit2: (req, res) => {
-        db.Products.findAll({
-                /* include : [
-                    { model: db.ProductsSubCategories, as: 'Subcategories' }
-                ] */
-
-            }
-
-        ).then((products) => {
-            let producto = products.filter(function(x) {
-                return x.id == req.params.id
-            })
-            db.Models.findAll().then((modelos) => {
-                db.ProductSubCategory.findAll().then((categories) => {
-
-                    res.render("products/product-edit-form", { p: producto[0], m: modelos, c: categories })
-                })
-            })
-        });
-
-    },
 
     update: (req, res) => {
-
-        products.forEach(x => {
-            if (x.id == req.params.id) {
-                x.name = req.body.name
-                x.category = req.body.category
-                x.description = req.body.description
-                x.vendor = req.body.vendor
-                x.price = Number(req.body.price)
-                x.stock = Number(req.body.stock)
-                x.img = req.body.img
-                x.minBuy = Number(req.body.minBuy)
-            }
-
-        });
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, ' '));
-        res.redirect("/products");
-
+        const datosRecibidos = JSON.parse(JSON.stringify(req.body));
+        console.log(datosRecibidos);
+        db.Products.findByPk(req.params.id).then((producto) => {
+            producto.productName = datosRecibidos.productName,
+                producto.price = datosRecibidos.price,
+                producto.minBuy = datosRecibidos.minBuy,
+                producto.productImages = req.file.filename,
+                producto.models_id = datosRecibidos.models,
+                producto.category_id = datosRecibidos.category
+            producto.save().then(() => {
+                res.redirect("/products");
+            });
+        })
     },
 
     destroy: (req, res) => {
-        db.ProductsSubCategories.destroy({
+
+        db.ProductCart.destroy({
             where: {
                 product_id: req.params.id
             }
         }).then(() => {
-            db.ProProductCartducts.destroy({
+            db.FavoriteProducs.destroy({
                 where: {
                     product_id: req.params.id
                 }
             }).then(() => {
-                db.FavoriteProducs.destroy({
+                db.Products.destroy({
                     where: {
-                        product_id: req.params.id
+                        id: req.params.id
                     }
                 }).then(() => {
-                    db.Products.destroy({
-                        where: {
-                            product_id: req.params.id
-                        }
-                    }).then(() => {
-                        res.redirect("/products")
-                    })
-
+                    res.redirect("/products")
                 })
+
             })
-
         })
-
-
 
     },
     detail: async(req, res) => {
@@ -141,22 +109,6 @@ const controllers = {
         // uso la asociación de models para extraer la marca
         let marca = modelo.marcas
         res.render("products/productDetail", { p: producto, m: modelo, marca: marca });
-    },
-    detail2: (req, res) => {
-
-        const idBuscado = req.params.id;
-        const productDetail = products.find(producto => producto.id == idBuscado);
-        const vendorID = productDetail.vendor;
-
-        const vendor = users.find(
-            (vendor) => vendor.id == vendorID
-        );
-
-        res.render("products/productDetail", {
-            p: productDetail,
-            vendor: vendor,
-        });
-
     },
 
 
@@ -189,6 +141,19 @@ const controllers = {
         } else {
             res.render("products/product-create-form");
         }
+
+    },
+    search: (req, res) => {
+        const busqueda = req.query.search;
+        db.Products.findAll({
+            where: {
+                productName: {
+                    [Op.like]: '%' + busqueda + '%'
+                }
+            }
+        }).then((products) => {
+            res.render("products/productsList.ejs", { products })
+        })
 
     },
     add: (req, res) => {

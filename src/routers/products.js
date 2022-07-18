@@ -6,8 +6,7 @@ const multer = require("multer");
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {
-        const categoryForDestination = req.body.category;
-        const pathForMulter = 'public/img/articulos/' + categoryForDestination;
+        const pathForMulter = 'public/img/articulos/';
         cb(null, pathForMulter);
     },
     filename: function(req, file, cb) {
@@ -25,9 +24,10 @@ router.get("/", productsController.list);
 router.get("/create", productsController.create);
 router.post("/create", uploadFile.single("img"), productsController.store)
 router.get("/edit/:id", productsController.edit);
-router.put("/edit/:id", productsController.update);
+router.put("/edit/:id", uploadFile.single("img"), productsController.update);
 router.delete("/delete/:id", productsController.destroy);
 router.get("/detail/:id", productsController.detail);
+router.get("/search", productsController.search);
 router.get("/agregar/:id", productsController.add);
 
 
