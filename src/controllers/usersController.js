@@ -51,6 +51,7 @@ const controllers = {
     
       if (bcrypt.compareSync(password, resultado[0].password)) {
       req.session.userLogged = resultado[0];
+      console.log(req.session.userLogged);
 
       if (req.body.recordame) {
         res.cookie("userEmail", req.body.username, { maxAge: 1000 * 60 });
@@ -135,6 +136,27 @@ const controllers = {
     /*const urlToRedirect = "vendorInfo/" + idToAssing;
             res.redirect(urlToRedirect);*/
   },
+
+  edit: (req, res) => { 
+
+    if (req.session.userLogged) {
+      const userId = req.session.userLogged.id;
+      const paramsId = req.params.id;
+      res.send("USERID: " + userId)
+      res.send("PARAMSID: " + paramsId)
+
+    } else {
+      res.render("users/register");
+    }
+  },
+
+  update: (req, res) => {
+    if (req.session.userLogged) {
+      res.redirect("users/");
+    } else {
+      res.render("users/register");
+    }
+  }
 };
 
 module.exports = controllers;

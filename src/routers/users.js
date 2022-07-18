@@ -26,6 +26,7 @@ router.get("/logOut", usersController.logOut)
 router.get("/register", usersController.register);
 router.get("/test", usersController.test);
 router.post("/register", uploadFile.single("img"), usersController.store);
+router.get("/edit/:id", usersController.edit);
 
 
 module.exports = router;

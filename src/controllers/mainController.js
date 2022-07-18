@@ -13,7 +13,6 @@ module.exports = {
 
         ).then(function(products) {
 
-            console.log(products);
             res.render("index.ejs", { products })
         }).catch(error => {
             console.log(error)

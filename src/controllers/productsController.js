@@ -14,8 +14,6 @@ const controllers = {
         db.Products.findAll(
 
         ).then(function(products) {
-
-            console.log(products);
             res.render("products/productsList.ejs", { products })
         }).catch(error => {
             console.log(error)
