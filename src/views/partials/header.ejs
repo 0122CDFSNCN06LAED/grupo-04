@@ -33,11 +33,12 @@
                                 <hr class="dropdown-divider" />
                             </li>
 
-                            <li><a class="dropdown-item" href="#">Almacén</a></li>
-                            <li><a class="dropdown-item" href="#">Herramientas</a></li>
-                            <li><a class="dropdown-item" href="#">Librería</a></li>
-                            <li><a class="dropdown-item" href="#">Tecnología</a></li>
-                            <li><a class="dropdown-item" href="#">Vestimenta</a></li>
+                            <li><a  class="dropdown-item" href="/products/category/1" >Almacén</a></li>
+                            <li><a  class="dropdown-item" href="/products/category/2" >Herramientas</a></li>
+                            <li><a  class="dropdown-item" href="/products/category/3" >Librería</a></li>
+                            <li><a  class="dropdown-item" href="/products/category/4" >Muebles</a></li>
+                            <li><a  class="dropdown-item" href="/products/category/5" >Tecnología</a></li>
+                            <li><a  class="dropdown-item" href="/products/category/6" >Vestimenta</a></li>
                         </ul>
                     </li>
                     <% if(locals.isLogged) {%>
@@ -55,7 +56,15 @@
                                 <li>
                                     <hr class="dropdown-divider" />
                                 </li>
+                                <li><a class="dropdown-item" href="/products">Mis productos</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
                                 <li><a class="dropdown-item" href="#">Favoritos</a></li>
+                                <li>
+                                    <hr class="dropdown-divider" />
+                                </li>
+                                <li><a class="dropdown-item" href="/products/create">Vender</a></li>
                                 <li>
                                     <hr class="dropdown-divider" />
                                 </li>
@@ -101,7 +110,7 @@
               </form>
             </span>
                     <% if (locals.isLogged) { %>
-                        <span class="celeste-vpm m-2">Bienvenido <%= locals.userLogged.userName %> </span>
+                        <a href="/users/edit"><span class="celeste-vpm m-2">Bienvenido <%= locals.userLogged.userName %> </span></a>
                         <% } %>
                 </div>
             </div>

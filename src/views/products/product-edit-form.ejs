@@ -54,18 +54,22 @@
 
                                <option value="<%= c[i].id %>"><%= c[i].name %></option> 
                                 <% } %> 
-                        </select>
+                        </select> 
                     </div>
                     <div class="col-md-6"><label class="form-label celeste-vpm" for="img">Imagen</label>
                         <input class="form-control" type="file" id="img" name="img" value="<%= p.img %>">
                     </div>
                     <div class="col-12 d-flex justify-content-center mt-5">
-                        <button class=" btn btn-outline-info mb-5 w-50 " type="submit ">Guardar cambios</button>
+                        <button class=" btn btn-outline-info w-50 " type="submit ">Guardar cambios</button>
                     </div>
                 </div>
-            </form>
-            <form action="/products/delete/<%=p.id%>?_method=delete" method="POST"><button class="btn btn-outline-info mb-5 w-50" type="submit">Eliminar producto</button></form>
 
+            </form>
+            <form action="/products/delete/<%=p.id%>?_method=delete" method="POST">
+                <div class="col-12 d-flex justify-content-center mt-5">
+                <button class="btn btn-secondary mb-5 w-50" type="submit">Eliminar producto</button>
+            </form>
+        </div>
 
         </main>
         <%- include("../partials/footer.ejs") %>

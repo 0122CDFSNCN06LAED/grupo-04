@@ -18,9 +18,11 @@
                     <% products.forEach(product => { %>
                         <article class="cont-card col-md-3 col-sm-6">
                             <div class="card m-2">
-                                <div class="box-img">
-                                    <img class="article-img" src="/img/articulos/<%=product.productImages%>">
-                                </div>
+                                <a href="../../products/detail/<%= product.id %>">
+                                    <div class="box-img">
+                                        <img class="article-img" src="/img/articulos/<%=product.productImages%>">
+                                    </div>
+                                </a>
                                 <div class="card-body card-description">
 
                                     <div class="d-flex justify-content-around">

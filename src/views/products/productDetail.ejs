@@ -90,8 +90,9 @@
                         </select>
                             <p class="card-text "><small class="text-green">Envío Gratis</small></p>
                             <% if(locals.isLogged) {%>
-                                <a href="/products/agregar/<%=p.id%>"> <button type="button" class="btn btn-primary">Comprar ahora</button></a>
-                                <a href="" style="display: flex"> <button type="button" class="btn btn-add-to-cart">Agregar al carrito <i class="fa-solid fa-dolly"></i></button></a>
+                                <a href="/"> <button type="button" class="btn btn-primary">Comprar ahora</button></a>  
+                                <a href="/productCart" style="display: flex"> <button type="button" class="btn btn-add-to-cart">Agregar al carrito <i class="fa-solid fa-dolly"></i></button></a>
+                                <a href="/products/edit/<%= p.id %> "> <button type="button" class="btn btn-secondary">Editar producto</button></a>  
                                 <%} else {%>
                                     <a href="/users/login"> <button type="button" class="btn btn-primary">Comprar ahora</button></a>
                                     <a href="/users/login" style="display: flex"> <button type="button" class="btn btn-add-to-cart">Agregar al carrito <i class="fa-solid fa-dolly"></i></button></a>
