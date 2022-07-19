@@ -52,8 +52,12 @@
                         <input type="tel" class="form-control" name="contact" value="<%= u.phoneNumber%>" id="contact" required>
                     </div>
                     <div class="mb-3">
-                        <label for="img" class="form-label celeste-vpm">Foto de perfil</label>
+                        <label for="img" class="form-label celeste-vpm">Imagen de perfil</label>
                         <input class="form-control" type="file" id="img" name="img" placeholder="Cambiar de imagen de perfil">
+                    </div>
+                    <div class="mb-3 avatar-container">
+                        <label for="avatar" class="form-label celeste-vpm">Imagen actual</label>
+                        <img src="/img/users/avatars/<%= u.companyImg%>" id="avatar" alt="avatar" class="avatar-mw-50">
                     </div>
                     
                     <div class="d-flex justify-content-center mt-5 mb-5"><button type="submit" class="btn btn-outline-info mb-5 w-50">Modificar</button>

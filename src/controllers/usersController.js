@@ -119,10 +119,10 @@ const controllers = {
         res.redirect(`/users/edit/${userId}`)
       } else {
         db.Users.findByPk(paramsId).then((usuario) => { 
+          console.log(usuario.companyImg);
           res.render("users/edit", { u: usuario  })
         });        
       };
-
     } else {
       res.redirect("/users/register");
     }
