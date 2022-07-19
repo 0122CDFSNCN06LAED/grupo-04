@@ -20,18 +20,22 @@
                         </h2>
                     </div>
                     <div class="col-12 col-md-6">
+                        <label class="form-label celeste-vpm" for="name">Nombre del producto</label>
+                        <input class="form-control" type=" text " id="productName " name="productName" value="<%= locals.oldData ? oldData.productName : null%>">
                         <% if (locals.errors && errors.productName) { %>
-                            <div class="text-error">
+                            <div class="text-danger">
                                 <%= errors.productName.msg %>
                             </div>
                             <% } %>
-
-                                <label class="form-label celeste-vpm" for="name">Nombre del producto</label>
-                                <input class="form-control" type=" text " id="productName " name="productName" value="<%= locals.oldData ? oldData.productName : null%>">
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label celeste-vpm" for="name">Descripcion del producto</label>
-                        <input class="form-control" type=" text " id="description " name="description" value="">
+                        <input class="form-control" type=" text " id="description " name="description" value="<%= locals.oldData ? oldData.description : null%>">
+                        <% if (locals.errors && errors.description) { %>
+                            <div class="text-danger">
+                                <%= errors.description.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="models">Modelo</label>
@@ -40,6 +44,11 @@
                                <option value="<%= m[i].id %> "><%= m[i].name %></option> 
                                 <% } %> 
                         </select>
+                        <% if (locals.errors && errors.models) { %>
+                            <div class="text-danger">
+                                <%= errors.models.msg %>
+                            </div>
+                            <% } %>
                     </div>
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="price">Precio</label>

@@ -8,39 +8,21 @@ const { validationResult } = require('express-validator')
 const controllers = {
     list: (req, res) => {
         db.Products.findAll().then(function(products) {
-            res.render("products/productsList.ejs", { products, categorie: null })
+            res.render("products/productsList.ejs", { products, category: null })
         }).catch(error => {
             console.log(error)
         })
     },
-    listByCategory1: (req, res) => {
-        const categoryId = req.params.id;
-        if (categoryId) {
-            db.Products.findAll({ where: { category_id: categoryId } }, { include: [{ association: "categories" }] }).then(function(products) {;
-                console.log((products.category_id));
-                if (products.length > 0) {
-                    res.render("products/productsList.ejs", { products });
-                } else {
-                    res.redirect("/")
-                }
-            }).catch(error => {
-                console.log(error)
-            })
-        } else {
-            res.redirect("/")
-        };
-    },
-
     listByCategory: (req, res) => {
         const categoryId = req.params.id;
         if (categoryId) {
             let categoriePedido = db.ProductCategories.findAll({ where: { id: categoryId } });
             let productoPedido = db.Products.findAll({ where: { category_id: categoryId } });
-            Promise.all([categoriePedido, productoPedido]).then(function([categorie, products]) {
-                console.log(categorie)
+            Promise.all([categoriePedido, productoPedido]).then(function([category, products]) {
+                console.log(category)
 
                 if (products.length > 0) {
-                    res.render("products/productsList.ejs", { categorie: categorie[0], products });
+                    res.render("products/productsList.ejs", { category: category[0], products });
 
                 } else {
                     res.redirect("/")
@@ -174,6 +156,9 @@ const controllers = {
     },
     add: (req, res) => {
         res.send("agregaste al carrito")
+    },
+    addProduct: (req, res) => {
+
     }
 }
 

@@ -69,3 +69,5 @@ DEJAR DE HACER: todo a último momento.
 
 
 
+19/07 daily 
+Nos juntamos para compartir avances del proyecyo, se sigue avanzando y se ponen prioridades de tareas.

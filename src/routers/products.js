@@ -27,6 +27,7 @@ router.delete("/delete/:id", productsController.destroy);
 router.get("/detail/:id", productsController.detail);
 router.get("/search", productsController.search);
 router.get("/agregar/:id", productsController.add);
+router.post("/productCart", productsController.addProduct)
 
 
 
