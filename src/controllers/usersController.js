@@ -115,6 +115,8 @@ const controllers = {
       const paramsId = req.params.id;
       if (!paramsId) {
         res.redirect(`/users/edit/${userId}`)
+      } else if (paramsId != userId) {
+        res.redirect(`/users/edit/${userId}`)
       } else {
         db.Users.findByPk(paramsId).then((usuario) => { 
           res.render("users/edit", { u: usuario  })
