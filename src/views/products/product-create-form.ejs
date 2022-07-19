@@ -20,8 +20,14 @@
                         </h2>
                     </div>
                     <div class="col-12 col-md-6">
-                        <label class="form-label celeste-vpm" for="name">Nombre del producto</label>
-                        <input class="form-control" type=" text " id="productName " name="productName" value="">
+                        <% if (locals.errors && errors.productName) { %>
+                            <div class="text-error">
+                                <%= errors.productName.msg %>
+                            </div>
+                            <% } %>
+
+                                <label class="form-label celeste-vpm" for="name">Nombre del producto</label>
+                                <input class="form-control" type=" text " id="productName " name="productName" value="<%= locals.oldData ? oldData.productName : null%>">
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label celeste-vpm" for="name">Descripcion del producto</label>
@@ -70,6 +76,12 @@
 -->
                     <div class="col-md-6"><label class="form-label celeste-vpm" for="img">Imagen</label>
                         <input class="form-control" type="file" id="img" name="img" value="">
+                        <% if (locals.errors && errors.productImages) { %>
+                            <div class="text-error">
+                                <%= errors.productImages.msg %>
+                            </div>
+                            <% } %>
+
                     </div>
                     <div class="col-12 d-flex justify-content-center mt-5">
                         <button class=" btn btn-outline-info mb-5 w-50 " type="submit ">Crear</button>

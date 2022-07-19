@@ -13,25 +13,16 @@ const storage = multer.diskStorage({
         cb(null, `${Date.now()}${path.extname(file.originalname)}`);
     }
 })
-
 const uploadFile = multer({ storage });
-/*se comineza a probar validaciones, pero no está en funcionamiento */
-const validations = [
-        body('productName').notEmpty().isLength({ min: 5 }),
-        body('description').notEmpty().isLength({ min: 100 }),
-        body('models').notEmpty(),
-        body('price').notEmpty().isNumeric(),
-        body('minBuy').notEmpty().isNumeric(),
-        body('category').notEmpty(),
-
-    ]
+const validations = require("../middlewares/createProductValidation")
+const validationEdit = require("../middlewares/ediProductValidation")
     // /products 
 router.get("/", productsController.list);
 router.get("/category/:id?", productsController.listByCategory);
 router.get("/create", productsController.create);
 router.post("/create", uploadFile.single("img"), validations, productsController.store)
 router.get("/edit/:id", productsController.edit);
-router.put("/edit/:id", uploadFile.single("img"), productsController.update);
+router.put("/edit/:id", uploadFile.single("img"), validationEdit, productsController.update);
 router.delete("/delete/:id", productsController.destroy);
 router.get("/detail/:id", productsController.detail);
 router.get("/search", productsController.search);
