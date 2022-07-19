@@ -14,15 +14,11 @@ const controllers = {
     const idBuscado = req.params.id;
     db.Users.findByPk(idBuscado).then((vendorInfo) => {
       res.render("users/vendorInformation.ejs", { vendorInfo });
-    })//.catch(res.send("Hubo un error en la consulta"));  
-    //Falta validar que ID que llegue sea correcto
+    })
   },
   
   login: (req, res) => {
-   /*  db.Users.findAll().then((users) => {
-      //console.log(users);
-    }); */
-
+   
     res.render("users/login.ejs", { error: "" });
   },
 
@@ -110,34 +106,6 @@ const controllers = {
       })
       .catch((error) => console.log(error));
 
-    /*const datosRecibidos = JSON.parse(JSON.stringify(req.body));
-
-    const acumulador = [];
-
-    for (i = 0; i < users.length; i++) {
-      acumulador.push(users[i].id);
-    }
-
-    const biggerId = Math.max.apply(null, acumulador);
-    const idToAssing = biggerId + 1;
-    datosRecibidos.id = idToAssing;
-    datosRecibidos.password = bcrypt.hashSync(datosRecibidos.password, 10);
-
-    if (req.file) {
-      datosRecibidos.img = req.file.filename;
-    } else {
-      datosRecibidos.img = "default-avatar.png";
-    }
-
-    users.push(datosRecibidos);
-    const usersWithNew = JSON.stringify(users);
-
-    fs.writeFileSync(usersFilePath, usersWithNew);
-
-    
-
-    /*const urlToRedirect = "vendorInfo/" + idToAssing;
-            res.redirect(urlToRedirect);*/
   },
 
   edit: (req, res) => { 

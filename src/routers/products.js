@@ -27,6 +27,8 @@ const validations = [
     ]
     // /products 
 router.get("/", productsController.list);
+router.get("/category/:id", productsController.listByCategory);
+router.get("/category/", productsController.listByCategory);
 router.get("/create", productsController.create);
 router.post("/create", uploadFile.single("img"), validations, productsController.store)
 router.get("/edit/:id", productsController.edit);
