@@ -92,7 +92,7 @@ const controllers = {
       lastName: req.body.lastName,
       email: req.body.email,
       cuit: req.body.cuit,
-      password: hashedPassword,
+      //password: hashedPassword,
       companyName: req.body.companyName,
       phoneNumber: req.body.contact,
       companyImg: img,
@@ -111,6 +111,7 @@ const controllers = {
   edit: (req, res) => { 
 
     if (req.session.userLogged) {
+      console.log("aquí te va:" , req.session.userLogged);
       const userId = req.session.userLogged.id;
       const paramsId = req.params.id;
       if (!paramsId) {
@@ -119,7 +120,7 @@ const controllers = {
         res.redirect(`/users/edit/${userId}`)
       } else {
         db.Users.findByPk(paramsId).then((usuario) => { 
-          console.log(usuario.companyImg);
+          console.log(userId)
           res.render("users/edit", { u: usuario  })
         });        
       };
@@ -129,10 +130,48 @@ const controllers = {
   },
 
   update: (req, res) => {
-    if (req.session.userLogged) {
-      res.redirect("users/");
+    const userId = req.session.userLogged.id;
+    const paramsId = req.params.id;
+    if (paramsId && userId == paramsId) {
+
+      var img = null;
+
+      if (req.file) {
+        img = req.file.filename;
+      } else {
+        img = req.session.userLogged.img ;
+      }
+      
+      var passwordChange = null;
+      
+      if (req.body.password && req.body.password == req.body.passwordRepeat) {
+        passwordChange = true;
+      }
+
+      const hashedPassword = bcrypt.hashSync(req.body.password, 10);
+
+      db.Users.update({
+        userName: req.body.userName,
+        firstName: req.body.firstName,
+        lastName: req.body.lastName,
+        email: req.body.email,
+        cuit: req.body.cuit,
+        password: passwordChange ? hashedPassword : req.session.userLogged.password,
+        companyName: req.body.companyName,
+        phoneNumber: req.body.contact,
+        companyImg: img,
+      },{
+        where: { id: userId}
+      }).then((newUser) => {
+        const datosRecibidos = JSON.parse(JSON.stringify(req.body));
+        datosRecibidos.id = userId;
+        req.session.userLogged = datosRecibidos;
+        res.redirect(`/users/edit/${userId}`)
+      })
+      .catch((error) => console.log(error));
+
     } else {
-      res.render("users/register");
+      res.send("paramsId y sessionId no coinciden");
     }
   }
 };

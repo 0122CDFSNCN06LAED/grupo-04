@@ -28,6 +28,7 @@ router.get("/test", usersController.test);
 router.post("/register", uploadFile.single("img"), usersController.store);
 router.get("/edit/", usersController.edit);
 router.get("/edit/:id", usersController.edit);
+router.put("/edit/:id", uploadFile.single("img"), usersController.update);
 
 
 module.exports = router;

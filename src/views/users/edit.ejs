@@ -14,7 +14,7 @@
             <div>
                 <h1 class="titulo-fomulario text-center celeste-vpm">Perfil de usuario</span></h1>
             </div>
-            <form method="POST" action="" enctype="multipart/form-data">
+            <form method="POST" action="/users/edit/<%=u.id%>?_method=PUT" enctype="multipart/form-data">
                 <div class="row">
                     <div class="mb-3">
                         <label for="username" class="form-label celeste-vpm">Nombre de usuario</label>
@@ -39,13 +39,16 @@
                         <input type="text" class="form-control" id="businessId" name="cuit" value="<%= u.cuit%>" placeholder="xx-xxxxxxxx-x" required>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputEmail1" class="form-label celeste-vpm">Email</label>
-                        <input type="email" class="form-control" id="exampleInputEmail1" name="email" value="<%= u.email%>" placeholder="nombre@ejemplo.com.ar" required>
-                        <div id="emailHelp" class="form-text text-light">Nunca compartiremos su correo electrónico con nadie más.</div>
+                        <label for="email" class="form-label celeste-vpm">Email</label>
+                        <input type="email" class="form-control" id="email" name="email" value="<%= u.email%>" placeholder="nombre@ejemplo.com.ar" required>
                     </div>
                     <div class="mb-3">
-                        <label for="exampleInputPassword1" class="form-label celeste-vpm">Contraseña</label>
-                        <input type="text" class="form-control" name="password" readonly id="exampleInputPassword1" value="NO CAMBIA EL PASS">
+                        <label for="password" class="form-label celeste-vpm">Contraseña</label>
+                        <input type="text" class="form-control" name="password" id="password" placeholder="Agregue una contraseña para cambiarla">
+                    </div>
+                    <div class="mb-3">
+                        <label for="passwordRepeat" class="form-label celeste-vpm">Repita la contraseña</label>
+                        <input type="text" class="form-control" name="passwordRepeat" id="passwordRepeat" placeholder="Repita la contraseña">
                     </div>
                     <div class="mb-3">
                         <label for="contact" class="form-label celeste-vpm">Teléfono</label>

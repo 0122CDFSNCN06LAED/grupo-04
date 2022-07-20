@@ -9,6 +9,7 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
 
 module.exports = {
     home: (req, res) => {
+
         db.Products.findAll(
 
         ).then(function(products) {
