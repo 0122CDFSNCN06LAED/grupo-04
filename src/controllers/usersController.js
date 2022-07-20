@@ -173,7 +173,22 @@ const controllers = {
     } else {
       res.send("paramsId y sessionId no coinciden");
     }
-  }
-};
+  },
+  destroy: (req, res) => {
+    const userId = req.session.userLogged.id;
+    const paramsId = req.params.id;
+    if (paramsId && userId == paramsId) {
+    db.Users.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then(() => {
+                res.redirect("/users/logOut")
+            });
+    } else {
+      res.send("paramsId y sessionId no coinciden");
+    }
+      
+}};
 
 module.exports = controllers;

@@ -29,6 +29,8 @@ router.post("/register", uploadFile.single("img"), usersController.store);
 router.get("/edit/", usersController.edit);
 router.get("/edit/:id", usersController.edit);
 router.put("/edit/:id", uploadFile.single("img"), usersController.update);
+router.delete("/delete/:id", usersController.destroy);
+
 
 
 module.exports = router;
