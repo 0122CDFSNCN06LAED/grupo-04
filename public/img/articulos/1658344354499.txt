@@ -1,0 +1,18 @@
+pasos de git
+pasos de express
+
+resumen css general:
+
+
+resumen clase flexbox:
+
+.contenedor-padre{
+display:flex ;}
+flex-item {hijos}
+
+ejes: dos ejes, main axis (eje principal)
+
+flex direction: row/ row-reverse /colum/ colum-reverse
+ 
+
+justify-content : flex start ; flex end, flex center; 

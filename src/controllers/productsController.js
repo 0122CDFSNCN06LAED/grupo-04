@@ -37,7 +37,10 @@ const controllers = {
     create: (req, res) => {
         db.Models.findAll().then((modelos) => {
             db.ProductCategories.findAll().then((categories) => {
-                res.render("products/product-create-form", { m: modelos, c: categories })
+                db.Users.findAll().then((vendor) => {
+                    res.render("products/product-create-form", { m: modelos, c: categories, v: vendor })
+                })
+
             })
         })
     },
@@ -47,15 +50,19 @@ const controllers = {
             /* console.log(resultValidation.errors);*/
             db.Models.findAll().then((modelos) => {
                 db.ProductCategories.findAll().then((categories) => {
-                    return res.render("products/product-create-form", {
-                        m: modelos,
-                        c: categories,
-                        errors: resultValidation.mapped(),
-                        oldData: req.body
+                    db.Users.findAll().then((vendor) => {
+                        res.render("products/product-create-form", {
+                            m: modelos,
+                            c: categories,
+                            v: vendor,
+                            errors: resultValidation.mapped(),
+                            oldData: req.body
+                        })
                     })
                 })
             })
         } else {
+            const userId = req.session.userLogged.id
             const datosRecibidos = JSON.parse(JSON.stringify(req.body));
             await db.Products.create({
                 productName: datosRecibidos.productName,
@@ -64,7 +71,8 @@ const controllers = {
                 productImages: req.file.filename,
                 description: datosRecibidos.description,
                 models_id: datosRecibidos.models,
-                category_id: datosRecibidos.category
+                category_id: datosRecibidos.category,
+                vendor_id: userId,
 
             });
             res.redirect("/")
