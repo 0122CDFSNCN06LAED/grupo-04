@@ -10,19 +10,17 @@ const validations = [
     .isNumeric().withMessage('Ingrese un numero'),
     body('minBuy').notEmpty().withMessage('Escriba el minimo de compra').bail()
     .isNumeric().withMessage('Ingrese un numero'),
-    /*body('productImages').custom((value, { req }) => {
+    body('productImages').custom((value, { req }) => {
         let file = req.file;
         let acceptedExtensions = ['.jpg', '.png', '.jpeg', 'gif'];
-        if (!file) {
-            throw new Error('Suba una imagen');
-        } else {
+        if (file) {
             let fileExtensions = path.extname(file.originalname);
             if (acceptedExtensions.includes(fileExtensions) === false) {
-                throw new Error('Los archivos permitidos son  ${ acceptedExtensions.join(', ')}')
+                throw new Error('Los archivos permitidos son ' + acceptedExtensions.join(', '))
             }
         };
         return true;
-    }),*/
+    }),
 ]
 
 

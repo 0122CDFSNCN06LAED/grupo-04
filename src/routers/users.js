@@ -6,13 +6,13 @@ const multer = require("multer");
 const validations = require("../middlewares/registerValidation");
 
 const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    const pathForMulter = "public/img/users/avatars/";
-    cb(null, pathForMulter);
-  },
-  filename: function(req, file, cb) {
-    cb(null, `${Date.now()}${path.extname(file.originalname)}`);
-  },
+    destination: function(req, file, cb) {
+        const pathForMulter = "public/img/users/avatars/";
+        cb(null, pathForMulter);
+    },
+    filename: function(req, file, cb) {
+        cb(null, `${Date.now()}${path.extname(file.originalname)}`);
+    },
 });
 
 const uploadFile = multer({ storage });
