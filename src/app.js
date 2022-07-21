@@ -8,7 +8,7 @@ const usersRouter = require("./routers/users");
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
-const userLoggedMW = require('./middlewares/userLogged');
+const userLoggedMW = require('./middlewares/userLoggedMiddleware');
 
 
 

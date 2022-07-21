@@ -60,12 +60,15 @@ const controllers = {
             } else {
                 res.render("users/login", { error: "Login incorrecto" });
             };
+            console.log(req.session)
         }
 
     },
     logOut: (req, res) => {
         res.clearCookie("userEmail");
-        req.session.userLogged = null;
+        req.session.destroy();
+        console.log(res.cookie);
+        console.log(req.session);
         res.redirect("../");
     },
 
@@ -203,5 +206,4 @@ const controllers = {
 
     }
 };
-
 module.exports = controllers;
