@@ -1,11 +1,13 @@
- //const users = require('../models/user')
+const db = require("../database/models");
 
- function usuarioLogeado(req, res, next) {
+ async function usuarioLogeado (req, res, next)  {
 
 
      res.locals.isLogged = false;
      let emailEnCookie = req.cookies.userEmail;
-     let userEnCookie = null //users.findByField('email', emailEnCookie)
+     let userEnCookie = emailEnCookie ? await db.Users.findOne({
+        where: { email: emailEnCookie }
+    }) : null;
 
      if (userEnCookie) {
          req.session.userLogged = userEnCookie

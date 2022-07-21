@@ -9,11 +9,19 @@
 }
 
 .avatar-container {
-    width: 30%;
+    display: flex;
+    justify-content: center;
+
+}
+
+.avatar-sub-container {
     display: flex;
     flex-direction: column;
+    width: 50%;
+    align-items: center;
 }
 
 .avatar-mw-50 {
-    width: 50%;
+    width: 90%;
+
 }
