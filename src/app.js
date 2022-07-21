@@ -8,7 +8,7 @@ const usersRouter = require("./routers/users");
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
-const usuarioLogeadoMW = require('./middlewares/usuarioLogeado');
+const userLoggedMW = require('./middlewares/userLogged');
 
 
 
@@ -23,7 +23,7 @@ app.use(
     })
 );
 app.use(cookies());
-app.use(usuarioLogeadoMW);
+app.use(userLoggedMW);
 //Seteo para usar EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
