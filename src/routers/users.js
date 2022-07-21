@@ -5,6 +5,7 @@ const router = Router();
 const multer = require("multer");
 const validations = require("../middlewares/registerValidation");
 const guestMiddleware = require("../middlewares/guestMiddleware")
+const authMiddleware = require("../middlewares/authMiddleware")
 
 const storage = multer.diskStorage({
     destination: function(req, file, cb) {

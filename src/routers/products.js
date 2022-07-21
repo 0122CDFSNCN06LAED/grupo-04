@@ -14,14 +14,16 @@ const storage = multer.diskStorage({
     }
 })
 const uploadFile = multer({ storage });
-const validations = require("../middlewares/createProductValidation")
-const validationEdit = require("../middlewares/ediProductValidation")
-    // /products 
+const validations = require("../middlewares/createProductValidation");
+const validationEdit = require("../middlewares/ediProductValidation");
+const authMiddleware = require("../middlewares/authMiddleware")
+
+// /products 
 router.get("/", productsController.list);
 router.get("/category/:id?", productsController.listByCategory);
-router.get("/create", productsController.create);
+router.get("/create", authMiddleware, productsController.create);
 router.post("/create", uploadFile.single("img"), validations, productsController.store)
-router.get("/edit/:id", productsController.edit);
+router.get("/edit/:id", authMiddleware, productsController.edit);
 router.put("/edit/:id", uploadFile.single("img"), validationEdit, productsController.update);
 router.delete("/delete/:id", productsController.destroy);
 router.get("/detail/:id", productsController.detail);
