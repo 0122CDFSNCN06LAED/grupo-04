@@ -22,17 +22,17 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     const ProductCar = sequelize.define(alias, cols, config);
-   /* ProductCar.associate = function(models) {
-        ProductCar.hasMany(models.Products, {
-            as: "productCar",
-            foreignKey: "product_id",
+    /* ProductCar.associate = function(models) {
+         ProductCar.hasMany(models.Products, {
+             as: "productCar",
+             foreignKey: "product_id",
 
-        });
-        ProductCar.hasMany(models.Users, {
-            as: "productCarUsers",
-            foreignKey: "user_id",
+         });
+         ProductCar.hasMany(models.Users, {
+             as: "productCarUsers",
+             foreignKey: "user_id",
 
-        });
-    } */
+         });
+     } */
     return ProductCar;
 }

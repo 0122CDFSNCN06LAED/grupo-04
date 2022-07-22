@@ -12,4 +12,5 @@ router.get("/informacionVendedor", mainController.informacionVendedor);
 
 
 
+
 module.exports = router;

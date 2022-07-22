@@ -204,6 +204,49 @@ const controllers = {
             res.send("paramsId y sessionId no coinciden");
         }
 
+    },
+
+    apiUsers: (req, res) => {
+        db.Users.findAll()
+            .then(usuarios => {
+                let lista = [];
+                for (unUsuario of usuarios) {
+                    let usuarios = {
+                        id: unUsuario.id,
+                        nombre: unUsuario.firstName,
+                        email: unUsuario.email,
+                        companyName: unUsuario.companyName,
+                    };
+                    lista.push(usuarios);
+                }
+                console.log(unUsuario)
+                return res.status(200).json({
+                    registro: lista.length,
+                    data: lista,
+                    codigo: 200,
+                })
+
+            });
+    },
+    apiUsersId: (req, res) => {
+        db.Users.findByPk(req.params.id, /*{ include: [{ association: "" }] }*/ )
+            .then(usuario => {
+                res.status(200).json({
+
+                    userName: usuario.userName,
+                    firstName: usuario.firstName,
+                    lastName: usuario.lastName,
+                    email: usuario.email,
+                    cuit: usuario.cuit,
+                    companyName: usuario.companyName,
+                    phoneNumber: usuario.contact,
+                    /* companyImg: img,*/
+                    codigo: 200,
+
+                })
+
+            });
     }
+
 };
 module.exports = controllers;

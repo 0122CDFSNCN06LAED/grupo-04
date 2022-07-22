@@ -33,6 +33,9 @@ router.get("/edit/", usersController.edit);
 router.get("/edit/:id", usersController.edit);
 router.put("/edit/:id", uploadFile.single("img"), usersController.update);
 router.delete("/delete/:id", usersController.destroy);
+router.get("/api", usersController.apiUsers);
+router.get("/api/:id", usersController.apiUsersId)
+
 
 
 

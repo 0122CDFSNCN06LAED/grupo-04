@@ -165,9 +165,49 @@ const controllers = {
     add: (req, res) => {
         res.send("agregaste al carrito")
     },
-    addProduct: (req, res) => {
+
+    apiProduct: (req, res) => {
+        db.Products.findAll()
+            .then(productos => {
+                let lista = [];
+                for (unProducto of productos) {
+                    let unProd = {
+                        nombre: unProducto.productName,
+                        descripcion: unProducto.description,
+                        precio: unProducto.price,
+                        minBuy: unProducto.minBuy,
+                        imagen: unProducto.productImages,
+                    };
+                    lista.push(unProd);
+
+                }
+                res.status(200).json({
+                    registro: lista.length,
+                    data: lista,
+                    codigo: 200,
+                })
+
+            });
+    },
+    apiProductDetail: (req, res) => {
+        db.Products.findByPk(req.params.id, { include: [{ association: "productosFavoritos" }] })
+            .then(producto => {
+                res.status(200).json({
+                    nombre: producto.productName,
+                    descripcion: producto.description,
+                    precio: producto.price,
+                    minBuy: producto.minBuy,
+                    imagen: producto.productImages,
+                    favoitos: producto.productosFavoritos,
+                    codigo: 200,
+
+                })
+
+            });
 
     }
+
+
 }
 
 
