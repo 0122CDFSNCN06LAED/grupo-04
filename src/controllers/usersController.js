@@ -5,7 +5,6 @@ const bcrypt = require("bcryptjs");
 let db = require("../database/models")
 const { validationResult } = require('express-validator')
 
-
 //const usersFilePath = path.join(__dirname, "../data/users.json");
 //const users = JSON.parse(fs.readFileSync(usersFilePath, "utf-8"));
 
@@ -37,6 +36,14 @@ const controllers = {
     loguear: async(req, res) => {
         const emailRecibido = req.body.username;
         const password = req.body.password;
+        const resultValidation = validationResult(req);
+
+        if (resultValidation.errors.length > 0) {
+            return res.render("users/login", {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        } else {
 
         const resultado = await db.Users.findAll({
             where: {
@@ -45,7 +52,7 @@ const controllers = {
         });
 
         if (resultado[0] == undefined) {
-            res.render("users/login", { error: "Login incorrecto" });
+            res.render("users/login", { loginError: "Login incorrecto" });
         } else {
 
             if (bcrypt.compareSync(password, resultado[0].password)) {
@@ -58,12 +65,12 @@ const controllers = {
                 res.redirect("../");
 
             } else {
-                res.render("users/login", { error: "Login incorrecto" });
+                res.render("users/login", { loginError: "Login incorrecto" });
             };
             console.log(req.session)
         }
 
-    },
+    }},
     logOut: (req, res) => {
         res.clearCookie("userEmail");
         req.session.destroy();

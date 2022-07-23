@@ -14,18 +14,30 @@
 
         <main class="container w-50 ml-auto mr-auto ">
             <h1 class="titulo-fomulario text-center celeste-vpm">Iniciar sesión</h1>
-            <%if(error!=""){ %>
-                <span class="celeste-vpm m-2 errorMensaje"><%= error %> </span>
-
-                <% } %>
+            <% if (locals.loginError) { %>
+                <div class="text-danger">
+                    <p>Login incorrecto. Verifique los datos ingresados.</p>
+                </div>
+            <% } %>
             <form action="" method="POST">
                 <div class="row mb-1 mt-5">
-                    <label for="username" class="form-label celeste-vpm fs-20">Nombre de usuario</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Ingrese nombre de usuario o email" required>
+                    <label for="username" class="form-label celeste-vpm fs-20">Dirección de e-mail</label>
+                    <input type="text" class="form-control" id="username" name="username" value="<%= locals.username ? oldData.username : null%>" placeholder="Ingrese su dirección de e-mail" required>
+                    <% if (locals.errors && errors.username) { %>
+                        <div class="text-danger">
+                            <%= errors.username.msg %>
+                        </div>
+                        <% } %>
                 </div>
                 <div class="row mb-3 mt-5">
                     <label for="password" class="form-label celeste-vpm fs-20">Contraseña</label>
                     <input type="password" class="form-control" id="password" name="password" required>
+                    <% if (locals.errors && errors.password) { %>
+                        <div class="text-danger">
+                            <%= errors.password.msg %>
+                            <%= console.log(errors) %>
+                        </div>
+                        <% } %>
                 </div>
                 <div>
                     <label for="recordame" class="form-label text-white">Acordate de mi </label>
