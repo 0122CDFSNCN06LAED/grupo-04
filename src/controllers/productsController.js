@@ -163,6 +163,11 @@ const controllers = {
 
     },
     add: (req, res) => {
+
+        /* db.ProductCart.create({
+
+
+         })*/
         res.send("agregaste al carrito")
     },
 
@@ -190,7 +195,7 @@ const controllers = {
             });
     },
     apiProductDetail: (req, res) => {
-        db.Products.findByPk(req.params.id, { include: [{ association: "productosFavoritos" }] })
+        db.Products.findByPk(req.params.id, { include: [{ association: "categories" }] })
             .then(producto => {
                 res.status(200).json({
                     nombre: producto.productName,
@@ -199,6 +204,7 @@ const controllers = {
                     minBuy: producto.minBuy,
                     imagen: producto.productImages,
                     favoitos: producto.productosFavoritos,
+                    categoria: producto.categories.name,
                     codigo: 200,
 
                 })
