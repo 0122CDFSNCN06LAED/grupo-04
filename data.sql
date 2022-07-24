@@ -59,7 +59,7 @@ insert into products (id, productName, price, minBuy, productImages, description
  (6, 'Cajonera', 30324, 5, 'cajonera.webp', '4 Cajones / Escritorio / Oficina Con Ruedas', 3, 4, 1),
  (7, 'Impresora', 150124, 5, 'impresora.jpg','color multifunción Epson EcoTank L3210 negra 220V', 4, 5, 1),
  (8, 'Impresora', 13255, 5, 'impresoraXerox.jpg', 'Impresora simple función Xerox Phaser 3020/BI con wifi blanca y azul 220V - 240V', 8, 5, 1),
- (9, 'Apple Macbook Air', 300524, 2, 'macbook1.webp','computadora Apple primera generacion', 9, 5, 1), 
+ (9, 'Apple Macbook Air', 300524, 2, 'macbook1.webp','computadora Apple primera generacion', 9, 5, 2), 
  (10, 'Monitor LG 24MK430H', 150909, 10, 'monitorLg.jpeg','led 23.8 negro 100V/240V', 10, 5, 1),
  (11, 'Delantal', 5200, 30, 'delantalCocina.jpg', 'Delantal de cocina Universal', 5, 6, 1),
  (12, 'Remera Clásica', 4000, 10, 'remeraLisa.jpg', 'Remera Clásica Manga Corta Blanca', 16, 6, 1),

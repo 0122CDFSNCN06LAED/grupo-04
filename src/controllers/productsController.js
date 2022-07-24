@@ -7,7 +7,7 @@ const { validationResult } = require('express-validator')
 
 const controllers = {
     list: (req, res) => {
-        db.Products.findAll().then(function(products) {
+        db.Products.findAll().then(function (products) {
             res.render("products/productsList.ejs", { products, category: null })
         }).catch(error => {
             console.log(error)
@@ -18,7 +18,7 @@ const controllers = {
         if (categoryId) {
             let categoriePedido = db.ProductCategories.findAll({ where: { id: categoryId } });
             let productoPedido = db.Products.findAll({ where: { category_id: categoryId } });
-            Promise.all([categoriePedido, productoPedido]).then(function([category, products]) {
+            Promise.all([categoriePedido, productoPedido]).then(function ([category, products]) {
                 console.log(category)
 
                 if (products.length > 0) {
@@ -34,6 +34,21 @@ const controllers = {
             res.redirect("/")
         };
     },
+
+    listMyProducts: async (req, res) => {
+        const userId = req.session.userLogged.id
+        let productosPedidos = await db.Products.findAll({ where: { vendor_id: userId } });
+       // console.log(productosPedidos)
+        if (productosPedidos) {
+            res.render("products/productsList.ejs", { products: productosPedidos, category: null })
+        } else {
+            res.redirect('/')
+        }
+
+
+
+    },
+
     create: (req, res) => {
         db.Models.findAll().then((modelos) => {
             db.ProductCategories.findAll().then((categories) => {
@@ -44,7 +59,7 @@ const controllers = {
             })
         })
     },
-    store: async(req, res) => {
+    store: async (req, res) => {
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
             /* console.log(resultValidation.errors);*/
@@ -143,7 +158,7 @@ const controllers = {
             })
         })
     },
-    detail: async(req, res) => {
+    detail: async (req, res) => {
         let producto = await db.Products.findByPk(req.params.id, { include: [{ association: "vendor" }, { association: "modelosDeProducto" }] });
         let modelo = await db.Models.findByPk(producto.models_id, { include: [{ association: "marcas" }] });
         let marca = modelo.marcas
