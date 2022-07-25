@@ -42,8 +42,7 @@ CREATE TABLE models (
 	brand_id INT,
 	name VARCHAR(50),
 	description VARCHAR(100),
-	PRIMARY KEY (id),
-    FOREIGN KEY (brand_id) REFERENCES brands(id)
+	PRIMARY KEY (id)
 );
 
 
