@@ -34,6 +34,21 @@ const controllers = {
             res.redirect("/")
         };
     },
+
+    listMyProducts: async(req, res) => {
+        const userId = req.session.userLogged.id
+        let productosPedidos = await db.Products.findAll({ where: { vendor_id: userId } });
+        // console.log(productosPedidos)
+        if (productosPedidos) {
+            res.render("products/productsList.ejs", { products: productosPedidos, category: null })
+        } else {
+            res.redirect('/')
+        }
+
+
+
+    },
+
     create: (req, res) => {
         db.Models.findAll().then((modelos) => {
             db.ProductCategories.findAll().then((categories) => {
@@ -47,7 +62,7 @@ const controllers = {
     store: async(req, res) => {
         const resultValidation = validationResult(req);
         if (resultValidation.errors.length > 0) {
-            /* console.log(resultValidation.errors);*/
+            console.log(resultValidation.errors);
             db.Models.findAll().then((modelos) => {
                 db.ProductCategories.findAll().then((categories) => {
                     db.Users.findAll().then((vendor) => {
@@ -163,6 +178,11 @@ const controllers = {
 
     },
     add: (req, res) => {
+
+        /* db.ProductCart.create({
+
+
+         })*/
         res.send("agregaste al carrito")
     },
 
@@ -190,7 +210,7 @@ const controllers = {
             });
     },
     apiProductDetail: (req, res) => {
-        db.Products.findByPk(req.params.id, { include: [{ association: "productosFavoritos" }] })
+        db.Products.findByPk(req.params.id, { include: [{ association: "categories" }] })
             .then(producto => {
                 res.status(200).json({
                     nombre: producto.productName,
@@ -199,13 +219,28 @@ const controllers = {
                     minBuy: producto.minBuy,
                     imagen: producto.productImages,
                     favoitos: producto.productosFavoritos,
+                    categoria: producto.categories.name,
                     codigo: 200,
-
                 })
-
             });
+    },
+    apiCategories: (req, res) => {
+        console.log("category");
+        db.ProductCategories.findAll()
+            .then(category => {
+                category.forEach(element => {
+                    element['cantidad'] = 5;
+                });
+                return res.status(200).json({
+                    registro: category.length,
+                    data: category,
+                    codigo: 200
+                })
+            }).catch(excepcion => {
+                console.log(excepcion);
+            })
+    },
 
-    }
 
 
 }

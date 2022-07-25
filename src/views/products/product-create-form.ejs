@@ -11,17 +11,19 @@
 <body class="bg-black">
     <%- include("../partials/header.ejs") %>
         <main class="container m-15 mb-10">
-
-            <form action="/products/create" method="POST" enctype="multipart/form-data">
+            <div class="errores text text-danger">
+                <ul></ul>
+            </div>
+            <form class="crear" action="/products/create" method="POST" enctype="multipart/form-data">
                 <input type="hidden">
                 <div class="row">
                     <div class="col-12">
                         <h2 class="titulo-fomulario text-center celeste-vpm">Creando un nuevo producto</i>
                         </h2>
                     </div>
-                    <div class="col-12 col-md-6">
+                    <div class="col-12 col-md-6 ">
                         <label class="form-label celeste-vpm" for="name">Nombre del producto</label>
-                        <input class="form-control" type=" text " id="productName " name="productName" value="<%= locals.oldData ? oldData.productName : null%>">
+                        <input class="form-control" type=" text " id="validacionName" id="productName" name="productName" value="<%= locals.oldData ? oldData.productName : null%>">
                         <% if (locals.errors && errors.productName) { %>
                             <div class="text-danger">
                                 <%= errors.productName.msg %>
@@ -31,7 +33,7 @@
 
                     <div class="col-12 col-md-6">
                         <label class="form-label celeste-vpm" for="name">Descripcion del producto</label>
-                        <input class="form-control" type=" text " id="description " name="description" value="<%= locals.oldData ? oldData.description : null%>">
+                        <input class="form-control" type=" text " id="description" name="description" value="<%= locals.oldData ? oldData.description : null%>">
                         <% if (locals.errors && errors.description) { %>
                             <div class="text-danger">
                                 <%= errors.description.msg %>
@@ -40,12 +42,12 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label celeste-vpm" for="name">Modelo del producto</label>
-                        <input class="form-control" type=" text " id="models " name="models" value="<%= locals.oldData ? oldData.models : null%>">
-                        <% if (locals.errors && errors.models) { %>
-                            <div class="text-danger">
+                        <input class="form-control" type=" text " id="models" name="models" value="<%= locals.oldData ? oldData.models : null%>">
+                        <div class="text-danger" id="errorModelo">
+                            <% if (locals.errors && errors.models) { %>
                                 <%= errors.models.msg %>
-                            </div>
-                            <% } %>
+                                    <% } %>
+                        </div>
                     </div>
                     <!--<div class="col-md-6">
                             <label class="form-label celeste-vpm" for="models">Modelo</label>
@@ -79,28 +81,19 @@
                             </div>
                             <% } %>
                     </div>
-
-
                     <!-- <div class="col-md-6 "><label class="form-label celeste-vpm " for="stock ">Stock</label>
                         <input class="form-control " type=" text " id="stock " name="stock " value=" ">
                     </div>-->
-
                     <div class="col-md-6 ">
                         <label class="form-label celeste-vpm " for="category ">Categoria</label>
-                        <!--
-                         <% for(let i=0; i<c.length; i++){ %> 
-                            <input type="checkbox " id="cat<%=c [i].id %>">
-                                <%= c[i].name %><br>
-
-                                    <% } %>
-                                        -->
                         <select name="category" id="category" class="form-control">
+                            <option value="0" selected="selected">seleccione categoria</option>
                             <% for(let i=0; i<c.length; i++){ %> 
-                               <option value="<%= c[i].id %> "><%= c[i].name %></option> 
+                               <option value="<%= c[i].id %>"><%= c[i].name %></option> 
                                 <% } %> 
                         </select>
                         <% if (locals.errors && errors.category) { %>
-                            <div class="text-error">
+                            <div class="text-danger">
                                 <%= errors.category.msg %>
                             </div>
                             <% } %>
@@ -123,6 +116,7 @@
 
         </main>
         <%- include("../partials/footer.ejs") %>
+            <script src="/js/validacionCreate.js"></script>
 </body>
 
 </html>

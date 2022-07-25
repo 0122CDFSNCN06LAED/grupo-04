@@ -10,10 +10,6 @@ const session = require('express-session');
 const cookies = require('cookie-parser');
 const userLoggedMW = require('./middlewares/userLoggedMiddleware');
 
-
-
-
-
 //cookies & session
 app.use(
     session({
@@ -24,27 +20,31 @@ app.use(
 );
 app.use(cookies());
 app.use(userLoggedMW);
+app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+    next();
+
+    app.options('*', (req, res) => {
+        res.header('Access-Control-Allow-Methods', 'GET, PATCH, PUT, POST, DELETE, OPTIONS');
+        res.send();
+    });
+});
+
 //Seteo para usar EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '/views'));
-
-
 //Config de METHOD para otros métodos
 app.use(methodOverride('_method'));
-
 //Config para que reciba por POST
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-
 //Declaración de ruta public
 app.use(express.static(path.join(__dirname, "../public")));
-
-//Ejecución de Node en la puerto 3000
-app.listen(3000, () => {
-    console.log("El servidor de prendio en el puerto:3000");
+//Ejecución de Node en la puerto 3001
+app.listen(3001, () => {
+    console.log("El servidor de prendio en el puerto:3001");
 });
-
-
 //Configuración de Routers
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);

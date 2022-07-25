@@ -45,32 +45,33 @@ const controllers = {
             });
         } else {
 
-        const resultado = await db.Users.findAll({
-            where: {
-                email: emailRecibido,
-            }
-        });
-
-        if (resultado[0] == undefined) {
-            res.render("users/login", { loginError: "Login incorrecto" });
-        } else {
-
-            if (bcrypt.compareSync(password, resultado[0].password)) {
-                req.session.userLogged = resultado[0];
-                console.log(req.session.userLogged);
-
-                if (req.body.recordame) {
-                    res.cookie("userEmail", req.body.username, { maxAge: 1000 * 60 });
+            const resultado = await db.Users.findAll({
+                where: {
+                    email: emailRecibido,
                 }
-                res.redirect("../");
+            });
 
-            } else {
+            if (resultado[0] == undefined) {
                 res.render("users/login", { loginError: "Login incorrecto" });
-            };
-            console.log(req.session)
-        }
+            } else {
 
-    }},
+                if (bcrypt.compareSync(password, resultado[0].password)) {
+                    req.session.userLogged = resultado[0];
+                    console.log(req.session.userLogged);
+
+                    if (req.body.recordame) {
+                        res.cookie("userEmail", req.body.username, { maxAge: 1000 * 60 });
+                    }
+                    res.redirect("../");
+
+                } else {
+                    res.render("users/login", { loginError: "Login incorrecto" });
+                };
+                console.log(req.session)
+            }
+
+        }
+    },
     logOut: (req, res) => {
         res.clearCookie("userEmail");
         req.session.destroy();
