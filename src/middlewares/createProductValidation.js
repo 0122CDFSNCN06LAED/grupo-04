@@ -10,7 +10,7 @@ const validations = [
     body('models').notEmpty().withMessage('agregue un modelo al producto'),
     body('price').notEmpty().withMessage('Escriba el precio del producto').bail()
     .isNumeric().withMessage('Ingrese un precio'),
-    /* body('category').equals(0).withMessage('seleccione una categoria'),*/
+    body('category').notEmpty().withMessage('seleccione una categoria'),
     body('minBuy').notEmpty().withMessage('Escriba el minimo de compra').bail()
     .isNumeric().withMessage('Ingrese un numero'),
     body('productImages').custom((value, { req }) => {
