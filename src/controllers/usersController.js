@@ -166,7 +166,7 @@ const controllers = {
 
             var passwordChange = null;
 
-            if (req.body.password && req.body.password == req.body.passwordRepeat) {
+            if (req.body.password != "" && req.body.password == req.body.passwordRepeat) {
                 passwordChange = true;
             }
 
