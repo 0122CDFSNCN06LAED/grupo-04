@@ -44,18 +44,13 @@ const controllers = {
         } else {
             res.redirect('/')
         }
-
-
-
     },
-
     create: (req, res) => {
         db.Models.findAll().then((modelos) => {
             db.ProductCategories.findAll().then((categories) => {
                 db.Users.findAll().then((vendor) => {
                     res.render("products/product-create-form", { m: modelos, c: categories, v: vendor })
                 })
-
             })
         })
     },
@@ -88,7 +83,6 @@ const controllers = {
                 models_id: datosRecibidos.models,
                 category_id: datosRecibidos.category,
                 vendor_id: userId,
-
             });
             res.redirect("/")
         }
@@ -101,7 +95,6 @@ const controllers = {
             .then(([producto, modelos, categorias]) => {
                 res.render("products/product-edit-form", { p: producto, m: modelos, c: categorias })
             })
-
     },
     update: (req, res) => {
         const resultValidation = validationResult(req);

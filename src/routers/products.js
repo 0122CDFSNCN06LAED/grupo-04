@@ -31,7 +31,7 @@ router.get("/search", productsController.search);
 router.get("/agregar/:id", productsController.add);
 router.get("/api", productsController.apiProduct);
 router.get("/api/:id", productsController.apiProductDetail);
-router.get("/myProducts", productsController.listMyProducts);
+router.get("/myProducts", authMiddleware, productsController.listMyProducts);
 router.get("/categorias", productsController.apiCategories);
 
 
