@@ -37,13 +37,23 @@ const controllers = {
 
     listMyProducts: async(req, res) => {
         const userId = req.session.userLogged.id
-        let productosPedidos = await db.Products.findAll({ where: { vendor_id: userId } });
+
+        try {
+            let productosPedidos = await db.Products.findAll({ where: { vendor_id: userId } });
         // console.log(productosPedidos)
         if (productosPedidos) {
             res.render("products/productsList.ejs", { products: productosPedidos, category: null })
         } else {
             res.redirect('/')
         }
+            
+        } catch (error) {
+            
+            res.redirect('/')
+        }
+        
+
+
     },
     create: (req, res) => {
         db.Models.findAll().then((modelos) => {
@@ -88,13 +98,31 @@ const controllers = {
         }
     },
     edit: (req, res) => {
-        let pedidoProducto = db.Products.findByPk(req.params.id);
-        let pedidoModelos = db.Models.findAll();
-        let pedidoCategorias = db.ProductCategories.findAll();
-        Promise.all([pedidoProducto, pedidoModelos, pedidoCategorias])
-            .then(([producto, modelos, categorias]) => {
-                res.render("products/product-edit-form", { p: producto, m: modelos, c: categorias })
-            })
+
+
+        try {
+            
+            let pedidoProducto = db.Products.findByPk(req.params.id);
+            let pedidoModelos = db.Models.findAll();
+            let pedidoCategorias = db.ProductCategories.findAll();
+            Promise.all([pedidoProducto, pedidoModelos, pedidoCategorias])
+                .then(([producto, modelos, categorias]) => {
+                 const userId = req.session.userLogged.id
+                if (producto != null && userId == producto.vendor_id) {
+                    res.render("products/product-edit-form", { p: producto, m: modelos, c: categorias })
+                } else {
+                    res.redirect("../../products/myProducts")
+                };
+                    
+                })
+    
+
+        } catch (error) {
+            res.redirect("../../products/myProducts")
+        }
+
+
+      
     },
     update: (req, res) => {
         const resultValidation = validationResult(req);

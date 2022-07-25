@@ -92,7 +92,10 @@
                             <% if(locals.isLogged) {%>
                                 <a href="/"> <button type="button" class="btn btn-primary">Comprar ahora</button></a>  
                                 <a href="/productCart" style="display: flex"> <button type="button" class="btn btn-add-to-cart">Agregar al carrito <i class="fa-solid fa-dolly"></i></button></a>
-                                <a href="/products/edit/<%= p.id %> "> <button type="button" class="btn btn-secondary">Editar producto</button></a>  
+                                <% if (locals.isLogged && locals.userLogged.id == p.vendor.id) { %>
+                                    <a href="/products/edit/<%= p.id %> "> <button type="button" class="btn btn-secondary">Editar producto</button></a>  
+                                <% } %>
+                               
                                 <%} else {%>
                                     <a href="/users/login"> <button type="button" class="btn btn-primary">Comprar ahora</button></a>
                                     <a href="/users/login" style="display: flex"> <button type="button" class="btn btn-add-to-cart">Agregar al carrito <i class="fa-solid fa-dolly"></i></button></a>
