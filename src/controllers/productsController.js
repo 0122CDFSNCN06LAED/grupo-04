@@ -55,14 +55,12 @@ const controllers = {
 
 
     },
-
     create: (req, res) => {
         db.Models.findAll().then((modelos) => {
             db.ProductCategories.findAll().then((categories) => {
                 db.Users.findAll().then((vendor) => {
                     res.render("products/product-create-form", { m: modelos, c: categories, v: vendor })
                 })
-
             })
         })
     },
@@ -95,7 +93,6 @@ const controllers = {
                 models_id: datosRecibidos.models,
                 category_id: datosRecibidos.category,
                 vendor_id: userId,
-
             });
             res.redirect("/")
         }

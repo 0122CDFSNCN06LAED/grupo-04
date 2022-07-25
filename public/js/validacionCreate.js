@@ -8,15 +8,18 @@ window.addEventListener("load", function() {
 
         let productName = document.querySelector("input#validacionName");
         if (productName.value == "") {
-            errores.push("indique el nombe del producto")
+            document.getElementById("errorNombre").innerHTML = "debes indicar el nombre del producto"
+            errores.push("nombre del producto")
         } else if (productName.value.length < 5) {
-            errores.push("minimo 5 letras")
+            document.getElementById("errorNombre").innerHTML = "minimo 5 letras"
+            errores.push("5 letras")
         }
         let descripcion = document.querySelector("input#description")
         if (descripcion.value == "") {
-            errores.push("debe ser completada la descripcion")
+            document.getElementById("errorDescripcion").innerHTML = "debes hacer una descripcion sobre el producto"
+            errores.push("descripcion")
         } else if (descripcion.value.length < 20) {
-            errores.push("minimo 20 caracteres")
+            errores.push("20 caracteres")
         }
 
         let modelo = document.querySelector("input#models")
@@ -26,11 +29,13 @@ window.addEventListener("load", function() {
         }
         let precio = document.querySelector("input#price")
         if (precio.value == "") {
-            errores.push("indique el precio")
+            document.getElementById("errorPrecio").innerHTML = "debes indicar un precio"
+            errores.push("precio")
         }
         let minBuy = document.querySelector("input#minBuy")
         if (minBuy.value == "") {
-            errores.push("indique minimo de compra")
+            document.getElementById("errorMinBuy").innerHTML = "debes indicar la cantidad minima de compra"
+            errores.push("minimo de compra")
         }
 
         if (errores.length > 0) {

@@ -1,6 +1,6 @@
 const path = require('path');
 const { body } = require('express-validator');
-const { log } = require('console');
+
 
 const validations = [
     body('productName').notEmpty().withMessage('Escriba un nombre').bail()
@@ -10,7 +10,7 @@ const validations = [
     body('models').notEmpty().withMessage('agregue un modelo al producto'),
     body('price').notEmpty().withMessage('Escriba el precio del producto').bail()
     .isNumeric().withMessage('Ingrese un precio'),
-    body('category').equals(0).withMessage('seleccione una categoria'),
+    /* body('category').equals(0).withMessage('seleccione una categoria'),*/
     body('minBuy').notEmpty().withMessage('Escriba el minimo de compra').bail()
     .isNumeric().withMessage('Ingrese un numero'),
     body('productImages').custom((value, { req }) => {
