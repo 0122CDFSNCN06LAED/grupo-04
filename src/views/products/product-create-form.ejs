@@ -43,11 +43,11 @@
                     <div class="col-12 col-md-6">
                         <label class="form-label celeste-vpm" for="name">Modelo del producto</label>
                         <input class="form-control" type=" text " id="models" name="models" value="<%= locals.oldData ? oldData.models : null%>">
-                        <% if (locals.errors && errors.models) { %>
-                            <div class="text-danger">
+                        <div class="text-danger" id="errorModelo">
+                            <% if (locals.errors && errors.models) { %>
                                 <%= errors.models.msg %>
-                            </div>
-                            <% } %>
+                                    <% } %>
+                        </div>
                     </div>
                     <!--<div class="col-md-6">
                             <label class="form-label celeste-vpm" for="models">Modelo</label>
@@ -87,6 +87,7 @@
                     <div class="col-md-6 ">
                         <label class="form-label celeste-vpm " for="category ">Categoria</label>
                         <select name="category" id="category" class="form-control">
+                            <option value="0" selected="selected">seleccione categoria</option>
                             <% for(let i=0; i<c.length; i++){ %> 
                                <option value="<%= c[i].id %>"><%= c[i].name %></option> 
                                 <% } %> 

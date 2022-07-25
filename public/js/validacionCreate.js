@@ -4,8 +4,6 @@ window.addEventListener("load", function() {
     console.log(formulario, "soy una prueba");
 
     formulario.addEventListener("submit", function(e) {
-        e.preventDefault();
-
         let errores = [];
 
         let productName = document.querySelector("input#validacionName");
@@ -23,7 +21,8 @@ window.addEventListener("load", function() {
 
         let modelo = document.querySelector("input#models")
         if (modelo.value == "") {
-            errores.push("debes indicar un modelo")
+            document.getElementById("errorModelo").innerHTML = "debes indicar un modelo"
+            errores.push("modelo");
         }
         let precio = document.querySelector("input#price")
         if (precio.value == "") {
@@ -36,12 +35,7 @@ window.addEventListener("load", function() {
 
         if (errores.length > 0) {
             e.preventDefault();
-            let ulErrores = document.querySelector("div.errores ul")
-            for (let i = 0; i < errores.length; i++) {
 
-                ulErrores.innerHTML += "<li>" + errores[i] + "</li>"
-
-            }
         }
 
         /*   if (categoria.value == "") {
