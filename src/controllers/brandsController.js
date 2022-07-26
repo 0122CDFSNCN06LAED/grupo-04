@@ -23,9 +23,71 @@ const controllers = {
         );
 
     },
-    edit: (req, res) => {},
-    update: (req, res) => {},
-    destroy: (req, res) => {},
+    edit: (req, res) => {
+
+        if (req.session.userLogged.usercategory_id == 1) {
+            const paramsId = req.params.id;
+            
+            if (!paramsId) {
+                res.redirect(`/brands/list`)
+            } else {
+                db.Brands.findByPk(paramsId).then((brand) => {
+                    if (brand){
+                        res.render("brands/brandsEdit", { b: brand })
+                    } else {
+                        res.redirect(`/brands/list`)
+                    }
+
+                });
+            };
+        } else {
+            res.redirect("/products/");
+        }
+    },
+    update: (req, res) => {
+
+        if (req.session.userLogged.usercategory_id == 1) {
+            const paramsId = req.params.id;
+            
+            if (!paramsId) {
+                res.redirect(`/brands/list`)
+            } else {
+                db.Brands.update({
+                    name: req.body.name
+                }, {
+                    where: { id: paramsId }
+                }).then((brand) => {
+                    console.log(brand)
+                    res.redirect("/brands/list")
+                });
+            };
+        } else {
+            res.redirect("/products/");
+        }
+        
+
+    },
+    destroy: (req, res) => {
+
+        if (req.session.userLogged.usercategory_id == 1) {
+            const paramsId = req.params.id;
+            
+            if (!paramsId) {
+                res.redirect(`/brands/list`)
+            } else {
+                db.Brands.destroy({
+                    where: {
+                        id: req.params.id
+                    }
+                }).then(() => {
+                    res.redirect("/brands/list")
+                });
+            };
+        } else {
+            res.redirect("/products/");
+        }
+
+    },
 }
 
 module.exports = controllers

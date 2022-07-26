@@ -113,7 +113,7 @@ const controllers = {
                     lastName: req.body.lastName,
                     email: req.body.email,
                     cuit: req.body.cuit,
-                    //password: hashedPassword,
+                    password: hashedPassword,
                     companyName: req.body.companyName,
                     phoneNumber: req.body.contact,
                     companyImg: img,
@@ -134,7 +134,7 @@ const controllers = {
     edit: (req, res) => {
 
         if (req.session.userLogged) {
-            console.log("aquí te va:", req.session.userLogged);
+            console.log("aquí te va:", req.session.userLogged.usercategory_id);
             const userId = req.session.userLogged.id;
             const paramsId = req.params.id;
             if (!paramsId) {

@@ -7,7 +7,9 @@ router.get("/", authMiddleware, brandsController.list);
 router.get("/list", authMiddleware, brandsController.list);
 router.get("/create", authMiddleware, brandsController.create);
 router.post("/create", authMiddleware, brandsController.store);
-
+router.get("/edit/:id", authMiddleware, brandsController.edit);
+router.put("/edit/:id", authMiddleware, brandsController.update);
+router.delete("/delete/:id", authMiddleware, brandsController.destroy);
 
 
 module.exports = router;

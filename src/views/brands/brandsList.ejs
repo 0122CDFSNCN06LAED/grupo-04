@@ -14,11 +14,11 @@
         <main class="bg-white mt-4">
             <div class="container">
                             <div class="row">
-                                <ul class="list-group">
+                                <ul class="list-group mb-5">
                                     <li class="list-group-item active">Marcas</li>
                                     <% brands.forEach(brand => { %>
                                     <li class="list-group-item">
-                                        <a href="../../brands/detail/<%= brand.id %>"> <%=brand.name%> </a>
+                                        <a href="../../brands/edit/<%= brand.id %>"> <%=brand.name%> </a>
                                     </li>
                                     <% }) %>
                                   </ul>

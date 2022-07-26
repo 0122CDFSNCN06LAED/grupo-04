@@ -48,7 +48,7 @@ insert into productCategories (id, name, description) values
 (17, 8, 'Fan ', 'descripcion de modelo');
 
 insert into users (id, userName, firstName, lastName, email, cuit, companyName, phoneNumber, password, companyImg, userCategory_id) values  
- (1, 'admin@admin.com', 'admin', 'admin', 'admin@admin.com', 828437021, 'BMP (admin)', 615252920, '$2a$10$3JRBBvulx7pqYfMP8vqE.eR7YNBEqSPk4kqDTWu9qCFZy/gki3SyO', 'default-avatar.png', 2), (2, 'user@user.com', 'user', 'user', 'user@user.com', 828437021, 'BMP (user)', 615252920, '$2a$10$3JRBBvulx7pqYfMP8vqE.eR7YNBEqSPk4kqDTWu9qCFZy/gki3SyO', 'default-avatar.png', 2);
+ (1, 'admin@admin.com', 'admin', 'admin', 'admin@admin.com', 828437021, 'BMP (admin)', 615252920, '$2a$10$3JRBBvulx7pqYfMP8vqE.eR7YNBEqSPk4kqDTWu9qCFZy/gki3SyO', 'default-avatar.png', 1), (2, 'user@user.com', 'user', 'user', 'user@user.com', 828437021, 'BMP (user)', 615252920, '$2a$10$3JRBBvulx7pqYfMP8vqE.eR7YNBEqSPk4kqDTWu9qCFZy/gki3SyO', 'default-avatar.png', 2);
 
 insert into products (id, productName, price, minBuy, productImages, description, models_id, category_id,vendor_id) values 
  (1, 'Azucar', 300, 10, 'azucar.jpg', 'azucar de primera calidad', 1, 1, 1),
