@@ -23,7 +23,8 @@
                     </div>
                     <div class="col-12 col-md-6 ">
                         <label class="form-label celeste-vpm" for="name">Nombre del producto</label>
-                        <input class="form-control" type=" text " id="validacionName" id="productName" name="productName" value="<%= locals.oldData ? oldData.productName : null%>">
+                        <input class="form-control" type=" text " id="validacionName" id="productName"
+                            name="productName" value="<%= locals.oldData ? oldData.productName : null%>">
                         <div class="text-danger" id="errorNombre">
                             <% if (locals.errors && errors.productName) { %>
                                 <%= errors.productName.msg %>
@@ -32,7 +33,8 @@
                     </div>
                     <div class="col-12 col-md-6">
                         <label class="form-label celeste-vpm" for="name">Descripcion del producto</label>
-                        <input class="form-control" type=" text " id="description" name="description" value="<%= locals.oldData ? oldData.description : null%>">
+                        <input class="form-control" type=" text " id="description" name="description"
+                            value="<%= locals.oldData ? oldData.description : null%>">
                         <div class="text-danger" id="errorDescripcion">
                             <% if (locals.errors && errors.description) { %>
                                 <%= errors.description.msg %>
@@ -43,9 +45,14 @@
                         <label class="form-label celeste-vpm" for="models">Marca y Modelo</label>
                         <select name="models" id="models" class="form-control models">
                             <option value="" selected="selected">seleccione una combinación</option>
-                            <div><% for(let i=0; i<m.length; i++){ %> 
-                               <option value="<%= m[i].id %> "><%= m[i].marcas ? `Marca: ${ m[i].marcas.name } - Modelo: ${ m[i].name }`  : m[i].name %></option> 
-                                 <% } %></div>
+                            <div>
+                                <% for(let i=0; i<m.length; i++){ %>
+                                    <option value="<%= m[i].id %> ">
+                                        <%= m[i].marcas ? `Marca: ${ m[i].marcas.name } - Modelo: ${ m[i].name }` :
+                                            m[i].name %>
+                                    </option>
+                                    <% } %>
+                            </div>
                         </select>
                     </div>
                     <!-- <div class="col-12 col-md-6"> 
@@ -59,7 +66,8 @@
                     </div>  -->
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="price">Precio</label>
-                        <input class="form-control" type="text" id="price" name="price" value="<%= locals.oldData ? oldData.price : null%>">
+                        <input class="form-control" type="text" id="price" name="price"
+                            value="<%= locals.oldData ? oldData.price : null%>">
                         <div class="text-danger" id="errorPrecio">
                             <% if (locals.errors && errors.price) { %>
                                 <%= errors.price.msg %>
@@ -68,7 +76,8 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="minBuy">Minimo a comprar</label>
-                        <input class="form-control" type="text" id="minBuy" name="minBuy" value="<%= locals.oldData ? oldData.minBuy : null%>">
+                        <input class="form-control" type="text" id="minBuy" name="minBuy"
+                            value="<%= locals.oldData ? oldData.minBuy : null%>">
                         <div class="text-danger" id="errorMinBuy">
                             <% if (locals.errors && errors.minBuy) { %>
                                 <%= errors.minBuy.msg %>
@@ -78,10 +87,12 @@
                     <div class="col-md-6 ">
                         <label class="form-label celeste-vpm" for="category">Categoria</label>
                         <select name="category" id="category" class="form-control">
-                             <option value="" selected="selected">seleccione categoria</option>
-                            <% for(let i=0; i<c.length; i++){ %> 
-                               <option value="<%= c[i].id %>"><%= c[i].name %></option> 
-                                <% } %> 
+                            <option value="" selected="selected">seleccione categoria</option>
+                            <% for(let i=0; i<c.length; i++){ %>
+                                <option value="<%= c[i].id %>">
+                                    <%= c[i].name %>
+                                </option>
+                                <% } %>
                         </select>
                         <% if (locals.errors && errors.category) { %>
                             <div class="text-danger">
@@ -90,7 +101,8 @@
                             <% } %>
                     </div>
                     <div class="col-md-6"><label class="form-label celeste-vpm" for="img">Imagen</label>
-                        <input class="form-control" type="file" id="img" name="img" value="<%= locals.oldData ? oldData.productImages : null%>">
+                        <input class="form-control" type="file" id="img" name="img"
+                            value="<%= locals.oldData ? oldData.productImages : null%>">
                         <% if (locals.errors && errors.productImages) { %>
                             <div class="text-danger">
                                 <%= errors.productImages.msg %>
