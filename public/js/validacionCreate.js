@@ -1,9 +1,10 @@
 window.addEventListener("load", function() {
-
+    
     let formulario = document.querySelector("form.crear");
-    console.log(formulario, "soy una prueba");
-
+    //console.log(formulario, "soy una prueba");
+    
     formulario.addEventListener("submit", function(e) {
+        e.preventDefault();
         let errores = [];
 
         let productName = document.querySelector("input#validacionName");
@@ -36,11 +37,10 @@ window.addEventListener("load", function() {
         if (minBuy.value == "") {
             document.getElementById("errorMinBuy").innerHTML = "debes indicar la cantidad minima de compra"
             errores.push("minimo de compra")
-        }
+        } console.log(errores)
 
-        if (errores.length > 0) {
-            e.preventDefault();
-
+        if (errores.length == 0) {
+            formulario.submit();
         }
 
         /*   if (categoria.value == "") {
