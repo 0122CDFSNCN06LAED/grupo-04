@@ -16,7 +16,7 @@ const storage = multer.diskStorage({
 const uploadFile = multer({ storage });
 const validations = require("../middlewares/createProductValidation");
 const validationEdit = require("../middlewares/ediProductValidation");
-const authMiddleware = require("../middlewares/authMiddleware")
+const authMiddleware = require("../middlewares/authMiddleware");
 
 // /products 
 router.get("/", productsController.list);

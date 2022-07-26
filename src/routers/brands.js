@@ -1,13 +1,12 @@
 const { Router } = require("express");
 const brandsController = require("../controllers/brandsController");
-
 const router = Router();
+const authMiddleware = require("../middlewares/authMiddleware");
 
-
-router.get("/", brandsController.list);
-router.get("/list", brandsController.list);
-router.get("/create", brandsController.create);
-router.post("/create", brandsController.store);
+router.get("/", authMiddleware, brandsController.list);
+router.get("/list", authMiddleware, brandsController.list);
+router.get("/create", authMiddleware, brandsController.create);
+router.post("/create", authMiddleware, brandsController.store);
 
 
 
