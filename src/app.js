@@ -5,6 +5,8 @@ const app = express();
 const mainRouter = require("./routers/mainRouter");
 const productsRouter = require("./routers/products")
 const usersRouter = require("./routers/users");
+const brandsRouter = require("./routers/brands");
+const modelsRouter = require("./routers/models");
 const methodOverride = require('method-override');
 const session = require('express-session');
 const cookies = require('cookie-parser');
@@ -48,4 +50,6 @@ app.listen(3001, () => {
 //Configuración de Routers
 app.use("/users", usersRouter);
 app.use("/products", productsRouter);
+app.use("/models", modelsRouter);
+app.use("/brands", brandsRouter);
 app.use("/", mainRouter);

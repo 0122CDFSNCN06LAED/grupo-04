@@ -56,7 +56,7 @@ const controllers = {
 
     },
     create: (req, res) => {
-        db.Models.findAll().then((modelos) => {
+        db.Models.findAll({ include: [{ association: "marcas" }] }).then((modelos) => {
             db.ProductCategories.findAll().then((categories) => {
                 db.Users.findAll().then((vendor) => {
                     res.render("products/product-create-form", { m: modelos, c: categories, v: vendor })
