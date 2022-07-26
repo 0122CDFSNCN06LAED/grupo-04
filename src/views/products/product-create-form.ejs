@@ -41,11 +41,12 @@
                     </div>
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="models">Marca y Modelo</label>
-                        <select name="models" id="models" class="form-control models">
+                        <select name="models" id="models" class="form-control models marca">
                             <option value="" selected="selected">seleccione una combinación</option>
                             <div><% for(let i=0; i<m.length; i++){ %> 
                                <option value="<%= m[i].id %> "><%= m[i].marcas ? `Marca: ${ m[i].marcas.name } - Modelo: ${ m[i].name }`  : m[i].name %></option> 
                                  <% } %></div>
+                                 <a href="/brands/create"><option value="create">cree una combinación </option></a>
                         </select>
                     </div>
                     <!-- <div class="col-12 col-md-6"> 
@@ -104,7 +105,7 @@
                 </div>
         </main>
         <%- include("../partials/footer.ejs") %>
-
+            <script src=""></script>
             <!-- <script src="/js/validacionCreate.js"></script> -->
 </body>
 
