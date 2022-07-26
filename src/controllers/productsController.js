@@ -84,23 +84,13 @@ const controllers = {
         } else {
             const userId = req.session.userLogged.id
             const datosRecibidos = JSON.parse(JSON.stringify(req.body));
-            const marcas = await db.Brands.create({
-                name: datosRecibidos.marca,
-            })
-
-            const idModels = await db.Models.create({
-                name: datosRecibidos.models,
-                description: "",
-                brand_id: "",
-            })
-
             await db.Products.create({
                 productName: datosRecibidos.productName,
                 price: datosRecibidos.price,
                 minBuy: datosRecibidos.minBuy,
                 productImages: req.file.filename,
                 description: datosRecibidos.description,
-                models_id: idModels.id,
+                models_id: datosRecibidos.models,
                 category_id: datosRecibidos.category,
                 vendor_id: userId,
             });
@@ -204,7 +194,7 @@ const controllers = {
                 }
             }
         }).then((products) => {
-            res.render("products/productsList.ejs", { products, category: null })
+            res.render("products/productsList.ejs", { products })
         })
 
     },
