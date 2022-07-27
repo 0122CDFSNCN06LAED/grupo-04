@@ -7,15 +7,20 @@ const { validationResult } = require('express-validator')
 
 const controllers = {
     list: (req, res) => {
+                if (res.locals.isLogged){
                 db.Products.findAll().then(function(products) {
                     db.FavoriteProducs.findAll({where:{user_id:req.session.userLogged.id}}).then(productosFavoritos=>{
                         res.render("products/productsList.ejs", { products, category: null,productosFavoritos })
 
                     })
-        }).catch(error => {
+        }
+        
+        ).catch(error => {
             console.log(error)
         })
-    },
+    }else{ db.Products.findAll().then(function(products) {res.render("products/productsList.ejs", { products, category: null, productosFavoritos: null, })})
+
+    }},
     listByCategory: (req, res) => {
         const categoryId = req.params.id;
         if (categoryId) {
@@ -54,9 +59,6 @@ const controllers = {
 
             res.redirect('/')
         }
-
-
-
     },
     create: (req, res) => {
         db.Models.findAll({ include: [{ association: "marcas" }] }).then((modelos) => {
@@ -118,14 +120,9 @@ const controllers = {
                     };
 
                 })
-
-
         } catch (error) {
             res.redirect("../../products/myProducts")
         }
-
-
-
     },
     update: (req, res) => {
         const resultValidation = validationResult(req);
@@ -146,7 +143,7 @@ const controllers = {
                 })
         } else {
             const datosRecibidos = JSON.parse(JSON.stringify(req.body));
-            console.log(datosRecibidos);
+            // console.log(datosRecibidos);
             db.Products.findByPk(req.params.id).then((producto) => {
                 producto.productName = datosRecibidos.productName;
                 producto.price = datosRecibidos.price;
@@ -201,11 +198,18 @@ const controllers = {
         })
 
     },
+    productosFavoritos: (req,res)=>{
+        db.FavoriteProducs.create({
+            product_id:req.params.id,
+            user_id:req.session.userLogged.id
+        }).then((favoritoNuevo)=>{
+res.redirect("/")
+        }).catch(error=>{
+            console.log(error)
+        })
+    },
     add: (req, res) => {
-
         /* db.ProductCart.create({
-
-
          })*/
         res.send("agregaste al carrito")
     },
@@ -274,20 +278,6 @@ const controllers = {
             console.log(excepcion)});
        
     },
-
-    productosFavoritos: (req,res)=>{
-        db.FavoriteProducs.create({
-            product_id:req.params.id,
-            user_id:req.session.userLogged.id
-        }).then((favoritoNuevo)=>{
-res.redirect("/")
-        }).catch(error=>{
-            console.log(error)
-        })
-    }
-
-
-
 }
 
 
