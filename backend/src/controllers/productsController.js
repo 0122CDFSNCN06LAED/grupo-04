@@ -2,13 +2,16 @@ const fs = require("fs");
 const { url } = require("inspector");
 const path = require("path");
 const db = require("../database/models")
-const { Op } = require("sequelize");
+const { Op, where } = require("sequelize");
 const { validationResult } = require('express-validator')
 
 const controllers = {
     list: (req, res) => {
-        db.Products.findAll().then(function(products) {
-            res.render("products/productsList.ejs", { products, category: null })
+                db.Products.findAll().then(function(products) {
+                    db.FavoriteProducs.findAll({where:{user_id:req.session.userLogged.id}}).then(productosFavoritos=>{
+                        res.render("products/productsList.ejs", { products, category: null,productosFavoritos })
+
+                    })
         }).catch(error => {
             console.log(error)
         })
@@ -217,7 +220,7 @@ const controllers = {
                         descripcion: unProducto.description,
                         precio: unProducto.price,
                         minBuy: unProducto.minBuy,
-                        imagen: unProducto.productImages,
+                       
                     };
                     lista.push(unProd);
 
@@ -231,15 +234,15 @@ const controllers = {
             });
     },
     apiProductDetail: (req, res) => {
-        db.Products.findByPk(req.params.id, { include: [{ association: "categories" }] })
+        db.Products.findByPk(req.params.id, { include: [{ association: "categories" },{association:"productosFavoritos"}] })
             .then(producto => {
                 res.status(200).json({
                     nombre: producto.productName,
                     descripcion: producto.description,
                     precio: producto.price,
                     minBuy: producto.minBuy,
-                    imagen: producto.productImages,
-                    favoitos: producto.productosFavoritos,
+                    imagen:`http://localhost:3001/img/articulos/${producto.productImages}`,
+                    favoritos: producto.productosFavoritos,
                     categoria: producto.categories.name,
                     codigo: 200,
                 })
@@ -247,20 +250,41 @@ const controllers = {
     },
     apiCategories: (req, res) => {
         console.log("category");
-        db.ProductCategories.findAll()
+        db.Products.findAll().then(products=>{
+            db.ProductCategories.findAll()
             .then(category => {
+                let categorias = []
+                
                 category.forEach(element => {
-                    element.cantidad = 5;
+                    let categoria = {
+                        nombre: element.name,
+                        cantidad:products.filter(x=>x.category_id==element.id).length,
+                    }
+                    categorias.push(categoria)
                 });
                 return res.status(200).json({
-                    registro: category.length,
-                    data: category,
+                    registro: categorias.length,
+                    data: categorias,
                     codigo: 200
                 })
             }).catch(excepcion => {
                 console.log(excepcion);
             })
+        }).catch(excepcion => {
+            console.log(excepcion)});
+       
     },
+
+    productosFavoritos: (req,res)=>{
+        db.FavoriteProducs.create({
+            product_id:req.params.id,
+            user_id:req.session.userLogged.id
+        }).then((favoritoNuevo)=>{
+res.redirect("/")
+        }).catch(error=>{
+            console.log(error)
+        })
+    }
 
 
 

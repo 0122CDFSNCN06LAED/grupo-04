@@ -36,8 +36,15 @@
 
                                                 <div class="d-flex justify-content-around">
                                                     <div id="favProd">
-                                                        <i class="icon-card fa-solid fa-heart fa-2x "></i>
-                                                    </div>>
+                                                        <% if(productosFavoritos.filter(x=>
+                                                            x.product_id==product.id).length==0){ %>
+                                                            <a href="/products/favoritos/<%= product.id %>"><i
+                                                                    class="icon-card fa-solid fa-heart fa-2x "></i></a>
+                                                            <% } else{ %>
+                                                                <i class="icon-card fa-solid fa-heart fa-2x "></i>
+                                                                <% } %>
+
+                                                    </div>
                                                     <p class=" card-price ">$
                                                         <%=product.price%>
                                                     </p>
@@ -62,7 +69,7 @@
         </main>
 
         <%- include("../partials/footer.ejs") %>
-            <script src="/js/productFavoritos.js"></script>
+            <!-- <script src="/js/productFavoritos.js"></script> -->
 
 </body>
 
