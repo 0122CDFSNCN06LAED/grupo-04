@@ -90,6 +90,7 @@ const controllers = {
 
     store: (req, res) => {
         var img = null;
+        
 
         if (req.file) {
             img = req.file.filename;

@@ -44,16 +44,28 @@
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="models">Marca y Modelo</label>
                         <select name="models" id="models" class="form-control models marca">
-                            <option value="" selected="selected">seleccione una combinación</option>
+                            
                             <div>
                                 <% for(let i=0; i<m.length; i++){ %>
-                                    <option value="<%= m[i].id %> ">
+                                    <option  value="<%= m[i].id %>" 
+                                        <% if (locals.userLogged.recentCreatedModel && locals.userLogged.recentCreatedModel.id == m[i].id ) { %>
+                                            selected="selected"
+                                        <% } %>>
                                         <%= m[i].marcas ? `Marca: ${ m[i].marcas.name } - Modelo: ${ m[i].name }` :
                                             m[i].name %>
                                     </option>
                                     <% } %>
+                                    <% console.log("esto viene del ejs: ", locals.userLogged) %> 
+                                    <% if (!locals.userLogged.recentCreatedModel) { %>
+                                        <option value="" selected="selected">seleccione una combinación</option>
+                                    <% } %>
+
+                                    <% locals.userLogged.recentCreatedModel = null; %> 
+                                    <% console.log(locals.userLogged.recentCreatedModel) %> 
                             </div>
                         </select>
+                            <button type="button" class="btn btn-primary mt-2 mb-1 form-control" onclick="window.location.href='/brands/create';">Crear una nueva combinación</button>
+                       
                     </div>
                     <!-- <div class="col-12 col-md-6"> 
                     <label class="form-label celeste-vpm" for="name">Modelo del producto</label>
