@@ -61,6 +61,8 @@ const controllers = {
             res.redirect('/')
         }
     },
+   
+
     create: (req, res) => {
         db.Models.findAll({ include: [{ association: "marcas" }] }).then((modelos) => {
             db.ProductCategories.findAll().then((categories) => {
@@ -208,6 +210,18 @@ res.redirect("/")
         }).catch(error=>{
             console.log(error)
         })
+    },
+    listFavoritesProducts: async(req, res) => {
+        const userId = req.session.userLogged.id
+        let productos =  await db.Products.findAll();
+        let productosFavoritos = await db.FavoriteProducs.findAll({where:{user_id: userId}});
+        let favoriteIDproduct =  productosFavoritos
+        console.log(favoriteIDproduct)
+        if(productosFavoritos){
+            res.render('products/productsList.ejs',{ category:null, products:productosFavoritos })
+        }else{
+            res.send('no tienes productos favoritos')
+        }
     },
     add: (req, res) => {
         /* db.ProductCart.create({

@@ -34,6 +34,7 @@ router.get("/api/:id", productsController.apiProductDetail);
 router.get("/myProducts", authMiddleware, productsController.listMyProducts);
 router.get("/categorias", productsController.apiCategories);
 router.get("/favoritos/:id",authMiddleware, productsController.productosFavoritos)
+router.get("/favoritos",authMiddleware, productsController.listFavoritesProducts)
 
 
 
