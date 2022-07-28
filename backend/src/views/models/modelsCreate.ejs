@@ -19,10 +19,14 @@
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="models">Marca</label>
                         <select name="brand_id" id="brand_id" class="form-control">
-                            <option value="" selected="selected">seleccione una marca</option>
                             <div><% for(let i=0; i<m.length; i++){ %> 
-                               <option value="<%= m[i].id %> "><%= m[i].name %></option> 
+                               <option value="<%= m[i].id %>" <% if (locals.userLogged.recentCreatedBrand && locals.userLogged.recentCreatedBrand.id == m[i].id ) { %>
+                                selected="selected"
+                               <% } %>><%= m[i].name %></option>
                                <% } %></div>
+                               <% if (!locals.userLogged.recentCreatedBrand) { %>
+                            <option value="" selected="selected">seleccione una marca</option>
+                                <% } %>
                         </select>
                         </div>
                     <div class="mb-3 col-md-6 col-lg-6">

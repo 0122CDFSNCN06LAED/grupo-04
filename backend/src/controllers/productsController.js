@@ -64,6 +64,7 @@ const controllers = {
    
 
     create: (req, res) => {
+        req.session.userLogged.recentCreatedBrand = null;
         db.Models.findAll({ include: [{ association: "marcas" }] }).then((modelos) => {
             db.ProductCategories.findAll().then((categories) => {
                 db.Users.findAll().then((vendor) => {

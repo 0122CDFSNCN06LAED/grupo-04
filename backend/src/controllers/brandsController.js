@@ -14,20 +14,23 @@ const controllers = {
         res.render("brands/brandsCreate")
     },
 
-    store: (req, res) => {
+    store: async (req, res) => {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
-        db.Brands.create({
-            name : datosRecibidos.name
-        }).then(
-            res.redirect("../../brands/list")
-        );
 
+        const newBrand = await  db.Brands.create({
+            name : datosRecibidos.name
+        });
+
+        const brands = await  db.Brands.findAll();
+            console.log(newBrand);
+            req.session.userLogged.recentCreatedBrand = newBrand;
+            res.redirect(`/models/create`)
     },
+
     edit: (req, res) => {
 
         if (req.session.userLogged.usercategory_id == 1) {
             const paramsId = req.params.id;
-            
             if (!paramsId) {
                 res.redirect(`/brands/list`)
             } else {

@@ -20,13 +20,17 @@ const controllers = {
 
     store: (req, res) => {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
-
+        req.session.userLogged.recentCreatedBrand = null;
         db.Models.create({
             brand_id: datosRecibidos.brand_id,
             name : datosRecibidos.name,
             description: datosRecibidos.description
         }).then(
-            res.redirect("../../models/list")
+            (recentCreatedModel) => {
+            req.session.userLogged.recentCreatedModel = recentCreatedModel;
+            console.log("modeloguardado: ", req.session.userLogged.recentCreatedModel);
+            res.redirect("../../products/create")
+            }
         );
 
     }
