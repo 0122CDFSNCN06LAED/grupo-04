@@ -39,6 +39,7 @@ main h2 {
     right: 15px;
 }
 
+
 .quienes-somos {
     display: flex;
     flex-direction: column;
@@ -56,6 +57,13 @@ main h2 {
 
 .icon-card:hover {
     color: #477ecf;
+}
+.selectFavorite{
+    color: red;
+
+}
+.selectFavorite:hover{
+    color: red;
 }
 
 video {

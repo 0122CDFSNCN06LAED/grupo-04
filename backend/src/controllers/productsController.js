@@ -10,6 +10,7 @@ const controllers = {
                 if (res.locals.isLogged){
                 db.Products.findAll().then(function(products) {
                     db.FavoriteProducs.findAll({where:{user_id:req.session.userLogged.id}}).then(productosFavoritos=>{
+                   console.log(productosFavoritos);
                         res.render("products/productsList.ejs", { products, category: null,productosFavoritos })
 
                     })
@@ -18,7 +19,7 @@ const controllers = {
         ).catch(error => {
             console.log(error)
         })
-    }else{ db.Products.findAll().then(function(products) {res.render("products/productsList.ejs", { products, category: null, productosFavoritos: null, })})
+    }else{ db.Products.findAll().then(function(products) {res.render("products/productsList.ejs", { products, category: null, })})
 
     }},
     listByCategory: (req, res) => {
@@ -50,7 +51,7 @@ const controllers = {
             let productosPedidos = await db.Products.findAll({ where: { vendor_id: userId } });
             // console.log(productosPedidos)
             if (productosPedidos) {
-                res.render("products/productsList.ejs", { products: productosPedidos, category: null })
+                res.render("products/productsList.ejs", { products: productosPedidos, category: null, productosFavoritos:null })
             } else {
                 res.redirect('/')
             }
