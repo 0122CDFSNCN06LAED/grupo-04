@@ -64,18 +64,17 @@
                                     <% console.log(locals.userLogged.recentCreatedModel) %> 
                             </div>
                         </select>
-                            <button type="button" class="btn btn-primary mt-2 mb-1 form-control" onclick="window.location.href='/brands/create';">Crear una nueva combinación</button>
-                       
-                    </div>
-                    <!-- <div class="col-12 col-md-6"> 
-                    <label class="form-label celeste-vpm" for="name">Modelo del producto</label>
-                        <input class="form-control" type=" text " id="models" name="models" value="<%= locals.oldData ? oldData.models : null%>">
-                        <div class="text-danger" id="errorModelo">
-                            <% if (locals.errors && errors.models) { %>
+                        <% if (locals.errors && errors.models) { %>
+                            <div class="text-danger">
                                 <%= errors.models.msg %>
-                                    <% } %>
-                        </div>
-                    </div>  -->
+                            </div>
+                            <% } %>
+                        <button type="button" class="btn btn-primary mt-2 mb-1 form-control" onclick="window.location.href='/brands/create';">Crear una nueva combinación</button>
+                    </div>
+                      
+                    
+                       
+                    
                     <div class="col-md-6">
                         <label class="form-label celeste-vpm" for="price">Precio</label>
                         <input class="form-control" type="text" id="price" name="price"

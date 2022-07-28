@@ -6,9 +6,9 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true,
         },
-        /* product_id: {
+        product_id: {
              type: dataTypes.INTEGER,
-         },*/
+        },
         quantity: {
             type: dataTypes.INTEGER,
         },
@@ -21,18 +21,31 @@ module.exports = (sequelize, dataTypes) => {
         timestamps: false,
     };
 
-    const ProductCar = sequelize.define(alias, cols, config);
-    /*  ProductCar.associate = function(models) {
-          ProductCar.hasMany(models.Products, {
-              as: "productCar",
-              foreignKey: "product_id",
+    const ProductCart = sequelize.define(alias, cols, config);
+     ProductCart.associate = function(models) {
+    ProductCart.belongsToMany(models.Users, {
+        as: "usersProductCart",
+        through: "ProductCart_users",
+        foreignKey: "productCart_id",
+        otherKey: "user_id",
+        timestamps: false,
+    });
+    ProductCart.belongsToMany(models.ProductCart, {
+        as: "ProductsProductCart",
+        through: "ProductCart_users",
+        foreignKey: "productCart_id",
+        otherKey: "product_id",
+        timestamps: false,
+    }); 
 
-          });
-          ProductCar.hasMany(models.Users, {
-              as: "productCarUsers",
-              foreignKey: "user_id",
+   /*  ProductCart.belongsToMany(models.Products, {
+        as: "productCartProducts",
+        through: "productCart_products",
+        foreignKey: "productCart_id",
+        otherKey: "product_id",
+        timestamps: false,
+    });  */
 
-          });
-      }*/
-    return ProductCar;
+     }
+    return ProductCart;
 }

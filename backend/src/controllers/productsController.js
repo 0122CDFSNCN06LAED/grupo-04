@@ -212,8 +212,13 @@ res.redirect("/")
             console.log(error)
         })
     },
+  /*   const userId = req.session.userLogged.id
+    const productosFavoritos = Products.productosFavoritos.product_id
+
+ db.Products.findAll({include: [{ association: "productosFavoritos" }]}, {where:{productosFavoritos:product.id,user_id: userId}}).then((productos)=>{
+    res.render('products/productsList.ejs',{ category:null,productosFavoritos }) */
     listFavoritesProducts: async(req, res) => {
-        const userId = req.session.userLogged.id
+      const userId = req.session.userLogged.id
         let productos =  await db.Products.findAll();
         let productosFavoritos = await db.FavoriteProducs.findAll({where:{user_id: userId}});
         let favoriteIDproduct =  productosFavoritos
@@ -222,11 +227,13 @@ res.redirect("/")
             res.render('products/productsList.ejs',{ category:null, products:productosFavoritos })
         }else{
             res.send('no tienes productos favoritos')
-        }
+        } 
     },
     add: (req, res) => {
-        /* db.ProductCart.create({
-         })*/
+        db.ProductCart.create({
+            product_id:product.id,
+            user_id:req.session.userLogged.id,
+         })
         res.send("agregaste al carrito")
     },
 

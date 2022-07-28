@@ -60,6 +60,20 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "user_id",
             timestamps: false,
         });
+      /*  Product.belongsToMany(models.productCart, {
+            as: "productsProductCart",
+            through: "productCart_products",
+            foreignKey: "product_id",
+            otherKey: "productCart_id",
+            timestamps: false,
+        });  */
+        Product.belongsToMany(models.ProductCart, {
+            as: "ProductCartProducts",
+            through: "ProductCart_users",
+            foreignKey: "product_id",
+            otherKey: "productCart_id",
+            timestamps: false,
+        }); 
         Product.hasMany(models.BuyDetail, {
             as: "detalleCompra_producto",
             foreignKey: "product_id",

@@ -28,7 +28,7 @@ router.put("/edit/:id", uploadFile.single("img"), validationEdit, productsContro
 router.delete("/delete/:id", productsController.destroy);
 router.get("/detail/:id", productsController.detail);
 router.get("/search", productsController.search);
-router.get("/agregar/:id", productsController.add);
+router.get("/add/:id", productsController.add);
 router.get("/api", productsController.apiProduct);
 router.get("/api/:id", productsController.apiProductDetail);
 router.get("/myProducts", authMiddleware, productsController.listMyProducts);

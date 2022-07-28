@@ -57,15 +57,18 @@ module.exports = (sequelize, dataTypes) => {
             otherKey: "product_id",
             timestamps: false,
         });
+        User.belongsToMany(models.ProductCart, {
+            as: "productCartusers",
+            through: "ProductCart_users",
+            foreignKey: "user_id",
+            otherKey: "productCart_id",
+            timestamps: false,
+        }); 
         User.hasMany(models.Products, {
             as: "productVendor",
             foreignKey: "vendor_id",
         });
-        /*
-                User.belongsTo(models.BuyDetail, {
-                  as: "detalleDeCompra",
-                  foreignKey: "user_id"
-                }); */
+     
 
         //buyDetail + products necesitan una tabla intermedia? Si
         //productCar + users, necesitan tabla intermedia? 

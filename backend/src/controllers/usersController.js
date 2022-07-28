@@ -228,7 +228,7 @@ const controllers = {
                     };
                     lista.push(usuarios);
                 }
-                console.log(unUsuario)
+              
                 return res.status(200).json({
                     registro: lista.length,
                     data: lista,
