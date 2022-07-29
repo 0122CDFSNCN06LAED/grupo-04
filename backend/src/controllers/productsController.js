@@ -4,7 +4,8 @@ const path = require("path");
 const db = require("../database/models")
 const { Op, where } = require("sequelize");
 const { validationResult } = require('express-validator')
-
+/* const { body } = require('express-validator');
+ */
 const controllers = {
     list: (req, res) => {
                 if (res.locals.isLogged){
@@ -75,36 +76,53 @@ const controllers = {
     },
     store: async(req, res) => {
         const resultValidation = validationResult(req);
-        if (resultValidation.errors.length > 0) {
-            console.log(resultValidation.errors);
-            db.Models.findAll().then((modelos) => {
-                db.ProductCategories.findAll().then((categories) => {
-                    db.Users.findAll().then((vendor) => {
-                        res.render("products/product-create-form", {
-                            m: modelos,
-                            c: categories,
-                            v: vendor,
-                            errors: resultValidation.mapped(),
-                            oldData: req.body
+         const productInDB = db.Products.findAll({where:{vendor_id:req.session.userLogged.id, productName:req.body.productName}}).then((product)=>{
+   let msg = ""
+                if(productInDB.length>0){    
+             const error ={
+                    productName:{
+                        msg:'este producto ya lo tenes creado'
+                    }
+                }
+                resultValidation.errors.push(error)
+                msg = 'este producto ya lo tenes creado'
+  } 
+  console.log(resultValidation)
+                if (resultValidation.errors.length > 0) {
+                    console.log(resultValidation.errors);
+                    db.Models.findAll().then((modelos) => {
+                        db.ProductCategories.findAll().then((categories) => {
+                            db.Users.findAll().then((vendor) => {
+                                res.render("products/product-create-form", {
+                                    m: modelos,
+                                    c: categories,
+                                    v: vendor,
+                                    errors: resultValidation.mapped(),
+                                    oldData: req.body,
+/*                                     error: msg
+ */                                })
+                            })
                         })
                     })
-                })
-            })
-        } else {
-            const userId = req.session.userLogged.id
-            const datosRecibidos = JSON.parse(JSON.stringify(req.body));
-            await db.Products.create({
-                productName: datosRecibidos.productName,
-                price: datosRecibidos.price,
-                minBuy: datosRecibidos.minBuy,
-                productImages: req.file.filename,
-                description: datosRecibidos.description,
-                models_id: datosRecibidos.models,
-                category_id: datosRecibidos.category,
-                vendor_id: userId,
-            });
-            res.redirect("/")
-        }
+                } else {
+                    const userId = req.session.userLogged.id
+                    const datosRecibidos = JSON.parse(JSON.stringify(req.body));
+                     db.Products.create({
+                        productName: datosRecibidos.productName,
+                        price: datosRecibidos.price,
+                        minBuy: datosRecibidos.minBuy,
+                        productImages: req.file.filename,
+                        description: datosRecibidos.description,
+                        models_id: datosRecibidos.models,
+                        category_id: datosRecibidos.category,
+                        vendor_id: userId,
+                    });
+                    res.redirect("/")
+                }
+            }
+            )
+                     
+        
     },
     edit: (req, res) => {
 
