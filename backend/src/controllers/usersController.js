@@ -88,7 +88,7 @@ const controllers = {
         }
     },
 
-    store: (req, res) => {
+    store: async (req, res) => {
         var img = null;
         
 
@@ -101,13 +101,29 @@ const controllers = {
         const hashedPassword = bcrypt.hashSync(req.body.password, 10);
 
         const resultValidation = validationResult(req);
-
+        
+        
         if (resultValidation.errors.length > 0) {
             return res.render("users/register", {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
-        } else {
+        } 
+        
+        const reqEmail = req.body.email
+        const userInDb =  await db.Users.findAll({where: {email: reqEmail}})
+       // console.log(userInDb)
+
+        if(userInDb.length > 0 ){
+            return res.render("users/register", {
+                errors: {
+                    email: {
+                        msg: "Este email ya está registrado"
+                    }
+                },
+                oldData: req.body
+            });
+        }else {
             db.Users.create({
                     userName: req.body.userName,
                     firstName: req.body.firstName,
