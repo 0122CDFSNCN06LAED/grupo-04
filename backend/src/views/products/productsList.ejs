@@ -16,7 +16,9 @@
         <h2>Todos los productos de <%=category.name %></h2>
         <% } else{%>
         <h2>Todos los productos</h2>
-        <% } %> <% if(locals.isLogged){ %>
+        <% } %>
+        
+        <% if(locals.isLogged){ %>
         <div class="row">
           <% products.forEach(product=> { %>
           <article class="cont-card col-md-3 col-sm-6">

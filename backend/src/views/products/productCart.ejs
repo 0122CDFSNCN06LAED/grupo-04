@@ -18,111 +18,38 @@
 
             <h1 class="text-center">Mi Carrito de Compras</h1>
             <section class="section-main">
+                
                 <section class="section-products">
-                    <section>
-
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="/img/articulos/sierraSensitiva.jpg" class="img-fluid rounded-start img-thumbnail rounded mx-auto d-block" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="precio-numero">$ 23,304</h5>
-                                        <p class="card-text product-name">Sierra Sensitiva BOSCH.</p>
-                                        <select class="form-select pd-amount" aria-label="Default select example">
-                                            <option selected>Cantidad: 1  (40 disponibles)</option>
-                                            <option value="1">1 unidad</option>
-                                            <option value="2">2 unidades</option>
-                                            <option value="3">3 unidades</option>
-                                            <option value="more-than-3">Más de 3</option>
-                                          </select>
-                                        <p class="card-text "><small class="text-green">Envío Gratis</small></p>
-                                        <button class="button-eliminarProducto" type="button">
-                                    <p class="card-text">Eliminar producto</p>
-                                </button>
+                       <% productos.forEach(p => { %>
+                        <section>
+        
+                            <div class="card mb-3" style="max-width: 540px;">
+                                <div class="row g-0">
+                                    <div class="col-md-4">
+                                        <img src="/img/articulos/<%=p.productImages%> " class="img-fluid rounded-start img-thumbnail rounded mx-auto d-block" alt="...">
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body">
+                                            <h5 class="precio-numero"><%=p.price%> </h5>
+                                            <p class="card-text product-name"><%=p.name%> </p>
+                                            <select class="form-select pd-amount" aria-label="Default select example">
+                                                <option selected>Cantidad: 1  (40 disponibles)</option>
+                                                <option value="1">1 unidad</option>
+                                                <option value="2">2 unidades</option>
+                                                <option value="3">3 unidades</option>
+                                                <option value="more-than-3">Más de 3</option>
+                                              </select>
+                                            <p class="card-text "><small class="text-green">Envío Gratis</small></p>
+                                            <button class="button-eliminarProducto" type="button">
+                                        <p class="card-text">Eliminar producto</p>
+                                    </button>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                    </section>
-                    <section>
+                        </section>
+                      <% }) %>
 
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="/img/articulos/sierraSensitiva.jpg" class="img-fluid rounded-start img-thumbnail rounded mx-auto d-block" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="precio-numero">$ 23,304</h5>
-                                        <p class="card-text product-name">Sierra Sensitiva BOSCH.</p>
-                                        <select class="form-select pd-amount" aria-label="Default select example">
-                                            <option selected>Cantidad: 1  (40 disponibles)</option>
-                                            <option value="1">1 unidad</option>
-                                            <option value="2">2 unidades</option>
-                                            <option value="3">3 unidades</option>
-                                            <option value="more-than-3">Más de 3</option>
-                                          </select>
-                                        <p class="card-text "><small class="text-green">Envío Gratis</small></p>
-                                        <button class="button-eliminarProducto" type="button">
-                                    <p class="card-text">Eliminar producto</p>
-                                </button>
-                                    </div>
-                                </div>
-                            </div>
-                    </section>
-                    <section>
-
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="/img/articulos/sierraSensitiva.jpg" class="img-fluid rounded-start img-thumbnail rounded mx-auto d-block" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="precio-numero">$ 23,304</h5>
-                                        <p class="card-text product-name">Sierra Sensitiva BOSCH.</p>
-                                        <select class="form-select pd-amount" aria-label="Default select example">
-                                            <option selected>Cantidad: 1  (40 disponibles)</option>
-                                            <option value="1">1 unidad</option>
-                                            <option value="2">2 unidades</option>
-                                            <option value="3">3 unidades</option>
-                                            <option value="more-than-3">Más de 3</option>
-                                          </select>
-                                        <p class="card-text "><small class="text-green">Envío Gratis</small></p>
-                                        <button class="button-eliminarProducto" type="button">
-                                    <p class="card-text">Eliminar producto</p>
-                                </button>
-                                    </div>
-                                </div>
-                            </div>
-                    </section>
-                    <section>
-
-                        <div class="card mb-3" style="max-width: 540px;">
-                            <div class="row g-0">
-                                <div class="col-md-4">
-                                    <img src="/img/articulos/sierraSensitiva.jpg" class="img-fluid rounded-start img-thumbnail rounded mx-auto d-block" alt="...">
-                                </div>
-                                <div class="col-md-8">
-                                    <div class="card-body">
-                                        <h5 class="precio-numero">$ 23,304</h5>
-                                        <p class="card-text product-name">Sierra Sensitiva BOSCH.</p>
-                                        <select class="form-select pd-amount" aria-label="Default select example">
-                                            <option selected>Cantidad: 1  (40 disponibles)</option>
-                                            <option value="1">1 unidad</option>
-                                            <option value="2">2 unidades</option>
-                                            <option value="3">3 unidades</option>
-                                            <option value="more-than-3">Más de 3</option>
-                                          </select>
-                                        <p class="card-text "><small class="text-green">Envío Gratis</small></p>
-                                        <button class="button-eliminarProducto" type="button">
-                                    <p class="card-text">Eliminar producto</p>
-                                </button>
-                                    </div>
-                                </div>
-                            </div>
-                    </section>
+                    
                 </section>
                 <section class="information-total mb-5">
                     <div class="caja-total">
