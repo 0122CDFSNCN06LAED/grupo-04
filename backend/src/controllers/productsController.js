@@ -197,16 +197,19 @@ const controllers = {
         })
     },
     detail: async(req, res) => {
-        let producto = await db.Products.findByPk(req.params.id, { include: [{ association: "vendor" }, { association: "modelosDeProducto" }] });
-        let modelo = await db.Models.findByPk(producto.models_id, { include: [{ association: "marcas" }] });
-        let marca = modelo.marcas
-        let productsInCart = await db.ProductCart.findAll({where:{user_id: req.session.userLogged.id, product_id: req.params.id}}); 
-         
-       
-
-        console.log("PRODUCTOS EN EL CARRRRITOOOOO LRPM QUE LO RMIL PARIO", productsInCart)
-        res.render("products/productDetail", { p: producto, m: modelo, marca: marca, productsInCart });
-        
+        if(req.session.userLogged){
+            let producto = await db.Products.findByPk(req.params.id, { include: [{ association: "vendor" }, { association: "modelosDeProducto" }] });
+            let modelo = await db.Models.findByPk(producto.models_id, { include: [{ association: "marcas" }] });
+            let marca = modelo.marcas
+            let productsInCart = await db.ProductCart.findAll({where:{user_id: req.session.userLogged.id, product_id: req.params.id}}); 
+            
+            res.render("products/productDetail", { p: producto, m: modelo, marca: marca, productsInCart });
+        } else {
+            let producto = await db.Products.findByPk(req.params.id, { include: [{ association: "vendor" }, { association: "modelosDeProducto" }] });
+            let modelo = await db.Models.findByPk(producto.models_id, { include: [{ association: "marcas" }] });
+            let marca = modelo.marcas
+            res.render("products/productDetail", { p: producto, m: modelo, marca: marca, productsInCart: null});
+        }
     },
     search: (req, res) => {
         const busqueda = req.query.search;
@@ -274,28 +277,33 @@ res.redirect("/")
         const userId = req.session.userLogged.id
         const productsAdd = await db.ProductCart.findAll({where:{user_id: userId}});
         
-        
-        let productosBuscar = productsAdd.map(producto => {
-            const resultado = producto.product_id;
-            return resultado
-            
-        })
-        
-        
-        let productos =  await db.Products.findAll({where: {
-            id: {
-                [Op.or]: productosBuscar
+        if(productsAdd.length==0){
+            res.render("products/productCart.ejs", {productos: null})
+        }else{
+            let productosBuscar = productsAdd.map(producto => {
+           
+                const resultado = producto.product_id;
+                return resultado
+                   
+            })
+            let productos =  await db.Products.findAll({where: {
+                id: {
+                    [Op.or]: productosBuscar
+                }
+            }}
+            );
+            res.render("products/productCart.ejs", {productos})
+        } 
+
+    },
+    destroyCart: async(req, res) => {
+       await db.ProductCart.destroy({
+            where: {
+                product_id: req.params.id,
+                user_id: req.session.userLogged.id
             }
-        }}
-        );
-        
-        /* if(productosFavoritos.length>0){
-        res.render('products/products-favorites.ejs',{ category:null, products:productos })
-    }else{
-        res.render("products/productCart.ejs", {})
-    }   */
-    res.render("products/productCart.ejs", {productos})
-       ;
+        }) 
+       res.redirect('/products/productCart')
     },
 
     apiProduct: (req, res) => {
