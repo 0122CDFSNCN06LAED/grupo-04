@@ -27,9 +27,7 @@ module.exports = {
         res.render("productDetail.ejs");
     },
 
-    productCart: (req, res) => {
-        res.render("products/productCart.ejs");
-    },
+    
     aboutUs: (req, res) => {
         res.render("aboutUs.ejs");
     },

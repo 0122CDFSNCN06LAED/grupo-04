@@ -28,13 +28,14 @@ router.put("/edit/:id", uploadFile.single("img"), validationEdit, productsContro
 router.delete("/delete/:id", productsController.destroy);
 router.get("/detail/:id", productsController.detail);
 router.get("/search", productsController.search);
-router.get("/add/:id", productsController.add);
+router.get("/productCartAdd/:id", productsController.productCartAdd);
 router.get("/api", productsController.apiProduct);
 router.get("/api/:id", productsController.apiProductDetail);
 router.get("/myProducts", authMiddleware, productsController.listMyProducts);
 router.get("/categorias", productsController.apiCategories);
 router.get("/favoritos/:id",authMiddleware, productsController.productosFavoritos)
-router.get("/favoritos",authMiddleware, productsController.listFavoritesProducts)
+router.get("/favoritos",authMiddleware, productsController.listFavoritesProducts);
+router.get('/productCart', authMiddleware, productsController.showProductCart)
 
 
 

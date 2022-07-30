@@ -39,6 +39,10 @@ main h2 {
     right: 15px;
 }
 
+.emoji{
+    font-size: 100px;
+}
+
 
 .quienes-somos {
     display: flex;
