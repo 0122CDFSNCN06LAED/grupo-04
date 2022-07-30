@@ -29,9 +29,11 @@
                             <% if (locals.errors && errors.productName) { %>
                                 <%= errors.productName.msg %>
                                     <% } %>
-                                    <% if(locals.productoExiste){ %> 
-                                  <% console.log(locals.productoExiste) %> 
+                                    <% if(locals.error){ %> 
+                                        <% console.log(locals.error, "agus capo") %> 
+                                   <%= locals.error %>
                                   <% } %>
+                                
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
