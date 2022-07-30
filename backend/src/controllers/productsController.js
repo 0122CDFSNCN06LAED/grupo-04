@@ -4,8 +4,7 @@ const path = require("path");
 const db = require("../database/models")
 const { Op, where } = require("sequelize");
 const { validationResult } = require('express-validator')
-/* const { body } = require('express-validator');
- */
+
 const controllers = {
     list: (req, res) => {
                 if (res.locals.isLogged){
@@ -15,7 +14,8 @@ const controllers = {
                         res.render("products/productsList.ejs", { products, category: null,productosFavoritos })
 
                     })
-        }        
+        }
+        
         ).catch(error => {
             console.log(error)
         })
@@ -116,12 +116,8 @@ const controllers = {
                         category_id: datosRecibidos.category,
                         vendor_id: userId,
                     });
-                    res.redirect("/")
-                
-            }
-            
-                     
-        
+                    res.redirect("/")   
+            }                      
     },
     edit: (req, res) => {
 
@@ -204,7 +200,13 @@ const controllers = {
         let producto = await db.Products.findByPk(req.params.id, { include: [{ association: "vendor" }, { association: "modelosDeProducto" }] });
         let modelo = await db.Models.findByPk(producto.models_id, { include: [{ association: "marcas" }] });
         let marca = modelo.marcas
-        res.render("products/productDetail", { p: producto, m: modelo, marca: marca });
+        let productsInCart = await db.ProductCart.findAll({where:{user_id: req.session.userLogged.id, product_id: req.params.id}}); 
+         
+       
+
+        console.log("PRODUCTOS EN EL CARRRRITOOOOO LRPM QUE LO RMIL PARIO", productsInCart)
+        res.render("products/productDetail", { p: producto, m: modelo, marca: marca, productsInCart });
+        
     },
     search: (req, res) => {
         const busqueda = req.query.search;
@@ -236,22 +238,64 @@ res.redirect("/")
     res.render('products/productsList.ejs',{ category:null,productosFavoritos }) */
     listFavoritesProducts: async(req, res) => {
       const userId = req.session.userLogged.id
-        let productos =  await db.Products.findAll();
-        let productosFavoritos = await db.FavoriteProducs.findAll({where:{user_id: userId}});
-        let favoriteIDproduct =  productosFavoritos
-        console.log(favoriteIDproduct)
-        if(productosFavoritos){
-            res.render('products/productsList.ejs',{ category:null, products:productosFavoritos })
+      let productosFavoritos = await db.FavoriteProducs.findAll({where:{user_id: userId}});
+      let favoriteIDproduct =  productosFavoritos
+
+      let productosBuscar = productosFavoritos.map(producto => {
+        const resultado = producto.product_id;
+        return resultado
+      })
+
+
+      let productos =  await db.Products.findAll({where: {
+        id: {
+          [Op.or]: productosBuscar
+        }
+      }}
+    );
+      
+        if(productosFavoritos.length>0){
+            res.render('products/products-favorites.ejs',{ category:null, products:productos })
         }else{
-            res.send('no tienes productos favoritos')
+            res.render('products/products-favorites.ejs')
         } 
     },
-    add: (req, res) => {
+
+    productCartAdd: (req, res) => {
         db.ProductCart.create({
-            product_id:product.id,
+            product_id:req.params.id,
             user_id:req.session.userLogged.id,
          })
-        res.send("agregaste al carrito")
+        res.redirect('/products/productCart')
+    },
+
+    showProductCart: async(req, res)=> {
+        // agregar los productos
+        const userId = req.session.userLogged.id
+        const productsAdd = await db.ProductCart.findAll({where:{user_id: userId}});
+        
+        
+        let productosBuscar = productsAdd.map(producto => {
+            const resultado = producto.product_id;
+            return resultado
+            
+        })
+        
+        
+        let productos =  await db.Products.findAll({where: {
+            id: {
+                [Op.or]: productosBuscar
+            }
+        }}
+        );
+        
+        /* if(productosFavoritos.length>0){
+        res.render('products/products-favorites.ejs',{ category:null, products:productos })
+    }else{
+        res.render("products/productCart.ejs", {})
+    }   */
+    res.render("products/productCart.ejs", {productos})
+       ;
     },
 
     apiProduct: (req, res) => {
