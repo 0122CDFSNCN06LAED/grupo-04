@@ -18,6 +18,21 @@ main {
     width: 40%;
 }
 
+.emoji{
+    font-size: 100px;
+}
+
+.box-img {
+    height: 300px;
+    display: flex;
+}
+
+.article-img {
+    max-height: 100%;
+    display: flex;
+    margin: auto;
+}
+
 #caja-precio {
     width: 100%;
     display: flex;
@@ -154,5 +169,11 @@ main {
         position: sticky;
         top: 50px
     }
-}
+    .article-img {
+        max-height: 260px;
+        width: 100%;
+        display: flex;
+        margin: auto;
+    }
 
+}

@@ -32,17 +32,10 @@
               <div class="card-body card-description">
                 <div class="d-flex justify-content-around">
                   <div id="favProd">
-                    <% if(locals.productosFavoritos &&
-                    productosFavoritos.filter(x=>
-                    x.product_id==product.id).length==0){ %>
+                    
                     <a href="/products/favoritos/<%= product.id %>"
-                      ><i class="icon-card fa-solid fa-heart fa-2x"></i
-                    ></a>
-                    <% } else{ %>
-                    <i
-                      class="icon-card fa-solid fa-heart fa-2x selectFavorite"
-                    ></i>
-                    <% } %>
+                      ><i class="icon-card fa-solid fa-trash-can"></i></a>
+                    
                   </div>
                   <p class="card-price">$ <%=product.price%></p>
                   <p class="card-discount">10% off</p>

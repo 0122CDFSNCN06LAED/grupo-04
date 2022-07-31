@@ -21,8 +21,8 @@
                 
                 <section class="section-products">
                     <% if(productos==null){ %>
-                        <div class="mb-5 mt-5"><h1 class="emoji">😔</h1></div>
-                        <div class="mb-5 "><h2>No tienes productos en el carrito </h2></div>
+                        <div class="mb-5 mt-5 d-flex justify-content-center"><h1 class="emoji">😔</h1></div>
+                        <div class="mb-5 justify-content-center"><h2>No tienes productos en el carrito </h2></div>
                    <% } else { %> 
                        <% productos.forEach(p => { %>
                         <section>
@@ -30,19 +30,20 @@
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0">
                                     <div class="col-md-4">
-                                        <img src="/img/articulos/<%=p.productImages%> " class="img-fluid rounded-start img-thumbnail rounded mx-auto d-block" alt="...">
+                                        <div class="box-img">
+                                        <img src="/img/articulos/<%=p.productImages%> " class="img-fluid article-img" alt="...">
+                                        </div>
                                     </div>
                                     <div class="col-md-8">
                                         <div class="card-body">
-                                            <h5 class="precio-numero"><%=p.price%> </h5>
+                                            <h5 class="precio-numero">$ <%=p.price%> </h5>
                                             <p class="card-text product-name"><%=p.name%> </p>
                                             <select class="form-select pd-amount" aria-label="Default select example">
-                                                <option selected>Cantidad: 1 </option>
-                                            
+                                                <option selected>Cantidad: 1 </option>                          
                                               </select>
                                             <p class="card-text "><small class="text-green">Envío Gratis</small></p>
                                                 <form action="/products/productCartDestroy/<%=p.id%>?_method=delete" method="POST">
-                                                    <div class="col-12 d-flex justify-content-center mt-5">
+                                                    <div class="col-12 d-flex mt-5">
                                                         <button class="button-eliminarProducto" type="submit"><p class="card-text">Eliminar producto</p></button>
                                                 </form>
                                     </button>
