@@ -263,6 +263,15 @@ res.redirect("/")
             res.render('products/products-favorites.ejs')
         } 
     },
+    destroyFav:async (req,res)=>{
+     await db.FavoriteProducs.destroy({
+            where: {
+                product_id: req.params.id,
+                user_id: req.session.userLogged.id
+            }
+        })
+        res.render('products/products-favorites.ejs')
+    },
 
     productCartAdd: (req, res) => {
         db.ProductCart.create({

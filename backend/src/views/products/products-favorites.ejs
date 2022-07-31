@@ -12,10 +12,8 @@
 
     <main class="bg-white mt-4">
       <div class="container">
-        
         <h2>Tus productos favoritos</h2>
-        
-        
+
         <% if(locals.isLogged && locals.products){ %>
         <div class="row">
           <% products.forEach(product=> { %>
@@ -32,10 +30,14 @@
               <div class="card-body card-description">
                 <div class="d-flex justify-content-around">
                   <div id="favProd">
-                    
-                    <a href="/products/favoritos/<%= product.id %>"
-                      ><i class="icon-card fa-solid fa-trash-can"></i></a>
-                    
+                    <form
+                      action="/products/productFavDestroy/<%=product.id%>?_method=delete"
+                      method="POST"
+                    >
+                      <button>
+                        <i class="icon-card fa-solid fa-trash-can"></i>
+                      </button>
+                    </form>
                   </div>
                   <p class="card-price">$ <%=product.price%></p>
                   <p class="card-discount">10% off</p>
@@ -52,14 +54,12 @@
           </article>
           <% }) %>
         </div>
-        
+
         <% } else { %>
-          <div class="mb-5 mt-5"><h1 class="emoji">😔</h1></div>
-          <div class="mb-5 "><h2>No tienes productos favoritos</h2></div>
-          
-       <% } %>  
-        
-        
+        <div class="mb-5 mt-5"><h1 class="emoji">😔</h1></div>
+        <div class="mb-5"><h2>No tienes productos favoritos</h2></div>
+
+        <% } %>
       </div>
     </main>
 

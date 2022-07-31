@@ -265,7 +265,7 @@ const controllers = {
                     cuit: usuario.cuit,
                     companyName: usuario.companyName,
                     phoneNumber: usuario.contact,
-                    /* companyImg: img,*/
+                    imagen:`http://localhost:3001/img/users/avatars/${usuario.companyImg}`,
                     codigo: 200,
 
                 })

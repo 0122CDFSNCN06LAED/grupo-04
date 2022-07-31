@@ -34,6 +34,7 @@ router.get("/myProducts", authMiddleware, productsController.listMyProducts);
 router.get("/categorias", productsController.apiCategories);
 router.get("/favoritos/:id",authMiddleware, productsController.productosFavoritos)
 router.get("/favoritos",authMiddleware, productsController.listFavoritesProducts);
+router.delete("/productFavDestroy/:id", authMiddleware, productsController.destroyFav);
 router.get('/productCart', authMiddleware, productsController.showProductCart);
 router.get("/productCartAdd/:id", productsController.productCartAdd);
 router.delete("/productCartDestroy/:id", authMiddleware, productsController.destroyCart);
