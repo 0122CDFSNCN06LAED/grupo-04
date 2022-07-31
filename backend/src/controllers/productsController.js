@@ -4,14 +4,12 @@ const path = require("path");
 const db = require("../database/models")
 const { Op, where } = require("sequelize");
 const { validationResult } = require('express-validator')
-/* const { body } = require('express-validator');
- */
+
 const controllers = {
     list: (req, res) => {
                 if (res.locals.isLogged){
                 db.Products.findAll().then(function(products) {
                     db.FavoriteProducs.findAll({where:{user_id:req.session.userLogged.id}}).then(productosFavoritos=>{
-                   console.log(productosFavoritos);
                         res.render("products/productsList.ejs", { products, category: null,productosFavoritos })
 
                     })
@@ -76,17 +74,17 @@ const controllers = {
     },
     store: async(req, res) => {
         const resultValidation = validationResult(req);
-         const productInDB = db.Products.findAll({where:{vendor_id:req.session.userLogged.id, productName:req.body.productName}}).then((product)=>{
+         const productInDB = await db.Products.findAll({where:{vendor_id:req.session.userLogged.id, productName:req.body.productName}})
    let msg = ""
                 if(productInDB.length>0){    
              const error ={
                     productName:{
-                        msg:'este producto ya lo tenes creado'
+                        msg:''
                     }
                 }
                 resultValidation.errors.push(error)
-                msg = 'este producto ya lo tenes creado'
-  } 
+                msg = 'Ya tenes "'+ productInDB[0].productName +'" creado'}
+  
   console.log(resultValidation)
                 if (resultValidation.errors.length > 0) {
                     console.log(resultValidation.errors);
@@ -99,8 +97,8 @@ const controllers = {
                                     v: vendor,
                                     errors: resultValidation.mapped(),
                                     oldData: req.body,
-/*                                     error: msg
- */                                })
+                                     error: msg
+                                 })
                             })
                         })
                     })
@@ -117,12 +115,8 @@ const controllers = {
                         category_id: datosRecibidos.category,
                         vendor_id: userId,
                     });
-                    res.redirect("/")
-                }
-            }
-            )
-                     
-        
+                    res.redirect("/")   
+            }                      
     },
     edit: (req, res) => {
 
@@ -202,10 +196,19 @@ const controllers = {
         })
     },
     detail: async(req, res) => {
-        let producto = await db.Products.findByPk(req.params.id, { include: [{ association: "vendor" }, { association: "modelosDeProducto" }] });
-        let modelo = await db.Models.findByPk(producto.models_id, { include: [{ association: "marcas" }] });
-        let marca = modelo.marcas
-        res.render("products/productDetail", { p: producto, m: modelo, marca: marca });
+        if(req.session.userLogged){
+            let producto = await db.Products.findByPk(req.params.id, { include: [{ association: "vendor" }, { association: "modelosDeProducto" }] });
+            let modelo = await db.Models.findByPk(producto.models_id, { include: [{ association: "marcas" }] });
+            let marca = modelo.marcas
+            let productsInCart = await db.ProductCart.findAll({where:{user_id: req.session.userLogged.id, product_id: req.params.id}}); 
+            
+            res.render("products/productDetail", { p: producto, m: modelo, marca: marca, productsInCart });
+        } else {
+            let producto = await db.Products.findByPk(req.params.id, { include: [{ association: "vendor" }, { association: "modelosDeProducto" }] });
+            let modelo = await db.Models.findByPk(producto.models_id, { include: [{ association: "marcas" }] });
+            let marca = modelo.marcas
+            res.render("products/productDetail", { p: producto, m: modelo, marca: marca, productsInCart: null});
+        }
     },
     search: (req, res) => {
         const busqueda = req.query.search;
@@ -237,22 +240,78 @@ res.redirect("/")
     res.render('products/productsList.ejs',{ category:null,productosFavoritos }) */
     listFavoritesProducts: async(req, res) => {
       const userId = req.session.userLogged.id
-        let productos =  await db.Products.findAll();
-        let productosFavoritos = await db.FavoriteProducs.findAll({where:{user_id: userId}});
-        let favoriteIDproduct =  productosFavoritos
-        console.log(favoriteIDproduct)
-        if(productosFavoritos){
-            res.render('products/productsList.ejs',{ category:null, products:productosFavoritos })
+      let productosFavoritos = await db.FavoriteProducs.findAll({where:{user_id: userId}});
+      let favoriteIDproduct =  productosFavoritos
+
+      let productosBuscar = productosFavoritos.map(producto => {
+        const resultado = producto.product_id;
+        return resultado
+      })
+
+
+      let productos =  await db.Products.findAll({where: {
+        id: {
+          [Op.or]: productosBuscar
+        }
+      }}
+    );
+      
+        if(productosFavoritos.length>0){
+            res.render('products/products-favorites.ejs',{ category:null, products:productos })
         }else{
-            res.send('no tienes productos favoritos')
+            res.render('products/products-favorites.ejs')
         } 
     },
-    add: (req, res) => {
+    destroyFav:async (req,res)=>{
+     await db.FavoriteProducs.destroy({
+            where: {
+                product_id: req.params.id,
+                user_id: req.session.userLogged.id
+            }
+        })
+        res.render('products/products-favorites.ejs')
+    },
+
+    productCartAdd: (req, res) => {
         db.ProductCart.create({
-            product_id:product.id,
+            product_id:req.params.id,
             user_id:req.session.userLogged.id,
          })
-        res.send("agregaste al carrito")
+        res.redirect('/products/productCart')
+    },
+
+    showProductCart: async(req, res)=> {
+        // agregar los productos
+        const userId = req.session.userLogged.id
+        const productsAdd = await db.ProductCart.findAll({where:{user_id: userId}});
+        
+        if(productsAdd.length==0){
+            res.render("products/productCart.ejs", {productos: null})
+        }else{
+            let productosBuscar = productsAdd.map(producto => {
+           
+                const resultado = producto.product_id;
+                return resultado
+                   
+            })
+            let productos =  await db.Products.findAll({where: {
+                id: {
+                    [Op.or]: productosBuscar
+                }
+            }}
+            );
+            res.render("products/productCart.ejs", {productos})
+        } 
+
+    },
+    destroyCart: async(req, res) => {
+       await db.ProductCart.destroy({
+            where: {
+                product_id: req.params.id,
+                user_id: req.session.userLogged.id
+            }
+        }) 
+       res.redirect('/products/productCart')
     },
 
     apiProduct: (req, res) => {
