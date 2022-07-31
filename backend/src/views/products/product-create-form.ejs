@@ -29,9 +29,11 @@
                             <% if (locals.errors && errors.productName) { %>
                                 <%= errors.productName.msg %>
                                     <% } %>
-                                    <% if(locals.productoExiste){ %> 
-                                  <% console.log(locals.productoExiste) %> 
+                                    <% if(locals.error){ %> 
+                                        
+                                   <%= locals.error %>
                                   <% } %>
+                                
                         </div>
                     </div>
                     <div class="col-12 col-md-6">
@@ -74,8 +76,7 @@
                             <% } %>
                         <button type="button" class="btn btn-primary mt-2 mb-1 form-control" onclick="window.location.href='/brands/create';">Crear una nueva combinación</button>
                     </div>
-                      
-                    
+                                 
                        
                     
                     <div class="col-md-6">
@@ -131,7 +132,7 @@
         </main>
         <%- include("../partials/footer.ejs") %>
             <script src=""></script>
-            <!-- <script src="/js/validacionCreate.js"></script> -->
+             <script src="/js/validacionCreate.js"></script>  
 </body>
 
 </html>

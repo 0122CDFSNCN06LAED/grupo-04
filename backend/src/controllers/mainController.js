@@ -2,8 +2,8 @@ const path = require("path");
 const fs = require("fs");
 const db = require("../database/models")
 
-const productsFilePath = path.join(__dirname, "../data/products.json");
-const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8"));
+/* const productsFilePath = path.join(__dirname, "../data/products.json");
+const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8")); */
 
 
 
@@ -27,9 +27,7 @@ module.exports = {
         res.render("productDetail.ejs");
     },
 
-    productCart: (req, res) => {
-        res.render("products/productCart.ejs");
-    },
+    
     aboutUs: (req, res) => {
         res.render("aboutUs.ejs");
     },

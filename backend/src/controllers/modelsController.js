@@ -18,7 +18,29 @@ const controllers = {
         res.render("models/modelsCreate", { m: brands });
     },
 
-    store: (req, res) => {
+    store: async (req, res) => {
+        const resultValidation = validationResult(req);
+               if (resultValidation.errors.length > 0) {
+            const brands = await db.Brands.findAll();
+            return res.render("models/modelsCreate", {
+                errors: resultValidation.mapped(),
+                oldData: req.body,
+                m:brands,
+            });
+            
+        }
+        const modelsInDB = await db.Models.findAll({where:{name:req.body.name}})
+        if(modelsInDB.length>0){           
+            const brands = await db.Brands.findAll();
+            res.render("models/modelsCreate", {m: brands , errors: {
+                name: {
+                    msg: "Este modelo ya está creado"
+                }
+            },
+            oldData: req.body}   
+            );
+
+        }  else {
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
         req.session.userLogged.recentCreatedBrand = null;
         db.Models.create({
@@ -33,7 +55,7 @@ const controllers = {
             }
         );
 
-    }
+    }}
 }
 
 
