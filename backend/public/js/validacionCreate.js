@@ -22,12 +22,6 @@ window.addEventListener("load", function() {
         } else if (descripcion.value.length < 20) {
             errores.push("20 caracteres")
         }
-
-        let modelo = document.querySelector("input#models")
-        if (modelo.value == "") {
-            document.getElementById("errorModelo").innerHTML = "debes indicar un modelo"
-            errores.push("modelo");
-        }
         let precio = document.querySelector("input#price")
         if (precio.value == "") {
             document.getElementById("errorPrecio").innerHTML = "debes indicar un precio"
@@ -39,8 +33,10 @@ window.addEventListener("load", function() {
             errores.push("minimo de compra")
         } console.log(errores)
 
-        if (errores.length == 0) {
-            formulario.submit();
+        if (errores.length>0) {
+            e.preventDefault();
+        }else{
+            formulario.submit()
         }
 
 

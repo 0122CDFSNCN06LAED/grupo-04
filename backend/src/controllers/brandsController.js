@@ -21,6 +21,19 @@ const controllers = {
                 errors: resultValidation.mapped(),
                 oldData: req.body
             });
+        }
+        const brandInDB = await db.Brands.findAll({where:{name:req.body.name}})
+
+        if(brandInDB.length>0){
+            return res.render("brands/brandsCreate", {
+                errors: {
+                    name: {
+                        msg: "Esta marca ya está creada"
+                    }
+                },
+                oldData: req.body
+            });
+
         }else{
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 

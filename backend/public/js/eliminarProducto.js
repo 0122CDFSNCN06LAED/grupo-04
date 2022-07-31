@@ -1,7 +1,6 @@
 window.addEventListener("load",function(){
 
     let botonEliminar =document.getElementById("cuidadoAlEliminar");
-    console.log(botonEliminar, "te elimino");
 
     botonEliminar.addEventListener('click',function(e){
        
