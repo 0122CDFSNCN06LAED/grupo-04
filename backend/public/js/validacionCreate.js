@@ -43,11 +43,7 @@ window.addEventListener("load", function() {
             formulario.submit();
         }
 
-        /*   if (categoria.value == "") {
-            alert("seleccione otra cat")
-        } 
-        fijarse como por defecto q diga otro msj
-*/
+
     })
 
 

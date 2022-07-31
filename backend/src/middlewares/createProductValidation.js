@@ -6,7 +6,7 @@ const validations = [
     .isLength({ min: 5 }).withMessage('minimo 5 caracteres'),
     body('description').notEmpty().withMessage('agregue descripcion del producto').bail()
     .isLength({ min: 20 }).withMessage('minimo 20 caracteres'),
-    body('models').notEmpty().withMessage('agregue un modelo al producto'),
+    body('models').notEmpty().withMessage('agregue una marca y modelo'),
     body('price').notEmpty().withMessage('Escriba el precio del producto').bail()
     .isNumeric().withMessage('Ingrese un precio'),
     body('category').notEmpty().withMessage('seleccione una categoria'),

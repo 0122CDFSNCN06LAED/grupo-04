@@ -15,6 +15,13 @@ const controllers = {
     },
 
     store: async (req, res) => {
+        const resultValidation = validationResult(req);
+        if (resultValidation.errors.length > 0) {
+            return res.render("brands/brandsCreate", {
+                errors: resultValidation.mapped(),
+                oldData: req.body
+            });
+        }else{
         const datosRecibidos = JSON.parse(JSON.stringify(req.body));
 
         const newBrand = await  db.Brands.create({
@@ -25,7 +32,7 @@ const controllers = {
             console.log(newBrand);
             req.session.userLogged.recentCreatedBrand = newBrand;
             res.redirect(`/models/create`)
-    },
+    }},
 
     edit: (req, res) => {
 

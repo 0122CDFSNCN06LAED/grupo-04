@@ -28,15 +28,30 @@
                             <option value="" selected="selected">seleccione una marca</option>
                                 <% } %>
                         </select>
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.brand_id) { %>
+                                <%= errors.brand_id.msg %>
+                                    <% } %>
+                        </div>
                         </div>
                     <div class="mb-3 col-md-6 col-lg-6">
                         <label for="name" class="form-label celeste-vpm">Nombre del modelo</label>
-                        <input type="text" class="form-control" id="name" name="name" >
+                        <input type="text" class="form-control" id="name" name="name" value="<%= locals.oldData ? oldData.name : null%>" >
+                        <div class="text-danger">
+                            <% if (locals.errors && errors.name) { %>
+                                <%= errors.name.msg %>
+                                    <% } %>
+                        </div>
                     </div>
 
                     <div class="mb-3 col-md-6 col-lg-6">
                         <label for="description" class="form-label celeste-vpm">Descripción del modelo</label>
-                        <input type="text" class="form-control" id="description" name="description" >
+                        <input type="text" class="form-control" id="description" name="description" value="<%= locals.oldData ? oldData.description : null%>">
+                        <div class="text-danger" id="errorDescripcion">
+                            <% if (locals.errors && errors.description) { %>
+                                <%= errors.description.msg %>
+                                    <% } %>
+                        </div>
                     </div>
 
                                                          
