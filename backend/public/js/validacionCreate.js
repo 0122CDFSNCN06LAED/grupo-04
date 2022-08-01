@@ -33,9 +33,7 @@ window.addEventListener("load", function() {
             errores.push("minimo de compra")
         } console.log(errores)
 
-        if (errores.length>0) {
-            e.preventDefault();
-        }else{
+        if (errores.length==0) {
             formulario.submit()
         }
 
