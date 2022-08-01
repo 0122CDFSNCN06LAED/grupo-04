@@ -64,17 +64,21 @@
                                 <p>Resumen de compra</p>
                             </div>
                             <div style="display: flex; justify-content: space-between;">
-                                <p>Productos(5)</p>
-                                <p>$133,234</p>
+                                <p>Productos (<%= productos ? productos.length : "" %>)</p>
+                                <% let precioTotal = 0; %> 
+                                <% productos.forEach(element => { %>
+                                    <% precioTotal = precioTotal + element.price %> 
+                                <% }) %>
+                                <p>$ <%= precioTotal %></p>
                             </div>
                             <div style="display: flex; justify-content: space-between;">
                                 <p>Envío</p>
-                                <p>$0</p>
+                                <p class="text-green">Gratis</p>
                             </div>
                         </article>
                         <article class="caja-total-envio">
                             <h2>Total con envío</h2>
-                            <p class="total-precio">$ 133,234</p>
+                            <p class="total-precio"> $ <%= precioTotal %></p>
                         </article>
                     </div>
 
