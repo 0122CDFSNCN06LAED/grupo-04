@@ -26,11 +26,13 @@ const controllers = {
         if (categoryId) {
             let categoriePedido = db.ProductCategories.findAll({ where: { id: categoryId } });
             let productoPedido = db.Products.findAll({ where: { category_id: categoryId } });
-            Promise.all([categoriePedido, productoPedido]).then(function([category, products]) {
+            let productosFavoritos = req.session.userLogged ? db.FavoriteProducs.findAll({where:{user_id:req.session.userLogged.id}}) : [];
+
+            Promise.all([categoriePedido, productoPedido, productosFavoritos]).then(function([category, products, productosFavoritos]) {
                 console.log(category)
 
                 if (products.length > 0) {
-                    res.render("products/productsList.ejs", { category: category[0], products });
+                    res.render("products/productsList.ejs", { category: category[0], products, productosFavoritos });
 
                 } else {
                     res.redirect("/")
@@ -48,7 +50,6 @@ const controllers = {
 
         try {
             let productosPedidos = await db.Products.findAll({ where: { vendor_id: userId } });
-            // console.log(productosPedidos)
             if (productosPedidos) {
                 res.render("products/productsList.ejs", { products: productosPedidos, category: null, productosFavoritos:null })
             } else {
@@ -84,8 +85,7 @@ const controllers = {
                 }
                 resultValidation.errors.push(error)
                 msg = 'Ya tenes "'+ productInDB[0].productName +'" creado'}
-  
-  console.log(resultValidation)
+
                 if (resultValidation.errors.length > 0) {
                     console.log(resultValidation.errors);
                     db.Models.findAll().then((modelos) => {
@@ -228,7 +228,7 @@ const controllers = {
             product_id:req.params.id,
             user_id:req.session.userLogged.id
         }).then((favoritoNuevo)=>{
-res.redirect("/")
+            res.redirect("/")
         }).catch(error=>{
             console.log(error)
         })
@@ -262,14 +262,14 @@ res.redirect("/")
             res.render('products/products-favorites.ejs')
         } 
     },
-    destroyFav:async (req,res)=>{
+    destroyFav: async (req,res)=>{
      await db.FavoriteProducs.destroy({
             where: {
                 product_id: req.params.id,
                 user_id: req.session.userLogged.id
             }
         })
-        res.render('products/products-favorites.ejs')
+        res.redirect('/products/favoritos')
     },
 
     productCartAdd: (req, res) => {

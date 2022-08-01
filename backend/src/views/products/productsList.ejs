@@ -77,11 +77,25 @@
               </a>
               <div class="card-body card-description">
                 <div class="d-flex justify-content-around">
-                  <div id="favProd">
+                  <% if (locals.userLogged) { %>
+                    
+                  
+                    <% if(locals.productosFavoritos &&
+                    productosFavoritos.filter(x=>
+                    x.product_id==product.id).length== 0){ %>
                     <a href="/products/favoritos/<%= product.id %>"
-                      ><i class="icon-card fa-solid fa-heart fa-2x"></i
+                    ><i class="icon-card fa-regular fa-heart fa-2x"></i
                     ></a>
-                  </div>
+                    <% } else{ %>
+                    <i
+                    class="icon-card fa-solid fa-heart fa-2x selectFavorite"
+                    ></i>
+                    <% } %>
+                <% } else{ %>
+                    <a href="/products/favoritos/<%= product.id %>"
+                    ><i class="icon-card fa-regular fa-heart fa-2x"></i
+                    ></a>
+                                     <% } %>
                   <p class="card-price">$ <%=product.price%></p>
                   <p class="card-discount">10% off</p>
                 </div>
