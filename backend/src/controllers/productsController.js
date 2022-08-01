@@ -10,7 +10,7 @@ const controllers = {
                 if (res.locals.isLogged){
                 db.Products.findAll().then(function(products) {
                     db.FavoriteProducs.findAll({where:{user_id:req.session.userLogged.id}}).then(productosFavoritos=>{
-                        res.render("products/productsList.ejs", { products, category: null,productosFavoritos })
+                        res.render("products/productsList.ejs", { products, category: null, productosFavoritos })
 
                     })
         }

@@ -8,25 +8,19 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, "utf-8")); */
 
 
 module.exports = {
-    home: (req, res) => {
+    home: async (req, res) => {
 
-        db.Products.findAll(
+        const newProducts =  await db.Products.findAll({order: [['id', 'DESC']], limit: 8 });
+        const cheapProducts =  await db.Products.findAll({order: [['price', 'ASC']], limit: 8});
+        const productosFavoritos = req.session.userLogged ? await db.FavoriteProducs.findAll({where:{user_id:req.session.userLogged.id}}) : [];
 
-        ).then(function(products) {
+        res.render("index.ejs", { newProducts , cheapProducts, productosFavoritos });
 
-            res.render("index.ejs", { products })
-        }).catch(error => {
-            console.log(error)
-        })
     },
     
     register: (req, res) => {
         res.redirect("users/register");
     },
-    productDetail: (req, res) => {
-        res.render("productDetail.ejs");
-    },
-
     
     aboutUs: (req, res) => {
         res.render("aboutUs.ejs");

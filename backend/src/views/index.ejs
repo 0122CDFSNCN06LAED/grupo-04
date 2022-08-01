@@ -23,11 +23,11 @@
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
+      <span class="visually-hidden">Previo</span>
     </button>
             <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
       <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
+      <span class="visually-hidden">Siguiente</span>
     </button>
         </section>
 
@@ -36,7 +36,7 @@
                 <h2>Novedades</h2>
                 <div class="row">
 
-                    <% products.forEach(product => { %>
+                    <% newProducts.forEach(product => { %>
                         <article class="cont-card col-md-3 col-sm-6">
                             <div class="card m-2">
                                 <a href="../../products/detail/<%= product.id %>">
@@ -47,7 +47,26 @@
                                 <div class="card-body card-description">
 
                                     <div class="d-flex justify-content-around">
-                                        <i class="icon-card fa-solid fa-heart fa-2x "></i>
+                                        <% console.log("productos favoritos", locals.productosFavoritos) %> 
+                                        <% if (locals.userLogged) { %>
+                                         
+                                        
+                                            <% if(locals.productosFavoritos &&
+                                            productosFavoritos.filter(x=>
+                                            x.product_id==product.id).length== 0){ %>
+                                            <a href="/products/favoritos/<%= product.id %>"
+                                            ><i class="icon-card fa-regular fa-heart fa-2x"></i
+                                            ></a>
+                                            <% } else{ %>
+                                            <i
+                                            class="icon-card fa-solid fa-heart fa-2x selectFavorite"
+                                            ></i>
+                                            <% } %>
+                                        <% } else{ %>
+                                            <a href="/products/favoritos/<%= product.id %>"
+                                            ><i class="icon-card fa-regular fa-heart fa-2x"></i
+                                            ></a>
+                                        <% } %>
                                         <p class=" card-price ">$
                                             <%=product.price%>
                                         </p>
@@ -73,15 +92,15 @@
 
 
 
-                            <div class="d-flex"><button type="button" class="btn btn-dark  btn-mas-productos ">Ver mas productos</button>
+                            <div class="d-flex"> <a href="/products/"><button type="button" class="btn btn-dark  btn-mas-productos ">Ver mas productos</a></button>
                             </div>
                 </div>
             </div>
 
             <div class="container">
-                <h2>Ofertas del mes</h2>
+                <h2>Los mejores precios</h2>
                 <div class="row">
-                    <% products.forEach(product => { %>
+                    <% cheapProducts.forEach(product => { %>
                         <article class="cont-card col-md-3 col-sm-6">
                             <div class="card m-2">
                                 <div class="box-img">
