@@ -76,3 +76,6 @@ Nos juntamos para compartir avances del proyecyo, se sigue avanzando y se ponen 
 
 26/07 daily
 Reunion para tratar temas puntuales sobre todo el proyecto, mostramos avances y volvemos a asignar prioridades
+
+01/08 retro
+reunion para finalizar proyecto, se habla de como fue el trabajo en equipo, se intercambian opiniones, cosas a mejorar cada uno cuando se trabaja en equippo.

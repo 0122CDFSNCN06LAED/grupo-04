@@ -219,7 +219,7 @@ const controllers = {
                 }
             }
         }).then((products) => {
-            res.render("products/productsList.ejs", { products })
+            res.render("products/productsList.ejs", { products, category:null })
         })
 
     },
