@@ -26,7 +26,7 @@ function Users() {
             </div>
             <div className="contenedorCantidades">
                 <div>
-                    <h5>Ultimo Usuario conectado</h5>
+                    <h5>Último Usuario registrado</h5>
                 </div>
                 <div>
                     <div><span className="dato3">Nombre: </span><span className="dato1">{lastUser.nombre}</span></div>
