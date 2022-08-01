@@ -37,13 +37,15 @@
                             <% } %>
                     </div>
                     <div class="col-md-6">
-                        <label class="form-label celeste-vpm" for="models">Modelo</label>
+                        <label class="form-label celeste-vpm" for="models">Modelo y marca</label>
                         <select name="models" id="models" class="form-control">
                             <% for(let i=0; i<m.length; i++){ %> 
                                 <% if(m[i].id === p.models_id){ %>
-                                    <option value="<%= m[i].id %>" selected="selected"><%= m[i].name %></option> 
+                                    <option value="<%= m[i].id %>" selected="selected"><%= m[i].marcas ? `Marca: ${ m[i].marcas.name } - Modelo: ${ m[i].name }` :
+                                        m[i].name %></option> 
                                 <% }else{ %>
-                                   <option value="<%= m[i].id %>"><%= m[i].name %></option> 
+                                   <option value="<%= m[i].id %>"><%= m[i].marcas ? `Marca: ${ m[i].marcas.name } - Modelo: ${ m[i].name }` :
+                                    m[i].name %></option> 
                                 <% } } %> 
                                 <% if (locals.errors && errors.models) { %>
                                     <div class="text-danger">

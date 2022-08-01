@@ -124,7 +124,7 @@ const controllers = {
         try {
 
             let pedidoProducto = db.Products.findByPk(req.params.id);
-            let pedidoModelos = db.Models.findAll();
+            let pedidoModelos = db.Models.findAll({ include: [{ association: "marcas" }] });
             let pedidoCategorias = db.ProductCategories.findAll();
             Promise.all([pedidoProducto, pedidoModelos, pedidoCategorias])
                 .then(([producto, modelos, categorias]) => {
