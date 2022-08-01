@@ -29,9 +29,9 @@ function Users() {
                     <h5>Ultimo Usuario conectado</h5>
                 </div>
                 <div>
-                    <div><span className="dato3">Nombre:</span><span className="dato1">{lastUser.nombre}</span></div>
-                    <div><span className="dato3">Email:</span><span className="dato1">{lastUser.email}</span> </div>
-                    <div><span className="dato3">compañia:</span><span className="dato1">{lastUser.companyName}</span></div>
+                    <div><span className="dato3">Nombre: </span><span className="dato1">{lastUser.nombre}</span></div>
+                    <div><span className="dato3">Email: </span><span className="dato1">{lastUser.email}</span> </div>
+                    <div><span className="dato3">compañia: </span><span className="dato1">{lastUser.companyName}</span></div>
                     
                 </div>
             </div>

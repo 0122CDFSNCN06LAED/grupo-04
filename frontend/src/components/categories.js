@@ -29,9 +29,9 @@ function Categories(props){
                     {
                         categories.map((category) => (
                             <div>
-                                <span className="dato1">{category.nombre}</span>
+                            <span className="dato1">{category.nombre}:</span>
                                 
-                            <span className="dato2">{category.cantidad}</span>
+                            <span className="dato2"> {category.cantidad}</span>
                             </div>
                         ))
                     }               

@@ -2,11 +2,11 @@
   text-align: center;
   display: flex;
   justify-content: space-around;
+  flex-wrap: wrap;
 }
 
-.contenedorEstadistica {
-  width: 30%;
-}
+
+
 
 .contenedorCantidades{
   font-size: 36px;
@@ -45,4 +45,12 @@
 
 h5{
   font-size: 24px;
+}
+
+
+
+@media (min-width: 768px) {
+  .contenedorEstadistica {
+    width: 30%;
+  }
 }
