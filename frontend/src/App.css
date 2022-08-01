@@ -10,24 +10,41 @@
 
 .contenedorCantidades{
   font-size: 36px;
-  border: 1px solid #CCC;
+  border: 1px solid #ccc;
   border-radius: 20px;
   padding: 0px 20px 20px 20px;
   margin-top: 20px;
+
+
+  --c: no-repeat linear-gradient(#224ee0 0 0);
+  background: 
+    var(--c)  calc(-101% + var(--p,0%)) 100% / 50.1% var(--p,.08em),
+    var(--c)  calc( 201% - var(--p,0%)) 0    / 50.1% var(--p,.08em);
+  transition: .3s var(--t,0s), background-position .3s calc(.3s - var(--t,0s));
+
 }
 
+
+.contenedorCantidades:hover {
+  --p: 101%;
+  --t: 0.3s;
+  color: white;
+}
+
+
+
 .cantidadUsuarios{
-  color:red;
+  color:rgb(245, 105, 105);
   font-weight: bold;
 }
 .cantidadCategorias{
-  color:green;
+  color:rgb(72, 245, 72);
   font-weight: bold;
 }
 
 .cantidadProductos{
-  color:blue;
-  
+  color:rgb(218, 178, 0);
+  font-weight: bold;
 }
 
 .dato1{
@@ -36,7 +53,7 @@
 
 .dato2{
   font-size: 20px;;
-  color: cornflowerblue;
+  color: rgb(121, 167, 252);
 }
 
 .dato3{
@@ -49,8 +66,12 @@ h5{
 
 
 
+
+
 @media (min-width: 768px) {
   .contenedorEstadistica {
     width: 30%;
   }
 }
+
+
